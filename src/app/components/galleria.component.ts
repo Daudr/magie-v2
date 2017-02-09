@@ -2,9 +2,8 @@ import { Component, OnInit } from '@angular/core';
 declare var $: any;
 
 @Component({
-	moduleId: module.id,
 	selector: 'my-galleria',
-	templateUrl: 'galleria.component.html'
+	templateUrl: './galleria.component.html'
 })
 export class GalleriaComponent {
 

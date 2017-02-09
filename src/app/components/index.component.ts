@@ -6,9 +6,8 @@ import { EventiService } from '../services/eventi.service';
 declare var $: any;
 
 @Component({
-	moduleId: module.id,
 	selector: 'my-index',
-	templateUrl: 'index.component.html',
+	templateUrl: './index.component.html',
 })
 export class IndexComponent implements OnInit {
 	data: Date;

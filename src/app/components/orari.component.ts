@@ -5,10 +5,9 @@ import { Staff } from '../staff';
 import { StaffService } from '../services/staff.service';
 
 @Component({
-	moduleId: module.id,
 	selector: 'orari',
 	providers: [ MdSnackBar ],
-	templateUrl: 'orari.component.html'
+	templateUrl: './orari.component.html'
 })
 export class OrariComponent  implements OnInit {
 

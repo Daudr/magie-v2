@@ -9,9 +9,8 @@ import { Eventi } from '../eventi';
 declare var $: any;
 
 @Component({
-	moduleId: module.id,
 	selector: 'my-eventi',
-	templateUrl: 'eventi.component.html'
+	templateUrl: './eventi.component.html'
 })
 export class EventiComponent implements OnInit {
 	eventi: Eventi[];

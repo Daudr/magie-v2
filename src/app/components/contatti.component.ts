@@ -8,7 +8,6 @@ import { Staff } from '../staff';
 declare var $: any;
 
 @Component({
-	moduleId: module.id,
 	selector: 'my-contatti',
 	templateUrl: `./contatti.component.html`,
 })

@@ -6,7 +6,6 @@ import { StaffService } from './services/staff.service';
 import { EventiService } from './services/eventi.service';
 
 @Component({
-	moduleId: module.id,
 	selector: 'magie-dinverno',
 	templateUrl: `./app.component.html`,
 	providers: [
