@@ -1,3 +1,120 @@
-<h1>
-  {{title}}
-</h1>
+<md-sidenav-container class="example-container">
+	<md-sidenav #sidenav class="side-nav light-blue lighten-1">
+		<ul class="sidenav light-blue lighten-1">
+	    	<li routerLinkActive="active"><a routerLink="/index" (click)="setTitle( 'Magie D\'Inverno - Home' )" class="white-text btn-flat">Home</a></li>
+			<li routerLinkActive="active"><a routerLink="/orari" (click)="setTitle( 'Magie D\'Inverno - Orari' )" class="white-text btn-flat">Prezzi/Orari</a></li>
+			<li routerLinkActive="active"><a routerLink="/servizi" (click)="setTitle( 'Magie D\'Inverno - Servizi' )" class="white-text btn-flat">Servizi</a></li>
+			<li routerLinkActive="active"><a routerLink="/eventi" (click)="setTitle( 'Magie D\'Inverno - Eventi' )" class="white-text btn-flat">Eventi</a></li>
+			<li routerLinkActive="active"><a routerLink="/contatti" (click)="setTitle( 'Magie D\'Inverno - Contatti' )" class="white-text btn-flat">Contatti</a></li>
+			<!-- <li routerLinkActive="active"><a routerLink="/galleria" (click)="setTitle( 'Magie D\'Inverno - Galleria' )" class="white-text btn-flat">Galleria</a></li> -->
+
+			<li><a href="https://www.facebook.com/magiedinverno" target="_blank" class="white-text btn-flat"><img src="assets/icons/social/facebook.png" alt="Facebook" class="side">Facebook</a></li>
+			<li><a href="https://www.instagram.com/magie_inverno_official/" target="_blank" class="white-text btn-flat"><img src="assets/icons/social/instagram.png" alt="Instagram" class="side">Instagram</a></li>
+	      	<li><a href="https://www.youtube.com/watch?v=L8kx_VK4OMc" target="_blank" class="white-text btn-flat"><img src="assets/icons/social/youtube.png" alt="YouTube" class="side">YouTube</a></li>
+	    </ul>
+	</md-sidenav>
+
+	<div class="navbar-fixed">
+		<nav>
+		    <div class="nav-wrapper light-blue lighten-1">
+		    	<a routerLink="/index" class="brand-logo center hide-on-large-only"><img src="assets/icons/logo/magie_dinverno_logo.png" alt="Magie D'Inverno" class="logo center"></a>
+				<a (click)="sidenav.open()" class="button-collapse"><i class="material-icons">menu</i></a>
+				<ul id="nav-mobile" class="left hide-on-med-and-down">
+					<li routerLinkActive="active"><a routerLink="/index" (click)="setTitle( 'Magie D\'Inverno - Home' )" class="white-text btn-flat">Home</a></li>
+					<li routerLinkActive="active"><a routerLink="/orari" (click)="setTitle( 'Magie D\'Inverno - Orari' )" class="white-text btn-flat">Prezzi/Orari</a></li>
+					<li routerLinkActive="active"><a routerLink="/servizi" (click)="setTitle( 'Magie D\'Inverno - Servizi' )" class="white-text btn-flat">Servizi</a></li>
+					<li routerLinkActive="active"><a routerLink="/eventi" (click)="setTitle( 'Magie D\'Inverno - Eventi' )" class="white-text btn-flat">Eventi</a></li>
+					<li routerLinkActive="active"><a routerLink="/contatti" (click)="setTitle( 'Magie D\'Inverno - Contatti' )" class="white-text btn-flat">Contatti</a></li>
+					<!-- <li routerLinkActive="active"><a routerLink="/galleria" (click)="setTitle( 'Magie D\'Inverno - Galleria' )" class="white-text btn-flat">Galleria</a></li> -->
+				</ul>
+				<ul class="right hide-on-med-and-down">
+					<li>
+						<a href="javascript:void(0)">
+							<img class="asd-logo" src="assets/icons/logo/logo-asd-trasp.png" alt="A.S.D. Ice Team Sanve">
+						</a>
+					</li>
+				</ul>
+		    </div>
+		</nav>
+	</div>
+
+	<router-outlet></router-outlet>
+
+	<footer class="page-footer light-blue lighten-1">
+		<div class="row">
+			<div class="col l6 s12">
+				<h5 class="white-text">Magie D'Inverno ringrazia: </h5>
+				<div class="row">
+					<div class="col m3 offset-s3">
+						<img src="assets/icons/sponsor/sponsor_logo.jpg" alt="logo sponsor">
+					</div>
+					<div class="col m3 offset-s3">
+						<img src="assets/icons/sponsor/sponsor_logo.jpg" alt="logo sponsor">
+					</div>
+					<div class="col m3 offset-s3">
+						<img src="assets/icons/sponsor/sponsor_logo.jpg" alt="logo sponsor">
+					</div>
+					<div class="col m3 offset-s3">
+						<img src="assets/icons/sponsor/sponsor_logo.jpg" alt="logo sponsor">
+					</div>
+					<div class="col m3 offset-s3">
+						<img src="assets/icons/sponsor/sponsor_logo.jpg" alt="logo sponsor">
+					</div>
+					<div class="col m3 offset-s3">
+						<img src="assets/icons/sponsor/sponsor_logo.jpg" alt="logo sponsor">
+					</div>
+					<div class="col m3 offset-s3">
+						<img src="assets/icons/sponsor/sponsor_logo.jpg" alt="logo sponsor">
+					</div>
+					<div class="col m3 offset-s3">
+						<img src="assets/icons/sponsor/sponsor_logo.jpg" alt="logo sponsor">
+					</div>
+					<div class="col m3 offset-s3">
+						<img src="assets/icons/sponsor/sponsor_logo.jpg" alt="logo sponsor">
+					</div>
+				</div>
+				<h5 class="white-text left-align"> Ci puoi trovare anche su: </h5>
+				<div class="row">
+					<div class="footer-icon col"> <!-- Facebook -->
+						<a href="https://www.facebook.com" target="_blank"><img src="assets/icons/social/facebook.png" alt="Facebook" class="icon" mdTooltip="Facebook"></a>
+					</div>
+					<div class="footer-icon col"> <!-- Instragram -->
+						<a href="https://www.instagram.com/magie_inverno_official/" target="_blank"><img src="assets/icons/social/instagram.png" alt="Instagram" class="icon" mdTooltip="Instagram"></a>
+					</div>
+					<div class="footer-icon col"> <!-- YouTube -->
+						<a href="https://www.youtube.com/watch?v=L8kx_VK4OMc" target="_blank"><img src="assets/icons/social/youtube.png" alt="YouTube" class="icon" mdTooltip="YouTube"></a>
+					</div>
+				</div>
+			</div>
+			<div class="col l4 offset-l2 s12 center-align">
+				<h5 class="white-text left-align">
+					Per rimanere sempre aggiornato, iscriviti alla nostra newsletter:<br> 
+				</h5>
+				<a title="iscrizioneNewsletter" class="btn btn-flat white-text light-blue" (click)="openNews()" >Iscriviti</a>
+				<br><br>
+				<h5 class="white-text left-align">
+					Hai notato degli errori in questa pagina?<br>
+					Aiutami a risolverli:
+				</h5>
+				<a title="segnalaBug" class="btn btn-flat white-text light-blue" (click)="openBug()" >Segnala un errore</a>
+			</div>
+		</div>
+	  <div class="footer-copyright justify">
+	    <!--  <div class="margin-copy">
+	    	&copy; Progettato e realizzato da <a href="https://www.facebook.com/micheleedarin" target="_blank" class="copyright">Dau&eth;r</a>
+	    </div> -->
+	    <div>
+	    	<ul class="footer-list hide-on-small-only">
+	    		<li class="footer-list"><a class="white-text btn-flat" href="javscript:void(0)" title="Credits">Credits</a></li>
+	    		<li class="footer-list"><a class="white-text btn-flat" href="javascript:void(0)" title="Cookie Policy">Cookie Policy</a></li>
+	    		<li class="footer-list"><a class="white-text btn-flat" href="javascript:void(0)" title="Site Map">Site Map</a></li>
+	    	</ul>
+	    	<ul class="footer-list hide-on-med-and-up center-align">
+	    		<li><a class="white-text btn-flat" href="javscript:void(0)" title="Credits">Credits</a></li>
+	    		<li><a class="white-text btn-flat" href="javascript:void(0)" title="Cookie Policy">Cookie Policy</a></li>
+	    		<li><a class="white-text btn-flat" href="javascript:void(0)" title="Site Map">Site Map</a></li>
+	    	</ul>
+	    </div>
+	  </div>
+	</footer>
+</md-sidenav-container>

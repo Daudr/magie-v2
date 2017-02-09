@@ -1,14 +1,62 @@
 <!doctype html>
 <html>
-<head>
-  <meta charset="utf-8">
-  <title>MagieV2</title>
-  <base href="/">
+	<head>
+		<base href="/">
+		<title>Magie D'Inverno - Home</title>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta name="theme-color" content="#29b6f6">
+		<link rel="icon" type="image/x-icon" href="favicon.ico">
 
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="icon" type="image/x-icon" href="favicon.ico">
-</head>
-<body>
-  <app-root>Loading...</app-root>
-</body>
+		<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+	    <link href="https://fonts.googleapis.com/css?family=Merienda" rel="stylesheet">
+	    <!--Import materialize.css-->
+	    <link type="text/css" rel="stylesheet" href="assets/css/materialize.min.css"  media="screen"/>
+	    <link type="text/css" href="assets/css/material-theme.css" rel="stylesheet">
+
+	    <link rel="stylesheet" type="text/css" href="assets/css/styles.css">
+	</head>
+	
+	<body class="add">
+	    <main>
+	      <!-- BACKGROUND -->
+	      <div class="parallax">
+	        <video autoplay loop muted poster="/assets/icons/background/back-img.png" id="bgvid">
+	          <source src="/assets/videos/background.mp4" type="video/mp4" />
+	        </video>
+	      </div>
+
+	      <div id="loader-wrapper">
+	        <div id="loader"></div>
+	        <div class="loader-section section-right"></div>
+	        <div class="loader-section section-left"></div>
+	      </div>
+	      <div id="content">
+	        <magie-dinverno>
+	          <div class="justify">
+	            <div class="container valign-wrapper">
+	              <div class="card-panel valign">
+	                <h1 class="center-align">Caricamento...</h1>
+	                <h3 class="center-align">Se la pagina non si dovesse caricare entro pochi secondi si prega di contattare l'amministratore del sito.</h3>
+	                <p>Email: michidarin@gmail.com</p>
+	                <div class="center-align">
+	                  <a href="mailto:michidarin@gmail.com" class="white-text btn center-align light-blue text-darken-4">Invia email</a>
+	                </div>
+	              </div>
+	            </div>
+	          </div>
+	        </magie-dinverno>
+	      </div>
+
+	      <a class="cd-top">Top</a>
+	    </main>
+
+	    <!--Import jQuery before materialize.js-->
+	    <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+
+	    <script type="text/javascript" src="assets/js/animation.js"></script>
+	    <script type="text/javascript" src="assets/js/materialize.min.js"></script>
+
+	    <script type="text/javascript" src="assets/js/cd-top.js"></script>
+	  </body>
 </html>

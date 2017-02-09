@@ -1,0 +1,160 @@
+<!-- ADVERTISEMENT -->
+<!-- <div class="ad_left hide-on-med-and-down"><img src="assets/icons/ads/ads.png" alt="Annuncio"></div> -->
+<!-- <div class="ad_right hide-on-med-and-down"><img src="assets/icons/ads/ads.png" alt="Annuncio"></div> -->
+
+<div class="container main">
+	<div class="card-panel row col m12 light-blue lighten-4 top">
+		<h1>Orari apertura al pubblico:</h1>
+		<div class="row">
+			<table class="col s12 m10 l5 offset-m1 body_container tabella centered white-text">
+				<caption class="light-blue accent-3 tabella centered"><strong>Dal 28 Novembre al 23 Dicembre e dall'8 Gennaio al 5 Marzo</strong></caption>
+				<thead>
+					<tr>
+						<th data-field="giorno">Giorno</th>
+						<th data-field="turno_mattina">Mattina</th>
+						<th data-field="primo_turno">Pomeriggio</th>
+						<th data-field="secondo_turno">Sera</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td>Lunedì - Giovedì</td>
+						<td> / </td>
+						<td>15:00 - 16:30</td>
+						<td> / </td>
+					</tr>
+					<tr>
+						<td>Venerdì</td>
+						<td> / </td>
+						<td>15:00 - 18:30</td>
+						<td> / </td>
+					</tr>
+					<tr>
+						<td>Sabato</td>
+						<td> / </td>
+						<td>14:30 - 16:30 <br> 17:00 - 19:00</td>
+						<td>20:00 - 22:00</td>
+					</tr>
+					<tr>
+						<td>Domenica</td>
+						<td>10:00 - 12:00</td>
+						<td>14:30 - 16:30 <br> 17:00 - 19:00</td>
+						<td> / </td>
+					</tr>
+				</tbody>
+			</table>
+
+			<table class="col s12 m10 l5 offset-m1 offset-l2 body_container tabella centered white-text">
+				<caption class="light-blue accent-3 tabella"><strong>Dal 23 Dicembre al 8 Gennaio</strong></caption>
+				<thead>
+					<tr>
+						<th data-field="giorno">Giorno</th>
+						<th data-field="turno_mattina">Mattina</th>
+						<th data-field="primo_turno">Pomeriggio</th>
+						<th data-field="secondo_turno">Sera</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td>Tutti i giorni</td>
+						<td>10:00 - 12:00</td>
+						<td>14:30 - 16:30<br>17:00 - 19:00</td>
+						<td>20:00 - 22:00</td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+	</div>
+
+	<div class="card-panel row col m12 light-blue lighten-4">
+		<h1 class="hide-on-small-only">Orari corsi di pattinaggio</h1>
+		<h2 class="hide-on-med-and-up">Orari corsi di pattinaggio</h2>
+		
+		<div class="row">
+			<table class="col s12 m10 l5 offset-m1 body_container tabella centered white-text">
+				<caption class="light-blue accent-3 tabella"><strong>Dal 28 Novembre al 23 Dicembre e dall'8 Gennaio al 5 Marzo</strong></caption>
+				<thead>
+					<tr>
+						<th data-field="giorno">Giorno</th>
+						<th data-field="primo_turno">I turno</th>
+						<th data-field="secondo_turno">II turno</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td>Lunedì - Giovedì</td>
+						<td>16:30 - 17:30</td>
+						<td>17:30 - 18:30</td>
+					</tr>
+				</tbody>
+			</table>
+
+			<div class="col s12 m10 offset-m1 center-align hide-on-large-only tabella">
+				<a title="Informazioni corsi pomeridiani" class="btn btn-flat white-text light-blue" (click)="openDialogPomeriggio()">Informazioni</a>
+			</div>
+
+			<table class="col s12 m10 l5 offset-m1 offset-l2 body_container tabella centered white-text">
+				<caption class="light-blue accent-3 tabella"><strong>Ogni domenica</strong></caption>
+				<thead>
+					<tr>
+						<th data-field="giorno">Giorno</th>
+						<th data-field="primo_turno" class="centered">I turno</th>
+						<th data-field="secondo_turno">II turno</th>
+						<th data-field="terzo_turno">III turno</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td>Domenica</td>
+						<td>10:00 - 10:30</td>
+						<td>10:30 - 11:00</td>
+						<td>11:00 - 12:00</td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+
+		<div class="row">
+			<div class="col s12 m10 l5 offset-m1 center-align">
+				<a title="Informazioni corsi pomeridiani" class="btn btn-flat white-text light-blue hide-on-med-and-down" (click)="openDialogPomeriggio()" >Informazioni</a>
+			</div>
+			<div class="col s12 m10 l5 offset-m1 offset-l2 center-align">
+				<a title="Informazioni corsi della domenica mattina" class="btn btn-flat white-text light-blue" (click)="openDialogMattina()" >Informazioni</a>
+			</div>
+		</div>
+	</div>
+
+	<div class="card-panel row col m12 light-blue lighten-4">
+		<h1>Prezzi</h1>
+
+		<table class="col s12 m10 l8 offset-m1 offset-l2 body_container tabella centered ultima-tabella white-text">
+				<caption class="light-blue accent-3 tabella"><strong>Prezzi</strong></caption>
+				<tbody>
+					<tr>
+						<td>Ingresso + Noleggio</td>
+						<td>8&euro;</td>
+					</tr>
+					<tr>
+						<td>Solo ingresso</td>
+						<td>5&euro;</td>
+					</tr>
+					<tr>
+						<td>Tessera 5 Ingressi + Noleggio</td>
+						<td>32&euro;</td>
+					</tr>
+					<tr>
+						<td>Tessera 5 Ingressi</td>
+						<td>22&euro;</td>
+					</tr>
+					<tr>
+						<td>Abbonamento stagionale Ingresso + Noleggio</td>
+						<td>130&euro;</td>
+					</tr>
+					<tr>
+						<td>Abbonamento stagionale solo Ingresso</td>
+						<td>110&euro;</td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+</div>

@@ -1,0 +1,156 @@
+<div class="container container_logo">
+	<img src="assets/icons/logo/magie_dinverno_logo.png" alt="Logo" class="img_logo" id="staggered-test">
+	{{ fade_img() }}
+</div>
+
+<!-- ADVERTISEMENT -->
+<!-- <div class="ad_left hide-on-med-and-down"><img src="assets/icons/ads/ads.png" alt="Annuncio"></div>
+<div class="ad_right hide-on-med-and-down"><img src="assets/icons/ads/ads.png" alt="Annuncio"></div> -->
+
+<div class="container main">
+	<div class="card-panel body_container center-align"> <!-- ORARI -->
+		<p>
+			Oggi è {{ traduciData() }} e noi siamo <strong>{{ isOpen() }}</strong>
+		</p>
+		<p *ngIf="isset(apertura)">
+			Siamo aperti dalle <strong><time>{{ apertura }}</time></strong> alle <strong><time>{{ chiusura }}</time></strong> al pubblico
+		</p>
+		<p *ngIf="isset(aperturaCorsi)">
+			I corsi si svolgono dalle <strong><time>{{ aperturaCorsi }}</time></strong> alle <strong><time>{{ chiusuraCorsi }}</time></strong>
+		</p>
+		<a routerLink="/orari" routerLinkActive="active" class="white-text btn center-align light-blue text-darken-4">+ informazioni</a>
+	</div>
+
+	<div class="card-panel center-align body_container"> <!-- EVENTI -->
+		<h2>
+			Prossimi eventi:
+		</h2>
+		<div class="row center-align">
+
+			<div *ngFor="let event of eventi">
+				<div class="col s8 m6 l4 offset-s2">
+					<div class="card">
+						<div class="card-image">
+							<img class="icon_event" src="assets/icons/other/gear.svg" >
+						</div>
+						<div class="card-content left-align">
+							<span class="card-title grey-text text-darken-4">Evento #1</span>
+							<p class="left-align grey-text text-darken-2">30/10/2016</p>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<!-- 1 
+			<div class="col s8 m6 l4 offset-s2">
+				<div class="card">
+					<div class="card-image">
+						<img class="icon_event" src="assets/icons/other/gear.svg" >
+					</div>
+					<div class="card-content left-align">
+						<span class="card-title grey-text text-darken-4">Evento #1</span>
+						<p class="left-align grey-text text-darken-2">30/10/2016</p>
+					</div>
+				</div>
+			</div>
+
+				2
+			<div class="col s8 m6 l4 offset-s2">
+				<div class="card">
+					<div class="card-image">
+						<img class="center-align ng-icon_event" src="assets/icons/other/gear.svg" >
+					</div>
+					<div class="card-content left-align">
+						<span class="card-title grey-text text-darken-4">Evento #2</span>
+						<p class="left-align grey-text text-darken-2">30/10/2016</p>
+					</div>
+				</div>
+			</div>
+
+				3
+			<div class="col s8 m6 l4 offset-s2">
+				<div class="card">
+					<div class="card-image">
+						<img class="center-align icon_event" src="assets/icons/other/gear.svg" >
+					</div>
+					<div class="card-content left-align">
+						<span class="card-title grey-text text-darken-4">Evento #3</span>
+						<p class="left-align grey-text text-darken-2">30/10/2016</p>
+					</div>
+				</div>
+			</div> -->
+		</div>
+		<a routerLink="/eventi" routerLinkActive="active" class="white-text btn center-align light-blue text-darken-4">Altri eventi</a>
+	</div>
+
+	<div class="card-panel center-align body_container"> <!-- SERVIZI -->
+		
+		<h2>
+			Magie D'Inverno offre i seguenti servizi:
+		</h2>
+				
+		<div class="row top">
+			<div class="col s8 m6 l3 offset-s2">
+				<img src="assets/icons/services/ice-skating.png" alt="Pattino" class="icon-service">
+				<p>
+					<strong>Noleggio pattini</strong>
+				</p>
+			</div>
+			<div class="col s8 m6 l3 offset-s2">
+				<img src="assets/icons/services/people.svg" alt="Pattino" class="icon-service">
+				<p>
+					<strong>Cucina</strong>
+				</p>
+			</div>
+			<div class="col s8 m6 l3 offset-s2">
+				<img src="assets/icons/services/fair-stand.svg" alt="Mercatino" class="icon-service">
+				<p>
+					<strong>Mercatino</strong>
+				</p>
+			</div>
+			<div class="col s8 m6 l3 offset-s2">
+				<img src="assets/icons/services/teacher-talking-to-a-group.svg" alt="Lezioni" class="icon-service">
+				<p>
+					<strong>Lezioni di pattinaggio</strong>
+				</p>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col s8 m6 l3 offset-s2">
+				<p>
+					<strong>Gonfiabili/Area bimbi</strong>
+				</p>
+			</div>
+			<div class="col s8 m6 l3 offset-s2">
+				<p>
+					<strong>Capannone coperto e riscaldato</strong>
+				</p>
+			</div>
+			<div class="col s8 m6 l3 offset-s2">
+				<img src="../assets/icons/services/wifi-signal.svg" alt="Wifi" class="icon-service">
+				<p>
+					<strong>WiFi</strong>
+				</p>				</div>
+			<div class="col s8 m6 l3 offset-s2">
+				<img src="../assets/icons/services/hockey.svg" alt="Wifi" class="icon-service">
+				<p>
+					<strong>Hockey</strong>
+				</p>
+			</div>
+		</div>
+		<a routerLink="/servizi" routerLinkActive="active" class="white-text btn center-align light-blue text-darken-4">Altri servizi</a>
+	</div>
+
+	<div class="card-panel center-align body_container">
+		<h1>Dove siamo: </h1>
+		<div class="row map-row">
+			<iframe
+				frameborder="0"
+				class="map-frame col s12"
+				src="https://www.google.com/maps/embed/v1/place?q=place_id:ChIJLSt0CtQUeUcRvAz1SS5vNfk&key=AIzaSyBZbraKHNSZ6hXdK3ZPXCe3WHPcP4tdEM8" 
+				allowfullscreen>
+			</iframe>
+		</div>
+		<a routerLink="/contatti" routerLinkActive="active" class="white-text btn center-align light-blue text-darken-4">Contattaci</a>
+	</div>
+</div>
