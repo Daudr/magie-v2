@@ -578,5 +578,5 @@ img.dialog-evento {
 }
 
 .parallax img {
-	display: all;
+	display: inherit;
 }
