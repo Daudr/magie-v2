@@ -19,22 +19,16 @@ export class IndexComponent implements OnInit {
 	aperturaCorsi: string;
 	chiusuraCorsi: string;
 
-	eventi: Eventi[];
+	soonEvents: Eventi[];
 
-	constructor(private eventiService: EventiService) {
-		// this.eventiService.getEventiProssimi()
-		// 	.subscribe(eventi => {
-		// 		this.eventi = eventi;
-		// 	});
-		// console.log(this.eventi);
-	}
+	constructor(private eventiService: EventiService) { }
 
 	ngOnInit() {
         this.eventiService
             .getEventiProssimi()
-            .then((eventi: Eventi[]) => {
-                this.eventi = eventi.map((eventi) => {
-                    return eventi;
+            .then((soonEvents: Eventi[]) => {
+                this.soonEvents = soonEvents.map((soonEvents) => {
+                    return soonEvents;
                 });
             });
     }

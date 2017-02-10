@@ -537,3 +537,8 @@ img.dialog-evento {
 .margin-btn {
 	margin: 10px;
 }
+
+.db-error {
+	margin-right: 10%;
+	margin-left: 10%;
+}

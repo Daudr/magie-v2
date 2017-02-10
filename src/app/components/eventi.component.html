@@ -30,7 +30,7 @@
 						</a>
 					</div>
 
-					<div class="card-panel center-align" *ngIf="!soonEvents">
+					<div class="card-panel center-align db-error" *ngIf="!soonEvents">
 						<h3>Errore nel caricamento di eventi futuri</h3>
 					</div>
 
@@ -93,7 +93,7 @@
 						</div>
 					</div>
 
-					<div class="card-panel center-align" *ngIf="!futureEvents">
+					<div class="card-panel center-align db-error" *ngIf="!futureEvents">
 						<h3>Errore nel caricamento di eventi futuri</h3>
 					</div>
 				</div>
@@ -121,7 +121,7 @@
 						</div>
 					</div>
 
-					<div class="card-panel center-align" *ngIf="!pastEvents">
+					<div class="card-panel center-align db-error" *ngIf="!pastEvents">
 						<h3>Errore nel caricamento di eventi passati</h3>
 					</div>
 				</div>
