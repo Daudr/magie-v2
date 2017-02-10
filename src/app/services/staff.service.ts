@@ -6,7 +6,7 @@ import 'rxjs/add/operator/toPromise';
 @Injectable()
 export class StaffService {
 	private staffUrl = '/api/staff';
-	private corsiUrl = '/api/satff/corsi';
+	private corsiUrl = '/api/staff/corsi';
 	
 	constructor(private http: Http) { }
 
@@ -22,7 +22,6 @@ export class StaffService {
 			.toPromise()
 			.then(response => response.json() as Staff[])
 			.catch(this.handleError);
-		
 	}
 
 	private handleError(error: any) {
