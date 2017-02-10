@@ -15,17 +15,16 @@ export class ContattiComponent implements OnInit {
 
 	staff: Staff[];
 
-	constructor(private staffService: StaffService) {
-		this.staffService.getStaff()
-			.subscribe(staff => {
-				this.staff = staff;
-			});
-	}
+	constructor(private staffService: StaffService) { }
 
 	ngOnInit() {
-		if(!($('body').hasClass('back_img'))){
-			$('body').addClass('back_img');
-		}
+		this.staffService
+			.getStaff()
+			.then((staff: Staff[]) => {
+				this.staff = staff.map((staff => {
+					return staff;
+				}));
+			});
 	}
 }
 

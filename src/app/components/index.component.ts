@@ -22,14 +22,22 @@ export class IndexComponent implements OnInit {
 	eventi: Eventi[];
 
 	constructor(private eventiService: EventiService) {
-		this.eventiService.getEventiProssimi()
-			.subscribe(eventi => {
-				this.eventi = eventi;
-			});
-		console.log(this.eventi);
+		// this.eventiService.getEventiProssimi()
+		// 	.subscribe(eventi => {
+		// 		this.eventi = eventi;
+		// 	});
+		// console.log(this.eventi);
 	}
 
-	ngOnInit() { }
+	ngOnInit() {
+        this.eventiService
+            .getEventiProssimi()
+            .then((eventi: Eventi[]) => {
+                this.eventi = eventi.map((eventi) => {
+                    return eventi;
+                });
+            });
+    }
 
 	isset(str: string): boolean {
 		if(str != null)	return true;

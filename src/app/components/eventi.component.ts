@@ -17,14 +17,17 @@ export class EventiComponent implements OnInit {
 	data: Date;
 	i: number;
 
-	constructor(private eventiService: EventiService, public dialog: MdDialog){
-		this.eventiService.getEventi()
-			.subscribe(eventi => {
-				this.eventi = eventi;
+	constructor(private eventiService: EventiService, public dialog: MdDialog) { }
+
+	ngOnInit() {
+		this.eventiService
+			.getEventi()
+			.then((eventi: Eventi[]) => {
+				this.eventi = eventi.map((eventi => {
+					return eventi;
+				}));
 			});
 	}
-
-	ngOnInit() { }
 
 	ngAfterViewInit() {
 		if(!($('.md-tab-list').hasClass('light-blue lighten-2 tab'))) {
@@ -35,14 +38,6 @@ export class EventiComponent implements OnInit {
 	openEventDialog() {
 		this.dialog.closeAll();
 		this.dialog.open(EventDialog);
-	}
-
-	getWeekEvents() {
-		this.data = new Date();
-
-		for(this.i=this.data.getDay(); this.i < 6; this.i++){
-			// Do Something here
-		}
 	}
 }
 
