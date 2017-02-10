@@ -1,5 +1,5 @@
-var express = require('express');
-var bodyParser = require('body-parser');
+var express = require("express");
+var bodyParser = require("body-parser");
 var mongojs = require("mongojs");
 
 var ObjectID = mongojs.ObjectID;
@@ -16,22 +16,21 @@ app.use(bodyParser.json());
 var distDir = __dirname + "/dist/";
 app.use(express.static(distDir));
 
-// Create a database variable outside of the database connection callback to reuse the connection pool in your app.
-var st = mongojs('process.env.MONGODB_URI', [STAFF_COLLECTION]);
-
 // Generic error handler used by all endpoints.
 function handleError(res, reason, message, code) {
     console.log("ERROR: " + reason);
     res.status(code || 500).json({ "error": message });
 }
 
+var st = mongojs("process.env.MONGODB_URI", [STAFF_COLLECTION]);
+
 /*  "/api/staff"
  *    GET: finds all staff
  *    POST: creates a new person in staff
  */
 
-app.get('/api/staff', function(req, res){
-	st.staff.find(function(err, staff){
+app.get("/api/staff", function(req, res){
+	st.staff.find().toArray(function(err, staff){
 		if(err){
 			handleError(res, err.message, "Failed to get staff.");
 		} else {
@@ -40,14 +39,14 @@ app.get('/api/staff', function(req, res){
 	});
 });
 
-app.post('/api/staff', function(req, res){
+app.post("/api/staff", function(req, res){
 	var person = req.body;
 
 	if(!req.body.name){
 		handleError(res, "Invalid user input", "Must provide a name.", 400);
 	}
 
-	st.collection(STAFF_COLLECTION).insertOne(person, function(err, person){
+	st.staff.insertOne(person, function(err, person){
 		if(err){
 			handleError(res, err.message, "Failed to create new person.");
 		}
@@ -61,8 +60,8 @@ app.post('/api/staff', function(req, res){
  *    DELETE: deletes person by id
  */
 
-app.get('/api/staff/:id', function(req, res){
-	st.collection(STAFF_COLLECTION).findOne({_id: new ObjectID(req.params.id)}, function(err, person){
+app.get("/api/staff/:id", function(req, res){
+	st.staff.findOne({_id: new ObjectID(req.params.id)}, function(err, person){
 		if(err){
 			handleError(res, err.message, "Failed to get contact");
 		} else {
@@ -75,7 +74,7 @@ app.put("/api/staff/:id", function (req, res) {
     var person = req.body;
     delete person._id;
 
-    st.collection(STAFF_COLLECTION).updateOne({ _id: new ObjectID(req.params.id) }, person, function (err, doc) {
+    st.staff.updateOne({ _id: new ObjectID(req.params.id) }, person, function (err, doc) {
         if (err) {
             handleError(res, err.message, "Failed to update person");
         } else {
@@ -85,8 +84,8 @@ app.put("/api/staff/:id", function (req, res) {
     });
 });
 
-app.delete('/api/staff/:id', function(req, res){
-	st.collection(STAFF_COLLECTION).deleteOne({_id: new ObjectID(req.params.id)}, function(err, result){
+app.delete("/api/staff/:id", function(req, res){
+	st.staff.deleteOne({_id: new ObjectID(req.params.id)}, function(err, result){
 		if(err){
 			handleError(res, err.message, "Failed to delete person");
 		} else {
@@ -100,17 +99,17 @@ app.delete('/api/staff/:id', function(req, res){
  *    GET: finds all staff of corsi
  */
 
-app.get('/api/staff/corsi', function(req, res) {
-	st.collection(STAFF_COLLECTION).find({compiti: "Corsi - A.S.D. Ice Team Sanve"}, function(err, staff){
+app.get("/api/staff/corsi", function(req, res) {
+	st.staff.find({compiti: "Corsi - A.S.D. Ice Team Sanve"}).toArray(function(err, staff){
 		if(err){
 			handleError(res, err.message, "Failed to get staff.");
 		} else {
 			res.status(200).json(staff);
 		}
 	});
-});
+}); 
 
-var evt = mongojs('process.env.MONGODB_URI', [EVENTS_COLLECTION]);
+var evt = mongojs("process.env.MONGODB_URI", [EVENTS_COLLECTION]);
 
 
 /*  "/api/eventi"
@@ -118,8 +117,8 @@ var evt = mongojs('process.env.MONGODB_URI', [EVENTS_COLLECTION]);
  *    POST: creates a new event
  */
 
-app.get('/api/eventi', function(req, res){
-	evt.collection(EVENTS_COLLECTION).find(function(err, eventi){
+app.get("/api/eventi", function(req, res){
+	evt.eventi.find(function(err, eventi){
 		if(err){
 			handleError(res, err.message, "Failed to load events.");
 		}
@@ -135,8 +134,8 @@ app.get('/api/eventi', function(req, res){
  *    DELETE: deletes event by id
  */
 
-app.get('/api/eventi/:id', function(req, res){
-	evt.collection(EVENTS_COLLECTION).findOne({_id: new ObjectID(req.params.id)}, function(err, evento){
+app.get("/api/eventi/:id", function(req, res){
+	evt.eventi.findOne({_id: new ObjectID(req.params.id)}, function(err, evento){
 		if(err){
 			handleError(res, err.message, "Failed to load event.");
 		}
@@ -145,13 +144,39 @@ app.get('/api/eventi/:id', function(req, res){
 });
 
 /*  "/api/eventi/soon"
- *    GET: finds all near events
+ *    GET: finds the future 3 events
  */
 
-app.get('/api/eventi/soon', function(req, res){
-	evt.collection(EVENTS_COLLECTION).find({data: {$gt: new Date()}}).limit(3, function(err, eventi){
+app.get("/api/eventi/soon", function(req, res){
+	evt.eventi.find({data: {$gte: new Date()}}).limit(3, function(err, eventi){
 		if(err){
-			handleError(res, err.message, "Failed to load near events.");
+			handleError(res, err.message, "Failed to load the future 3 events.");
+		}
+		res.status(200).json(eventi);
+	});
+});
+
+/*  "/api/eventi/future"
+ *    GET: finds all the future events
+ */
+
+app.get("/api/eventi/future", function(req, res){
+	evt.eventi.find({data: {$gte: new Date()}}, function(err, eventi){
+		if(err){
+			handleError(res, err.message, "Failed to load the future events.");
+		}
+		res.status(200).json(eventi);
+	});
+});
+
+/*  "/api/eventi/past"
+ *    GET: finds all the past events
+ */
+
+app.get("/api/eventi/past", function(req, res){
+	evt.eventi.find({data: {$lt: new Date()}}, function(err, eventi){
+		if(err){
+			handleError(res, err.message, "Failed to load the past events.");
 		}
 		res.status(200).json(eventi);
 	});
@@ -172,14 +197,14 @@ app.get('/api/eventi/soon', function(req, res){
 
 
 /*  "/api/news"
- *    GET: finds all newsletter's contacts
- *    POST: creates a new newsletter's contact
+ *    GET: finds all newsletter"s contacts
+ *    POST: creates a new newsletter"s contact
  */
 
-var nw = mongojs('process.env.MONGODB_URI', [NEWS_COLLECTION]);
+var nw = mongojs("process.env.MONGODB_URI", [NEWS_COLLECTION]);
 
-app.get('/api/news', function(req, res){
-	nw.collection(NEWS_COLLECTION).find(function(err, contatti){
+app.get("/api/news", function(req, res){
+	nw.news.find(function(err, contatti){
 		if(err){
 			handleError(res, err.message, "Failed to load near contacts.");
 		}
