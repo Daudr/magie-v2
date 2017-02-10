@@ -576,3 +576,7 @@ img.dialog-evento {
 	top: 10px;
 	left: 10px;
 }
+
+.parallax img {
+	display: all;
+}
