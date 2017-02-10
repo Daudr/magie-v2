@@ -85,12 +85,7 @@ export class OrariComponent  implements OnInit {
 export class DialogPomeriggio implements OnInit {
 	staff: Staff[];
 
-	constructor(private staffService: StaffService) {
-		this.staffService.getCorsiStaff()
-			.subscribe(staff => {
-				this.staff = staff;
-			});
-	}
+	constructor(private staffService: StaffService) { }
 
 	ngOnInit() {
 		this.staffService
