@@ -6,17 +6,11 @@ import 'rxjs/add/operator/toPromise';
 @Injectable()
 export class EventiService {
 	private eventiUrl = '/api/eventi';
-	private soonUrl = '/api/eventi/soon'
+	private soonUrl = '/api/eventi/soon';
+	private futureUrl ='/api/eventi/future';
+	private pastUrl = '/api/eventi/past';
 
 	constructor(private http: Http) { }
-
-	// get("/api/contacts")
-    // getContacts(): Promise<Contact[]> {
-    //     return this.http.get(this.contactsUrl)
-    //         .toPromise()
-    //         .then(response => response.json() as Contact[])
-    //         .catch(this.handleError);
-    // }
 
 	getEventi(): Promise<Eventi[]>{
 		return this.http.get(this.eventiUrl)
@@ -30,6 +24,20 @@ export class EventiService {
 			.toPromise()
 			.then(response => response.json() as Eventi[])
 			.catch(this.handleError);
+	}
+
+	getFutureEvents(): Promise<Eventi[]> {
+		return this.http.get(this.futureUrl)
+		.toPromise()
+		.then(response => response.json() as Eventi[])
+		.catch(this.handleError);
+	}
+
+	getPastEvents(): Promise<Eventi[]> {
+		return this.http.get(this.pastUrl)
+		.toPromise()
+		.then(response => response.json() as Eventi[])
+		.catch(this.handleError);
 	}
 
 	private handleError(error: any) {

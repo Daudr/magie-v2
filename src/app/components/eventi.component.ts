@@ -13,7 +13,9 @@ declare var $: any;
 	templateUrl: './eventi.component.html'
 })
 export class EventiComponent implements OnInit {
-	eventi: Eventi[];
+	soonEvents: Eventi[];
+	futureEvents: Eventi[];
+	pastEvents: Eventi[];
 	data: Date;
 	i: number;
 
@@ -21,10 +23,26 @@ export class EventiComponent implements OnInit {
 
 	ngOnInit() {
 		this.eventiService
-			.getEventi()
-			.then((eventi: Eventi[]) => {
-				this.eventi = eventi.map((eventi => {
-					return eventi;
+			.getFutureEvents()
+			.then((futureEvents: Eventi[]) => {
+				this.futureEvents = futureEvents.map((futureEvents => {
+					return futureEvents;
+				}));
+			});
+
+		this.eventiService
+			.getPastEvents()
+			.then((pastEvents: Eventi[]) =>{
+				this.pastEvents = pastEvents.map((pastEvents => {
+					return pastEvents;
+				}));
+			});
+
+		this.eventiService
+			.getEventiProssimi()
+			.then((soonEvents: Eventi[]) => {
+				this.soonEvents = soonEvents.map((soonEvents => {
+					return soonEvents;
 				}));
 			});
 	}
