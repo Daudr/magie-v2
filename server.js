@@ -17,7 +17,7 @@ var distDir = __dirname + "/dist/";
 app.use(express.static(distDir));
 
 // Create a database variable outside of the database connection callback to reuse the connection pool in your app.
-var st = mongojs('process.env.MONGODB_URI', ['staff']);
+var st = mongojs('process.env.MONGODB_URI', [STAFF_COLLECTION]);
 
 // Generic error handler used by all endpoints.
 function handleError(res, reason, message, code) {
@@ -35,7 +35,6 @@ app.get('/api/staff', function(req, res){
 		if(err){
 			handleError(res, err.message, "Failed to get staff.");
 		} else {
-			console.log(staff);
 			res.status(200).json(staff);
 		}
 	});
@@ -111,7 +110,7 @@ app.get('/api/staff/corsi', function(req, res) {
 	});
 });
 
-var evt = mongojs('process.env.MONGODB_URI', ['eventi']);
+var evt = mongojs('process.env.MONGODB_URI', [EVENTS_COLLECTION]);
 
 
 /*  "/api/eventi"
@@ -177,7 +176,7 @@ app.get('/api/eventi/soon', function(req, res){
  *    POST: creates a new newsletter's contact
  */
 
-var nw = mongojs('process.env.MONGODB_URI', ['news']);
+var nw = mongojs('process.env.MONGODB_URI', [NEWS_COLLECTION]);
 
 app.get('/api/news', function(req, res){
 	nw.collection(NEWS_COLLECTION).find(function(err, contatti){
