@@ -727,3 +727,11 @@ img.dialog-evento {
 }
 
 /* FINE ANIMAZIONE */
+
+.loader-logo {
+	margin-top: 75px;
+}
+
+.block {
+	display: inline;
+}
