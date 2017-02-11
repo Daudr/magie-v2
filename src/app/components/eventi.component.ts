@@ -45,6 +45,10 @@ export class EventiComponent implements OnInit {
 					return soonEvents;
 				}));
 			});
+
+		console.log(this.soonEvents);
+		console.log(this.futureEvents);
+		console.log(this.pastEvents);
 	}
 
 	ngAfterViewInit() {
