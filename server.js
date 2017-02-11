@@ -210,8 +210,8 @@ app.get("/api/eventipast", function(req, res){
 
 var nw = mongojs("mongodb://mike:mike@ds147789.mlab.com:47789/heroku_slmcz4nh", [NEWS_COLLECTION]);
 
-app.get("/api/news").toArray(function(req, res){
-	nw.news.find(function(err, contatti){
+app.get("/api/news", function(req, res){
+	nw.news.find().toArray(function(err, contatti){
 		if(err){
 			handleError(res, err.message, "Failed to load near contacts.");
 		}
