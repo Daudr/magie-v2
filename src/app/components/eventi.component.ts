@@ -22,13 +22,13 @@ export class EventiComponent implements OnInit {
 	constructor(private eventiService: EventiService, public dialog: MdDialog) { }
 
 	ngOnInit() {
-		this.eventiService
-			.getFutureEvents()
-			.then((futureEvents: Eventi[]) => {
-				this.futureEvents = futureEvents.map((futureEvents) => {
-					return futureEvents;
-				});
-			});
+		// this.eventiService
+		// 	.getFutureEvents()
+		// 	.then((futureEvents: Eventi[]) => {
+		// 		this.futureEvents = futureEvents.map((futureEvents) => {
+		// 			return futureEvents;
+		// 		});
+		// 	});
 
 		// this.eventiService
 		// 	.getPastEvents()
@@ -38,13 +38,13 @@ export class EventiComponent implements OnInit {
 		// 		});
 		// 	});
 
-		// this.eventiService
-		// 	.getEventiProssimi()
-		// 	.then((soonEvents: Eventi[]) => {
-		// 		this.soonEvents = soonEvents.map((soonEvents) => {
-		// 			return soonEvents;
-		// 		});
-		// 	});
+		this.eventiService
+			.getEventiProssimi()
+			.then((soonEvents: Eventi[]) => {
+				this.soonEvents = soonEvents.map((soonEvents) => {
+					return soonEvents;
+				});
+			});
 	}
 
 	ngAfterViewInit() {
