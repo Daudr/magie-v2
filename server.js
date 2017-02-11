@@ -24,7 +24,12 @@ function handleError(res, reason, message, code) {
 
 console.log("mongodb://mike:mike@ds147789.mlab.com:47789/heroku_slmcz4nh");
 
-var st = mongojs("mongodb://mike:mike@ds147789.mlab.com:47789/heroku_slmcz4nh", [STAFF_COLLECTION]);
+var st = mongojs("mongodb://mike:mike@ds147789.mlab.com:47789/heroku_slmcz4nh", [STAFF_COLLECTION], function(err){
+	if(err){
+		console.log(err);
+		process.exit(1);
+	}
+});
 
 /*  "/api/staff"
  *    GET: finds all staff
