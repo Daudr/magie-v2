@@ -22,7 +22,7 @@ function handleError(res, reason, message, code) {
     res.status(code || 500).json({ "error": message });
 }
 
-var st = mongojs("process.env.MONGODB_URI", [STAFF_COLLECTION]);
+var st = mongojs(process.env.MONGODB_URI, [STAFF_COLLECTION]);
 
 /*  "/api/staff"
  *    GET: finds all staff
@@ -109,7 +109,7 @@ app.get("/api/staff/corsi", function(req, res) {
 	});
 }); 
 
-var evt = mongojs("process.env.MONGODB_URI", [EVENTS_COLLECTION]);
+var evt = mongojs(process.env.MONGODB_URI, [EVENTS_COLLECTION]);
 
 
 /*  "/api/eventi"
@@ -201,7 +201,7 @@ app.get("/api/eventi/past", function(req, res){
  *    POST: creates a new newsletter"s contact
  */
 
-var nw = mongojs("process.env.MONGODB_URI", [NEWS_COLLECTION]);
+var nw = mongojs(process.env.MONGODB_URI, [NEWS_COLLECTION]);
 
 app.get("/api/news", function(req, res){
 	nw.news.find(function(err, contatti){
