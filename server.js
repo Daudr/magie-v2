@@ -41,7 +41,7 @@ app.get("/api/staff", function(req, res){
 	});
 });
 
-ewapp.post("/api/staff", function(req, res){
+app.post("/api/staff", function(req, res){
 	var person = req.body;
 
 	if(!req.body.name){
