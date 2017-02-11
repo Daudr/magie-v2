@@ -30,21 +30,21 @@ export class EventiComponent implements OnInit {
 				});
 			});
 
-		this.eventiService
-			.getPastEvents()
-			.then((pastEvents: Eventi[]) =>{
-				this.pastEvents = pastEvents.map((pastEvents) => {
-					return pastEvents;
-				});
-			});
+		// this.eventiService
+		// 	.getPastEvents()
+		// 	.then((pastEvents: Eventi[]) =>{
+		// 		this.pastEvents = pastEvents.map((pastEvents) => {
+		// 			return pastEvents;
+		// 		});
+		// 	});
 
-		this.eventiService
-			.getEventiProssimi()
-			.then((soonEvents: Eventi[]) => {
-				this.soonEvents = soonEvents.map((soonEvents) => {
-					return soonEvents;
-				});
-			});
+		// this.eventiService
+		// 	.getEventiProssimi()
+		// 	.then((soonEvents: Eventi[]) => {
+		// 		this.soonEvents = soonEvents.map((soonEvents) => {
+		// 			return soonEvents;
+		// 		});
+		// 	});
 	}
 
 	ngAfterViewInit() {
