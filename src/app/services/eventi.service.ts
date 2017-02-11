@@ -28,16 +28,16 @@ export class EventiService {
 
 	getFutureEvents(): Promise<Eventi[]> {
 		return this.http.get(this.futureUrl)
-		.toPromise()
-		.then(response => response.json() as Eventi[])
-		.catch(this.handleError);
+			.toPromise()
+			.then(response => response.json() as Eventi[])
+			.catch(this.handleError);
 	}
 
 	getPastEvents(): Promise<Eventi[]> {
 		return this.http.get(this.pastUrl)
-		.toPromise()
-		.then(response => response.json() as Eventi[])
-		.catch(this.handleError);
+			.toPromise()
+			.then(response => response.json() as Eventi[])
+			.catch(this.handleError);
 	}
 
 	private handleError(error: any) {
