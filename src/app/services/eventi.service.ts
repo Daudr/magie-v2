@@ -7,8 +7,8 @@ import 'rxjs/add/operator/toPromise';
 export class EventiService {
 	private eventiUrl = '/api/eventi';
 	private soonUrl = '/api/eventisoon';
-	private futureUrl ='/api/eventi/future';
-	private pastUrl = '/api/eventi/past';
+	private futureUrl ='/api/eventifuture';
+	private pastUrl = '/api/eventipast';
 
 	constructor(private http: Http) { }
 

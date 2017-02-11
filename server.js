@@ -106,7 +106,7 @@ app.delete("/api/staff/:id", function(req, res){
  *    GET: finds all staff of corsi
  */
 
-app.get("/api/staff/corsi", function(req, res) {
+app.get("/api/staffcorsi", function(req, res) {
 	st.staff.find({compiti: "Corsi - A.S.D. Ice Team Sanve"}).toArray(function(err, staff){
 		if(err){
 			handleError(res, err.message, "Failed to get staff.");
@@ -167,7 +167,7 @@ app.get("/api/eventisoon", function(req, res){
  *    GET: finds all the future events
  */
 
-app.get("/api/eventi/future", function(req, res){
+app.get("/api/eventifuture", function(req, res){
 	evt.eventi.find({data: {$gte: new Date()}}, function(err, eventi){
 		if(err){
 			handleError(res, err.message, "Failed to load the future events.");
@@ -180,7 +180,7 @@ app.get("/api/eventi/future", function(req, res){
  *    GET: finds all the past events
  */
 
-app.get("/api/eventi/past", function(req, res){
+app.get("/api/eventipast", function(req, res){
 	evt.eventi.find({data: {$lt: new Date()}}, function(err, eventi){
 		if(err){
 			handleError(res, err.message, "Failed to load the past events.");
