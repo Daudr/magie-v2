@@ -147,4 +147,18 @@ export class DialogPomeriggio implements OnInit {
 		</div>
 	`
 })
-export class DialogMattina { }
+export class DialogMattina implements OnInit {
+	staff: Staff[];
+
+	constructor(private staffService: StaffService) { }
+	
+	ngOnInit() {
+		this.staffService
+			.getCorsiStaff()
+			.then((staff: Staff[]) => {
+				this.staff = staff.map((staff) => {
+					return staff;
+				});
+			});
+	}
+}
