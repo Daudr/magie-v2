@@ -11,7 +11,7 @@ export class StaffService {
 	constructor(private http: Http) { }
 
 	getStaff(): Promise<Staff[]>{
-		return this.http.get(this.corsiUrl)
+		return this.http.get(this.staffUrl)
 			.toPromise()
 			.then(response => response.json() as Staff[])
 			.catch(this.handleError);
