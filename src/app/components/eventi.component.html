@@ -9,7 +9,7 @@
 			<div class="container">
 				<h1 class="center-align">Eventi questa settimana</h1>
 				<div class="row">
-
+					{{ getSoonEvents() }}
 					<!-- 1 -->
 					<div class="col s8 m8 l5 offset-s2 offset-m2" *ngFor="let event of soonEvents">
 						<a (click)="openEventDialog()">
@@ -33,44 +33,11 @@
 					<div class="card-panel center-align db-error" *ngIf="!soonEvents">
 						<h3>Errore nel caricamento di eventi futuri</h3>
 					</div>
-
-					<!-- 2
-					<div class="col s8 m8 l5 offset-s2 offset-m2">
-						<div class="card">
-							<div class="card-image waves-effect waves-block waves-light">
-								<img class="activator center-align icon_event" src="../assets/icons/other/gear.svg">
-							</div>
-							<div class="card-content">
-								<span class="card-title activator grey-text-text-darken-4">Evento #2<a class="btn-floating btn waves-effect waves-light red right"><i class="material-icons">add</i></a></span>
-								<p class="left-align">30/10/2016</p>
-							</div>
-							<div class="card-reveal">
-								<span class="card-title grey-text text-darken-4">Evento #2<i class="material-icons right">close</i></span>
-								<p>Queste sono le informazioni relative ad un evento. Da aggiungere ancora tutto (Nome, data, ora, luogo, immagine, descrizione).</p>
-							</div>
-						</div>
-					</div>
-
-						3 
-					<div class="col s8 m8 l5 offset-s2 offset-m2">
-						<div class="card">
-							<div class="card-image waves-effect waves-block waves-light">
-								<img class="activator center-align icon_event" src="../assets/icons/other/gear.svg">
-							</div>
-							<div class="card-content">
-								<span class="card-title activator grey-text-text-darken-4">Evento #3<a class="btn-floating btn waves-effect waves-light red right"><i class="material-icons">add</i></a></span>
-								<p class="left-align">30/10/2016</p>
-							</div>
-							<div class="card-reveal">
-								<span class="card-title grey-text text-darken-4">Evento #3<i class="material-icons right">close</i></span>
-								<p>Queste sono le informazioni relative ad un evento. Da aggiungere ancora tutto (Nome, data, ora, luogo, immagine, descrizione).</p>
-							</div>
-						</div>
-					</div> -->
 				</div>
 			</div>
 
 			<div class="container">
+				{{ getFutureEvents() }}
 				<h1 class="center-align">Prossimamente</h1>
 
 				<div class="row" >
@@ -103,6 +70,7 @@
 			<!-- PASSATI -->
 
 			<div class="container">
+				{{ getPastEvents() }}
 				<h1>Eventi passati</h1>
 				<div class="row">
 
