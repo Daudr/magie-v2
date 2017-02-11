@@ -9,7 +9,6 @@ import { Eventi } from '../eventi';
 declare var $: any;
 
 @Component({
-	providers: [ EventiService ],
 	selector: 'my-eventi',
 	templateUrl: './eventi.component.html'
 })
@@ -26,30 +25,26 @@ export class EventiComponent implements OnInit {
 		this.eventiService
 			.getFutureEvents()
 			.then((futureEvents: Eventi[]) => {
-				this.futureEvents = futureEvents.map((futureEvents => {
+				this.futureEvents = futureEvents.map((futureEvents) => {
 					return futureEvents;
-				}));
+				});
 			});
 
 		this.eventiService
 			.getPastEvents()
 			.then((pastEvents: Eventi[]) =>{
-				this.pastEvents = pastEvents.map((pastEvents => {
+				this.pastEvents = pastEvents.map((pastEvents) => {
 					return pastEvents;
-				}));
+				});
 			});
 
 		this.eventiService
 			.getEventiProssimi()
 			.then((soonEvents: Eventi[]) => {
-				this.soonEvents = soonEvents.map((soonEvents => {
+				this.soonEvents = soonEvents.map((soonEvents) => {
 					return soonEvents;
-				}));
+				});
 			});
-
-		console.log(this.soonEvents);
-		console.log(this.futureEvents);
-		console.log(this.pastEvents);
 	}
 
 	ngAfterViewInit() {
