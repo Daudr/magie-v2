@@ -22,6 +22,8 @@ function handleError(res, reason, message, code) {
     res.status(code || 500).json({ "error": message });
 }
 
+console.log(process.env.MONGODB_URI);
+
 var st = mongojs(process.env.MONGODB_URI, [STAFF_COLLECTION]);
 
 /*  "/api/staff"
@@ -39,7 +41,7 @@ app.get("/api/staff", function(req, res){
 	});
 });
 
-app.post("/api/staff", function(req, res){
+ewapp.post("/api/staff", function(req, res){
 	var person = req.body;
 
 	if(!req.body.name){
