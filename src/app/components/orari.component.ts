@@ -102,6 +102,7 @@ export class DialogPomeriggio implements OnInit {
 }
 
 @Component({
+	providers: [ StaffService ],
 	selector: 'dialog-mattina',
 	template: `
 		<img src="./assets/icons//banner/banner_about.jpg" class="banner-corsi center-align" />
