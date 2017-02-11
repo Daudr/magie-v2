@@ -10,9 +10,9 @@
 			<div *ngFor="let person of staff" class="hide-on-small-only">
 				<div class="col m6">
 					<div class="card light-blue lighten-1">
-			            <div class="card-content white-text">
+			            <div class="card-content white-text" *ngIf="person.icon">
 			              	<div class="col s2">
-				              <img src="assets/icons/staff/icon_michele.png" class="circle responsive-img">
+				              <img src={{person.icon}} class="circle responsive-img">
 				          	</div>
 				          	<span class="card-title">{{person.nome}}</span>
 				          	<p class="left-align">
@@ -36,8 +36,8 @@
 				<div class="col m8">
 					<div class="card light-blue lighten-1">
 			            <div class="card-content white-text">
-			              	<div class="col s2">
-				              <img src="assets/icons/staff/icon_michele.png"class="circle responsive-img">
+			              	<div class="col s2" *ngIf="person.icon">
+				              <img src={{person.icon}} class="circle responsive-img">
 				          	</div>
 				          	<span class="card-title">{{person.nome}}</span>
 				          	<p class="left-align">

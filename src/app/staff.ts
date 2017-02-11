@@ -1,4 +1,5 @@
 export class Staff {
+	icon: string;
 	nome: string;
 	compiti: string;
 	disponibilita: string;
