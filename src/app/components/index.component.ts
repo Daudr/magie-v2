@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, AfterViewInit } from '@angular/core';
+import { MdDialog } from '@angular/material';
 
 import { Eventi } from '../eventi';
 import { EventiService } from '../services/eventi.service';
@@ -9,7 +10,7 @@ declare var $: any;
 	selector: 'my-index',
 	templateUrl: './index.component.html',
 })
-export class IndexComponent implements OnInit {
+export class IndexComponent implements OnInit, AfterViewInit {
 	data: Date;
 	giorno: String;
 	mese: String;
@@ -21,7 +22,7 @@ export class IndexComponent implements OnInit {
 
 	soonEvents: Eventi[];
 
-	constructor(private eventiService: EventiService) { }
+	constructor(private eventiService: EventiService, public dialog: MdDialog) { }
 
 	ngOnInit() {
         this.eventiService
@@ -31,6 +32,10 @@ export class IndexComponent implements OnInit {
                     return soonEvents;
                 });
             });
+    }
+
+    ngAfterViewInit () {
+    	this.dialog.open(DialogAlert);
     }
 
 	isset(str: string): boolean {
@@ -149,3 +154,19 @@ export class IndexComponent implements OnInit {
 		});
 	}
 }
+
+@Component({
+	selector: 'dialog-alert',
+	template: `
+		<div class="center-align">
+			<h4>Benvenuti al sito ufficiale di Magie d'Inverno</h4>
+			<div>
+				Si avvisano i gentili visitatori che questo sito è attualmente in fase di sviluppo, quindi alcune alcune opzioni sono ancora da implementare, ma sono presenti le cose più essenziali
+				come orari e mappa per raggiungerci.<br><br>
+				Un cordiale ringraziamento, <br>
+				Michele. 
+			<div>
+		</div>
+	`
+})
+export class DialogAlert { }

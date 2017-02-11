@@ -10,7 +10,7 @@ import { Parallax } from 'ng2-parallax/commonjs';
 
 import { AppComponent, NewsDialog, BugDialog } from './app.component';
 import { OrariComponent, DialogPomeriggio, DialogMattina } from './components/orari.component';
-import { IndexComponent } from './components/index.component';
+import { IndexComponent, DialogAlert } from './components/index.component';
 import { EventiComponent, EventDialog } from './components/eventi.component';
 import { ServiziComponent } from './components/servizi.component';
 import { ContattiComponent } from './components/contatti.component';
@@ -40,6 +40,7 @@ import { AggiungiEventoComponent } from './components/aggiungi-evento.component'
     DialogMattina,
     EventDialog,
     BugDialog,
+    DialogAlert,
     Parallax
   ],
   entryComponents: [
@@ -47,7 +48,8 @@ import { AggiungiEventoComponent } from './components/aggiungi-evento.component'
     DialogPomeriggio,
     DialogMattina,
     EventDialog,
-    BugDialog
+    BugDialog,
+    DialogAlert
   ],
   providers: [
     Title
