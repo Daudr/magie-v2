@@ -9,6 +9,7 @@ import { Eventi } from '../eventi';
 declare var $: any;
 
 @Component({
+	providers: [ EventiService ],
 	selector: 'my-eventi',
 	templateUrl: './eventi.component.html'
 })
