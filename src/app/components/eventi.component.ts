@@ -21,9 +21,7 @@ export class EventiComponent implements OnInit {
 
 	constructor(private eventiService: EventiService, public dialog: MdDialog) { }
 
-	ngOnInit() { }
-
-	getFutureEvents () {
+	ngOnInit() {
 		this.eventiService
 			.getFutureEvents()
 			.then((futureEvents: Eventi[]) => {
@@ -31,9 +29,7 @@ export class EventiComponent implements OnInit {
 					return futureEvents;
 				});
 			});
-	}
 
-	getPastEvents () {
 		this.eventiService
 			.getPastEvents()
 			.then((pastEvents: Eventi[]) =>{
@@ -41,9 +37,7 @@ export class EventiComponent implements OnInit {
 					return pastEvents;
 				});
 			});
-	}
 
-	getSoonEvents () {
 		this.eventiService
 			.getEventiProssimi()
 			.then((soonEvents: Eventi[]) => {

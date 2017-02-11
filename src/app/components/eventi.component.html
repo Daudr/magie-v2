@@ -9,7 +9,6 @@
 			<div class="container">
 				<h1 class="center-align">Eventi questa settimana</h1>
 				<div class="row">
-					{{ getSoonEvents() }}
 					<!-- 1 -->
 					<div class="col s8 m8 l5 offset-s2 offset-m2" *ngFor="let event of soonEvents">
 						<a (click)="openEventDialog()">
@@ -37,7 +36,6 @@
 			</div>
 
 			<div class="container">
-				{{ getFutureEvents() }}
 				<h1 class="center-align">Prossimamente</h1>
 
 				<div class="row" >
@@ -70,7 +68,6 @@
 			<!-- PASSATI -->
 
 			<div class="container">
-				{{ getPastEvents() }}
 				<h1>Eventi passati</h1>
 				<div class="row">
 
