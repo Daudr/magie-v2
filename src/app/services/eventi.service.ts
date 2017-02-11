@@ -6,7 +6,7 @@ import 'rxjs/add/operator/toPromise';
 @Injectable()
 export class EventiService {
 	private eventiUrl = '/api/eventi';
-	private soonUrl = '/api/eventi/soon';
+	private soonUrl = '/api/eventisoon';
 	private futureUrl ='/api/eventi/future';
 	private pastUrl = '/api/eventi/past';
 

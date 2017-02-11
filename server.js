@@ -154,7 +154,7 @@ app.get("/api/eventi/:id", function(req, res){
  *    GET: finds the future 3 events
  */
 
-app.get("/api/eventi/soon", function(req, res){
+app.get("/api/eventisoon", function(req, res){
 	evt.eventi.find({data: {$gte: new Date()}}).limit(3, function(err, eventi){
 		if(err){
 			handleError(res, err.message, "Failed to load the future 3 events.");
