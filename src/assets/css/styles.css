@@ -580,3 +580,32 @@ img.dialog-evento {
 .parallax img {
 	display: inherit;
 }
+
+.row-service-index {
+	margin: 0;
+	padding: 0;
+}
+
+.col-service-index {
+	margin: 0;
+	padding: 0 !important;
+}
+
+.img-service-index {
+	max-width: 100%;
+}
+
+.img-service-index:hover {
+	animation-duration: 1s;
+	animation-name: darken;
+}
+
+@keyframes darken {
+	from {
+		filter: brightness(100%);
+	}
+
+	to {
+		filter: brightness(50%);
+	}
+}
