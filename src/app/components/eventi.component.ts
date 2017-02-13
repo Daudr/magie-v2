@@ -97,7 +97,9 @@ export class EventiComponent implements OnInit {
 })
 export class EventDialog implements AfterViewInit {
 
-	constructor(event: Eventi) {}
+	constructor() {
+		console.log(event);
+	}
 
 	ngAfterViewInit() {
 		if(window.screen.height < 700) {
