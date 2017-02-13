@@ -1,5 +1,5 @@
 import { Component, OnInit, AfterViewInit } from '@angular/core';
-import { MdDialog } from '@angular/material';
+import { MdDialog, MdDialogRef } from '@angular/material';
 
 
 import { EventiService } from '../services/eventi.service';
@@ -10,7 +10,7 @@ declare var $: any;
 
 @Component({
 	selector: 'my-eventi',
-	templateUrl: './eventi.component.html'
+	templateUrl: './eventi.component.html',
 })
 export class EventiComponent implements OnInit {
 	soonEvents: Eventi[];
@@ -20,6 +20,8 @@ export class EventiComponent implements OnInit {
 	i: number;
 
 	evtdlg: EventDialog;
+
+	dialogRef: MdDialogRef<EventDialog>;
 
 	constructor(private eventiService: EventiService, public dialog: MdDialog) { }
 
@@ -56,9 +58,10 @@ export class EventiComponent implements OnInit {
 	}
 
 	openEventDialog(event: Eventi) {
-		console.log(event);
+		this.dialogRef.componentInstance.event = event;
+
 		this.dialog.closeAll();
-		this.dialog.open(EventDialog, event);
+		this.dialogRef = this.dialog.open(EventDialog);
 	}
 }
 
@@ -96,10 +99,7 @@ export class EventiComponent implements OnInit {
 	`
 })
 export class EventDialog implements AfterViewInit {
-
-	constructor(event: Eventi) {
-		console.log(event);
-	}
+	event: Eventi;
 
 	ngAfterViewInit() {
 		if(window.screen.height < 700) {
@@ -107,11 +107,5 @@ export class EventDialog implements AfterViewInit {
 				$('.md-dialog-container').addClass('dialog-cel');
 			}
 		}
-
-		// if(window.screen.width > 600) {
-		// 	if(!($('.md-dialog-container').hasClass('dialog-width'))) {
-		// 		$('.md-dialog-container').addClass('dialog-width');
-		// 	}
-		// }
 	}
 }
