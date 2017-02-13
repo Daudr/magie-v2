@@ -53,7 +53,7 @@ export class EventiComponent implements OnInit {
 		}
 	}
 
-	openEventDialog() {
+	openEventDialog(event: Eventi) {
 		this.dialog.closeAll();
 		this.dialog.open(EventDialog);
 	}
@@ -65,10 +65,10 @@ export class EventiComponent implements OnInit {
 		<div class="info">
 			<img class="dialog-evento" src="../assets/icons//events/evento2801.jpeg">
 			<div class="floatr">
-				<h3>Il Piave mormorava</h3>
-				<p class="des-evento"> 28/01/2017</p>
-				<p class="des-evento">Dalle 21:00<p>
-				<p class="des-evento">Presso l'area riscaldata del Capannone del Villaggio di Magie d'inverno - San Vendemiano - fronte Municipio</p>
+				<h3>{{event.nome}}</h3>
+				<p class="des-evento">{{event.data | date:'dd/MM/yyyy'}}</p>
+				<p class="des-evento">Dalle {{event.oraInizio}}<p>
+				<p class="des-evento">Presso {{event.luogo}}</p>
 				<div class="map-event">
 					<iframe
 						frameborder="0"
@@ -81,8 +81,7 @@ export class EventiComponent implements OnInit {
 		</div>
 		<div class="descrizione">
 			<span>
-				Rievocazione storica della Grande Guerra con letture, canzoni e interventi musicali.<br>
-				Ci sarà il Coro "I Borghi" diretto da Nadia Steffenino, inoltre la "Piccola Orchestra Veneta" ed i suoi solisti.
+				{{event.descrizione}}
 			</span>
 		</div>
 		<!--
