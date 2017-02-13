@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, AfterViewInit } from '@angular/core';
 import { Parallax, ParallaxConfig } from 'ng2-parallax/commonjs';
 import { Servizio } from '../servizio';
 
@@ -8,7 +8,7 @@ declare var $: any;
 	selector: 'my-servizi',
 	templateUrl: `./servizi.component.html`,
 })
-export class ServiziComponent  {
+export class ServiziComponent implements OnInit, AfterViewInit {
 	servizi: Servizio[] = [
 	{
 			nome: 'Pista di Pattinaggio',
@@ -51,7 +51,9 @@ export class ServiziComponent  {
 		if(!($('body').hasClass('back_img'))){
 			$('body').addClass('back_img');
 		}
+	}
 
+	ngAfterViewInit () {
 		$(document).ready(function(){
 	      $('.parallax').parallax();
 	    });
