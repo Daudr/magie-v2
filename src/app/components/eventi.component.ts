@@ -19,6 +19,8 @@ export class EventiComponent implements OnInit {
 	data: Date;
 	i: number;
 
+	evtdlg: EventDialog;
+
 	constructor(private eventiService: EventiService, public dialog: MdDialog) { }
 
 	ngOnInit() {
@@ -54,6 +56,8 @@ export class EventiComponent implements OnInit {
 	}
 
 	openEventDialog(event: Eventi) {
+		this.evtdlg.addEvent(event);
+		
 		this.dialog.closeAll();
 		this.dialog.open(EventDialog);
 	}
@@ -92,6 +96,8 @@ export class EventiComponent implements OnInit {
 	`
 })
 export class EventDialog implements AfterViewInit {
+	event: Eventi;
+
 	ngAfterViewInit() {
 		if(window.screen.height < 700) {
 			if(!($('.md-dialog-container').hasClass('dialog-cel'))) {
@@ -104,5 +110,9 @@ export class EventDialog implements AfterViewInit {
 		// 		$('.md-dialog-container').addClass('dialog-width');
 		// 	}
 		// }
+	}
+
+	addEvent (event: Eventi) {
+		this.event = event;
 	}
 }
