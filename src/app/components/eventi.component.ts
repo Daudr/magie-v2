@@ -97,7 +97,7 @@ export class EventiComponent implements OnInit {
 })
 export class EventDialog implements AfterViewInit {
 
-	constructor() {
+	constructor(event: Eventi) {
 		console.log(event);
 	}
 
