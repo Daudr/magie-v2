@@ -58,10 +58,9 @@ export class EventiComponent implements OnInit {
 	}
 
 	openEventDialog(event: Eventi) {
-		this.dialogRef.componentInstance.event = event;
-
 		this.dialog.closeAll();
 		this.dialogRef = this.dialog.open(EventDialog);
+		this.dialogRef.componentInstance.event = event;
 	}
 }
 
