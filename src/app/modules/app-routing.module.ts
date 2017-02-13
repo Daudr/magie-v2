@@ -9,6 +9,7 @@ import { ServiziComponent } from '../components/servizi.component';
 import { ContattiComponent } from '../components/contatti.component';
 import { GalleriaComponent } from '../components/galleria.component';
 import { AdminComponent } from '../components/admin.component';
+import { CreditsComponent } from '../components/credits.component';
 
 const routes: Routes = [
 	{ path: '', redirectTo: '/index', pathMatch: 'full' },
@@ -39,6 +40,10 @@ const routes: Routes = [
 	{
 		path: 'admin',
 		component: AdminComponent
+	},
+	{
+		path: 'credits',
+		component: CreditsComponent
 	}
 ]
 

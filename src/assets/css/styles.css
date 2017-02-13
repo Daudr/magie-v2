@@ -609,3 +609,8 @@ img.dialog-evento {
 		filter: brightness(50%);
 	}
 }
+
+.credits-div {
+	display: block;
+	max-width: 40%;
+}

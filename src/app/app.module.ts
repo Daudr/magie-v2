@@ -6,8 +6,6 @@ import { MaterialModule } from '@angular/material';
 
 import { AppRoutingModule } from './modules/app-routing.module';
 
-import { Parallax } from 'ng2-parallax/commonjs';
-
 import { AppComponent, NewsDialog, BugDialog } from './app.component';
 import { OrariComponent, DialogPomeriggio, DialogMattina } from './components/orari.component';
 import { IndexComponent, DialogAlert } from './components/index.component';
@@ -17,6 +15,7 @@ import { ContattiComponent } from './components/contatti.component';
 import { GalleriaComponent } from './components/galleria.component';
 import { AdminComponent} from './components/admin.component';
 import { AggiungiEventoComponent } from './components/aggiungi-evento.component';
+import { CreditsComponent } from './components/credits.component';
 
 @NgModule({
   imports: [
@@ -41,7 +40,7 @@ import { AggiungiEventoComponent } from './components/aggiungi-evento.component'
     EventDialog,
     BugDialog,
     DialogAlert,
-    Parallax
+    CreditsComponent
   ],
   entryComponents: [
     NewsDialog,

@@ -12,7 +12,7 @@ export class ServiziComponent  {
 	servizi: Servizio[] = [
 	{
 			nome: 'Pista di Pattinaggio',
-			foto: '../../assets/icons/background/back-img.png',
+			foto: '../../assets/icons/services/pista1.jpg',
 			descrizione: 'A Magie D\'Inverno è presente la più grande pista di pattinaggio del trevigiano: 800mq di ghiaccio vero.' ,
 		},
 		{
