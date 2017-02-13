@@ -125,7 +125,7 @@ var evt = mongojs("mongodb://mike:mike@ds147789.mlab.com:47789/heroku_slmcz4nh",
  */
 
 app.get("/api/eventi", function(req, res){
-	evt.eventi.find().toArray(function(err, eventi){
+	evt.eventi.find($orderby {data: -1}).toArray(function(err, eventi){
 		if(err){
 			handleError(res, err.message, "Failed to load events.");
 		}
@@ -155,7 +155,7 @@ app.get("/api/eventi/:id", function(req, res){
  */
 
 app.get("/api/eventisoon", function(req, res){
-	evt.eventi.find({data: {$gte: new Date()}}).limit(3).toArray(function(err, eventi){
+	evt.eventi.find({data: {$gte: new Date()}}, $orderby {data: -1}).limit(3).toArray(function(err, eventi){
 		if(err){
 			handleError(res, err.message, "Failed to load the future 3 events.");
 		}
@@ -168,7 +168,7 @@ app.get("/api/eventisoon", function(req, res){
  */
 
 app.get("/api/eventifuture", function(req, res){
-	evt.eventi.find({data: {$gte: new Date()}}).toArray(function(err, eventi){
+	evt.eventi.find({data: {$gte: new Date()}}, $orderby {data: -1}).toArray(function(err, eventi){
 		if(err){
 			handleError(res, err.message, "Failed to load the future events.");
 		}
@@ -181,7 +181,7 @@ app.get("/api/eventifuture", function(req, res){
  */
 
 app.get("/api/eventipast", function(req, res){
-	evt.eventi.find({data: {$lt: new Date()}}).toArray(function(err, eventi){
+	evt.eventi.find({data: {$lt: new Date()}}, $orderby {data: -1}).toArray(function(err, eventi){
 		if(err){
 			handleError(res, err.message, "Failed to load the past events.");
 		}
