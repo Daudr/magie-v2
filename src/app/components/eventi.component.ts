@@ -64,6 +64,7 @@ export class EventiComponent implements OnInit {
 }
 
 @Component({
+	providers: [Eventi],
 	selector: 'event-dialog',
 	template:`
 		<div class="info">
