@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { MdSnackBar, MdDialog } from '@angular/material';
 
 import { Staff } from '../staff';
+import { Orario } from '../orario';
 import { StaffService } from '../services/staff.service';
 
 @Component({
@@ -10,6 +11,17 @@ import { StaffService } from '../services/staff.service';
 	templateUrl: './orari.component.html'
 })
 export class OrariComponent  implements OnInit {
+	changes: Orario[] = [
+		{
+			giorno: new Date('2017-02-19T00:00:00.000Z'),
+			primoTurno: '9:45 - 11:45',
+			secondoTurno: '13:45 - 15:45',
+			terzoTurno: '17:10 - 19:30',
+		}
+	];
+
+	giorno: string;
+	mese: string;
 
 	constructor(public snackBar: MdSnackBar, public dialog: MdDialog) { }
 
@@ -36,6 +48,58 @@ export class OrariComponent  implements OnInit {
 	      duration: 6000,
 	    });
   	}
+
+  	traduciData(grn: Date): String {				// METODO PER TRADURRE LA DATA
+
+		switch (grn.getDay()) {
+			default:
+				console.log("errore nel reperire giorno.");
+			case 0:
+				this.giorno = "Domenica";
+				break;
+			case 1:
+				this.giorno = "Lunedì";
+				break;
+			case 2:
+				this.giorno = "Martedì";
+				break;
+			case 3:
+				this.giorno = "Mercoledì";
+				break;
+			case 4:
+				this.giorno = "Giovedì";
+				break;
+			case 5:
+				this.giorno = "Venerdì";
+				break;
+			case 6:
+				this.giorno = "Sabato";
+				break;
+		}
+
+		switch (grn.getMonth()) {
+			default:
+				console.log("Errore nel reperire mese.");
+				break;
+			case 0:
+				this.mese = "Gennaio";
+				break;
+			case 1:
+				this.mese = "Febbraio";
+				break;
+			case 2:
+				this.mese = "Marzo";
+				break;
+			case 10:
+				this.mese = "Novembre";
+				break;
+			case 11:
+				this.mese = "Dicembre";
+				break;
+		}
+
+		return this.giorno + " " + grn.getDate() + " " + this.mese; 
+	}
 }
 
 @Component({

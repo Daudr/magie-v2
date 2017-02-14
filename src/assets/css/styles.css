@@ -614,3 +614,7 @@ img.dialog-evento {
 	display: block;
 	max-width: 40%;
 }
+
+.tabella-changes {
+	margin-bottom: 20px;
+}

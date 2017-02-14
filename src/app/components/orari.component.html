@@ -4,6 +4,30 @@
 
 <div class="container main">
 	<div class="card-panel row col m12 light-blue lighten-4 top">
+		<div class="col s12" *ngFor="let change of changes">
+			<h4 class="red-text danger center-align">
+				Attenzione!
+				<br>
+				Si avvisa che {{traduciData(change.giorno)}} la pista aprirà con i seguenti orari:
+			</h4>
+			<table class="col s12 body_container tabella centered white-text tabella-changes">
+				<caption class="light-blue accent-3 tabella centered"><strong>{{traduciData(change.giorno)}}</strong></caption>
+				<thead>
+					<tr>
+						<th data-field="turno_mattina">Primo turno</th>
+						<th data-field="primo_turno">Secondo Turno</th>
+						<th data-field="secondo_turno" *ngIf="change.terzoTurno">Terzo Turno</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td>{{change.primoTurno}}</td>
+						<td>{{change.secondoTurno}}</td>
+						<td *ngIf="change.terzoTurno">{{change.terzoTurno}}</td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
 		<h1>Orari apertura al pubblico:</h1>
 		<div class="row">
 			<table class="col s12 m10 l5 offset-m1 body_container tabella centered white-text">
