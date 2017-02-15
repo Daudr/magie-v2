@@ -413,7 +413,8 @@ ul.sidenav {
 }
 
 .parallax-container {
-	height: 300px;
+	height: auto;
+	max-height: 300px;
 }
 
 div.main {
@@ -616,5 +617,9 @@ img.dialog-evento {
 }
 
 .tabella-changes {
+	margin-bottom: 20px;
+}
+
+.row:after {
 	margin-bottom: 20px;
 }

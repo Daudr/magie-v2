@@ -51,24 +51,16 @@
 
 	<div class="card-panel center-align body_container"> <!-- SERVIZI -->
 		
-		<h2>
-			Magie D'Inverno offre i seguenti servizi:
-		</h2>
+		<h2>Magie D'Inverno offre i seguenti servizi</h2>
 
 		<div class="row row-service-index">
-			<div class="col m6 s12 col-service-index">
-				<img src="../assets/icons/services/pista1.jpg" class="img-service-index">
-			</div>
-			<div class="col m6 s12 col-service-index">
-				<img src="../assets/icons/services/taverna.jpg" class="img-service-index">
-			</div>
-		</div>
-		<div class="row row-service-index">
-			<div class="col m6 s12 col-service-index">
-				<img src="../assets/icons/services/pattini.jpg" class="img-service-index">
-			</div>
-			<div class="col m6 s12 col-service-index">
-				<img src="../assets/icons/services/corsimattina.jpg" class="img-service-index">
+			<div class="col m6 s12 col-service-index parallax-container" *ngFor="let servizio of servizi">
+				<div>
+					<img src={{servizio.foto}} class="img-service-index">
+				</div>
+				<div class="card-panel service-name">
+					<p>{{servizio.nome}}</p>
+				</div>
 			</div>
 		</div>
 		<a routerLink="/servizi" routerLinkActive="active" class="white-text btn center-align light-blue text-darken-4">Altri servizi</a>

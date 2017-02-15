@@ -4,6 +4,8 @@ import { MdDialog } from '@angular/material';
 import { Eventi } from '../eventi';
 import { EventiService } from '../services/eventi.service';
 
+import { Servizio } from '../servizio';
+
 declare var $: any;
 
 @Component({
@@ -21,6 +23,29 @@ export class IndexComponent implements OnInit, AfterViewInit {
 	chiusuraCorsi: string;
 
 	soonEvents: Eventi[];
+
+	servizi: Servizio[] = [
+		{
+			nome: 'Pista di pattinaggio',
+			descrizione: '',
+			foto: '../assets/icons/services/pista1.jpg',
+		},
+		{
+			nome: 'Taverna on Ice',
+			descrizione: '',
+			foto: '../assets/icons/services/taverna.jpg',
+		},
+		{
+			nome: 'Noleggio Pattini',
+			descrizione: '',
+			foto: '../assets/icons/services/pattini.jpg',
+		},
+		{
+			nome: 'Corsi di pattinaggio',
+			descrizione: '',
+			foto: '../assets/icons/services/corsimattina.jpg',
+		},
+	];
 
 	constructor(private eventiService: EventiService, public dialog: MdDialog) { }
 
