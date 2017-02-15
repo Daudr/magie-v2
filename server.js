@@ -12,6 +12,7 @@ var NEWS_COLLECTION = "newsletter";
 
 var app = express();
 app.use(bodyParser.json());
+app.use(compression());
 
 // Create link to Angular build directory
 var distDir = __dirname + "/dist/";
