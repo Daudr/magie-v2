@@ -24,9 +24,9 @@
 	</div>
 
 	<div class="card-panel center-align body_container"> <!-- EVENTI -->
-		<h2>
-			Prossimi eventi:
-		</h2>
+		<h2 class="hide-on-small-only">Prossimi eventi</h2>
+		<h4 class="hide-on-med-and-up">Prossimi eventi</h4>
+
 		<div class="row center-align">
 
 			<div *ngFor="let event of soonEvents">
@@ -44,7 +44,8 @@
 			</div>
 
 			<div class="card-panel center-align db-error" *ngIf="!soonEvents">
-				<h3>Caricamento eventi</h3>
+				<h3 class="hide-on-small-only">Caricamento eventi</h3>
+				<h4 class="hide-on-med-and-up">Caricamento eventi</h4>
 			</div>
 		</div>
 		<a routerLink="/eventi" routerLinkActive="active" class="white-text btn center-align light-blue text-darken-4">Altri eventi</a>
@@ -52,7 +53,8 @@
 
 	<div class="card-panel center-align body_container"> <!-- SERVIZI -->
 		
-		<h2>Magie D'Inverno offre i seguenti servizi</h2>
+		<h2 class="hide-on-small-only">Magie D'Inverno offre i seguenti servizi</h2>
+		<h4 class="hide-on-med-and-up">Magie D'Inverno offre i seguenti servizi</h4>
 
 		<div class="row row-service-index">
 			<div class="col m6 s12 col-service-index parallax-container" *ngFor="let servizio of servizi">
@@ -68,7 +70,8 @@
 	</div>
 
 	<div class="card-panel center-align body_container">
-		<h1>Dove siamo: </h1>
+		<h1 class="hide-on-small-only">Dove siamo</h1>
+		<h4 class="hide-on-med-and-up">Dove siamo</h4>
 		<div class="row map-row">
 			<iframe
 				frameborder="0"

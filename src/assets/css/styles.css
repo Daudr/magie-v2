@@ -65,7 +65,7 @@ div.top {
 	margin-top: 50px;
 }
 
-p, h1, h2, a.valign, strong.valign {
+p, h1, h2, h3, h4, a.valign, strong.valign {
 	color: #304ffe;
 	text-align: center;
 }
@@ -627,4 +627,8 @@ img.dialog-evento {
 .iubenda-ibadge {
 	vertical-align: middle;
 	vertical-align: -webkit-baseline-middle;
+}
+
+.side-nav {
+	width: 250px;
 }

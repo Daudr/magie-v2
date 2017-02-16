@@ -1,6 +1,6 @@
 import { Component, OnInit, AfterViewInit } from '@angular/core';
 import { Title } from '@angular/platform-browser';
-import { MdDialog, MdDialogRef, MdDialogConfig } from '@angular/material';
+import { MdDialog, MdDialogRef, MdDialogConfig, MdSidenavModule, MdSidenav } from '@angular/material';
 
 import { StaffService } from './services/staff.service';
 import { EventiService } from './services/eventi.service';
@@ -22,6 +22,8 @@ export class AppComponent implements OnInit {
 
 	public setTitle (newTitle: string) {
 		this.titleService.setTitle( newTitle );
+
+		// this.sidenav.toggle();
 	}
 
 	ngOnInit(){ }

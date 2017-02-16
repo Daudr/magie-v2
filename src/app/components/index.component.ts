@@ -119,7 +119,9 @@ export class IndexComponent implements OnInit, AfterViewInit {
 			case 5:
 				this.giorno = "Venerdì";
 				this.apertura = '15:00';
-				this.chiusura = '18:30';
+				this.chiusura = '16:30';
+				this.aperturaCorsi = '16:30';
+				this.chiusuraCorsi = '18:30';
 				break;
 			case 6:
 				this.giorno = "Sabato";
@@ -186,7 +188,7 @@ export class IndexComponent implements OnInit, AfterViewInit {
 		<div class="center-align">
 			<h4>Benvenuti al sito ufficiale di Magie d'Inverno</h4>
 			<div>
-				Si avvisano i gentili visitatori che questo sito è attualmente in fase di sviluppo, quindi alcune alcune opzioni sono ancora da implementare, ma sono presenti le cose più essenziali
+				Si avvisano i gentili visitatori che questo sito è attualmente in fase di sviluppo, quindi alcune opzioni sono ancora da implementare, ma sono presenti le cose più essenziali
 				come orari e mappa per raggiungerci.<br><br>
 				Un cordiale ringraziamento, <br>
 				Michele. 
