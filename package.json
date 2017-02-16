@@ -32,6 +32,7 @@
     "mongojs": "^2.4.0",
     "ng2-parallax": "^1.0.0",
     "rxjs": "^5.0.1",
+    "sendgrid": "^4.7.1",
     "ts-helpers": "^1.1.1",
     "zone.js": "0.7.6"
   },
