@@ -45,8 +45,9 @@ export class AppComponent implements OnInit {
 	selector: 'news-dialog',
 	template: `
 		<div class="dialog">
+			<p>Funzionalità non ancotra implementata</p>
+			<!--
 			<div class="container">
-				<!-- <img /> Immagine figa -->
 				<div class="dialog-title">
 					<h4>Rimani sempre aggiornato</h4>
 				</div>
@@ -59,6 +60,7 @@ export class AppComponent implements OnInit {
 					<button md-button (click)="dialogRef.close(name.value, email.value)">Invia</button>
 				</div>
 			</div>
+			-->
 		</div>
 	`
 })
@@ -76,6 +78,14 @@ export class NewsDialog implements AfterViewInit {
 	selector: 'bug-dialog',
 	template: `
 		<div class="dialog">
+			<div class="center-align">
+				<p>
+					Funzionalità non ancotra implementata del tutto<br>
+					Per il momento si prega di inviare un'email a michidarin@gmail.com
+				</p>
+				<a class="white-text btn center-align light-blue text-darken-4" href="mailto:michidarin@gmail.com">Invia email</a>
+			</div>
+			<!--
 			<div class="dialog-title">
 				<h4>Segnala un errore del sito</h4>
 			</div>
@@ -112,6 +122,7 @@ export class NewsDialog implements AfterViewInit {
 			<div class="center-align dialog-actions">
 				<button md-button (click)="dialogRef.close()">Invia</button>
 			</div>
+			-->
 		</div>
 	`
 })
