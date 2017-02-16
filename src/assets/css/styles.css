@@ -623,3 +623,8 @@ img.dialog-evento {
 .row:after {
 	margin-bottom: 20px;
 }
+
+.iubenda-ibadge {
+	vertical-align: middle;
+	vertical-align: -webkit-baseline-middle;
+}

@@ -4,4 +4,5 @@ export class Eventi {
 	oraInizio: string;
 	oraFine: string;
 	descrizione: string;
+	folder: string;
 }
