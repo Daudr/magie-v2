@@ -136,10 +136,14 @@ export class OrariComponent  implements OnInit {
 					          	</p>
 					          	<p class="left-align hide-on-med-and-up">
 					          		<br>
-					          		Contattare per: {{person.compiti}}<br>
-					          		Contattare: {{person.disponibilita}}<br>
-					          		Cel: {{person.telefono}}<br>
-					          		Email: {{person.email}}<br>
+					          		Contattare per:<br>
+					          		{{person.compiti}}<br>
+					          		Contattare:<br>
+					          		{{person.disponibilita}}<br>
+					          		Cellulare:<br>
+					          		{{person.telefono}}<br>
+					          		Email:<br>
+					          		{{person.email}}<br>
 					          	</p>
 				            </div>
 				            <div class="card-action center-align">
