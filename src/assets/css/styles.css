@@ -632,3 +632,9 @@ img.dialog-evento {
 .side-nav {
 	width: 250px;
 }
+
+@media only screen and (max-width: 768px) {
+  .dialog {
+  	height: 500px;
+  }
+}
