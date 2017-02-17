@@ -1,8 +1,10 @@
 import { Component, OnInit, AfterViewInit } from '@angular/core';
-import { MdDialog } from '@angular/material';
+import { MdDialog, MdDialogRef } from '@angular/material';
 
 import { Eventi } from '../eventi';
 import { EventiService } from '../services/eventi.service';
+
+import { EventDialog } from './eventi.component';
 
 import { Servizio } from '../servizio';
 
@@ -21,6 +23,8 @@ export class IndexComponent implements OnInit, AfterViewInit {
 	chiusura: string;
 	aperturaCorsi: string;
 	chiusuraCorsi: string;
+
+	dialogRef: MdDialogRef<any>;
 
 	soonEvents: Eventi[];
 
@@ -66,6 +70,12 @@ export class IndexComponent implements OnInit, AfterViewInit {
 	isset(str: string): boolean {
 		if(str != null)	return true;
 		else return false;
+	}
+
+	openEventDialog(event: Eventi) {
+		this.dialog.closeAll();
+		this.dialogRef = this.dialog.open(EventDialog);
+		this.dialogRef.componentInstance.event = event;
 	}
 
 	isOpen(): string {
