@@ -31,7 +31,7 @@ function handleError(res, reason, message, code) {
 }
 
 app.get('/', function(req, res, next){
-	res.render('index.html');
+	res.render('./dist/index.html');
 });
 
 var st = mongojs("mongodb://mike:mike@ds147789.mlab.com:47789/heroku_slmcz4nh", [STAFF_COLLECTION], function(err){
