@@ -642,3 +642,7 @@ img.dialog-evento {
   	max-width: 250px;
   }
 }
+
+.p-dialog {
+	font-size: .999em;
+}

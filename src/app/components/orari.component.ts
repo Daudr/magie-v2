@@ -134,7 +134,7 @@ export class OrariComponent  implements OnInit {
 					          		Cel: {{person.telefono}}<br>
 					          		Email: {{person.email}}<br>
 					          	</p>
-					          	<p class="left-align hide-on-med-and-up">
+					          	<p class="hide-on-med-and-up p-dialog">
 					          		<br>
 					          		Contattare per:<br>
 					          		{{person.compiti}}<br>
