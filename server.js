@@ -20,7 +20,7 @@ app.use(express.static(distDir));
 
 // HTTP Caching
 app.use(function(req, res, next) {
-    res.setHeader("Cache-Control", "max-age");
+    res.setHeader("Cache-Control", "max-age=2419200");
     return next();
 });
 
