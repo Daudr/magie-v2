@@ -42,7 +42,7 @@ export class ServiziComponent implements OnInit, AfterViewInit {
 		},
 		{
 			nome: 'Corsi di avviamento, pattinaggio artistico e hockey del pomeriggio',
-			foto: '../../assets/icons/background/back-img.png',
+			foto: '../../assets/icons/background/back-img.jpg',
 			descrizione: 'Magie d\'Inverno offre ai ragazzi la possibilità di imparare uno sport, poco conosciuto ma non per questo bello, a prezzi completamente convenienti.',
 		},
 	];
