@@ -1,6 +1,8 @@
 import { Component, OnInit, AfterViewInit } from '@angular/core';
 import { MdDialog, MdDialogRef } from '@angular/material';
 
+import { CookieService } from 'angular2-cookie/services/cookies.service';
+
 import { Eventi } from '../eventi';
 import { EventiService } from '../services/eventi.service';
 
@@ -23,6 +25,7 @@ export class IndexComponent implements OnInit, AfterViewInit {
 	chiusura: string;
 	aperturaCorsi: string;
 	chiusuraCorsi: string;
+	viewed: boolean;
 
 	dialogRef: MdDialogRef<any>;
 
@@ -51,7 +54,7 @@ export class IndexComponent implements OnInit, AfterViewInit {
 		},
 	];
 
-	constructor(private eventiService: EventiService, public dialog: MdDialog) { }
+	constructor(private eventiService: EventiService, private cookieService: CookieService, public dialog: MdDialog) { }
 
 	ngOnInit() {
         this.eventiService
@@ -64,7 +67,10 @@ export class IndexComponent implements OnInit, AfterViewInit {
     }
 
     ngAfterViewInit () {
-    	this.dialogRef = this.dialog.open(DialogAlert);
+    	if(!this.cookieService.get('viewed')) {
+    		this.dialogRef = this.dialog.open(DialogAlert);
+    		this.cookieService.put('viewed', 'true');
+    	}
     }
 
 	isset(str: string): boolean {
@@ -202,7 +208,7 @@ export class IndexComponent implements OnInit, AfterViewInit {
 				come orari e mappa per raggiungerci.<br><br>
 				Un cordiale ringraziamento, <br>
 				Michele.
-        <br><br>
+        		<br><br>
 			<div>
 		</div>
     <div class="center-align dialog-actions">
