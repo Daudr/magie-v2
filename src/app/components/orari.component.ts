@@ -137,11 +137,11 @@ export class OrariComponent  implements OnInit {
 					          	<p class="hide-on-med-and-up p-dialog">
 					          		<br>
 					          		Contattare per:<br>
-					          		{{person.compiti}}<br>
+					          		{{person.compiti}}<br><br>
 					          		Contattare:<br>
-					          		{{person.disponibilita}}<br>
+					          		{{person.disponibilita}}<br><br>
 					          		Cellulare:<br>
-					          		{{person.telefono}}<br>
+					          		{{person.telefono}}<br><br>
 					          		Email:<br>
 					          		{{person.email}}<br>
 					          	</p>
