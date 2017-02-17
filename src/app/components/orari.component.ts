@@ -107,55 +107,53 @@ export class OrariComponent  implements OnInit {
 	selector: 'dialog-pomeriggio',
 	template: `
 		<img src="./assets/icons//banner/banner_about.jpg" class="banner-corsi center-align" />
-		<div class="container">
-			<h4>Corso di Hockey e Pattinaggio Artistico</h4>
-			<div class="center-align">
-				<span>
-					Da inserire:<br>
-					informazioni relative ai corsi (avviamento, artistico, hockey)
-				</span>
+		<h4>Corso di Hockey e Pattinaggio Artistico</h4>
+		<div class="center-align">
+			<span>
+				Da inserire:<br>
+				informazioni relative ai corsi (avviamento, artistico, hockey)
+			</span>
+		</div>
+		<div class="contatti row">
+			<h4 class="center-align">Per informazioni:</h4>
+			<div *ngFor="let person of staff">
+				<div class="col m12">
+					<div class="card light-blue lighten-1">
+			            <div class="card-content white-text">
+			              	<div class="col s4">
+				              <img src={{person.icon}} class="circle responsive-img">
+				          	</div>
+				          	<span class="card-title">{{person.nome}}</span>
+				          	<p class="left-align hide-on-small-only">
+				          		<br>
+				          		<br>
+				          		<br>
+				          		Contattare per: {{person.compiti}}<br>
+				          		Contattare: {{person.disponibilita}}<br>
+				          		Cel: {{person.telefono}}<br>
+				          		Email: {{person.email}}<br>
+				          	</p>
+				          	<p class="hide-on-med-and-up p-dialog">
+				          		<br>
+				          		Contattare per:<br>
+				          		{{person.compiti}}<br><br>
+				          		Contattare:<br>
+				          		{{person.disponibilita}}<br><br>
+				          		Cellulare:<br>
+				          		{{person.telefono}}<br><br>
+				          		Email:<br>
+				          		{{person.email}}<br>
+				          	</p>
+			            </div>
+			            <div class="card-action center-align">
+			              <a href="tel:{{person.telefono}}" class="btn btn-flat light-blue darken-4 white-text waves-effect">Chiama</a>
+			              <a href="mailto:{{person.email}}" class="btn btn-flat white-text light-blue darken-4 waves-effect margin-btn" disabled>Invia email</a>
+			            </div>
+			        </div>
+				</div>
 			</div>
-			<div class="contatti row">
-				<h4 class="center-align">Per informazioni:</h4>
-				<div *ngFor="let person of staff">
-					<div class="col m12">
-						<div class="card light-blue lighten-1">
-				            <div class="card-content white-text">
-				              	<div class="col s4">
-					              <img src={{person.icon}} class="circle responsive-img">
-					          	</div>
-					          	<span class="card-title">{{person.nome}}</span>
-					          	<p class="left-align hide-on-small-only">
-					          		<br>
-					          		<br>
-					          		<br>
-					          		Contattare per: {{person.compiti}}<br>
-					          		Contattare: {{person.disponibilita}}<br>
-					          		Cel: {{person.telefono}}<br>
-					          		Email: {{person.email}}<br>
-					          	</p>
-					          	<p class="hide-on-med-and-up p-dialog">
-					          		<br>
-					          		Contattare per:<br>
-					          		{{person.compiti}}<br><br>
-					          		Contattare:<br>
-					          		{{person.disponibilita}}<br><br>
-					          		Cellulare:<br>
-					          		{{person.telefono}}<br><br>
-					          		Email:<br>
-					          		{{person.email}}<br>
-					          	</p>
-				            </div>
-				            <div class="card-action center-align">
-				              <a href="tel:{{person.telefono}}" class="btn btn-flat light-blue darken-4 white-text waves-effect">Chiama</a>
-				              <a href="mailto:{{person.email}}" class="btn btn-flat white-text light-blue darken-4 waves-effect margin-btn" disabled>Invia email</a>
-				            </div>
-				        </div>
-					</div>
-				</div>
-				<div class="card-panel center-align db-error" *ngIf="!staff">
-					<h3>Errore nel caricamento dei contatti</h3>
-				</div>
+			<div class="card-panel center-align db-error" *ngIf="!staff">
+				<h3>Errore nel caricamento dei contatti</h3>
 			</div>
 		</div>
 	`
@@ -181,55 +179,53 @@ export class DialogPomeriggio implements OnInit {
 	selector: 'dialog-mattina',
 	template: `
 		<img src="./assets/icons//banner/banner_about.jpg" class="banner-corsi center-align" />
-		<div class="container">
-			<h4 class="center-align">Corso di avviamento al pattinaggio su ghiaccio</h4>
-			<div class="center-align">
-				<span>
-					Da inserire:<br>
-					informazioni relative ai corsi (avviamento, artistico, hockey)
-				</span>
+		<h4 class="center-align">Corso di avviamento al pattinaggio su ghiaccio</h4>
+		<div class="center-align">
+			<span>
+				Da inserire:<br>
+				informazioni relative ai corsi (avviamento, artistico, hockey)
+			</span>
+		</div>
+		<div class="contatti row">
+			<h4 class="center-align">Per informazioni:</h4>
+			<div *ngFor="let person of staff">
+				<div class="col m12">
+					<div class="card light-blue lighten-1">
+			            <div class="card-content white-text">
+			              	<div class="col s4">
+				              <img src={{person.icon}} class="circle responsive-img">
+				          	</div>
+				          	<span class="card-title">{{person.nome}}</span>
+				          	<p class="left-align hide-on-small-only">
+				          		<br>
+				          		<br>
+				          		<br>
+				          		Contattare per: {{person.compiti}}<br>
+				          		Contattare: {{person.disponibilita}}<br>
+				          		Cel: {{person.telefono}}<br>
+				          		Email: {{person.email}}<br>
+				          	</p>
+				          	<p class="hide-on-med-and-up p-dialog">
+				          		<br>
+				          		Contattare per:<br>
+				          		{{person.compiti}}<br><br>
+				          		Contattare:<br>
+				          		{{person.disponibilita}}<br><br>
+				          		Cellulare:<br>
+				          		{{person.telefono}}<br><br>
+				          		Email:<br>
+				          		{{person.email}}<br>
+				          	</p>
+			            </div>
+			            <div class="card-action center-align">
+			              <a href="tel:{{person.telefono}}" class="btn btn-flat light-blue darken-4 white-text waves-effect">Chiama</a>
+			              <a href="mailto:{{person.email}}" class="btn btn-flat white-text light-blue darken-4 waves-effect margin-btn">Invia email</a>
+			            </div>
+			        </div>
+				</div>
 			</div>
-			<div class="contatti row">
-				<h4 class="center-align">Per informazioni:</h4>
-				<div *ngFor="let person of staff">
-					<div class="col m12">
-						<div class="card light-blue lighten-1">
-				            <div class="card-content white-text">
-				              	<div class="col s4">
-					              <img src={{person.icon}} class="circle responsive-img">
-					          	</div>
-					          	<span class="card-title">{{person.nome}}</span>
-					          	<p class="left-align hide-on-small-only">
-					          		<br>
-					          		<br>
-					          		<br>
-					          		Contattare per: {{person.compiti}}<br>
-					          		Contattare: {{person.disponibilita}}<br>
-					          		Cel: {{person.telefono}}<br>
-					          		Email: {{person.email}}<br>
-					          	</p>
-					          	<p class="hide-on-med-and-up p-dialog">
-					          		<br>
-					          		Contattare per:<br>
-					          		{{person.compiti}}<br><br>
-					          		Contattare:<br>
-					          		{{person.disponibilita}}<br><br>
-					          		Cellulare:<br>
-					          		{{person.telefono}}<br><br>
-					          		Email:<br>
-					          		{{person.email}}<br>
-					          	</p>
-				            </div>
-				            <div class="card-action center-align">
-				              <a href="tel:{{person.telefono}}" class="btn btn-flat light-blue darken-4 white-text waves-effect">Chiama</a>
-				              <a href="mailto:{{person.email}}" class="btn btn-flat white-text light-blue darken-4 waves-effect margin-btn">Invia email</a>
-				            </div>
-				        </div>
-					</div>
-				</div>
-				<div class="card-panel center-align db-error" *ngIf="!staff">
-					<h3>Errore nel caricamento dei contatti</h3>
-				</div>
+			<div class="card-panel center-align db-error" *ngIf="!staff">
+				<h3>Errore nel caricamento dei contatti</h3>
 			</div>
 		</div>
 	`
