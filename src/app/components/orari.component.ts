@@ -125,9 +125,16 @@ export class OrariComponent  implements OnInit {
 					              <img src={{person.icon}} class="circle responsive-img">
 					          	</div>
 					          	<span class="card-title">{{person.nome}}</span>
-					          	<p class="left-align">
+					          	<p class="left-align hide-on-small-only">
 					          		<br>
 					          		<br>
+					          		<br>
+					          		Contattare per: {{person.compiti}}<br>
+					          		Contattare: {{person.disponibilita}}<br>
+					          		Cel: {{person.telefono}}<br>
+					          		Email: {{person.email}}<br>
+					          	</p>
+					          	<p class="left-align hide-on-med-and-up">
 					          		<br>
 					          		Contattare per: {{person.compiti}}<br>
 					          		Contattare: {{person.disponibilita}}<br>
