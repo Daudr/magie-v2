@@ -121,7 +121,7 @@ export class OrariComponent  implements OnInit {
 					<div class="col m12">
 						<div class="card light-blue lighten-1">
 				            <div class="card-content white-text">
-				              	<div class="col s2">
+				              	<div class="col s4">
 					              <img src={{person.icon}} class="circle responsive-img">
 					          	</div>
 					          	<span class="card-title">{{person.nome}}</span>
@@ -148,7 +148,7 @@ export class OrariComponent  implements OnInit {
 				            </div>
 				            <div class="card-action center-align">
 				              <a href="tel:{{person.telefono}}" class="btn btn-flat light-blue darken-4 white-text waves-effect">Chiama</a>
-				              <a href="mailto:{{person.email}}" class="btn btn-flat white-text light-blue darken-4 waves-effect margin-btn">Invia email</a>
+				              <a href="mailto:{{person.email}}" class="btn btn-flat white-text light-blue darken-4 waves-effect margin-btn" disabled>Invia email</a>
 				            </div>
 				        </div>
 					</div>
@@ -195,11 +195,11 @@ export class DialogPomeriggio implements OnInit {
 					<div class="col m12">
 						<div class="card light-blue lighten-1">
 				            <div class="card-content white-text">
-				              	<div class="col s2">
+				              	<div class="col s4">
 					              <img src={{person.icon}} class="circle responsive-img">
 					          	</div>
 					          	<span class="card-title">{{person.nome}}</span>
-					          	<p class="left-align">
+					          	<p class="left-align hide-on-small-only">
 					          		<br>
 					          		<br>
 					          		<br>
@@ -207,6 +207,17 @@ export class DialogPomeriggio implements OnInit {
 					          		Contattare: {{person.disponibilita}}<br>
 					          		Cel: {{person.telefono}}<br>
 					          		Email: {{person.email}}<br>
+					          	</p>
+					          	<p class="hide-on-med-and-up p-dialog">
+					          		<br>
+					          		Contattare per:<br>
+					          		{{person.compiti}}<br><br>
+					          		Contattare:<br>
+					          		{{person.disponibilita}}<br><br>
+					          		Cellulare:<br>
+					          		{{person.telefono}}<br><br>
+					          		Email:<br>
+					          		{{person.email}}<br>
 					          	</p>
 				            </div>
 				            <div class="card-action center-align">
