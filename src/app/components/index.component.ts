@@ -201,7 +201,8 @@ export class IndexComponent implements OnInit, AfterViewInit {
 				Si avvisano i gentili visitatori che questo sito è attualmente in fase di sviluppo, quindi alcune opzioni sono ancora da implementare, ma sono presenti le cose più essenziali
 				come orari e mappa per raggiungerci.<br><br>
 				Un cordiale ringraziamento, <br>
-				Michele. 
+				Michele.
+        <br><br>
 			<div>
 		</div>
     <div class="center-align dialog-actions">
@@ -209,4 +210,6 @@ export class IndexComponent implements OnInit, AfterViewInit {
     </div>
 	`
 })
-export class DialogAlert { }
+export class DialogAlert {
+  constructor(public dialogRef: MdDialogRef<DialogAlert>) {}
+}
