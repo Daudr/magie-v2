@@ -509,7 +509,7 @@ caption {
 }
 
 img.dialog-evento {
-	max-width: 250px;
+	max-width: 300px;
 	height: auto;
 }
 
@@ -636,5 +636,9 @@ img.dialog-evento {
 @media only screen and (max-width: 768px) {
   .dialog {
   	height: 500px;
+  }
+
+  img.dialog-evento {
+  	max-width: 250px;
   }
 }
