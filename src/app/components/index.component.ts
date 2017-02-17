@@ -64,7 +64,7 @@ export class IndexComponent implements OnInit, AfterViewInit {
     }
 
     ngAfterViewInit () {
-    	this.dialog.open(DialogAlert);
+    	this.dialogRef = this.dialog.open(DialogAlert);
     }
 
 	isset(str: string): boolean {
@@ -204,6 +204,9 @@ export class IndexComponent implements OnInit, AfterViewInit {
 				Michele. 
 			<div>
 		</div>
+    <div class="center-align dialog-actions">
+      <button md-button (click)="dialogRef.close()">Capito</button>
+    </div>
 	`
 })
 export class DialogAlert { }
