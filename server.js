@@ -18,6 +18,12 @@ app.use(compression());
 var distDir = __dirname + "/dist/";
 app.use(express.static(distDir));
 
+// HTTP Caching
+app.use(function(req, res, next) {
+    res.setHeader("Cache-Control", "max-age");
+    return next();
+});
+
 // Generic error handler used by all endpoints.
 function handleError(res, reason, message, code) {
     console.log("ERROR: " + reason);
