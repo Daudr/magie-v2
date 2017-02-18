@@ -30,8 +30,8 @@ function handleError(res, reason, message, code) {
     res.status(code || 500).json({ "error": message });
 }
 
-app.get('/', function(req, res, next){
-	res.render('./dist/index.html');
+app.get('*', function(req, res, next){
+	res.render('index.html');
 });
 
 var st = mongojs("mongodb://mike:mike@ds147789.mlab.com:47789/heroku_slmcz4nh", [STAFF_COLLECTION], function(err){
