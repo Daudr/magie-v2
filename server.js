@@ -15,7 +15,7 @@ app.use(bodyParser.json());
 app.use(compression());
 
 // Create link to Angular build directory
-var distDir = __dirname + "/dist/";
+var distDir = __dirname + "/dist/index.html";
 app.use(express.static(distDir));
 
 // HTTP Caching
