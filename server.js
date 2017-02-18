@@ -191,7 +191,7 @@ app.get("/api/eventifuture", function(req, res){
  */
 
 app.get("/api/eventipast", function(req, res){
-	evt.eventi.find({data: {$lt: new Date()}}).sort({data: 1}).toArray(function(err, eventi){
+	evt.eventi.find({data: {$lt: new Date()}}).sort({data: -1}).toArray(function(err, eventi){
 		if(err){
 			handleError(res, err.message, "Failed to load the past events.");
 		}
