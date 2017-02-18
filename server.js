@@ -178,7 +178,7 @@ app.get("/api/eventisoon", function(req, res){
  */
 
 app.get("/api/eventifuture", function(req, res){
-	evt.eventi.find({data: {$gte: new Date()}}).sort({data: 1}).toArray(function(err, eventi){
+	evt.eventi.find({data: {$gte: new Date()}}).sort({data: 1}).skip(3).toArray(function(err, eventi){
 		if(err){
 			handleError(res, err.message, "Failed to load the future events.");
 		}
