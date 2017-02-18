@@ -34,7 +34,7 @@ function handleError(res, reason, message, code) {
 	res.render('index.html');
 }); */
 
-var st = mongojs("mongodb://mike:mike@ds147789.mlab.com:47789/heroku_slmcz4nh", [STAFF_COLLECTION], function(err){
+var st = mongojs(process.env.MONGODB_URI, [STAFF_COLLECTION], function(err){
 	if(err){
 		console.log(err);
 		process.exit(1);
@@ -126,7 +126,7 @@ app.get("/api/staffcorsi", function(req, res) {
 	});
 }); 
 
-var evt = mongojs("mongodb://mike:mike@ds147789.mlab.com:47789/heroku_slmcz4nh", [EVENTS_COLLECTION]);
+var evt = mongojs(process.env.MONGODB_URI, [EVENTS_COLLECTION]);
 
 
 /*  "/api/eventi"
@@ -218,7 +218,7 @@ app.get("/api/eventipast", function(req, res){
  *    POST: creates a new newsletter"s contact
  */
 
-var nw = mongojs("mongodb://mike:mike@ds147789.mlab.com:47789/heroku_slmcz4nh", [NEWS_COLLECTION]);
+var nw = mongojs(process.env.MONGODB_URI, [NEWS_COLLECTION]);
 
 app.get("/api/news", function(req, res){
 	nw.news.find().toArray(function(err, contatti){
