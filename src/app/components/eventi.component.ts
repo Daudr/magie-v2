@@ -30,7 +30,7 @@ export class EventiComponent implements OnInit {
 			.getFutureEvents()
 			.then((futureEvents: Eventi[]) => {
 				this.futureEvents = futureEvents.map((futureEvents) => {
-					if(this.futureEvents == []) return null;
+					console.log(futureEvents);
 					return futureEvents;
 				});
 			});
