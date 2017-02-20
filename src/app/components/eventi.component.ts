@@ -30,10 +30,9 @@ export class EventiComponent implements OnInit {
 			.getFutureEvents()
 			.then((futureEvents: Eventi[]) => {
 				this.futureEvents = futureEvents.map((futureEvents) => {
-					console.log(futureEvents);
+					console.log("eventi: " + futureEvents);
 					return futureEvents;
 				});
-				console.log("eventi: " + futureEvents);
 			});
 
 		this.eventiService
