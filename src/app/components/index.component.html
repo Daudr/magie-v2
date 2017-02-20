@@ -53,6 +53,11 @@
 				<h3 class="hide-on-small-only">Caricamento eventi</h3>
 				<h4 class="hide-on-med-and-up">Caricamento eventi</h4>
 			</div>
+
+			<div class="card-panel center-align db-error" *ngIf="futureEvents?.length == 0">
+				<h3 class="hide-on-small-only">Non sono presenti eventi futuri</h3>
+				<h4 class="hide-on-med-and-up">Non sono presenti eventi futuri</h4>
+			</div>
 		</div>
 		<a routerLink="/eventi" routerLinkActive="active" class="white-text btn center-align light-blue text-darken-4">Altri eventi</a>
 	</div>
