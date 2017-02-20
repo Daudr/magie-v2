@@ -33,6 +33,7 @@ export class EventiComponent implements OnInit {
 					console.log(futureEvents);
 					return futureEvents;
 				});
+				console.log("eventi: " + futureEvents);
 			});
 
 		this.eventiService
