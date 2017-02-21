@@ -235,26 +235,29 @@ app.get("/api/news", function(req, res){
  *    DELETE: deletes contact by id
  */
 
-var helper = require('sendgrid').mail;
-  
-from_email = new helper.Email("michidarin@gmail.com");
-to_email = new helper.Email("michidarin@gmail.com");
-subject = "Sending with SendGrid is Fun";
-content = new helper.Content("text/plain", "and easy to do anywhere, even with Node.js");
-mail = new helper.Mail(from_email, subject, to_email, content);
+app.get("/api/email", function(res, res){
+	var helper = require('sendgrid').mail;
 
-var sg = require('sendgrid')(process.env.SENDGRID_API_KEY);
-var request = sg.emptyRequest({
-  method: 'POST',
-  path: '/v3/mail/send',
-  body: mail.toJSON()
+	from_email = new helper.Email("michidarin@gmail.com");
+	to_email = new helper.Email("michidarin@gmail.com");
+	subject = "Sending with SendGrid is Fun";
+	content = new helper.Content("text/plain", "and easy to do anywhere, even with Node.js");
+	mail = new helper.Mail(from_email, subject, to_email, content);
+
+	var sg = require('sendgrid')(process.env.SENDGRID_API_KEY);
+	var request = sg.emptyRequest({
+	method: 'POST',
+	path: '/v3/mail/send',
+	body: mail.toJSON()
+	});
+
+	sg.API(request, function(error, response) {
+	console.log(response.statusCode);
+	console.log(response.body);
+	console.log(response.headers);
+	});
 });
 
-sg.API(request, function(error, response) {
-  console.log(response.statusCode);
-  console.log(response.body);
-  console.log(response.headers);
-});
 
 var server = app.listen(process.env.PORT || 8080, function () {
     var port = server.address().port;
