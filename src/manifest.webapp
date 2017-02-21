@@ -1,9 +1,9 @@
 {
   "name": "Magie D'Inverno",
   "short_name": "Magie",
-  "start_url": "/",
+  "start_url": "/index.html",
   "display": "standalone",
-  "background_color": "#fff",
+  "theme_color": "#29b6f6",
   "description": "App ufficiale di Magie D'Inverno.",
   "icons": [{
     "src": "/favicon.ico",
