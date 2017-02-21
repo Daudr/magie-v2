@@ -1156,3 +1156,16 @@ img.dialog-evento {
 .p-dialog {
   font-size: .999em;
 }
+
+md-tab-header {
+  margin-bottom: 20px;
+}
+
+.btn-group {
+  margin: 10px;
+  padding: 5px;
+}
+
+.admin-input {
+  width: 70%;
+}

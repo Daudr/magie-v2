@@ -1,0 +1,68 @@
+<div class="btn-group center-align">
+	<a href="#agg-ev" class="btn-flat white-text light-blue text-darken-4">Aggiungi</a>
+	<a href="#mod-ev" class="btn-flat white-text light-blue text-darken-4">Modifica</a>
+	<a href="#del-ev" class="btn-flat white-text light-blue text-darken-4">Elimina</a>
+</div>
+
+<div id="agg-ev" class="card-panel">
+	<h4>Aggiungi evento</h4>
+
+	<!-- 
+		Evento:
+			Nome,
+			Data
+			oraInizio,
+			oraFine,
+			descrizione,
+			fotoMin,
+			foto
+	 -->
+	<form class="center-align">
+		<md-input-container class="admin-input">
+		    <input md-input placeholder="Nome">
+		</md-input-container>
+		<br>
+		<md-input-container class="admin-input">
+	    	<input md-input type="date" placeholder="Data">
+	    </md-input-container>
+	    <br>
+	    <md-input-container>
+	    	<input md-input type="time" placeholder="Ora Inizio">
+	    </md-input-container>
+	    <md-input-container>
+	    	<input md-input type="time" placeholder="Ora Fine">
+	    </md-input-container>
+	    <br>
+	    <div class="input-field">
+			<textarea id="textarea1" class="textarea materialize-textarea"></textarea>
+			<label for="textarea1">Descrizione evento</label>
+			<br>
+		</div>
+
+		Foto min: <input type="file" accept="image/jpg" placeholder="Foto">
+		<br><br>
+		Foto intera: <input type="file" accept="image/jpg" placeholder="Foto completa">
+
+		<div class="center-align btn-group">
+			<a href="javascript:void(0)" class="btn-flat white-text light-blue text-darken-4">Inserisci</a>
+			<a href="javascript:void(0)" class="btn-flat white-text light-blue text-darken-4">Reset</a>
+		</div>
+	</form>
+</div>
+
+<div id="mod-ev" class="card-panel">
+	Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+	tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+	quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+	consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+	cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+	proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+</div>
+<div id="del-ev" class="card-panel">
+	Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+	tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+	quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+	consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+	cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+	proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+</div>

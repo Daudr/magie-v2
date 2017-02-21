@@ -19,6 +19,8 @@ import { GalleriaComponent } from './components/galleria.component';
 import { AdminComponent} from './components/admin.component';
 import { AggiungiEventoComponent } from './components/aggiungi-evento.component';
 import { CreditsComponent } from './components/credits.component';
+import { AdminEventiComponent } from './components/admin-eventi.component';
+import { AdminStaffComponent } from './components/admin-staff.component';
 
 @NgModule({
   imports: [
@@ -43,7 +45,9 @@ import { CreditsComponent } from './components/credits.component';
     EventDialog,
     BugDialog,
     DialogAlert,
-    CreditsComponent
+    CreditsComponent,
+    AdminEventiComponent,
+    AdminStaffComponent
   ],
   entryComponents: [
     NewsDialog,
