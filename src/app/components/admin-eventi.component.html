@@ -51,13 +51,45 @@
 </div>
 
 <div id="mod-ev" class="card-panel">
-	<form>
-		Seleziona evento: 
-		<md-select placeholder="Nome evento">
-			<md-option *ngFor="let event of events" [value]="event._objectID">
-				{{ event.nome }}
-			</md-option>
-		</md-select>
+	<h4>Modifica evento</h4>
+	
+	Seleziona evento: 
+	<md-select placeholder="Nome evento">
+		<md-option *ngFor="let event of events" [value]="event._objectID">
+			{{ event.nome }}
+		</md-option>
+	</md-select>
+
+	<form class="center-align">
+		<md-input-container class="admin-input">
+		    <input md-input placeholder="Nome" [value]="md-select.md-selected-text">
+		</md-input-container>
+		<br>
+		<md-input-container class="admin-input">
+	    	<input md-input type="date" placeholder="Data">
+	    </md-input-container>
+	    <br><br>
+	    <md-input-container>
+	    	<input md-input type="time" placeholder="Ora Inizio">
+	    </md-input-container>
+	    <md-input-container>
+	    	<input md-input type="time" placeholder="Ora Fine">
+	    </md-input-container>
+	    <br>
+	    <div class="input-field">
+			<textarea id="textarea1" class="textarea materialize-textarea"></textarea>
+			<label for="textarea1">Descrizione evento</label>
+			<br>
+		</div>
+
+		Foto min: <input type="file" accept="image/jpg" placeholder="Foto">
+		<br><br>
+		Foto intera: <input type="file" accept="image/jpg" placeholder="Foto completa">
+
+		<div class="center-align btn-group">
+			<a href="javascript:void(0)" class="btn-flat white-text light-blue text-darken-4">Inserisci</a>
+			<a href="javascript:void(0)" class="btn-flat white-text light-blue text-darken-4">Reset</a>
+		</div>
 	</form>
 </div>
 <div id="del-ev" class="card-panel">
