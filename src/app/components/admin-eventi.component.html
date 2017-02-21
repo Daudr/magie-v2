@@ -54,7 +54,7 @@
 	<h4>Modifica evento</h4>
 	
 	Seleziona evento: 
-	<md-select placeholder="Nome evento">
+	<md-select placeholder="Nome evento" ng-model="selectedEvent">
 		<md-option *ngFor="let event of events" [value]="event._objectID">
 			{{ event.nome }}
 		</md-option>
@@ -62,7 +62,7 @@
 
 	<form class="center-align">
 		<md-input-container class="admin-input">
-		    <input md-input placeholder="Nome" [value]="md-select.md-selected-text">
+		    <input md-input placeholder="Nome" [value]="selectedEvent.nome">
 		</md-input-container>
 		<br>
 		<md-input-container class="admin-input">
