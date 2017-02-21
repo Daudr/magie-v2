@@ -9,6 +9,8 @@ import { EventiService } from '../services/eventi.service';
 })
 export class AdminEventiComponent {
   events: Eventi[];
+
+  selectedEvent: Eventi;
   
   constructor (private eventiService: EventiService) { }
 
