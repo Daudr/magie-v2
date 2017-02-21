@@ -9,7 +9,6 @@ import { EventiService } from '../services/eventi.service';
 })
 export class AdminEventiComponent {
   events: Eventi[];
-  staff: Staff[];
   
   constructor (private eventiService: EventiService) { }
 
