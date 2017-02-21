@@ -60,7 +60,7 @@
 		</md-option>
 	</md-select>
 
-	<form class="center-align">
+	<form class="center-align" *ngIf="selectedEvent">
 		<md-input-container class="admin-input">
 		    <input md-input placeholder="Nome" [value]="selectedEvent.nome">
 		</md-input-container>
