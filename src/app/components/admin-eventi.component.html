@@ -19,18 +19,18 @@
 	 -->
 	<form class="center-align">
 		<md-input-container class="admin-input">
-		    <input md-input placeholder="Nome">
+		    <input mdInput placeholder="Nome">
 		</md-input-container>
 		<br>
 		<md-input-container class="admin-input">
-	    	<input md-input type="date" placeholder="Data">
+	    	<input mdInput type="date" placeholder="Data">
 	    </md-input-container>
 	    <br><br>
 	    <md-input-container>
-	    	<input md-input type="time" placeholder="Ora Inizio">
+	    	<input mdInput type="time" placeholder="Ora Inizio">
 	    </md-input-container>
 	    <md-input-container>
-	    	<input md-input type="time" placeholder="Ora Fine">
+	    	<input mdInput type="time" placeholder="Ora Fine">
 	    </md-input-container>
 	    <br>
 	    <div class="input-field">
@@ -66,18 +66,18 @@
 			<div class="collapsible-body">
 				<form class="center-align">
 					<md-input-container class="admin-input">
-					    <input md-input placeholder="Nome" [value]="event.nome">
+					    <input mdInput placeholder="Nome" [value]="event.nome">
 					</md-input-container>
 					<br>
 					<md-input-container class="admin-input">
-				    	<input md-input type="date" placeholder="Data" [value]="event.data">
+				    	<input mdInput type="date" placeholder="Data" [value]="event.data">
 				    </md-input-container>
 				    <br><br>
 				    <md-input-container>
-				    	<input md-input type="time" placeholder="Ora Inizio" [value]="event.oraIniizo">
+				    	<input mdInput type="time" placeholder="Ora Inizio" [value]="event.oraIniizo">
 				    </md-input-container>
 				    <md-input-container>
-				    	<input md-input type="time" placeholder="Ora Fine" [value]="event.oraFine" *ngIf="event.oraInizio">
+				    	<input mdInput type="time" placeholder="Ora Fine" [value]="event.oraFine" *ngIf="event.oraInizio">
 				    </md-input-container>
 				    <br>
 				    <div class="input-field">
