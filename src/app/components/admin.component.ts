@@ -9,8 +9,8 @@ export class AdminComponent implements OnInit, AfterViewInit {
 	ngOnInit(){ }
 
 	ngAfterViewInit() {
-		if(!($('.md-tab-list').hasClass('light-blue lighten-2 tab'))) {
-			$('.md-tab-list').addClass('light-blue lighten-2 tab');
+		if(!($('.mat-tab-list').hasClass('light-blue lighten-2 tab'))) {
+			$('.mat-tab-list').addClass('light-blue lighten-2 tab');
 		}
 	}
 }
