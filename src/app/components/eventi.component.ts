@@ -1,5 +1,5 @@
 import { Component, OnInit, AfterViewInit } from '@angular/core';
-import { MdDialog, MdDialogRef } from '@angular/material';
+import { matDialog, matDialogRef } from '@angular/material';
 
 
 import { EventiService } from '../services/eventi.service';
@@ -21,9 +21,9 @@ export class EventiComponent implements OnInit {
 
 	evtdlg: EventDialog;
 
-	dialogRef: MdDialogRef<EventDialog>;
+	dialogRef: matDialogRef<EventDialog>;
 
-	constructor(private eventiService: EventiService, public dialog: MdDialog) { }
+	constructor(private eventiService: EventiService, public dialog: matDialog) { }
 
 	ngOnInit() {
 		this.eventiService
@@ -103,8 +103,8 @@ export class EventDialog implements AfterViewInit {
 
 	ngAfterViewInit() {
 		if(window.screen.height < 700) {
-			if(!($('.md-dialog-container').hasClass('dialog-cel'))) {
-				$('.md-dialog-container').addClass('dialog-cel');
+			if(!($('.mat-dialog-container').hasClass('dialog-cel'))) {
+				$('.mat-dialog-container').addClass('dialog-cel');
 			}
 		}
 	}
