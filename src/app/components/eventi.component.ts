@@ -70,7 +70,7 @@ export class EventiComponent implements OnInit {
 	selector: 'event-dialog',
 	template:`
 		<div class="info">
-			<img class="dialog-evento" src={{event.foto}}>
+			<img class="dialog-evento materialboxed" src={{event.foto}}>
 			<div class="floatr">
 				<h3>{{event.nome}}</h3>
 				<p class="des-evento">{{event.data | date:'dd/MM/yyyy'}}</p>
@@ -98,8 +98,14 @@ export class EventiComponent implements OnInit {
 		-->
 	`
 })
-export class EventDialog implements AfterViewInit {
+export class EventDialog implements OnInit, AfterViewInit {
 	event: Eventi;
+
+	ngOnInit () {
+		$(document).ready(function(){
+			$('.materialboxed').materialbox();
+		});
+	}
 
 	ngAfterViewInit() {
 		if(window.screen.height < 700) {
