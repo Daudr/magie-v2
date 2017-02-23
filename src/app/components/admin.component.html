@@ -14,6 +14,9 @@
 				<a href="javascript:void(0)" (click)="showContent()" class="btn-flat white-text light-blue text-darken-4">Login</a>
 			</div>
 		</form>
+		<div *ngIf="!admin">
+			<p class="red-text">You are not allowed!</p>			
+		</div>
 	</div>
 	
 	<md-tab-group>

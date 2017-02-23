@@ -41,6 +41,10 @@ export class AppComponent implements OnInit {
   	openBug() {
   		this.dialogRef = this.dialog.open(BugDialog);
   	}
+
+  	allowAdmin () {
+  		console.log("admin allowed");
+  	}
 }
 
 @Component({
