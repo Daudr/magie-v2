@@ -120,7 +120,7 @@ export class OrariComponent  implements OnInit {
 				<div class="col m12">
 					<div class="card light-blue lighten-1">
 			            <div class="card-content white-text">
-			              	<div class="col l3 s4">
+			              	<div class="col l2 s3">
 				              <img src={{person.icon}} class="circle responsive-img">
 				          	</div>
 				          	<span class="card-title">{{person.nome}}</span>
@@ -192,7 +192,7 @@ export class DialogPomeriggio implements OnInit {
 				<div class="col m12">
 					<div class="card light-blue lighten-1">
 			            <div class="card-content white-text">
-			              	<div class="col l3 s4">
+			              	<div class="col l2 s3">
 				              <img src={{person.icon}} class="circle responsive-img">
 				          	</div>
 				          	<span class="card-title">{{person.nome}}</span>
