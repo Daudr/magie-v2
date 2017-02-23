@@ -1262,3 +1262,27 @@ mat-tab-header {
 .admin-input {
   width: 70%;
 }
+
+.hide-admin {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #000;
+  opacity: 40%;
+  z-index: 100;
+}
+
+.login-admin {
+  position: absolute;
+  top: 20%;
+  left: 20%;
+  right: 20%;
+  width: auto;
+  z-index: 101;
+}
+
+.btn-admin {
+  margin: 10px;
+}
