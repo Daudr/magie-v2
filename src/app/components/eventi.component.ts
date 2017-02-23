@@ -1,5 +1,5 @@
 import { Component, OnInit, AfterViewInit } from '@angular/core';
-import { matDialog, matDialogRef } from '@angular/material';
+import { MdDialog, MdDialogRef } from '@angular/material';
 
 
 import { EventiService } from '../services/eventi.service';
@@ -21,9 +21,9 @@ export class EventiComponent implements OnInit {
 
 	evtdlg: EventDialog;
 
-	dialogRef: matDialogRef<EventDialog>;
+	dialogRef: MdDialogRef<EventDialog>;
 
-	constructor(private eventiService: EventiService, public dialog: matDialog) { }
+	constructor(private eventiService: EventiService, public dialog: MdDialog) { }
 
 	ngOnInit() {
 		this.eventiService
