@@ -1095,10 +1095,6 @@ caption {
   height: 250px;
 }
 
-.dialog-cel {
-  height: 500px;
-}
-
 .mat-select-trigger {
   widows: 150px;
 }
@@ -1114,6 +1110,10 @@ caption {
 img.dialog-evento {
   width: 300px;
   height: auto;
+}
+
+.mat-dialog-container {
+  max-height: 500px;
 }
 
 .floatr {
@@ -1138,10 +1138,6 @@ img.dialog-evento {
   width: 100%;
 }
 
-.dialog-responsive {
-  max-height: 500px;
-}
-
 .margin-btn {
   margin: 10px;
 }
@@ -1149,22 +1145,6 @@ img.dialog-evento {
 .db-error {
   margin-right: 10%;
   margin-left: 10%;
-}
-
-*[parallax] {
-  width: 700px;
-    height: 300px;
-    
-    background-size: 100%;
-    margin-bottom: 100px;
-}
-
-#first {
-  background-image: url('../icons/background/back-img.png');
-}
-
-#second {
-  background-image: url(../icons/other/gear.svg);
 }
 
 .service-info {
