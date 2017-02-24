@@ -70,7 +70,7 @@ export class EventiComponent implements OnInit {
 	selector: 'event-dialog',
 	template:`
 		<div class="info">
-			<img class="dialog-evento materialboxed" src={{event.foto}}>
+			<img class="dialog-evento materialboxed floatl" src={{event.foto}}>
 			<div class="floatr">
 				<h3>{{event.nome}}</h3>
 				<p class="des-evento">{{event.data | date:'dd/MM/yyyy'}}</p>
@@ -86,7 +86,7 @@ export class EventiComponent implements OnInit {
 				</div>
 			</div>
 		</div>
-		<div class="descrizione">
+		<div class="descrizione floatl">
 			<span>
 				{{event.descrizione}}
 			</span>

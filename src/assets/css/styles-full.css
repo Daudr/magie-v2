@@ -1112,13 +1112,17 @@ caption {
 }
 
 img.dialog-evento {
-  max-width: 300px;
+  width: 300px;
   height: auto;
 }
 
 .floatr {
   float: right;
   margin-left: 10px;
+}
+
+.floatl {
+  float: left;
 }
 
 .des-evento {
