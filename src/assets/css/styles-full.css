@@ -1220,16 +1220,6 @@ img.dialog-evento {
   width: 250px;
 }
 
-@media only screen and (max-width: 768px) {
-  .dialog {
-    height: 500px;
-  }
-
-  img.dialog-evento {
-    max-width: 250px;
-  }
-}
-
 .p-dialog {
   font-size: .999em;
 }
