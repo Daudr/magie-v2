@@ -8,7 +8,6 @@ import { AppRoutingModule } from './modules/app-routing.module';
 
 import { CookieService } from 'angular2-cookie/services/cookies.service';
 
-
 import { AppComponent, NewsDialog, BugDialog } from './app.component';
 import { OrariComponent, DialogPomeriggio, DialogMattina } from './components/orari.component';
 import { IndexComponent, DialogAlert } from './components/index.component';
@@ -21,6 +20,7 @@ import { AggiungiEventoComponent } from './components/aggiungi-evento.component'
 import { CreditsComponent } from './components/credits.component';
 import { AdminEventiComponent } from './components/admin-eventi.component';
 import { AdminStaffComponent } from './components/admin-staff.component';
+import { IceTeamComponent } from './components/ice-team.component';
 
 @NgModule({
   imports: [
@@ -47,7 +47,8 @@ import { AdminStaffComponent } from './components/admin-staff.component';
     DialogAlert,
     CreditsComponent,
     AdminEventiComponent,
-    AdminStaffComponent
+    AdminStaffComponent,
+    IceTeamComponent
   ],
   entryComponents: [
     NewsDialog,
