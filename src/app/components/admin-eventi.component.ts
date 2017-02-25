@@ -33,9 +33,8 @@ export class AdminEventiComponent implements OnInit, AfterViewInit{
     });
   }
 
-  traduciData(data: Date): String {        // METODO PER TRADURRE LA DATA
-    data = new Date();
-
+  traduciData(data: Date): String {
+    
     switch (data.getDay()) {
       default:
         console.log("errore nel reperire giorno.");
