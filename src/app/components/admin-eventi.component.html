@@ -100,8 +100,8 @@
 	</ul>
 </div>
 <div id="del-ev" class="card-panel">
-  <div *ngFor="let event of events">
+  <span *ngFor="let event of events">
     <p class="del-width">{{event.nome}} - {{event.data}}</p>
     <a href="javascript:void(0)" class="btn-flat danger right-align"><i class="material-icons">delete</i></a>
-  </div>
+  </span>
 </div>
