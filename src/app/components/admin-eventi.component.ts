@@ -1,4 +1,4 @@
-import { Component, OnInit, AfterViewInit } from '@angular/core';
+import { Component, OnInit, AfterViewInit, Input } from '@angular/core';
 
 import { Eventi } from '../eventi';
 import { EventiService } from '../services/eventi.service';
@@ -14,6 +14,16 @@ export class AdminEventiComponent implements OnInit, AfterViewInit{
 
   giorno: string;
   mese: string;
+
+  @Input()
+  evento: Eventi;
+
+  @Input()
+  createHandler: Function;
+  @Input()
+  updateHandler: Function;
+  @Input()
+  deleteHandler: Function;
   
   constructor (private eventiService: EventiService) { }
 
@@ -25,6 +35,27 @@ export class AdminEventiComponent implements OnInit, AfterViewInit{
         return events;
       });
     });
+  }
+
+  creaEvento (evento: Eventi) {
+    this.eventiService.creaEvento(evento)
+      .then((nuovoEvento: Eventi) => {
+        this.createHandler(nuovoEvento);
+      });
+  }
+
+  eliminaEvento (eventoID: String): void {
+    this.eventiService.rimuoviEvento(eventoID)
+      .then((deletedEventID: String) => {
+        this.deleteHandler(deletedEventID);
+      });
+  }
+
+  aggiornaEvento (evento: Eventi): void {
+    this.eventiService.aggiornaEvento(evento)
+      .then((updateEvent: Eventi) => {
+        this.updateHandler(updateEvent);
+      })
   }
 
   ngAfterViewInit () {
