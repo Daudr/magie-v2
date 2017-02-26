@@ -62,7 +62,7 @@
 				    <md-input-container>
 				    	<input mdInput type="time" placeholder="Ora Inizio" >
 				    </md-input-container>
-				    <md-input-container *ngIf="!event.oraFine">
+				    <md-input-container *ngIf="event.oraFine">
 				    	<input mdInput type="time" placeholder="Ora Fine" [value]="event.oraFine">
 				    </md-input-container>
 				    <br>

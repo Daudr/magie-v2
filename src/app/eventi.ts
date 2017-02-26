@@ -1,7 +1,7 @@
 export class Eventi {
 	_id: string;
 	nome: string;
-	data: string;
+	data: Date;
 	oraInizio: string;
 	oraFine: string;
 	descrizione: string;
