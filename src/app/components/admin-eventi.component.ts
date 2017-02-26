@@ -16,7 +16,7 @@ export class AdminEventiComponent implements OnInit, AfterViewInit {
   mese: string;
 
   @Input()
-  evento: Eventi;
+  event: Eventi;
 
   @Input()
   createHandler: Function;
