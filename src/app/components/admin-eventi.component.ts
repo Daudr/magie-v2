@@ -15,15 +15,15 @@ export class AdminEventiComponent implements OnInit, AfterViewInit{
   giorno: string;
   mese: string;
 
-  @Input()
-  evento: Eventi;
+  // @Input()
+  // evento: Eventi;
 
-  @Input()
-  createHandler: Function;
-  @Input()
-  updateHandler: Function;
-  @Input()
-  deleteHandler: Function;
+  // @Input()
+  // createHandler: Function;
+  // @Input()
+  // updateHandler: Function;
+  // @Input()
+  // deleteHandler: Function;
   
   constructor (private eventiService: EventiService) { }
 
@@ -37,26 +37,26 @@ export class AdminEventiComponent implements OnInit, AfterViewInit{
     });
   }
 
-  creaEvento (evento: Eventi) {
-    this.eventiService.creaEvento(evento)
-      .then((nuovoEvento: Eventi) => {
-        this.createHandler(nuovoEvento);
-      });
-  }
+  // creaEvento (evento: Eventi) {
+  //   this.eventiService.creaEvento(evento)
+  //     .then((nuovoEvento: Eventi) => {
+  //       this.createHandler(nuovoEvento);
+  //     });
+  // }
 
-  eliminaEvento (eventoID: String): void {
-    this.eventiService.rimuoviEvento(eventoID)
-      .then((deletedEventID: String) => {
-        this.deleteHandler(deletedEventID);
-      });
-  }
+  // eliminaEvento (eventoID: String): void {
+  //   this.eventiService.rimuoviEvento(eventoID)
+  //     .then((deletedEventID: String) => {
+  //       this.deleteHandler(deletedEventID);
+  //     });
+  // }
 
-  aggiornaEvento (evento: Eventi): void {
-    this.eventiService.aggiornaEvento(evento)
-      .then((updateEvent: Eventi) => {
-        this.updateHandler(updateEvent);
-      })
-  }
+  // aggiornaEvento (evento: Eventi): void {
+  //   this.eventiService.aggiornaEvento(evento)
+  //     .then((updateEvent: Eventi) => {
+  //       this.updateHandler(updateEvent);
+  //     })
+  // }
 
   ngAfterViewInit () {
     $(document).ready(function(){

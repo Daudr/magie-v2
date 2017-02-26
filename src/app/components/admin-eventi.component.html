@@ -7,16 +7,6 @@
 <div id="agg-ev" class="card-panel">
 	<h4>Aggiungi evento</h4>
 
-	<!-- 
-		Evento:
-			Nome,
-			Data
-			oraInizio,
-			oraFine,
-			descrizione,
-			fotoMin,
-			foto
-	 -->
 	<form class="center-align">
 		<md-input-container class="admin-input">
 		    <input mdInput placeholder="Nome">
@@ -34,7 +24,7 @@
 	    </md-input-container>
 	    <br>
 	    <div class="input-field">
-			<textarea mdInput id="textarea1" class="textarea materialize-textarea"></textarea>
+			<textarea id="textarea1" class="textarea materialize-textarea"></textarea>
 			<label for="textarea1">Descrizione evento</label>
 			<br>
 		</div>
@@ -55,9 +45,9 @@
 
 	<ul class="collapsible" data-collapsible="accordion">
 		<li *ngFor="let event of events">
-			<div class="collapsible-header row">Ciao
-				<!-- <p class="col s6 left-align">{{event.nome}}</p>
-				<p class="col s6 right-align">{{traduciData(event.data)}}</p> -->
+			<div class="collapsible-header row">
+				<p class="col s6 left-align">{{event.nome}}</p>
+				<p class="col s6 right-align">{{traduciData(event.data)}}</p>
 			</div>
 			<div class="collapsible-body">
 				<form class="center-align">
@@ -77,7 +67,7 @@
 				    </md-input-container>
 				    <br>
 				    <div class="input-field">
-						<textarea mdInput id="textarea1" class="textarea materialize-textarea" [value]="event.descrizione"></textarea>
+						<textarea id="textarea1" class="textarea materialize-textarea" [value]="event.descrizione"></textarea>
 						<label for="textarea1">Descrizione evento</label>
 						<br>
 					</div>
