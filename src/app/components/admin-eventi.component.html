@@ -55,7 +55,10 @@
 
 	<ul class="collapsible" data-collapsible="accordion">
 		<li *ngFor="let event of events">
-			<div class="collapsible-header">{{event.nome}} - {{traduciData(event.data)}}</div>
+			<div class="collapsible-header row">
+				<p class="col s6 left-align">{{event.nome}}</p>
+				<p class="col s6 right-align">{{traduciData(event.data)}}</p>
+			</div>
 			<div class="collapsible-body">
 				<form class="center-align">
 					<md-input-container class="admin-input">
