@@ -23,7 +23,7 @@
 	    	<input mdInput type="time" placeholder="Ora Fine">
 	    </md-input-container>
 	    <br>
-	    <div class="input-field">
+	    <div class="input-field admin-input">
 			<textarea id="textarea1" class="textarea materialize-textarea"></textarea>
 			<label for="textarea1">Descrizione evento</label>
 			<br>
@@ -49,22 +49,22 @@
 			<div class="collapsible-body">
 				<form class="center-align">
 					<md-input-container class="admin-input">
-					    <input mdInput placeholder="Nome" >
+					    <input mdInput placeholder="Nome" [value]="event.nome" [(ngModel)]="event.nome">
 					</md-input-container>
 					<br>
 					<md-input-container class="admin-input">
-				    	<input mdInput type="date" placeholder="Data" >
+				    	<input mdInput type="date" placeholder="Data" [value]="event.data" [(ngModel)]="event.data">
 				    </md-input-container>
 				    <br><br>
 				    <md-input-container>
-				    	<input mdInput type="time" placeholder="Ora Inizio" >
+				    	<input mdInput type="time" placeholder="Ora Inizio" [value]="event.oraFine" [(ngModel)]="event.oraInizio">
 				    </md-input-container>
 				    <md-input-container *ngIf="event.oraFine">
-				    	<input mdInput type="time" placeholder="Ora Fine" [value]="event.oraFine">
+				    	<input mdInput type="time" placeholder="Ora Fine" [value]="event.oraFine" [(ngModel)]="event.oraInizio">
 				    </md-input-container>
 				    <br>
 				    <div class="input-field">
-						<textarea id={{event._id}} class="textarea materialize-textarea" [value]="event.descrizione"></textarea>
+						<textarea id={{event._id}} class="textarea materialize-textarea" [value]="event.descrizione" [(ngModel)]="event.descrizione"></textarea>
 						<label for={{event._id}}>Descrizione evento</label>
 						<br>
 					</div>
@@ -74,8 +74,8 @@
 					Foto intera: <input type="file" accept="image/jpg" placeholder="Foto completa">
 
 					<div class="center-align btn-group">
-						<a href="javascript:void(0)" class="btn-flat white-text light-blue text-darken-4">Modifica</a>
-						<a href="javascript:void(0)" class="btn-flat white-text light-blue text-darken-4">Reset</a>
+						<button (click)="aggiornaEvento()" class="btn-flat white-text light-blue text-darken-4">Inserisci</button>
+						<input type="reset" class="btn-flat white-text light-blue text-darken-4">
 					</div>
 				</form>
 			</div>
@@ -85,6 +85,6 @@
 <div id="del-ev" class="card-panel">
   <div *ngFor="let event of events" class="row">
     <div class="col s11">{{event.nome}} - {{traduciData(event.data)}}</div>
-    <a href="javascript:void(0)" class="btn-flat danger col s1 center-align"><i class="material-icons">delete</i></a>
+    <button (click)="rimuoviEvento(event)" class="btn-flat white-text light-blue text-darken-4">Inserisci</button>
   </div>
 </div>
