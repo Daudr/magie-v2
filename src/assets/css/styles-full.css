@@ -1267,3 +1267,8 @@ mat-tab-header {
     width: 250px;
   }
 }
+
+.iceteam-container {
+  width: 95%;
+  margin: 0 auto;
+}

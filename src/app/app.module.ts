@@ -21,6 +21,9 @@ import { CreditsComponent } from './components/credits.component';
 import { AdminEventiComponent } from './components/admin-eventi.component';
 import { AdminStaffComponent } from './components/admin-staff.component';
 import { IceTeamComponent } from './components/ice-team.component';
+import { HockeyComponent } from './components/hockey.component';
+import { PattArtComponent } from './components/patt-art.component';
+import { HockeyPistaComponent } from './components/hockey-pista.component';
 
 @NgModule({
   imports: [
@@ -48,7 +51,10 @@ import { IceTeamComponent } from './components/ice-team.component';
     CreditsComponent,
     AdminEventiComponent,
     AdminStaffComponent,
-    IceTeamComponent
+    IceTeamComponent,
+    HockeyComponent,
+    HockeyPistaComponent,
+    PattArtComponent
   ],
   entryComponents: [
     NewsDialog,
