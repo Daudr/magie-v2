@@ -64,9 +64,9 @@ export class AdminEventiComponent implements OnInit, AfterViewInit{
     });
   }
 
-  traduciData(grn: Date): String {
+  traduciData(dataEvento: Date): String {
 
-    switch (grn.getDay()) {
+    switch (dataEvento.getDay()) {
       default:
         console.log("errore nel reperire giorno.");
       case 0:
@@ -92,7 +92,7 @@ export class AdminEventiComponent implements OnInit, AfterViewInit{
         break;
     }
 
-    switch (grn.getMonth()) {
+    switch (dataEvento.getMonth()) {
       default:
         console.log("Errore nel reperire mese.");
         break;
@@ -113,6 +113,6 @@ export class AdminEventiComponent implements OnInit, AfterViewInit{
         break;
     }
 
-    return this.giorno + " " + grn.getDate() + " " + this.mese; 
+    return this.giorno + " " + dataEvento.getDate() + " " + this.mese; 
   }
 }
