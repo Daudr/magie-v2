@@ -10,6 +10,7 @@ import { ContattiComponent } from '../components/contatti.component';
 import { GalleriaComponent } from '../components/galleria.component';
 import { AdminComponent } from '../components/admin.component';
 import { CreditsComponent } from '../components/credits.component';
+import { IceTeamComponent } from '../components/ice-team.component';
 
 const routes: Routes = [
 	{ path: '', redirectTo: '/index', pathMatch: 'full' },
@@ -44,6 +45,10 @@ const routes: Routes = [
 	{
 		path: 'credits',
 		component: CreditsComponent
+	},
+	{
+		path: 'iceteam',
+		component: IceTeamComponent
 	}
 ]
 
