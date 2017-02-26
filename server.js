@@ -66,8 +66,9 @@ app.post("/api/staff", function(req, res){
 	st.staff.insertOne(person, function(err, person){
 		if(err){
 			handleError(res, err.message, "Failed to create new person.");
+		} else {
+			res.status(201).json(person);
 		}
-		res.status(201).json(person);
 	});
 });
 
@@ -126,8 +127,8 @@ app.get("/api/staffcorsi", function(req, res) {
 	});
 }); 
 
-var evt = mongojs(process.env.MONGODB_URI, [EVENTS_COLLECTION]);
 
+var evt = mongojs(process.env.MONGODB_URI, [EVENTS_COLLECTION]);
 
 /*  "/api/eventi"
  *    GET: finds all events
@@ -138,11 +139,27 @@ app.get("/api/eventi", function(req, res){
 	evt.eventi.find().sort({data: 1}).toArray(function(err, eventi){
 		if(err){
 			handleError(res, err.message, "Failed to load events.");
+		} else {
+			res.status(200).json(eventi);
 		}
-		console.log(eventi);
-		res.status(200).json(eventi);
 	});
 });
+
+app.post("/api/eventi", function(req, res){
+	var evento = req.body;
+
+	if(!req.body.nome){
+		handleError(res, "Invalid user input", "Must provide a name.", 400);
+	}
+
+	evt.eventi.insertOne(evento, function(err, evento) {
+		if(err) {
+			handleError(res, err.message, "Failed to insert event");
+		} else {
+			res.status(201).json(evento);
+		}
+	})
+})
 
 
 /*  "/api/eventi/:id"
@@ -152,15 +169,39 @@ app.get("/api/eventi", function(req, res){
  */
 
 app.get("/api/eventi/:id", function(req, res){
-	evt.eventi.findOne({_id: new ObjectID(req.params.id)}, function(err, evento){
-		if(err){
+	evt.eventi.findOne({_id: new ObjectID(req.params.id)}, function(err, doc){
+		if (err) {
 			handleError(res, err.message, "Failed to load event.");
 		}
 		res.status(200).json(evento);
 	});
 });
 
-/*  "/api/eventi/soon"
+app.put("/api/eventi/:id", function(req, res){
+	var evento = req.body;
+	delete evento._id;
+
+	evt.eventi.updateOne({_id: new ObjectID(req.params.id)}, evento, function(err, evento){
+		if (err) {
+			handleError(res, err.message, "Failed to update event")
+		} else {
+			evento._id = req.params.id;
+			res.status(200).json(evento);
+		}
+	})
+})
+
+app.delete("/api/evento/:id", function(req, res){
+	evt.eventi.findOne({_id: new ObjectID(req.params.id)}, function(err, result){
+		if(err) {
+			handleError(res, err.message, "Failed to delete event");
+		} else {
+			res.status(200).json(req.params.id);
+		}
+	});
+});
+
+/*  "/api/eventisoon"
  *    GET: finds the future 3 events
  */
 
@@ -173,7 +214,7 @@ app.get("/api/eventisoon", function(req, res){
 	});
 });
 
-/*  "/api/eventi/future"
+/*  "/api/eventifuture"
  *    GET: finds all the future events
  */
 
@@ -199,20 +240,6 @@ app.get("/api/eventipast", function(req, res){
 	});
 });
 
-
-/*  "/api/files"
- *    GET: finds all files
- *    POST: creates a new file
- */
-
-
-/*  "/api/files/:id"
- *    GET: find file by id
- *    PUT: update file by id
- *    DELETE: deletes file by id
- */
-
-
 /*  "/api/news"
  *    GET: finds all newsletter"s contacts
  *    POST: creates a new newsletter"s contact
@@ -224,8 +251,9 @@ app.get("/api/news", function(req, res){
 	nw.news.find().toArray(function(err, contatti){
 		if(err){
 			handleError(res, err.message, "Failed to load near contacts.");
+		} else {
+			res.status(200).json(contatti);
 		}
-		res.status(200).json(contatti);
 	});
 });
 
@@ -235,28 +263,28 @@ app.get("/api/news", function(req, res){
  *    DELETE: deletes contact by id
  */
 
-app.get("/api/email", function(res, res){
-	var helper = require('sendgrid').mail;
+// app.get("/api/email", function(res, res){
+// 	var helper = require('sendgrid').mail;
 
-	from_email = new helper.Email("michidarin@gmail.com");
-	to_email = new helper.Email("michidarin@gmail.com");
-	subject = "Sending with SendGrid is Fun";
-	content = new helper.Content("text/plain", "and easy to do anywhere, even with Node.js");
-	mail = new helper.Mail(from_email, subject, to_email, content);
+// 	from_email = new helper.Email("michidarin@gmail.com");
+// 	to_email = new helper.Email("michidarin@gmail.com");
+// 	subject = "Sending with SendGrid is Fun";
+// 	content = new helper.Content("text/plain", "and easy to do anywhere, even with Node.js");
+// 	mail = new helper.Mail(from_email, subject, to_email, content);
 
-	var sg = require('sendgrid')(process.env.SENDGRID_API_KEY);
-	var request = sg.emptyRequest({
-	method: 'POST',
-	path: '/v3/mail/send',
-	body: mail.toJSON()
-	});
+// 	var sg = require('sendgrid')(process.env.SENDGRID_API_KEY);
+// 	var request = sg.emptyRequest({
+// 	method: 'POST',
+// 	path: '/v3/mail/send',
+// 	body: mail.toJSON()
+// 	});
 
-	sg.API(request, function(error, response) {
-	console.log(response.statusCode);
-	console.log(response.body);
-	console.log(response.headers);
-	});
-});
+// 	sg.API(request, function(error, response) {
+// 	console.log(response.statusCode);
+// 	console.log(response.body);
+// 	console.log(response.headers);
+// 	});
+// });
 
 
 var server = app.listen(process.env.PORT || 8080, function () {

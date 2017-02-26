@@ -40,6 +40,29 @@ export class EventiService {
 			.catch(this.handleError);
 	}
 
+	creaEvento (nuovoEvento: Eventi): Promise<Eventi> {
+		return this.http.post(this.eventiUrl, nuovoEvento)
+			.toPromise()
+			.then(response => response.json() as Eventi)
+			.catch(this.handleError);
+	}
+
+	rimuoviEvento (delEvento: Eventi): Promise<String> {
+		return this.http.delete(this.eventiUrl + '/' + delEvento._id)
+			.toPromise()
+			.then(response => response.json() as String)
+			.catch(this.handleError);
+	}
+
+	agiornaEvento (putEvento: Eventi): Promise<Eventi> {
+		var putUrl = this.eventiUrl + '/' + putEvento._id;
+
+		return this.http.put(putUrl, putEvento)
+			.toPromise()
+			.then(response => response.json() as Eventi)
+			.catch(this.handleError);
+	}
+
 	private handleError(error: any) {
         let errMsg = (error.message) ? error.message :
             error.status ? `${error.status} - ${error.statusText}` : 'Server error';
