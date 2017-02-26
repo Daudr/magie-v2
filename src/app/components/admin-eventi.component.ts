@@ -1,4 +1,4 @@
-import { Component, OnInit, AfterViewInit, Input } from '@angular/core';
+import { Component, OnInit, AfterViewInit } from '@angular/core';
 
 import { Eventi } from '../eventi';
 import { EventiService } from '../services/eventi.service';
@@ -9,7 +9,7 @@ declare var $: any;
 	selector: 'admin-eventi',
 	templateUrl: './admin-eventi.component.html'
 })
-export class AdminEventiComponent implements OnInit, AfterViewInit{
+export class AdminEventiComponent implements OnInit, AfterViewInit {
   events: Eventi[];
 
   giorno: string;
