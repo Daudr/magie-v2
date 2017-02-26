@@ -9,15 +9,15 @@
 
 	<form class="center-align">
 		<md-input-container class="admin-input">
-		    <input mdInput placeholder="Nome">
+		    <input mdInput placeholder="Nome" required>
 		</md-input-container>
 		<br>
 		<md-input-container class="admin-input">
-	    	<input mdInput type="date" placeholder="Data">
+	    	<input mdInput type="date" placeholder="Data" required>
 	    </md-input-container>
 	    <br><br>
 	    <md-input-container>
-	    	<input mdInput type="time" placeholder="Ora Inizio">
+	    	<input mdInput type="time" placeholder="Ora Inizio" required>
 	    </md-input-container>
 	    <md-input-container>
 	    	<input mdInput type="time" placeholder="Ora Fine">
@@ -49,22 +49,22 @@
 			<div class="collapsible-body">
 				<form class="center-align">
 					<md-input-container class="admin-input">
-					    <input mdInput placeholder="Nome" [value]="event.nome" [(ngModel)]="event.nome">
+					    <input mdInput placeholder="Nome" [value]="event.nome" name="nomeEvento">
 					</md-input-container>
 					<br>
 					<md-input-container class="admin-input">
-				    	<input mdInput type="date" placeholder="Data" [value]="event.data" [(ngModel)]="event.data">
+				    	<input mdInput type="date" placeholder="Data" [value]="event.data" name="dataEvento">
 				    </md-input-container>
 				    <br><br>
 				    <md-input-container>
-				    	<input mdInput type="time" placeholder="Ora Inizio" [value]="event.oraFine" [(ngModel)]="event.oraInizio">
+				    	<input mdInput type="time" placeholder="Ora Inizio" [value]="event.oraFine" name="oraInizio">
 				    </md-input-container>
 				    <md-input-container *ngIf="event.oraFine">
-				    	<input mdInput type="time" placeholder="Ora Fine" [value]="event.oraFine" [(ngModel)]="event.oraInizio">
+				    	<input mdInput type="time" placeholder="Ora Fine" [value]="event.oraFine" name="oraFine">
 				    </md-input-container>
 				    <br>
 				    <div class="input-field">
-						<textarea id={{event._id}} class="textarea materialize-textarea" [value]="event.descrizione" [(ngModel)]="event.descrizione"></textarea>
+						<textarea id={{event._id}} class="textarea materialize-textarea" [value]="event.descrizione" name="descrizione"></textarea>
 						<label for={{event._id}}>Descrizione evento</label>
 						<br>
 					</div>

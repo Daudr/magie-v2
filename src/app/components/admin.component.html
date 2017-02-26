@@ -21,7 +21,9 @@
 	
 	<md-tab-group>
 		<md-tab label="EVENTI">
-			<admin-eventi></admin-eventi>
+			<admin-eventi [createHandler]="addContact"
+                          [updateHandler]="updateContact"
+                          [deleteHandler]="deleteContact"></admin-eventi>
 		</md-tab>
 
 		<!-- <md-tab label="Calendario">
