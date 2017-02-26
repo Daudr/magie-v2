@@ -64,7 +64,7 @@ export class AdminEventiComponent implements OnInit, AfterViewInit{
     });
   }
 
-  traduciData(grn: Date): String {        // METODO PER TRADURRE LA DATA
+  traduciData(grn: Date): String {
 
     switch (grn.getDay()) {
       default:
