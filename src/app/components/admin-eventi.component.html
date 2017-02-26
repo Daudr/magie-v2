@@ -43,9 +43,9 @@
 <div id="mod-ev" class="card-panel">
 	<h4>Modifica evento</h4>
 
-	<ul class="collapsible" data-collapsible="accordion">
+	<ul class="collapsible popout" data-collapsible="accordion">
 		<li *ngFor="let event of events">
-			<div class="collapsible-header row"> {{event.nome}} - {{traduciData(event.data)}} </div>
+			<div class="collapsible-header"> {{event.nome}} - {{traduciData(event.data)}} </div>
 			<div class="collapsible-body">
 				<form class="center-align">
 					<md-input-container class="admin-input">
