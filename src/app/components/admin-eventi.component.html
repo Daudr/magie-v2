@@ -8,7 +8,7 @@
 	<h4>Aggiungi evento</h4>
 
 	<form class="center-align">
-		<!-- <md-input-container class="admin-input">
+		<md-input-container class="admin-input">
 		    <input mdInput placeholder="Nome">
 		</md-input-container>
 		<br>
@@ -21,7 +21,7 @@
 	    </md-input-container>
 	    <md-input-container>
 	    	<input mdInput type="time" placeholder="Ora Fine">
-	    </md-input-container> -->
+	    </md-input-container>
 	    <br>
 	    <div class="input-field">
 			<textarea id="textarea1" class="textarea materialize-textarea"></textarea>
@@ -47,24 +47,24 @@
 		<li *ngFor="let event of events">
 			<div class="collapsible-header row">
 				<p class="col s6 left-align">{{event.nome}}</p>
-				<!-- <p class="col s6 right-align">{{traduciData(event.data)}}</p> -->
+				<p class="col s6 right-align">{{traduciData(event.data)}}</p>
 			</div>
 			<div class="collapsible-body">
 				<form class="center-align">
-					<!-- <md-input-container class="admin-input">
-					    <input mdInput placeholder="Nome" [value]="event.nome">
+					<md-input-container class="admin-input">
+					    <input mdInput placeholder="Nome" >
 					</md-input-container>
 					<br>
 					<md-input-container class="admin-input">
-				    	<input mdInput type="date" placeholder="Data" [value]="event.data">
+				    	<input mdInput type="date" placeholder="Data" >
 				    </md-input-container>
 				    <br><br>
 				    <md-input-container>
-				    	<input mdInput type="time" placeholder="Ora Inizio" [value]="event.oraIniizo">
+				    	<input mdInput type="time" placeholder="Ora Inizio" >
 				    </md-input-container>
-				    <md-input-container>
-				    	<input mdInput type="time" placeholder="Ora Fine" [value]="event.oraFine" *ngIf="!event.oraInizio">
-				    </md-input-container> -->
+				    <md-input-container *ngIf="!event.oraFine">
+				    	<input mdInput type="time" placeholder="Ora Fine" [value]="event.oraFine">
+				    </md-input-container>
 				    <br>
 				    <div class="input-field">
 						<textarea id="textarea1" class="textarea materialize-textarea" [value]="event.descrizione"></textarea>
