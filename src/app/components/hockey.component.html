@@ -13,24 +13,83 @@
 <div class="card-panel right-align">
 	<h4>Alcune regole importanti</h4>
 	<p>
-		Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-		tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-		quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-		consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-		cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-		proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+		Un incontro di hockey su ghiaccio dura normalmente 60 minuti (tre tempi - chiamati anche "terzi" - da 20 minuti). Gli intervalli fra un tempo e l'altro durano 15 minuti. A differenza di molti altri sport nell'hockey su ghiaccio non esiste il pareggio: se al termine di una partita il risultato è ancora di parità, viene giocato un tempo supplementare, di venti o cinque minuti, che termina immediatamente con il gol di una delle due squadre. Se al termine del tempo supplementare nessuna delle due squadre ha segnato, la partita viene decisa ai rigori oppure, a seconda del campionato, i tempi supplementari possono proseguire ad oltranza.
+	</p>
+	<p>
+		Una squadra di hockey su ghiaccio è composta al massimo di 22 giocatori, 20 di movimento e 2 portieri. Durante una partita possono essere sul ghiaccio al massimo 6 giocatori contemporaneamente. La regola prevede che siano 5 giocatori di movimento e un portiere, ma in situazioni particolari, il portiere può essere sostituito da un sesto giocatore di movimento.
+	</p>
+	<h4>e alcuni concetti</h4>
+	<p>
+		<strong>Ingaggio</strong>: quando viene fischiato l'inizio del gioco all'inizio di un tempo o dopo un'interruzione di gioco, si ha un ingaggio. Due giocatori avversari stanno uno di fronte all'altro all'interno di un cerchio dell'ingaggio ed il puck viene fatto cadere da un guardalinee. I due giocatori cercano di entrare in possesso del puck.
+	</p>
+	<p>
+		<strong>Liberazione vietata</strong>: si ha quando il puck supera - direttamente o dopo aver toccato la balaustra - la linea di centrocampo e la linea di porta avversaria dopo un rinvio dalla difesa. Viene fischiata l'interruzione del gioco e si ha un ingaggio. Questa regola non viene applicata se il disco attraversa l'area di porta oppure quando la squadra che effettua la liberazione sta giocando in inferiorità numerica. Nell'NHL l'icing è chiamato se il disco è toccato dalla squadra avversaria.
+	</p>
+	<p>
+		<strong>Gioco con un uomo in più</strong>: quando viene irrogata una sanzione disciplinare ad un giocatore, e questo finisce in panca puniti, la sua squadra resta con un uomo in meno sul ghiaccio (situazione di shorthand). La squadra che non ha subito la penalità gode dunque di un vantaggio, giocando in 5 contro 4 (oppure 5 contro 3, se viene irrogata una seconda penalità).
 	</p>
 </div>
 <div class="card-panel left-align">
 	<h4>L'hockey a Magie D'Inverno</h4>
 	<p>
-		Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-		tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-		quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-		consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-		cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-		proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+		Magie D'Inverno, in collaborazione con l'EstateSport Eventi e il comune di San Vendemiano, consente a tutti i ragazzi e bambini di poter provare a cimentarsi in questo sport.
 	</p>
+	<h4>Per informazioni contattare</h4>
+	<div class="row">
+		<div *ngFor="let person of staff" class="hide-on-small-only">
+			<div class="col m6">
+				<div class="card light-blue lighten-1">
+		            <div class="card-content white-text">
+		              	<div class="col l3" *ngIf="person.icon">
+			              <img src={{person.icon}} class="circle responsive-img">
+			          	</div>
+			          	<span class="card-title">{{person.nome}}</span>
+			          	<p class="left-align">
+			          		<br>
+			          		<br>
+			          		Contattare per: {{person.compiti}}<br>
+			          		Contattare: {{person.disponibilita}}<br>
+			          		Cel: {{person.telefono}}<br>
+			          		Email: {{person.email}}<br>
+			          	</p>
+		            </div>
+		            <div class="card-action center-align">
+		              <a href="tel:{{person.telefono}}" class="btn btn-flat light-blue darken-4 white-text waves-effect">Chiama</a>
+		              <a href="mailto:{{person.email}}" class="btn btn-flat white-text light-blue darken-4 waves-effect" disabled>Invia email</a>
+		            </div>
+		        </div>
+			</div>
+		</div>
+
+		<div *ngFor="let person of staff" class="hide-on-med-and-up">
+			<div class="col m8">
+				<div class="card light-blue lighten-1">
+		            <div class="card-content white-text">
+		              	<div class="col s4" *ngIf="person.icon">
+			              <img src={{person.icon}} class="circle responsive-img">
+			          	</div>
+			          	<span class="card-title">{{person.nome}}</span>
+			          	<p class="left-align">
+			          		<br>
+			          		Contattare per: {{person.compiti}}<br>
+			          		Contattare: {{person.disponibilita}}<br>
+			          		Cel: {{person.telefono}}<br>
+			          		Email: {{person.email}}<br>
+			          	</p>
+		            </div>
+		            <div class="card-action center-align">
+		              <a href="tel:{{person.telefono}}" class="btn btn-flat light-blue darken-4 white-text waves-effect">Chiama</a>
+		              <br>
+		              <br>
+		              <a href="mailto:{{person.email}}" class="btn btn-flat white-text light-blue darken-4 waves-effect" disabled>Invia email</a>
+		            </div>
+		        </div>
+			</div>		
+		</div>
+		<div class="card-panel center-align db-error" *ngIf="!staff">
+			<h4>Caricamento contatti</h4>
+		</div>
+	</div>
 </div>
 <div class="card-panel right-align">
 	<h4>Orari allenamenti</h4>
