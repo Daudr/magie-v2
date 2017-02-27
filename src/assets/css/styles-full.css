@@ -1130,7 +1130,8 @@ img.dialog-evento, img.iceteam {
 }
 
 .descrizione {
-  margin-top: 10px;
+  margin: 0 20px;
+
 }
 
 .map-frame-event {
@@ -1276,3 +1277,4 @@ mat-tab-header {
 img.iceteam {
   margin-bottom: 10px;
 }
+
