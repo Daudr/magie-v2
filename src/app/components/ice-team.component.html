@@ -13,4 +13,69 @@
 
 		</md-tab>
 	</md-tab-group>
+  
+  <div class="card-panel left-align">
+    <h4>Per informazioni contattare</h4>
+    <div class="row">
+      <div *ngFor="let person of staff" class="hide-on-small-only">
+        <div class="col m6">
+          <div class="card light-blue lighten-1">
+                  <div class="card-content white-text">
+                      <div class="col l3" *ngIf="person.icon">
+                      <img src={{person.icon}} class="circle responsive-img">
+                    </div>
+                    <span class="card-title">{{person.nome}}</span>
+                    <p class="left-align">
+                      <br>
+                      <br>
+                      Contattare per: {{person.compiti}}<br>
+                      Contattare: {{person.disponibilita}}<br>
+                      Cel: {{person.telefono}}<br>
+                      Email: {{person.email}}<br>
+                    </p>
+                  </div>
+                  <div class="card-action center-align">
+                    <a href="tel:{{person.telefono}}" class="btn btn-flat light-blue darken-4 white-text waves-effect">Chiama</a>
+                    <a href="mailto:{{person.email}}" class="btn btn-flat white-text light-blue darken-4 waves-effect" disabled>Invia email</a>
+                  </div>
+              </div>
+        </div>
+      </div>
+
+      <div *ngFor="let person of staff" class="hide-on-med-and-up">
+        <div class="col m8">
+          <div class="card light-blue lighten-1">
+                  <div class="card-content white-text">
+                      <div class="col s4" *ngIf="person.icon">
+                      <img src={{person.icon}} class="circle responsive-img">
+                    </div>
+                    <span class="card-title">{{person.nome}}</span>
+                    <p class="left-align">
+                      <br>
+                      Contattare per: {{person.compiti}}<br>
+                      Contattare: {{person.disponibilita}}<br>
+                      Cel: {{person.telefono}}<br>
+                      Email: {{person.email}}<br>
+                    </p>
+                  </div>
+                  <div class="card-action center-align">
+                    <a href="tel:{{person.telefono}}" class="btn btn-flat light-blue darken-4 white-text waves-effect">Chiama</a>
+                    <br>
+                    <br>
+                    <a href="mailto:{{person.email}}" class="btn btn-flat white-text light-blue darken-4 waves-effect" disabled>Invia email</a>
+                  </div>
+              </div>
+        </div>		
+      </div>
+      <div class="card-panel center-align db-error" *ngIf="!staff">
+        <h4>Caricamento contatti</h4>
+      </div>
+    </div>
+  </div>
+  <div class="card-panel right-align" *ngIf="foto">
+    <h4>Alcune foto dell'Ice Team Sanve</h4>
+    <div class="row">
+      <img src={{pic.path}} class="col l4 m6 s12 materialboxed iceteam" *ngFor="let pic of foto">	
+    </div>
+  </div>
 </div>
