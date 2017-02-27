@@ -91,11 +91,9 @@ export class EventiComponent implements OnInit {
 				{{event.descrizione}}
 			</span>
 		</div>
-		<!--
-			<div class="foto">
-
-			</div>
-		-->
+		<div class="galleria row" *ngIf="event.galleria">
+			<img src={{foto.path}} class="col l4 m6 s12 materialboxed iceteam" *ngFor="let foto of event.galleria">
+		</div>
 	`
 })
 export class EventDialog implements OnInit, AfterViewInit {

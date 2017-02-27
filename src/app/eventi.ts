@@ -1,5 +1,5 @@
 export class Eventi {
-	_id: string;
+	_id?: string;
 	nome: string;
 	data: Date;
 	oraInizio: string;
@@ -7,4 +7,5 @@ export class Eventi {
 	descrizione: string;
 	fotoMin: string;
 	foto: string;
+	galleria?: { }
 }
