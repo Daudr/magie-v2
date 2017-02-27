@@ -7,5 +7,5 @@ export class Eventi {
 	descrizione: string;
 	fotoMin: string;
 	foto: string;
-	galleria?: { }
+	galleria?: any[];
 }
