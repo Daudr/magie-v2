@@ -7,7 +7,6 @@ import { OrariComponent } from '../components/orari.component';
 import { EventiComponent } from '../components/eventi.component';
 import { ServiziComponent } from '../components/servizi.component';
 import { ContattiComponent } from '../components/contatti.component';
-import { GalleriaComponent } from '../components/galleria.component';
 import { AdminComponent } from '../components/admin.component';
 import { CreditsComponent } from '../components/credits.component';
 import { IceTeamComponent } from '../components/ice-team.component';
