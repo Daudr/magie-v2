@@ -35,10 +35,6 @@ const routes: Routes = [
 		component: ContattiComponent
 	},
 	{
-		path: 'galleria',
-		component: GalleriaComponent
-	},
-	{
 		path: 'admin',
 		component: AdminComponent
 	},

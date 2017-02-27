@@ -14,9 +14,7 @@ import { IndexComponent, DialogAlert } from './components/index.component';
 import { EventiComponent, EventDialog } from './components/eventi.component';
 import { ServiziComponent } from './components/servizi.component';
 import { ContattiComponent } from './components/contatti.component';
-import { GalleriaComponent } from './components/galleria.component';
 import { AdminComponent} from './components/admin.component';
-import { AggiungiEventoComponent } from './components/aggiungi-evento.component';
 import { CreditsComponent } from './components/credits.component';
 import { AdminEventiComponent } from './components/admin-eventi.component';
 import { AdminStaffComponent } from './components/admin-staff.component';
@@ -39,9 +37,7 @@ import { HockeyPistaComponent } from './components/hockey-pista.component';
     EventiComponent,
     ServiziComponent,
     ContattiComponent,
-    GalleriaComponent,
     AdminComponent,
-    AggiungiEventoComponent,
     NewsDialog,
     DialogPomeriggio,
     DialogMattina,
