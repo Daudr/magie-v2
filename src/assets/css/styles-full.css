@@ -1107,7 +1107,7 @@ caption {
   justify-content: center;
 }
 
-img.dialog-evento {
+img.dialog-evento, img.iceteam {
   width: 300px;
   height: auto;
 }
@@ -1271,4 +1271,8 @@ mat-tab-header {
 .iceteam-container {
   width: 95%;
   margin: 0 auto;
+}
+
+img.iceteam {
+  margin-bottom: 10px;
 }

@@ -34,6 +34,44 @@
 	<p>
 		Magie D'Inverno, in collaborazione con l'EstateSport Eventi e il comune di San Vendemiano, consente a tutti i ragazzi e bambini di poter provare a cimentarsi in questo sport.
 	</p>
+</div>
+<div class="card-panel right-align">
+	<h4>Orari allenamenti</h4>
+	<div class="row">
+			<table class="col s12 m10 l6 offset-m1 offset-l3 body_container tabella centered">
+				<thead>
+					<tr>
+						<th data-field="giorno">Squadra</th>
+						<th data-field="turno_mattina">Giorno</th>
+						<th data-field="primo_turno">Orario</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td>Hockey A e B</td>
+						<td> Lunedì </td>
+						<td>16:30 - 17:30</td>
+					</tr>
+					<tr>
+						<td>Hockey C</td>
+						<td> Lunedì </td>
+						<td>17:30 - 18:30</td>
+					</tr>
+					<tr>
+						<td>Hockey A e B</td>
+						<td> Mercoledì </td>
+						<td>16:30 - 17:30</td>
+					</tr>
+					<tr>
+						<td>Hockey C</td>
+						<td> Mercoledì </td>
+						<td>17:30 - 18:30</td>
+					</tr>
+				</tbody>
+			</table>
+	</div>
+</div>
+<div class="card-panel left-align">
 	<h4>Per informazioni contattare</h4>
 	<div class="row">
 		<div *ngFor="let person of staff" class="hide-on-small-only">
@@ -91,36 +129,9 @@
 		</div>
 	</div>
 </div>
-<div class="card-panel right-align">
-	<h4>Orari allenamenti</h4>
-	<p>
-		Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-		tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-		quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-		consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-		cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-		proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-	</p>
-</div>
-<div class="card-panel left-align">
-	<h4>Per informazioni</h4>
-	<p>
-		Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-		tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-		quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-		consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-		cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-		proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-	</p>
-</div>
-<div class="card-panel right-align">
+<div class="card-panel right-align" *ngIf="foto">
 	<h4>Alcune foto dell'Ice Team Sanve</h4>
-	<p>
-		Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-		tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-		quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-		consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-		cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-		proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-	</p>
+	<div class="row">
+		<img src={{pic.path}} class="col l4 m6 s12 materialboxed iceteam" *ngFor="let pic of foto">	
+	</div>
 </div>

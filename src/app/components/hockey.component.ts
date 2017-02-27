@@ -1,6 +1,7 @@
 import { Component, OnInit, AfterViewInit } from '@angular/core';
 
 import { Staff } from '../staff';
+import { Foto } from '../foto';
 import { StaffService } from '../services/staff.service';
 
 @Component({
@@ -9,6 +10,21 @@ import { StaffService } from '../services/staff.service';
 })
 export class HockeyComponent implements OnInit, AfterViewInit {
 	staff: Staff[];
+
+	foto: Foto[] = [
+		{
+			path: '../assets/icons/iceteam/hockey/foto1.jpg'
+		},
+		{
+			path: '../assets/icons/iceteam/hockey/foto2.jpg'
+		},
+		{
+			path: '../assets/icons/iceteam/hockey/foto3.jpg'
+		},
+		{
+			path: '../assets/icons/iceteam/hockey/foto4.jpg'
+		}
+	];
 
 	constructor (private staffService: StaffService) { }
 
