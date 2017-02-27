@@ -1278,3 +1278,6 @@ img.iceteam {
   margin-bottom: 10px;
 }
 
+md-card {
+  min-width: 350px;
+}
