@@ -1276,3 +1276,7 @@ mat-tab-header {
 img.iceteam {
   margin-bottom: 10px;
 }
+
+strong { 
+  font-weight: 900;
+}
