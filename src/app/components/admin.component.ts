@@ -8,6 +8,7 @@ import { CookieService } from 'angular2-cookie/services/cookies.service';
 })
 export class AdminComponent implements OnInit, AfterViewInit {
 	admin: boolean = true;
+	trueAdmin: boolean = false;
 
 	constructor (private cookieService: CookieService) { }
 
