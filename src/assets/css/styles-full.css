@@ -1275,3 +1275,9 @@ img.iceteam {
 strong { 
   font-weight: 900;
 }
+
+li.white-text {
+  text-transform: uppercase;
+  letter-spacing: .5px;
+  padding: 0 2rem;
+}
