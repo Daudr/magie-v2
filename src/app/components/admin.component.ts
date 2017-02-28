@@ -17,6 +17,9 @@ export class AdminComponent implements OnInit, AfterViewInit {
 		if(!($('.mat-tab-list').hasClass('light-blue lighten-2 tab'))) {
 			$('.mat-tab-list').addClass('light-blue lighten-2 tab');
 		}
+		if(!this.cookieService.get('allowAdmin')) {
+			this.cookieService.put('allowAdmin', 'true');
+		}
 	}
 
 	showContent () {

@@ -1,7 +1,7 @@
 <div class="main container">
-	<div class="hide-admin"></div>
-	<div class="card-panel login-admin">
-		<form class="center-align">
+	<div class="hide-admin justify valign-wrapper">
+		<div class="card-panel">
+			<form class="center-align">
 			<md-input-container class="admin-input">
 			    <input mdInput placeholder="Nome utente">
 			</md-input-container>
@@ -11,11 +11,12 @@
 		    </md-input-container>
 
 			<div class="center-align btn-group">
-				<a href="javascript:void(0)" (click)="showContent()" class="btn-flat white-text light-blue text-darken-4">Login</a>
+				<a class="btn-flat white-text light-blue text-darken-4" (click)="showContent()">Login</a>
 			</div>
 		</form>
 		<div *ngIf="!admin">
 			<p class="red-text">Non sei autorizzato!</p>			
+		</div>
 		</div>
 	</div>
 	
