@@ -22,6 +22,7 @@ import { IceTeamComponent } from './components/ice-team.component';
 import { HockeyComponent } from './components/hockey.component';
 import { PattArtComponent } from './components/patt-art.component';
 import { HockeyPistaComponent } from './components/hockey-pista.component';
+import { PattInlineComponent } from './components/patt-inline.component';
 
 @NgModule({
   imports: [
@@ -50,7 +51,8 @@ import { HockeyPistaComponent } from './components/hockey-pista.component';
     IceTeamComponent,
     HockeyComponent,
     HockeyPistaComponent,
-    PattArtComponent
+    PattArtComponent,
+    PattInlineComponent
   ],
   entryComponents: [
     NewsDialog,

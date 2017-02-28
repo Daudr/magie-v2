@@ -5,6 +5,8 @@ import { MdDialog, MdDialogRef, MdDialogConfig, MdSidenavModule, MdSidenav } fro
 import { StaffService } from './services/staff.service';
 import { EventiService } from './services/eventi.service';
 
+declare var $: any;
+
 @Component({
 	selector: 'magie-dinverno',
 	templateUrl: `./app.component.html`,
@@ -26,7 +28,11 @@ export class AppComponent implements OnInit {
 		// this.sidenav.toggle();
 	}
 
-	ngOnInit(){ }
+	ngOnInit(){
+		$(document).ready(function(){
+			$('.materialboxed').materialbox();
+		});
+	}
 
 	openNews() {
     	this.dialogRef = this.dialog.open(NewsDialog);
