@@ -29,6 +29,7 @@ import { PattInlineComponent } from './components/patt-inline.component';
       BrowserModule,
       AppRoutingModule,
       HttpModule,
+      FormsModule,
       MaterialModule.forRoot()
     ],
   declarations: [
