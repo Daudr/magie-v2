@@ -63,6 +63,11 @@ export class AdminEventiComponent implements OnInit, AfterViewInit {
     $(document).ready(function(){
       $('.collapsible').collapsible();
     });
+
+    $('.datepicker').pickadate({
+      selectMonths: true,
+      selectYears: 5
+    });
   }
 
   traduciData(dataEvento: Date): String {
