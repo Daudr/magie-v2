@@ -14,7 +14,7 @@
 		</md-tab>
 	</md-tab-group>
   
-  <div class="card-panel left-align">
+  <div class="card-panel light-blue lighten-2 left-align">
     <h4>Per informazioni contattare</h4>
     <div class="row">
       <div *ngFor="let person of staff" class="hide-on-small-only">
@@ -67,12 +67,12 @@
               </div>
         </div>		
       </div>
-      <div class="card-panel center-align db-error" *ngIf="!staff">
+      <div class="card-panel light-blue lighten-2 center-align db-error" *ngIf="!staff">
         <h4>Caricamento contatti</h4>
       </div>
     </div>
   </div>
-  <div class="card-panel right-align" *ngIf="foto">
+  <div class="card-panel light-blue lighten-2 right-align" *ngIf="foto">
     <h4>Alcune foto dell'Ice Team Sanve</h4>
     <div class="row">
       <img src={{pic.path}} class="col l4 m6 s12 materialboxed iceteam" *ngFor="let pic of foto">	
