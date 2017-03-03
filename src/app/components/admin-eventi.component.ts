@@ -11,6 +11,11 @@ declare var $: any;
 })
 export class AdminEventiComponent implements OnInit, AfterViewInit {
   nome: string;
+  data: any;
+  oraInizio: any;
+  oraFine: any;
+  descrizione: any;
+
   events: Eventi[];
 
   giorno: string;
@@ -38,7 +43,23 @@ export class AdminEventiComponent implements OnInit, AfterViewInit {
     });
   }
 
-  creaEvento (evento: Eventi) {
+  creaEvento () {
+    let event = {
+      nome: this.nome,
+      data: this.data,
+      oraInizio: this.oraInizio,
+      oraFine: this.oraFine,
+      descrizione: this.descrizione,
+      fotoMin: '',
+      foto: ''
+    }
+
+    console.log(event);
+
+    this.inserisciEvento(event);
+  }
+
+  inserisciEvento (evento: Eventi) {
     this.eventiService.creaEvento(evento)
       .then((nuovoEvento: Eventi) => {
         this.createHandler(nuovoEvento);
