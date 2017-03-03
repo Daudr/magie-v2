@@ -13,7 +13,7 @@
 		</md-input-container>
 		<br>
 		<md-input-container class="admin-input">
-	    	<input mdInput type="date" placeholder="Data" required>
+	    	<input mdInput type="date" placeholder="Data" class="datepicker" required>
 	    </md-input-container>
 	    <br><br>
 	    <md-input-container>
@@ -29,9 +29,25 @@
 			<br>
 		</div>
 
-		Foto min: <input type="file" accept="image/jpg" placeholder="Foto">
-		<br><br>
-		Foto intera: <input type="file" accept="image/jpg" placeholder="Foto completa">
+		<div class="file-field input-field">
+			<div class="btn">
+				<span>Foto min</span>
+				<input type="file" accept="image/jpg">
+			</div>
+			<div class="file-path-wrapper">
+				<input class="file-path validate" type="text">
+			</div>
+		</div>
+
+		<div class="file-field input-field">
+			<div class="btn">
+				<span>Foto min</span>
+				<input type="file" accept="image/jpg">
+			</div>
+			<div class="file-path-wrapper">
+				<input class="file-path validate" type="text">
+			</div>
+		</div>
 
 		<div class="center-align btn-group">
 			<a (click)="creaEvento()" class="btn-flat white-text light-blue text-darken-4">Inserisci</a>
