@@ -10,6 +10,7 @@ declare var $: any;
 	templateUrl: './admin-eventi.component.html'
 })
 export class AdminEventiComponent implements OnInit, AfterViewInit {
+  nome: string;
   events: Eventi[];
 
   giorno: string;
