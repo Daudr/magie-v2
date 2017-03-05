@@ -50,8 +50,8 @@
 		</div>
 
 		<div class="center-align btn-group">
-			<a (click)="creaEvento()" class="btn-flat white-text light-blue text-darken-4">Inserisci</a>
-			<input type="reset" class="btn-flat white-text light-blue text-darken-4">
+			<a (click)="creaEvento()" class="btn-flat white-text light-blue text-darken-4 margin-btn">Inserisci</a>
+			<input type="reset" class="btn-flat white-text light-blue text-darken-4 margin-btn">
 		</div>
 	</form>
 </div>
@@ -90,8 +90,8 @@
 					Foto intera: <input type="file" accept="image/jpg" placeholder="Foto completa">
 
 					<div class="center-align btn-group">
-						<button (click)="aggiornaEvento()" class="btn-flat white-text light-blue text-darken-4">Inserisci</button>
-						<input type="reset" class="btn-flat white-text light-blue text-darken-4">
+						<a (click)="aggiornaEvento()" class="btn-flat white-text light-blue text-darken-4 margin-btn">Inserisci</a>
+						<input type="reset" class="btn-flat white-text light-blue text-darken-4 margin-btn">
 					</div>
 				</form>
 			</div>
@@ -100,9 +100,9 @@
 </div>
 <div id="del-ev" class="card-panel">
   <div *ngFor="let event of events" class="row valign-wrapper">
-    <div class="col s8 valign">{{event.nome}} - {{traduciData(event.data)}}</div>
-    <div class="col s4">
-    	<button (click)="rimuoviEvento(event)" class="btn-flat white-text light-blue text-darken-4">Inserisci</button>
+    <div class="col l8 s10 valign">{{event.nome}} - {{traduciData(event.data)}}</div>
+    <div class="col l4 s2">
+    	<button (click)="rimuoviEvento(event)" class="btn-flat white-text light-blue text-darken-4">Elimina</button>
     </div>
   </div>
 </div>
