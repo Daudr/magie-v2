@@ -46,7 +46,7 @@ export class AdminEventiComponent implements OnInit, AfterViewInit {
   creaEvento () {
     let event = {
       nome: this.nome,
-      data: this.data,
+      data: new Date(this.data),
       oraInizio: this.oraInizio,
       oraFine: this.oraFine,
       descrizione: this.descrizione,
