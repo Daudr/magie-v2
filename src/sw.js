@@ -12,7 +12,7 @@ self.addEventListener('install', function(event) {
       return cache.addAll([
         '/',
         'index.html',
-        '/assets',
+        '/assets/*.*',
         'inline.bundle.js',
         'styles.bundle.js',
         'vendor.bundle.js',
