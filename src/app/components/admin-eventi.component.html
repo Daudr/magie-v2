@@ -85,9 +85,25 @@
 						<br>
 					</div>
 
-					Foto min: <input type="file" accept="image/jpg" placeholder="Foto">
-					<br><br>
-					Foto intera: <input type="file" accept="image/jpg" placeholder="Foto completa">
+					<div class="file-field input-field">
+						<div class="btn btn-flat light-blue">
+							<span>Foto min</span>
+							<input type="file" accept="image/jpg">
+						</div>
+						<div class="file-path-wrapper">
+							<input class="file-path validate" type="text">
+						</div>
+					</div>
+
+					<div class="file-field input-field">
+						<div class="btn btn-flat light-blue">
+							<span>Foto</span>
+							<input type="file" accept="image/jpg">
+						</div>
+						<div class="file-path-wrapper">
+							<input class="file-path validate" type="text">
+						</div>
+					</div>
 
 					<div class="center-align btn-group">
 						<a (click)="aggiornaEvento()" class="btn-flat white-text light-blue text-darken-4 margin-btn">Inserisci</a>
@@ -100,8 +116,8 @@
 </div>
 <div id="del-ev" class="card-panel">
   <div *ngFor="let event of events" class="row valign-wrapper">
-    <div class="col l8 s10 valign">{{event.nome}} - {{traduciData(event.data)}}</div>
-    <div class="col l4 s2">
+    <div class="col l8 m8 s7 valign">{{event.nome}} - {{traduciData(event.data)}}</div>
+    <div class="col l4 m4 s5">
     	<button (click)="rimuoviEvento(event)" class="btn-flat white-text light-blue text-darken-4">Elimina</button>
     </div>
   </div>
