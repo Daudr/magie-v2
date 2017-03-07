@@ -74,11 +74,6 @@ export class IndexComponent implements OnInit, AfterViewInit {
     	}
     }
 
-	isset(str: string): boolean {
-		if(str != null)	return true;
-		else return false;
-	}
-
 	openEventDialog(event: Eventi) {
 		this.dialog.closeAll();
 		this.dialogRef = this.dialog.open(EventDialog);
@@ -86,8 +81,13 @@ export class IndexComponent implements OnInit, AfterViewInit {
 	}
 
 	isOpen(): string {
-		if(this.data >= new Date(2016, 11, 23) || this.data <= new Date(2017, 3, 5))	return 'APERTI';
+		console.log('isOpen function');
+		if((this.data >= new Date(2016, 11, 23)) && (this.data <= new Date(2017, 3, 5))){
+			console.log(this.data);
+			return 'APERTI';
+		}
 		else {
+			console.log('closed');
 			this.apertura = null;		// Se siamo chiusi non apriamo
 			this.aperturaCorsi = null;	// Se siamo chiusi i corsi non si fanno
 			return 'CHIUSI';

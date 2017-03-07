@@ -12,10 +12,10 @@
 		<p>
 			Oggi è {{ traduciData() }} e noi siamo <strong>{{ isOpen() }}</strong>
 		</p>
-		<p *ngIf="isset(apertura)">
+		<p *ngIf="apertura">
 			Siamo aperti dalle <strong><time>{{ apertura }}</time></strong> alle <strong><time>{{ chiusura }}</time></strong> al pubblico
 		</p>
-		<p *ngIf="isset(aperturaCorsi)">
+		<p *ngIf="aperturaCorsi">
 			I corsi si svolgono dalle <strong><time>{{ aperturaCorsi }}</time></strong> alle <strong><time>{{ chiusuraCorsi }}</time></strong>
 		</p>
     	<!-- <p class="red-text">Si avvisa che:</p>
