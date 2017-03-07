@@ -17,7 +17,7 @@ declare var $: any;
 	templateUrl: './index.component.html',
 })
 export class IndexComponent implements OnInit, AfterViewInit {
-	data: Date;
+	data: Date = new Date();
 	giorno: String;
 	mese: String;
 	numero: number;
@@ -95,80 +95,80 @@ export class IndexComponent implements OnInit, AfterViewInit {
 	}
 
 	traduciData(): String {				// METODO PER TRADURRE LA DATA
-		this.data = new Date();
+		if((this.data >= new Date(2016, 11, 23)) && (this.data <= new Date(2017, 3, 5))){
+			switch (this.data.getDay()) {
+				default:
+					console.log("errore nel reperire giorno.");
+				case 0:
+					this.giorno = "Domenica";
+					this.apertura = '10:00';
+					this.chiusura = '19:00';
+					break;
+				case 1:
+					this.giorno = "Lunedì";
+					this.apertura = '15:00';
+					this.chiusura = '16:30';
+					this.aperturaCorsi = '16:30';
+					this.chiusuraCorsi = '18:30';
+					break;
+				case 2:
+					this.giorno = "Martedì";
+					this.apertura = '15:00';
+					this.chiusura = '16:30';
+					this.aperturaCorsi = '16:30';
+					this.chiusuraCorsi = '18:30';
+					break;
+				case 3:
+					this.giorno = "Mercoledì";
+					this.apertura = '15:00';
+					this.chiusura = '16:30';
+					this.aperturaCorsi = '16:30';
+					this.chiusuraCorsi = '18:30';
+					break;
+				case 4:
+					this.giorno = "Giovedì";
+					this.apertura = '15:00';
+					this.chiusura = '16:30';
+					this.aperturaCorsi = '16:30';
+					this.chiusuraCorsi = '18:30';
+					break;
+				case 5:
+					this.giorno = "Venerdì";
+					this.apertura = '15:00';
+					this.chiusura = '16:30';
+					this.aperturaCorsi = '16:30';
+					this.chiusuraCorsi = '18:30';
+					break;
+				case 6:
+					this.giorno = "Sabato";
+					this.apertura = '14:30';
+					this.chiusura = '22:00';
+					break;
+			}
 
-		switch (this.data.getDay()) {
-			default:
-				console.log("errore nel reperire giorno.");
-			case 0:
-				this.giorno = "Domenica";
-				this.apertura = '10:00';
-				this.chiusura = '19:00';
-				break;
-			case 1:
-				this.giorno = "Lunedì";
-				this.apertura = '15:00';
-				this.chiusura = '16:30';
-				this.aperturaCorsi = '16:30';
-				this.chiusuraCorsi = '18:30';
-				break;
-			case 2:
-				this.giorno = "Martedì";
-				this.apertura = '15:00';
-				this.chiusura = '16:30';
-				this.aperturaCorsi = '16:30';
-				this.chiusuraCorsi = '18:30';
-				break;
-			case 3:
-				this.giorno = "Mercoledì";
-				this.apertura = '15:00';
-				this.chiusura = '16:30';
-				this.aperturaCorsi = '16:30';
-				this.chiusuraCorsi = '18:30';
-				break;
-			case 4:
-				this.giorno = "Giovedì";
-				this.apertura = '15:00';
-				this.chiusura = '16:30';
-				this.aperturaCorsi = '16:30';
-				this.chiusuraCorsi = '18:30';
-				break;
-			case 5:
-				this.giorno = "Venerdì";
-				this.apertura = '15:00';
-				this.chiusura = '16:30';
-				this.aperturaCorsi = '16:30';
-				this.chiusuraCorsi = '18:30';
-				break;
-			case 6:
-				this.giorno = "Sabato";
-				this.apertura = '14:30';
-				this.chiusura = '22:00';
-				break;
+			switch (this.data.getMonth()) {
+				default:
+					console.log("Errore nel reperire mese.");
+					break;
+				case 0:
+					this.mese = "Gennaio";
+					break;
+				case 1:
+					this.mese = "Febbraio";
+					break;
+				case 2:
+					this.mese = "Marzo";
+					break;
+				case 10:
+					this.mese = "Novembre";
+					break;
+				case 11:
+					this.mese = "Dicembre";
+					break;
+			}
+
+			return this.giorno + " " + this.data.getDate() + " " + this.mese;
 		}
-
-		switch (this.data.getMonth()) {
-			default:
-				console.log("Errore nel reperire mese.");
-				break;
-			case 0:
-				this.mese = "Gennaio";
-				break;
-			case 1:
-				this.mese = "Febbraio";
-				break;
-			case 2:
-				this.mese = "Marzo";
-				break;
-			case 10:
-				this.mese = "Novembre";
-				break;
-			case 11:
-				this.mese = "Dicembre";
-				break;
-		}
-
-		return this.giorno + " " + this.data.getDate() + " " + this.mese; 
 	}
 
 	fade_img (): void {
