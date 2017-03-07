@@ -69,7 +69,7 @@ export class IndexComponent implements OnInit, AfterViewInit {
     ngAfterViewInit () {
     	if(!this.cookieService.get('viewed')) {
     		this.dialogRef = this.dialog.open(DialogAlert);
-    		this.cookieService.put('viewed', 'true');
+    		this.cookieService.put('viewed', 'true', {expires: '2020-31-12'});
     		// this.cookieService.put('allowAdmin', 'true', {expires: '2020-01-01'});
     	}
     }
@@ -80,7 +80,7 @@ export class IndexComponent implements OnInit, AfterViewInit {
 		this.dialogRef.componentInstance.event = event;
 	}
 
-	isOpen(): string {
+	isOpen(): String {
 		console.log('isOpen function');
 		if((this.data >= new Date(2016, 11, 23)) && (this.data <= new Date(2017, 3, 5))){
 			console.log(this.data);
