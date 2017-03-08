@@ -76,7 +76,7 @@ export class IndexComponent implements OnInit, AfterViewInit {
     ngAfterViewInit () {
     	if(!this.cookieService.get('viewed')) {
     		this.dialogRef = this.dialog.open(DialogAlert);
-    		this.cookieService.put('viewed', 'true', {expires: '2020-31-12'});
+    		this.cookieService.put('viewed', 'true', {expires: new Date(2020, 12, 31)});
     		// this.cookieService.put('allowAdmin', 'true', {expires: '2020-01-01'});
     	}
     }
@@ -92,7 +92,6 @@ export class IndexComponent implements OnInit, AfterViewInit {
 			return 'APERTI';
 		}
 		else {
-			console.log('closed');
 			this.apertura = null;		// Se siamo chiusi non apriamo
 			this.aperturaCorsi = null;	// Se siamo chiusi i corsi non si fanno
 			return 'CHIUSI';
