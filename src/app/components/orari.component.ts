@@ -144,9 +144,9 @@ export class OrariComponent  implements OnInit {
 				          		{{person.disponibilita}}<br><br>
 				          		Cellulare:<br>
 				          		{{person.telefono}}<br><br>
-				          		Email:<br>
-				          		{{person.email}}<br>
+				          		Email:
 				          	</p>
+				          	<p>{{person.email}}<br></p>
 			            </div>
 			            <div class="card-action center-align">
 			              <a href="tel:{{person.telefono}}" class="btn btn-flat light-blue darken-4 white-text waves-effect">Chiama</a>
@@ -216,9 +216,9 @@ export class DialogPomeriggio implements OnInit {
 				          		{{person.disponibilita}}<br><br>
 				          		Cellulare:<br>
 				          		{{person.telefono}}<br><br>
-				          		Email:<br>
-				          		{{person.email}}<br>
+				          		Email:
 				          	</p>
+				          	<p>{{person.email}}<br></p>
 			            </div>
 			            <div class="card-action center-align">
 			              <a href="tel:{{person.telefono}}" class="btn btn-flat light-blue darken-4 white-text waves-effect">Chiama</a>
