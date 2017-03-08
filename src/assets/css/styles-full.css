@@ -1291,3 +1291,7 @@ li.white-text {
   text-transform: uppercase;
   margin: 10px 0;
 }
+
+.p-email-dialog {
+  font-size: 0.9em;
+}
