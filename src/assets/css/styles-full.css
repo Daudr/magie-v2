@@ -1281,3 +1281,14 @@ li.white-text {
   letter-spacing: .5px;
   padding: 0 2rem;
 }
+
+.ul-link {
+  text-transform: uppercase;
+  margin: 0 10px;
+}
+
+.mobile-li {
+  text-transform: uppercase;
+  text-align: center;
+  margin: 10px 0;
+}

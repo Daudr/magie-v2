@@ -646,3 +646,14 @@ img.dialog-evento {
 .p-dialog {
 	font-size: .999em;
 }
+
+.ul-link {
+	text-transform: uppercase;
+	margin: 0 10px;
+}
+
+.mobile-li {
+	text-transform: uppercase;
+	text-align: center;
+	margin: 10px 0;
+}
