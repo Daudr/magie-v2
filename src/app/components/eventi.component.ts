@@ -1,6 +1,6 @@
 import { Component, OnInit, AfterViewInit } from '@angular/core';
 import { MdDialog, MdDialogRef } from '@angular/material';
-
+import { Title } from '@angular/platform-browser';
 
 import { EventiService } from '../services/eventi.service';
 
@@ -23,7 +23,7 @@ export class EventiComponent implements OnInit {
 
 	dialogRef: MdDialogRef<EventDialog>;
 
-	constructor(private eventiService: EventiService, public dialog: MdDialog) { }
+	constructor(private eventiService: EventiService, public dialog: MdDialog, private title: Title) { }
 
 	ngOnInit() {
 		this.eventiService
@@ -50,6 +50,8 @@ export class EventiComponent implements OnInit {
 					return soonEvents;
 				});
 			});
+
+		this.title.setTitle('Magie D\'Inverno - Eventi');
 	}
 
 	ngAfterViewInit() {

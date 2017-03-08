@@ -22,12 +22,6 @@ export class AppComponent implements OnInit {
 
 	public constructor(private titleService: Title, public dialog: MdDialog) { }
 
-	public setTitle (newTitle: string) {
-		this.titleService.setTitle( newTitle );
-
-		// this.sidenav.toggle();
-	}
-
 	ngOnInit(){
 		$(document).ready(function(){
 			$('.materialboxed').materialbox();

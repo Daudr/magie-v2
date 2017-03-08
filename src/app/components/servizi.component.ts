@@ -1,5 +1,5 @@
 import { Component, OnInit, AfterViewInit } from '@angular/core';
-import { Parallax, ParallaxConfig } from 'ng2-parallax/commonjs';
+import { Title } from '@angular/platform-browser';
 import { Servizio } from '../servizio';
 
 declare var $: any;
@@ -47,10 +47,14 @@ export class ServiziComponent implements OnInit, AfterViewInit {
 		},
 	];
 
+	constructor (private title: Title) {}
+
 	ngOnInit() {
 		if(!($('body').hasClass('back_img'))){
 			$('body').addClass('back_img');
 		}
+
+		this.title.setTitle('Magie D\'Inverno - Servizi');
 	}
 
 	ngAfterViewInit () {

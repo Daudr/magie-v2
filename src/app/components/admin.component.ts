@@ -1,4 +1,5 @@
 import  { Component, OnInit, AfterViewInit } from '@angular/core';
+import { Title } from '@angular/platform-browser';
 
 import { CookieService } from 'angular2-cookie/services/cookies.service';
 
@@ -10,9 +11,11 @@ export class AdminComponent implements OnInit, AfterViewInit {
 	admin: boolean = true;
 	trueAdmin: boolean = false;
 
-	constructor (private cookieService: CookieService) { }
+	constructor (private cookieService: CookieService, private title: Title) { }
 
-	ngOnInit(){ }
+	ngOnInit(){
+		this.title.setTitle('Admin');
+	}
 
 	ngAfterViewInit() {
 		if(!($('.mat-tab-list').hasClass('light-blue lighten-2 tab'))) {

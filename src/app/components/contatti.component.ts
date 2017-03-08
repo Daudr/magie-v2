@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { DomSanitizer, SafeStyle } from '@angular/platform-browser';
+import { Title } from '@angular/platform-browser';
 
 import { StaffService } from '../services/staff.service';
 
@@ -15,7 +15,7 @@ export class ContattiComponent implements OnInit {
 
 	staff: Staff[];
 
-	constructor(private staffService: StaffService) { }
+	constructor(private staffService: StaffService, private title: Title) { }
 
 	ngOnInit() {
 		this.staffService
@@ -25,6 +25,8 @@ export class ContattiComponent implements OnInit {
 					return staff;
 				}));
 			});
+
+		this.title.setTitle('Magie D\'Inverno - Contatti');
 	}
 }
 

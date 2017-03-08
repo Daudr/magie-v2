@@ -1,4 +1,5 @@
 import {Component, OnInit } from '@angular/core';
+import { Title } from '@angular/platform-browser';
 
 import { StaffService } from '../services/staff.service';
 
@@ -28,7 +29,7 @@ export class IceTeamComponent implements OnInit {
 		}
 	];
 
-	constructor(private staffService: StaffService) { }
+	constructor(private staffService: StaffService, private title: Title) { }
 
 	ngOnInit () {
 		this.staffService
@@ -38,5 +39,7 @@ export class IceTeamComponent implements OnInit {
 					return staff;
 				}));
 			});
+
+		this.title.setTitle('Ice Team Sanve');
 	}
 }

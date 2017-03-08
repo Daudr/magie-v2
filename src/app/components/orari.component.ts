@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { MdSnackBar, MdDialog } from '@angular/material';
+import { Title } from '@angular/platform-browser';
 
 import { Staff } from '../staff';
 import { Orario } from '../orario';
@@ -23,12 +24,14 @@ export class OrariComponent  implements OnInit {
 	giorno: string;
 	mese: string;
 
-	constructor(public snackBar: MdSnackBar, public dialog: MdDialog) { }
+	constructor(public snackBar: MdSnackBar, public dialog: MdDialog, private title: Title) { }
 
 	ngOnInit() {
 		if(window.screen.width < 992) {		// Apre il snackbar se la larghezza del dispositivo e` inferiore a 992px
 			this.openSnackBar();
 		}
+
+		this.title.setTitle('Magie D\'Inverno - Orari e Prezzi');
 	}
 
 	openDialogPomeriggio() {

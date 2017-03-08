@@ -1,4 +1,5 @@
 import { Component, OnInit, AfterViewInit, Input } from '@angular/core';
+import { Title } from '@angular/platform-browser';
 
 import { Eventi } from '../eventi';
 import { EventiService } from '../services/eventi.service';
@@ -31,7 +32,7 @@ export class AdminEventiComponent implements OnInit, AfterViewInit {
   @Input()
   deleteHandler: Function;
   
-  constructor (private eventiService: EventiService) { }
+  constructor (private eventiService: EventiService, private title: Title) { }
 
   ngOnInit () {
     this.eventiService
@@ -41,6 +42,8 @@ export class AdminEventiComponent implements OnInit, AfterViewInit {
         return events;
       });
     });
+
+    this.title.setTitle('Admin eventi');
   }
 
   creaEvento () {

@@ -1,5 +1,6 @@
 import { Component, OnInit, AfterViewInit } from '@angular/core';
 import { MdDialog, MdDialogRef } from '@angular/material';
+import { Title } from '@angular/platform-browser';
 
 import { CookieService } from 'angular2-cookie/services/cookies.service';
 
@@ -54,7 +55,11 @@ export class IndexComponent implements OnInit, AfterViewInit {
 		},
 	];
 
-	constructor(private eventiService: EventiService, private cookieService: CookieService, public dialog: MdDialog) { }
+	constructor(
+		private eventiService: EventiService,
+		private cookieService: CookieService,
+		public dialog: MdDialog,
+		private title: Title) { }
 
 	ngOnInit() {
         this.eventiService
@@ -64,6 +69,8 @@ export class IndexComponent implements OnInit, AfterViewInit {
                     return soonEvents;
                 });
             });
+
+        this.title.setTitle('Magie D\'Inverno - Home');
     }
 
     ngAfterViewInit () {
