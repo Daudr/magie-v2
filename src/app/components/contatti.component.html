@@ -9,11 +9,11 @@
 		<h4 class="hide-on-med-and-up">Per informazioni</h4>
 
 		<div class="row top">
-			<div *ngFor="let person of staff" class="hide-on-small-only">
-				<div class="col m6">
+			<div *ngFor="let person of staff">
+				<div class="col m6 s12">
 					<div class="card light-blue lighten-1">
 			            <div class="card-content white-text">
-			              	<div class="col l3 m4" *ngIf="person.icon">
+			              	<div class="col l3 m4 s4" *ngIf="person.icon">
 				              <img src={{person.icon}} class="circle responsive-img">
 				          	</div>
 				          	<span class="card-title">{{person.nome}}</span>
@@ -28,14 +28,16 @@
 			            </div>
 			            <div class="card-action center-align">
 			              <a href="tel:{{person.telefono}}" class="btn btn-flat light-blue darken-4 white-text waves-effect">Chiama</a>
+			              <br class="hide-on-med-and-up">
+			              <br class="hide-on-med-and-up">
 			              <a href="mailto:{{person.email}}" class="btn btn-flat white-text light-blue darken-4 waves-effect" disabled>Invia email</a>
 			            </div>
 			        </div>
 				</div>
 			</div>
 
-			<div *ngFor="let person of staff" class="hide-on-med-and-up">
-				<div class="col s8">
+			<!-- <div *ngFor="let person of staff" class="hide-on-med-and-up">
+				<div class="col s12">
 					<div class="card light-blue lighten-1">
 			            <div class="card-content white-text">
 			              	<div class="col s4" *ngIf="person.icon">
@@ -57,7 +59,7 @@
 			              <a href="mailto:{{person.email}}" class="btn btn-flat white-text light-blue darken-4 waves-effect" disabled>Invia email</a>
 			            </div>
 			        </div>
-				</div>
+				</div> -->
 			</div>
 
 			<div class="card-panel center-align db-error" *ngIf="!staff">

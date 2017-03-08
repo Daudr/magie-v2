@@ -707,7 +707,7 @@ video#bgvid {
    
   min-width: 100%; min-height: 1080px;
    
-  width: auto; height: auto; z-index: -100;
+  width: auto; height: 100%; z-index: -100;
   
   z-index: -100;
 }
