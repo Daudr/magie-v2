@@ -13,7 +13,7 @@
 				<div class="col m6">
 					<div class="card light-blue lighten-1">
 			            <div class="card-content white-text">
-			              	<div class="col l3" *ngIf="person.icon">
+			              	<div class="col l3 m4" *ngIf="person.icon">
 				              <img src={{person.icon}} class="circle responsive-img">
 				          	</div>
 				          	<span class="card-title">{{person.nome}}</span>
@@ -35,7 +35,7 @@
 			</div>
 
 			<div *ngFor="let person of staff" class="hide-on-med-and-up">
-				<div class="col m8">
+				<div class="col s8">
 					<div class="card light-blue lighten-1">
 			            <div class="card-content white-text">
 			              	<div class="col s4" *ngIf="person.icon">
