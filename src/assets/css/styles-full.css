@@ -1295,3 +1295,8 @@ li.white-text {
 .p-email-dialog {
   font-size: 0.9em;
 }
+
+.admin-form {
+  position: fixed;
+  top: 10%;
+}

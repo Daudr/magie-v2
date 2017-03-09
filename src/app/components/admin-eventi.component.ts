@@ -47,19 +47,23 @@ export class AdminEventiComponent implements OnInit, AfterViewInit {
   }
 
   creaEvento () {
-    let event = {
-      nome: this.nome,
-      data: new Date(this.data),
-      oraInizio: this.oraInizio,
-      oraFine: this.oraFine,
-      descrizione: this.descrizione,
-      fotoMin: '',
-      foto: ''
+    if (this.nome || this.data || this.oraInizio ) {
+      let event = {
+        nome: this.nome,
+        data: new Date(this.data),
+        oraInizio: this.oraInizio,
+        oraFine: this.oraFine,
+        descrizione: this.descrizione,
+        fotoMin: '',
+        foto: ''
+      }
+
+      console.log(event);
+
+      this.inserisciEvento(event);
+    } else {
+      console.log('Informazioni mancanti sul form');
     }
-
-    console.log(event);
-
-    this.inserisciEvento(event);
   }
 
   inserisciEvento (evento: Eventi) {
