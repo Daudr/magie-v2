@@ -1304,7 +1304,7 @@ li.white-text {
 div.cookie-policy {
   position: fixed; top: 0; left: 0;
   background-color: #000;
-  z-index: 99999;
+  z-index: 999;
   padding: 15px;
   width: 100%;
 }
