@@ -1,6 +1,8 @@
 import { Component, OnInit, AfterViewInit } from '@angular/core';
 import { Title } from '@angular/platform-browser';
-import { MdDialog, MdDialogRef, MdDialogConfig, MdSidenavModule, MdSidenav } from '@angular/material';
+import { MdDialog, MdDialogRef, MdDialogConfig } from '@angular/material';
+
+import { CookieService } from 'angular2-cookie/services/cookies.service';
 
 import { StaffService } from './services/staff.service';
 import { EventiService } from './services/eventi.service';
@@ -19,13 +21,16 @@ export class AppComponent implements OnInit {
 	dialogRef: MdDialogRef<any>;
 	email: string;
 	name: string;
+	cookieAccepted: any;
 
-	public constructor(private titleService: Title, public dialog: MdDialog) { }
+	public constructor(private titleService: Title, public dialog: MdDialog, private cookieService: CookieService) { }
 
 	ngOnInit(){
 		$(document).ready(function(){
 			$('.materialboxed').materialbox();
 		});
+
+		this.cookieAccepted = this.cookieService.get('cookieAccepted');
 	}
 
 	openNews() {
@@ -44,6 +49,12 @@ export class AppComponent implements OnInit {
 
   	allowAdmin () {
   		console.log("admin allowed");
+  	}
+
+  	hideCookieBanner () {
+  		console.log('accepted cookie policy');
+  		this.cookieService.put('cookieAccepted', 'true', {expires: new Date(2020, 12, 31)});
+  		this.cookieAccepted = this.cookieService.get('cookieAccepted');
   	}
 }
 
