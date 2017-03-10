@@ -37,21 +37,25 @@ export class IndexComponent implements OnInit, AfterViewInit {
 			nome: 'Pista di pattinaggio',
 			descrizione: '',
 			foto: '../assets/icons/services/pista1.jpg',
+			id: 'pista'
 		},
 		{
 			nome: 'Taverna on Ice',
 			descrizione: '',
 			foto: '../assets/icons/services/taverna.jpg',
+			id: 'taverna'
 		},
 		{
 			nome: 'Noleggio Pattini',
 			descrizione: '',
 			foto: '../assets/icons/services/pattini.jpg',
+			id: 'pattini'
 		},
 		{
 			nome: 'Corsi di pattinaggio',
 			descrizione: '',
 			foto: '../assets/icons/services/corsimattina.jpg',
+			id: 'corsi'
 		},
 	];
 
