@@ -18,6 +18,9 @@
 		<p *ngIf="aperturaCorsi">
 			I corsi si svolgono dalle <strong><time>{{ aperturaCorsi }}</time></strong> alle <strong><time>{{ chiusuraCorsi }}</time></strong>
 		</p>
+		<p *ngIf="isOpen()==='CHIUSI'">
+			Torna a trovarci spesso per sapere quando riapriremo.
+		</p>
     	<!-- <p class="red-text">Si avvisa che:</p>
 		<p class="red-text">Sabato 18 febbraio la pista chiude alle 19.</p>
 		<p class="red-text">Domenica 19 febbraio gli orari cambiano, cliccare sotto per avere più informazioni.</p> -->

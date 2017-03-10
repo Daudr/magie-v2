@@ -42,8 +42,6 @@ export class AdminEventiComponent implements OnInit, AfterViewInit {
         return events;
       });
     });
-
-    this.title.setTitle('Admin eventi');
   }
 
   creaEvento () {
@@ -92,10 +90,7 @@ export class AdminEventiComponent implements OnInit, AfterViewInit {
       $('.collapsible').collapsible();
     });
 
-    $('.datepicker').pickadate({
-      selectMonths: true,
-      selectYears: 5
-    });
+    this.title.setTitle('Admin eventi');
   }
 
   traduciData(dataEvento: Date): String {

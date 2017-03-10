@@ -1,5 +1,4 @@
-import { Component, OnInit, AfterViewInit } from '@angular/core';
-import { Title } from '@angular/platform-browser';
+import { Component, AfterViewInit } from '@angular/core';
 
 import { Staff } from '../staff';
 import { Foto } from '../foto';
@@ -8,13 +7,7 @@ import { Foto } from '../foto';
 	selector: 'hockey',
 	templateUrl: './hockey.component.html'
 })
-export class HockeyComponent implements OnInit, AfterViewInit {
-
-	constructor (private title: Title) { }
-
-	ngOnInit () {
-		this.title.setTitle('Ice Team Sanve - Hockey su ghiaccio');
-	}
+export class HockeyComponent implements AfterViewInit {
 
 	ngAfterViewInit() {
 		if(!($('.mat-tab-list').hasClass('light-blue lighten-2 tab'))) {
