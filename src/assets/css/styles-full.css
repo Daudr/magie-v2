@@ -1271,6 +1271,12 @@ mat-tab-header {
   }
 }
 
+@media only screen and (max-width: 360px) {
+  .p-email-dialog {
+    font-size: 0.8em;
+  }
+}
+
 .iceteam-container {
   width: 95%;
   margin: 0 auto;
