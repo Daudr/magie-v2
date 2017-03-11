@@ -156,7 +156,8 @@ export class OrariComponent  implements OnInit {
 				</div>
 			</div>
 			<div class="card-panel center-align db-error" *ngIf="!staff">
-				<h3>Errore nel caricamento dei contatti</h3>
+				<h3 class="hide-on-small-only">Caricamento dei contatti</h3>
+				<h4 class="hide-on-med-and-up">Caricamento dei contatti</h4>
 			</div>
 		</div>
 	`
