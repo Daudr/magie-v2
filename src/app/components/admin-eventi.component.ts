@@ -125,6 +125,7 @@ export class AdminEventiComponent implements OnInit, AfterViewInit {
     switch (grn.getMonth()) {
       default:
         console.log("Errore nel reperire mese.");
+        this.mese = "Un mese";
         break;
       case 0:
         this.mese = "Gennaio";
@@ -143,6 +144,6 @@ export class AdminEventiComponent implements OnInit, AfterViewInit {
         break;
     }
 
-    return this.giorno + " " + grn.getDate() + " " + this.mese; 
+    return this.giorno + " " + grn.getDate() + " " + this.mese + grn.getFullYear();
   }
 }
