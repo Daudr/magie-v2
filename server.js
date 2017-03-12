@@ -186,7 +186,7 @@ app.put("/api/eventi/:id", function(req, res){
 	var evento = req.body;
 	delete evento._id;
 
-	evt.eventi.updateOne({_id: new ObjectID(req.params.id)}, evento, function(err, evento){
+	evt.eventi.updateOne({_id: ObjectID(req.params.id)}, evento, function(err, evento){
 		if (err) {
 			handleError(res, err.message, "Failed to update event")
 		} else {
