@@ -1332,3 +1332,12 @@ a.cookie-policy-cancel {
 md-sidenav, md-backdrop {
   position: fixed !important;
 }
+
+md-sidenav {
+  max-height: 100vh;
+  overflow: scroll;
+}
+
+.noscroll {
+  overflow: hidden;
+}

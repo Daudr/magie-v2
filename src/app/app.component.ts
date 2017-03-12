@@ -17,7 +17,7 @@ declare var $: any;
 		EventiService
 	]
 })
-export class AppComponent implements OnInit {
+export class AppComponent implements OnInit, AfterViewInit {
 	dialogRef: MdDialogRef<any>;
 	email: string;
 	name: string;
@@ -31,6 +31,20 @@ export class AppComponent implements OnInit {
 		});
 
 		this.cookieAccepted = this.cookieService.get('cookieAccepted');
+	}
+
+	ngAfterViewInit () { }
+
+	addNoScroll (sidenav) {
+		if(sidenav._isOpened) {
+			if(!$('body').hasClass('noscroll')) {
+				$('body').addClass('noscroll');
+			}
+		} else {
+			if($('body').hasClass('noscroll')) {
+				$('body').removeClass('noscroll')
+			}
+		}
 	}
 
 	openNews() {
@@ -52,7 +66,6 @@ export class AppComponent implements OnInit {
   	}
 
   	hideCookieBanner () {
-  		console.log('accepted cookie policy');
   		this.cookieService.put('cookieAccepted', 'true', {expires: new Date(2020, 12, 31)});
   		this.cookieAccepted = this.cookieService.get('cookieAccepted');
   	}
