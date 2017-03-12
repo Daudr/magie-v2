@@ -165,6 +165,6 @@ export class AdminEventiComponent implements OnInit, AfterViewInit {
         break;
     }
 
-    return this.giorno + " " + grn.getDate() + " " + this.mese + grn.getFullYear();
+    return this.giorno + " " + grn.getDate() + " " + this.mese + " " + grn.getFullYear();
   }
 }
