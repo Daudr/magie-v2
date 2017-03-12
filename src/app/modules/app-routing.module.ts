@@ -10,6 +10,7 @@ import { ContattiComponent } from '../components/contatti.component';
 import { AdminComponent } from '../components/admin.component';
 import { CreditsComponent } from '../components/credits.component';
 import { IceTeamComponent } from '../components/ice-team.component';
+import { PrivacyComponent } from '../components/privacy.component';
 
 const routes: Routes = [
 	{ path: '', redirectTo: '/index', pathMatch: 'full' },
@@ -40,6 +41,10 @@ const routes: Routes = [
 	{
 		path: 'credits',
 		component: CreditsComponent
+	},
+	{
+		path: 'privacy',
+		component: PrivacyComponent
 	},
 	{
 		path: 'iceteam',

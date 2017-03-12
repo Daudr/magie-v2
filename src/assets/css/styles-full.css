@@ -1345,3 +1345,8 @@ md-sidenav {
 .credit-img {
   width: 100%;
 }
+
+.privacy-frame {
+  width: 100%;
+  min-height: 100vh;
+}
