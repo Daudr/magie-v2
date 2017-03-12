@@ -156,7 +156,7 @@ app.post("/api/eventi", function(req, res){
 			foto: req.body.foto
 		};
 
-		evt.eventi.insertOne(evento, function(err, evento) {
+		evt.eventi.insert(evento, function(err, evento) {
 			if(err) {
 				handleError(res, err.message, "Failed to insert event");
 			} else {
