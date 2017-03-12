@@ -178,7 +178,7 @@ app.get("/api/eventi/:id", function(req, res){
 		if (err) {
 			handleError(res, err.message, "Failed to load event.");
 		}
-		res.status(200).json(evento);
+		res.status(200).json(doc);
 	});
 });
 
