@@ -7,7 +7,7 @@
 <div id="agg-ev" class="card-panel">
 	<h4>Aggiungi evento</h4>
 
-	<form class="center-align">
+	<form class="center-align" (submit)="creaEvento()">
 		<md-input-container class="admin-input">
 		    <input mdInput placeholder="Nome" name="nome" [(ngModel)]="nome" required>
 		</md-input-container>
@@ -54,7 +54,7 @@
 		</div>
 
 		<div class="center-align btn-group">
-			<a (click)="creaEvento()" class="btn-flat white-text light-blue text-darken-4 margin-btn">Inserisci</a>
+			<input type="submit" class="btn-flat white-text light-blue text-darken-4 margin-btn">
 			<input type="reset" class="btn-flat white-text light-blue text-darken-4 margin-btn">
 		</div>
 	</form>

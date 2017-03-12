@@ -146,19 +146,28 @@ app.get("/api/eventi", function(req, res){
 });
 
 app.post("/api/eventi", function(req, res){
-	var evento = req.body;
-
-	if(!req.body.nome){
+	if(!req.body.nome || !req.body.data || !req.body.oraInizio ){
 		handleError(res, "Invalid user input", "Must provide a name.", 400);
-	}
+	} else {
+		var evento = {
+			nome: req.body.nome,
+			data: req.body.data,
+			oraInizio: req.body.oraInizio,
+			oraFine: req.body.oraFine,
+			luogo: req.body.luogo,
+			descrizione: req.body.descrizione,
+			fotoMin: req.body.fotoMin,
+			foto: req.body.foto
+		};
 
-	evt.eventi.insertOne(evento, function(err, evento) {
-		if(err) {
-			handleError(res, err.message, "Failed to insert event");
-		} else {
-			res.status(201).json(evento);
-		}
-	})
+		evt.eventi.insertOne(evento, function(err, evento) {
+			if(err) {
+				handleError(res, err.message, "Failed to insert event");
+			} else {
+				res.status(201).json(evento);
+			}
+		})
+	}
 })
 
 
