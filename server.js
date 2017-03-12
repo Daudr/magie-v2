@@ -30,9 +30,9 @@ function handleError(res, reason, message, code) {
     res.status(code || 500).json({ "error": message });
 }
 
-/* app.get('*', function(req, res, next){
-	res.render('index.html');
-}); */
+app.get('*', function(req, res, next){
+	res.sendFile(distDir + '/index.html');
+});
 
 var st = mongojs(process.env.MONGODB_URI, [STAFF_COLLECTION], function(err){
 	if(err){
