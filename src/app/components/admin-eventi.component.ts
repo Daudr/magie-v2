@@ -68,6 +68,7 @@ export class AdminEventiComponent implements OnInit, AfterViewInit {
     this.eventiService.creaEvento(evento)
       .then((nuovoEvento: Eventi) => {
         this.events.push(nuovoEvento);
+        console.log('Evento aggiunto');
       });
   }
 
