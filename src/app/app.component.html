@@ -16,11 +16,11 @@
 <md-sidenav-container>
 	<md-sidenav #sidenav class="side-nav light-blue lighten-1">
 		<ul class="sidenav light-blue lighten-1">
-	    	<li routerLinkActive="active"><a routerLink="/index" fragment="t" (click)="this.sidenav.toggle()" class="white-text mobile-li">Home</a></li>
-			<li routerLinkActive="active"><a routerLink="/orari" fragment="t" (click)="this.sidenav.toggle()" class="white-text mobile-li">Prezzi/Orari</a></li>
-			<li routerLinkActive="active"><a routerLink="/servizi" fragment="t" (click)="this.sidenav.toggle()" class="white-text mobile-li">Servizi</a></li>
-			<li routerLinkActive="active"><a routerLink="/eventi" fragment="t" (click)="this.sidenav.toggle()" class="white-text mobile-li">Eventi</a></li>
-			<li routerLinkActive="active"><a routerLink="/contatti" fragment="t" (click)="this.sidenav.toggle()" class="white-text mobile-li">Contatti</a></li>
+	    	<li routerLinkActive="active"><a routerLink="/index" (click)="this.sidenav.toggle()" class="white-text mobile-li">Home</a></li>
+			<li routerLinkActive="active"><a routerLink="/orari" (click)="this.sidenav.toggle()" class="white-text mobile-li">Prezzi/Orari</a></li>
+			<li routerLinkActive="active"><a routerLink="/servizi" (click)="this.sidenav.toggle()" class="white-text mobile-li">Servizi</a></li>
+			<li routerLinkActive="active"><a routerLink="/eventi" (click)="this.sidenav.toggle()" class="white-text mobile-li">Eventi</a></li>
+			<li routerLinkActive="active"><a routerLink="/contatti" (click)="this.sidenav.toggle()" class="white-text mobile-li">Contatti</a></li>
 			<li routerLinkActive="active">
 				<a routerLink="/iceteam" (click)="this.sidenav.toggle()">
 					<img class="asd-logo" src="assets/icons/logo/logo-asd-trasp.png" alt="A.S.D. Ice Team Sanve">
@@ -45,11 +45,11 @@
 		    	<a routerLink="/index" class="brand-logo center hide-on-large-only"><img src="assets/icons/logo/magie_dinverno_logo.png" alt="Magie D'Inverno" class="logo center"></a>
 				<a (click)="sidenav.open()" class="button-collapse"><i class="material-icons">menu</i></a>
 				<ul id="nav-mobile" class="left hide-on-med-and-down">
-					<li routerLinkActive="active"><a routerLink="/index" fragment="t" class="white-text ul-link">Home</a></li>
-					<li routerLinkActive="active"><a routerLink="/orari" fragment="t" class="white-text ul-link">Prezzi/Orari</a></li>
-					<li routerLinkActive="active"><a routerLink="/servizi" fragment="t" class="white-text ul-link">Servizi</a></li>
-					<li routerLinkActive="active"><a routerLink="/eventi" fragment="t" class="white-text ul-link">Eventi</a></li>
-					<li routerLinkActive="active"><a routerLink="/contatti" fragment="t" class="white-text ul-link">Contatti</a></li>
+					<li routerLinkActive="active"><a routerLink="/index" class="white-text ul-link">Home</a></li>
+					<li routerLinkActive="active"><a routerLink="/orari" class="white-text ul-link">Prezzi/Orari</a></li>
+					<li routerLinkActive="active"><a routerLink="/servizi" class="white-text ul-link">Servizi</a></li>
+					<li routerLinkActive="active"><a routerLink="/eventi" class="white-text ul-link">Eventi</a></li>
+					<li routerLinkActive="active"><a routerLink="/contatti" class="white-text ul-link">Contatti</a></li>
 				</ul>
 				<ul class="right hide-on-med-and-down">
 					<li routerLinkActive="active">
