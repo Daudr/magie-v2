@@ -102,13 +102,13 @@ export class EventiComponent implements OnInit {
 export class EventDialog implements OnInit, AfterViewInit {
 	event: Eventi;
 
-	ngOnInit () {
-		$(document).ready(function(){
-			$('.materialboxed').materialbox();
-		});
-	}
+	ngOnInit () { }
 
 	ngAfterViewInit() {
+    $(document).ready(function(){
+			$('.materialboxed').materialbox();
+		});
+    
 		if(window.screen.height < 700) {
 			if(!($('.mat-dialog-container').hasClass('dialog-cel'))) {
 				$('.mat-dialog-container').addClass('dialog-cel');
