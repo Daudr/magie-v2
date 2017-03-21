@@ -1269,6 +1269,10 @@ mat-tab-header {
   .map-row, .map-frame {
     height: 300px;
   }
+  
+  .parallax-service {
+    min-height: 300px; 
+  }
 }
 
 @media only screen and (max-width: 360px) {
