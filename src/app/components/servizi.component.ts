@@ -57,10 +57,6 @@ export class ServiziComponent implements OnInit, AfterViewInit {
 	constructor (private title: Title) {}
 
 	ngOnInit() {
-		if(!($('body').hasClass('back_img'))){
-			$('body').addClass('back_img');
-		}
-
 		this.title.setTitle('Magie D\'Inverno - Servizi');
 	}
 
