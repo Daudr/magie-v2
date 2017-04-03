@@ -26,6 +26,9 @@ import { PattInlineComponent } from './components/patt-inline.component';
 import { PrivacyComponent } from './components/privacy.component';
 import { AdminLoginComponent } from './components/admin-login.component';
 
+import { AuthService } from './services/auth.service';
+import { AuthGuard } from './guards/auth.guard';
+
 @NgModule({
   imports: [
       BrowserModule,
@@ -69,7 +72,9 @@ import { AdminLoginComponent } from './components/admin-login.component';
   ],
   providers: [
     Title,
-    CookieService
+    CookieService,
+    AuthService,
+    AuthGuard
   ],
   bootstrap:    [ AppComponent ]
 })
