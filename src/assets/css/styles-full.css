@@ -1070,7 +1070,7 @@ caption {
 }
 
 .asd-logo {
-  max-width: 200px;
+  max-width: 150px;
   margin-top: 20px;
 }
 
@@ -1268,6 +1268,10 @@ mat-tab-header {
 
   .map-row, .map-frame {
     height: 300px;
+  }
+  
+  .parallax-service {
+    min-height: 300px; 
   }
 }
 

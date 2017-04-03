@@ -1,4 +1,4 @@
-import {Component, OnInit } from '@angular/core';
+import {Component, OnInit, AfterViewInit } from '@angular/core';
 import { Title } from '@angular/platform-browser';
 
 import { StaffService } from '../services/staff.service';
@@ -12,7 +12,7 @@ declare var $: any;
   selector: 'ice-team',
   templateUrl: './ice-team.component.html'
 })
-export class IceTeamComponent implements OnInit {
+export class IceTeamComponent implements OnInit, AfterViewInit {
 	staff: Staff[];
 	foto: Foto[] = [
 		{
@@ -42,4 +42,10 @@ export class IceTeamComponent implements OnInit {
 
 		this.title.setTitle('Ice Team Sanve');
 	}
+  
+  ngAfterViewInit () {
+    $(document).ready(function(){
+      $('.materialboxed').materialbox();
+    }); 
+  }
 }

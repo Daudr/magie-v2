@@ -93,6 +93,10 @@ export class AdminEventiComponent implements OnInit, AfterViewInit {
 
     this.title.setTitle('Admin eventi');
   }
+  
+  goTo(location: string): void {
+    window.location.hash = location;
+  }
 
   traduciData(dataEvento: Date): String {
     var grn = new Date(dataEvento);

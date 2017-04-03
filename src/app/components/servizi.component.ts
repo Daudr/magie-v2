@@ -41,13 +41,13 @@ export class ServiziComponent implements OnInit, AfterViewInit {
 			id: 'gonfiabili'
 		},
 		{
-			nome: 'Corsi di avviamento al pattinaggio della domenica mattina',
+			nome: 'Corsi di avviamento',
 			foto: '../../assets/icons/services/corsimattina.jpg',
 			descrizione: 'Magie D\'Inverno offre ai più piccoli la possibilità di imparare a pattinare la domenica mattina' ,
 			id: 'corsi'
 		},
 		{
-			nome: 'Corsi di avviamento, pattinaggio artistico e hockey del pomeriggio',
+			nome: 'Ice Team Sanve',
 			foto: '../../assets/icons/background/back-img.jpg',
 			descrizione: 'Magie d\'Inverno offre ai ragazzi la possibilità di imparare uno sport, poco conosciuto ma non per questo bello, a prezzi completamente convenienti.',
 			id: 'iceteam'
@@ -57,10 +57,6 @@ export class ServiziComponent implements OnInit, AfterViewInit {
 	constructor (private title: Title) {}
 
 	ngOnInit() {
-		if(!($('body').hasClass('back_img'))){
-			$('body').addClass('back_img');
-		}
-
 		this.title.setTitle('Magie D\'Inverno - Servizi');
 	}
 
