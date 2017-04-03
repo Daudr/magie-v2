@@ -5,7 +5,6 @@ var mongojs = require("mongojs");
 const passport = require('passport');
 const jwt = require('jsonwebtoken');
 const mongoose = require('mongoose');
-const passport = require('passport');
 
 const config = require('./config/database');
 
@@ -19,13 +18,13 @@ var NEWS_COLLECTION = "newsletter";
 // Connessione mongoose
 mongoose.connect(config.database);
 
-// Passport
-app.use(passport.initialize());
-app.use(passport.session());
-
 var app = express();
 app.use(bodyParser.json());
 app.use(compression());
+
+// Passport
+app.use(passport.initialize());
+app.use(passport.session());
 
 // Create link to Angular build directory
 var distDir = __dirname + "/dist/";
