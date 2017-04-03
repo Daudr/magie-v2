@@ -11,6 +11,7 @@ import { AdminComponent } from '../components/admin.component';
 import { CreditsComponent } from '../components/credits.component';
 import { IceTeamComponent } from '../components/ice-team.component';
 import { PrivacyComponent } from '../components/privacy.component';
+import { AdminLoginComponent } from '../components/admin-login.component';
 
 const routes: Routes = [
 	{ path: '', redirectTo: '/index', pathMatch: 'full' },
@@ -37,6 +38,10 @@ const routes: Routes = [
 	{
 		path: 'admin',
 		component: AdminComponent
+	},
+	{
+		path: 'admin/login',
+		component: AdminLoginComponent
 	},
 	{
 		path: 'credits',

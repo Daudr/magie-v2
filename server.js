@@ -2,6 +2,12 @@ var compression = require('compression');
 var express = require("express");
 var bodyParser = require("body-parser");
 var mongojs = require("mongojs");
+const passport = require('passport');
+const jwt = require('jsonwebtoken');
+const mongoose = require('mongoose');
+const passport = require('passport');
+
+const config = require('./config/database');
 
 var ObjectID = mongojs.ObjectID;
 
@@ -9,6 +15,13 @@ var STAFF_COLLECTION = "staff";
 var EVENTS_COLLECTION = "eventi";
 var FILES_COLLECTION = "fs.files";
 var NEWS_COLLECTION = "newsletter";
+
+// Connessione mongoose
+mongoose.connect(config.database);
+
+// Passport
+app.use(passport.initialize());
+app.use(passport.session());
 
 var app = express();
 app.use(bodyParser.json());
@@ -121,7 +134,7 @@ app.get("/api/staffcorsi", function(req, res) {
 			res.status(200).json(staff);
 		}
 	});
-}); 
+});
 
 
 var evt = mongojs(process.env.MONGODB_URI, [EVENTS_COLLECTION]);
@@ -261,6 +274,43 @@ app.get("/api/news", function(req, res){
 			res.status(200).json(contatti);
 		}
 	});
+});
+
+//Admin authenticate
+app.post("/admin/authenticate", function(req, res){
+  const username = req.body.username;
+  const password = req.body.password;
+
+  User.getUserByUsername(username, (err, admin) => {
+    if (err) throw err;
+
+    if (!admin) {
+      return res.json({success: false, msg: 'Admin non trovato'});
+    }
+
+    User.comparePassword(password, user.password, (err, isMatch) => {
+      if (err) throw err;
+
+      if (isMatch) {
+        const token = jwt.sign(user, config.secret, {
+          expiresIn: 604800 // Una settimana
+        });
+
+        res.json({
+          success: true,
+          token: 'JWT ' + token,
+          admin: {   // Per non inviare la password creiamo un nuovo oggetto
+            id: admin._id,
+            name: admin.name,
+            username: admin.username,
+            email: admin.email
+          }
+        });
+      } else {
+        return res.json({success: false, msg: 'Password sbagliata'});
+      }
+    });
+  })
 });
 
 app.get('*', function(req, res, next){
