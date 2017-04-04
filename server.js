@@ -26,7 +26,7 @@ app.use(compression());
 app.use(passport.initialize());
 app.use(passport.session());
 
-require('.config/passport')(passport);
+require('./config/passport')(passport);
 
 const admins = require('./routes/admins');
 
