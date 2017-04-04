@@ -18,11 +18,6 @@ var NEWS_COLLECTION = "newsletter";
 // Connessione mongoose
 mongoose.connect(config.database);
 
-// On connection
-mongoose.connection.on('connected', () => {
-  console.log('Connected to database ' + config.database);
-});
-
 var app = express();
 app.use(bodyParser.json());
 app.use(compression());
