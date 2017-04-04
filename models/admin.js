@@ -24,12 +24,12 @@ const adminSchema = mongoose.Schema({
 const User = module.exports = mongoose.model('Admin', adminSchema);
 
 module.exports.getAdminById = function(id, callback){
-  User.findById(id, callback);
+  Admin.findById(id, callback);
 }
 
-module.exports.getUserByUsername = function(username, callback){
+module.exports.getAdminByUsername = function(username, callback){
   const query = {username: username}
-  User.findOne(query, callback);
+  Admin.findOne(query, callback);
 }
 
 // Incapsulazione
@@ -38,7 +38,7 @@ module.exports.addAdmin = function(newAdmin, callback) {
     bcrypt.hash(newAdmin.password, salt, (err, hash) => {
       if (err) throw err;
       newAdmin.password = hash;
-      newUser.save(callback);
+      newAdmin.save(callback);
     })
   });
 }
