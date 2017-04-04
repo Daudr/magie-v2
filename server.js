@@ -16,7 +16,12 @@ var FILES_COLLECTION = "fs.files";
 var NEWS_COLLECTION = "newsletter";
 
 // Connessione mongoose
-mongoose.connect(config.database);
+mongoose.connect(config.database + '/admins');
+
+// On connection
+mongoose.connection.on('connected', () => {
+  console.log('Connected to database ' + config.database);
+});
 
 var app = express();
 app.use(bodyParser.json());
