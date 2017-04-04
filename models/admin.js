@@ -21,7 +21,7 @@ const adminSchema = mongoose.Schema({
   }
 });
 
-const User = module.exports = mongoose.model('Admin', adminSchema);
+const User = module.exports = mongoose.model('Admin', adminSchema, 'admins');
 
 module.exports.getAdminById = function(id, callback){
   Admin.findById(id, callback);
