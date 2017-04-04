@@ -13,6 +13,8 @@ import { IceTeamComponent } from '../components/ice-team.component';
 import { PrivacyComponent } from '../components/privacy.component';
 import { AdminLoginComponent } from '../components/admin-login.component';
 
+import { AuthGuard } from '../guards/auth.guard';
+
 const routes: Routes = [
 	{ path: '', redirectTo: '/index', pathMatch: 'full' },
 	{
@@ -37,11 +39,13 @@ const routes: Routes = [
 	},
 	{
 		path: 'admin',
-		component: AdminComponent
+		component: AdminComponent,
+		canActivate: [ AuthGuard ]
 	},
 	{
 		path: 'admin/login',
-		component: AdminLoginComponent
+		component: AdminLoginComponent /* ,
+		canActivate: [ AuthGuard ] */
 	},
 	{
 		path: 'credits',

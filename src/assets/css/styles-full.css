@@ -701,14 +701,14 @@ a.copyright {
   padding: 10px;
 }
 
-video#bgvid { 
- 
+video#bgvid {
+
   position: fixed; right: 0; top: 0;
-   
+
   min-width: 100%; min-height: 1080px;
-   
+
   width: auto; height: 100%; z-index: -100;
-  
+
   z-index: -100;
 }
 
@@ -900,7 +900,7 @@ p.left-align {
       -ms-transform: translateX(-100%);  /* IE 9 */
         transform: translateX(-100%);  /* Firefox 16+, IE 10+, Opera */
 }
- 
+
 .loaded #loader-wrapper .loader-section.section-right {
     -webkit-transform: translateX(100%);  /* Chrome, Opera 15+, Safari 3.1+ */
       -ms-transform: translateX(100%);  /* IE 9 */
@@ -909,7 +909,7 @@ p.left-align {
 
 .loaded #loader {
   opacity: 0;
-  -webkit-transition: all 0.3s ease-out; 
+  -webkit-transition: all 0.3s ease-out;
             transition: all 0.3s ease-out;
 }
 
@@ -919,8 +919,8 @@ p.left-align {
 
 .loaded #loader-wrapper .loader-section.section-right,
 .loaded #loader-wrapper .loader-section.section-left {
- 
-    -webkit-transition: all 0.3s 0.3s ease-out; 
+
+    -webkit-transition: all 0.3s 0.3s ease-out;
             transition: all 0.3s 0.3s ease-out;
 }
 
@@ -1269,9 +1269,9 @@ mat-tab-header {
   .map-row, .map-frame {
     height: 300px;
   }
-  
+
   .parallax-service {
-    min-height: 300px; 
+    min-height: 300px;
   }
 }
 
@@ -1290,7 +1290,7 @@ img.iceteam {
   margin-bottom: 10px;
 }
 
-strong { 
+strong {
   font-weight: 900;
 }
 
@@ -1317,6 +1317,7 @@ li.white-text {
 .admin-form {
   position: fixed;
   top: 10%;
+  width: 50%;
 }
 
 div.cookie-policy {

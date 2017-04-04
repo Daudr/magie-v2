@@ -8,6 +8,8 @@ const mongoose = require('mongoose');
 
 const config = require('./config/database');
 
+const admins = require('./routes/admins');
+
 var ObjectID = mongojs.ObjectID;
 
 var STAFF_COLLECTION = "staff";
@@ -275,42 +277,7 @@ app.get("/api/news", function(req, res){
 	});
 });
 
-//Admin authenticate
-app.post("/admin/authenticate", function(req, res){
-  const username = req.body.username;
-  const password = req.body.password;
-
-  User.getUserByUsername(username, (err, admin) => {
-    if (err) throw err;
-
-    if (!admin) {
-      return res.json({success: false, msg: 'Admin non trovato'});
-    }
-
-    User.comparePassword(password, user.password, (err, isMatch) => {
-      if (err) throw err;
-
-      if (isMatch) {
-        const token = jwt.sign(user, config.secret, {
-          expiresIn: 604800 // Una settimana
-        });
-
-        res.json({
-          success: true,
-          token: 'JWT ' + token,
-          admin: {   // Per non inviare la password creiamo un nuovo oggetto
-            id: admin._id,
-            name: admin.name,
-            username: admin.username,
-            email: admin.email
-          }
-        });
-      } else {
-        return res.json({success: false, msg: 'Password sbagliata'});
-      }
-    });
-  })
-});
+app.use('/admin', admins);
 
 app.get('*', function(req, res, next){
 	res.sendFile(distDir + '/index.html');

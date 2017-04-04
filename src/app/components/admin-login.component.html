@@ -1,16 +1,18 @@
-<div class="hide-admin justify valign-wrapper">
-  <div class="card-panel valign admin-form">
-    <form class="center-align" (submit)="onLoginSubmit()">
-    <md-input-container class="admin-input">
-        <input mdInput placeholder="Nome utente" name="username" [(ngModel)]="username">
-    </md-input-container>
-    <br>
-    <md-input-container class="admin-input">
-        <input mdInput type="password" placeholder="Password" name="password" [(ngModel)]="password">
+<div class="main container">
+  <div class="justify valign-wrapper">
+    <div class="card-panel valign admin-form">
+      <form class="center-align" (submit)="onLoginSubmit()">
+      <md-input-container class="admin-input">
+          <input mdInput placeholder="Nome utente" name="username" [(ngModel)]="username">
       </md-input-container>
+      <br>
+      <md-input-container class="admin-input">
+          <input mdInput type="password" placeholder="Password" name="password" [(ngModel)]="password">
+        </md-input-container>
 
-    <div class="center-align btn-group">
-      <input type="submit" class="btn-flat white-text light-blue text-darken-4" value="Login">
-    </div>
-  </form>
+      <div class="center-align btn-group">
+        <input type="submit" class="btn-flat white-text light-blue text-darken-4" value="Login">
+      </div>
+    </form>
+  </div>
 </div>
