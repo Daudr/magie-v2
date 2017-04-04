@@ -16,7 +16,7 @@ var FILES_COLLECTION = "fs.files";
 var NEWS_COLLECTION = "newsletter";
 
 // Connessione mongoose
-mongoose.connect(config.database + '/admins');
+mongoose.connect(config.database);
 
 // On connection
 mongoose.connection.on('connected', () => {
