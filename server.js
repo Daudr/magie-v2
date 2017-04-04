@@ -8,8 +8,6 @@ const mongoose = require('mongoose');
 
 const config = require('./config/database');
 
-const admins = require('./routes/admins');
-
 var ObjectID = mongojs.ObjectID;
 
 var STAFF_COLLECTION = "staff";
@@ -27,6 +25,10 @@ app.use(compression());
 // Passport
 app.use(passport.initialize());
 app.use(passport.session());
+
+require('.config/passport')(passport);
+
+const admins = require('./routes/admins');
 
 // Create link to Angular build directory
 var distDir = __dirname + "/dist/";
