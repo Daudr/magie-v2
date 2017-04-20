@@ -56,6 +56,7 @@ export class AdminEventiComponent implements OnInit, AfterViewInit {
         foto: ''
       }
 
+			console.log(this.data.getFullYear());
       console.log(event);
 
       this.inserisciEvento(event);
