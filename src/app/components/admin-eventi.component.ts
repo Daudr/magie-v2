@@ -12,7 +12,7 @@ declare var $: any;
 })
 export class AdminEventiComponent implements OnInit, AfterViewInit {
   nome: string;
-  data: any;
+  data: string;
   oraInizio: any;
   oraFine: any;
   descrizione: any;
@@ -31,7 +31,7 @@ export class AdminEventiComponent implements OnInit, AfterViewInit {
   updateHandler: Function;
   @Input()
   deleteHandler: Function;
-  
+
   constructor (private eventiService: EventiService, private title: Title) { }
 
   ngOnInit () {
@@ -93,7 +93,7 @@ export class AdminEventiComponent implements OnInit, AfterViewInit {
 
     this.title.setTitle('Admin eventi');
   }
-  
+
   goTo(location: string): void {
     window.location.hash = location;
   }
