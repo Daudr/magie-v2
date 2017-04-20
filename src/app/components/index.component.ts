@@ -94,7 +94,7 @@ export class IndexComponent implements OnInit, AfterViewInit {
 	}
 
 	isOpen(): String {
-		if((this.data >= new Date(2016, 11, 23)) && !(this.data <= new Date(2017, 3, 5))){
+		if((this.data >= new Date(2016, 11, 23)) && (this.data <= new Date(2017, 3, 5))){
 			return 'APERTI';
 		}
 		else {
@@ -181,7 +181,6 @@ export class IndexComponent implements OnInit, AfterViewInit {
 
 	fade_img (): void {
 		$(document).ready(function($: any){
-			// browser window scroll (in pixels) after which the "back to top" link is shown
 			var offset2 = 50,
 				offset3 = 100,
 				offset4 = 150,

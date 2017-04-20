@@ -1,0 +1,3 @@
+[0420/154648.929:ERROR:file_io_win.cc(163)] CreateFile C:\Program Files (x86)\temp\settings.dat: Accesso negato. (0x5)
+[0420/154648.931:ERROR:registration_protocol_win.cc(83)] TransactNamedPipe: Pipe terminata. (0x6D)
+[0420/154648.932:ERROR:file_io_win.cc(163)] CreateFile C:\Program Files (x86)\temp\settings.dat: Accesso negato. (0x5)
