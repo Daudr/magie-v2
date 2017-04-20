@@ -48,16 +48,13 @@ export class AdminEventiComponent implements OnInit, AfterViewInit {
     if (this.nome || this.data || this.oraInizio ) {
       let event = {
         nome: this.nome,
-        data: new Date(this.data),
+        data: new Date(new Date(this.data).getFullYear(), new Date(this.data).getMonth(), new Date(this.data).getDay()),
         oraInizio: this.oraInizio,
         oraFine: this.oraFine,
         descrizione: this.descrizione,
         fotoMin: '',
         foto: ''
       }
-
-			console.log(new Date(this.data).getFullYear());
-      console.log(event);
 
       this.inserisciEvento(event);
     } else {
