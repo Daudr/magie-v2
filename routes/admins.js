@@ -11,12 +11,9 @@ router.post('/register', (req, res, next) => {
   let newAdmin= new Admin({
     name: req.body.name,
     email: req.body.email,
-    usernname: req.body.username,
+    username: req.body.username,
     password: req.body.password
   });
-
-  console.log(req.body);
-  console.log(newAdmin);
 
   Admin.addAdmin(newAdmin, (err, admin) => {
     if(err) {
