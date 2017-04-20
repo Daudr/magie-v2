@@ -11,7 +11,7 @@ router.post('/register', (req, res, next) => {
   let newAdmin= new Admin({
     name: req.body.name,
     email: req.body.email,
-    Adminname: req.body.Adminname,
+    usernname: req.body.username,
     password: req.body.password
   });
 
@@ -25,10 +25,10 @@ router.post('/register', (req, res, next) => {
 });
 
 router.post('/authenticate', (req, res, next) => {
-  const Adminname = req.body.Adminname;
+  const username = req.body.username;
   const password = req.body.password;
 
-  Admin.getAdminByUsername(Adminname, (err, admin) => {
+  Admin.getAdminByUsername(username, (err, admin) => {
     if (err) throw err;
 
     if (!admin) {
@@ -49,7 +49,7 @@ router.post('/authenticate', (req, res, next) => {
           Admin: {   // Per non inviare la password creiamo un nuovo oggetto
             id: admin._id,
             name: admin.name,
-            Adminname: admin.Adminname,
+            username: admin.username,
             email: admin.email
           }
         });
