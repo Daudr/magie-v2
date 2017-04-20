@@ -28,7 +28,7 @@ router.post('/authenticate', (req, res, next) => {
   const Adminname = req.body.Adminname;
   const password = req.body.password;
 
-  Admin.getAdminByAdminname(Adminname, (err, admin) => {
+  Admin.getAdminByUsername(Adminname, (err, admin) => {
     if (err) throw err;
 
     if (!admin) {

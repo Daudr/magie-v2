@@ -19,14 +19,14 @@ export class AuthService {
   }
 
   storeUserData (token, user) {
-    localStorage.setItem('id_token', token);
+    localStorage.setItem('id_admin_magie', token);
     localStorage.setItem('user', JSON.stringify(user));
     this.authToken = token;
     this.user = user;
   }
 
   loadToken () {
-    const token = localStorage.getItem('id_token');
+    const token = localStorage.getItem('id_admin_magie');
     this.authToken = token;
   }
 
