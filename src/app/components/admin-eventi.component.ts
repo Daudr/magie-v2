@@ -12,7 +12,7 @@ declare var $: any;
 })
 export class AdminEventiComponent implements OnInit, AfterViewInit {
   nome: string;
-  data: Date;
+  data: string;
   oraInizio: any;
   oraFine: any;
   descrizione: any;
@@ -48,7 +48,7 @@ export class AdminEventiComponent implements OnInit, AfterViewInit {
     if (this.nome || this.data || this.oraInizio ) {
       let event = {
         nome: this.nome,
-        data: this.data,
+        data: new Date(this.data),
         oraInizio: this.oraInizio,
         oraFine: this.oraFine,
         descrizione: this.descrizione,
@@ -56,7 +56,7 @@ export class AdminEventiComponent implements OnInit, AfterViewInit {
         foto: ''
       }
 
-			console.log(this.data.getFullYear);
+			console.log(new Date(this.data).getFullYear);
       console.log(event);
 
       this.inserisciEvento(event);
