@@ -12,7 +12,7 @@ declare var $: any;
 })
 export class AdminEventiComponent implements OnInit, AfterViewInit {
   nome: string;
-  data: string;
+  data: Date;
   oraInizio: any;
   oraFine: any;
   descrizione: any;
@@ -48,7 +48,7 @@ export class AdminEventiComponent implements OnInit, AfterViewInit {
     if (this.nome || this.data || this.oraInizio ) {
       let event = {
         nome: this.nome,
-        data: new Date(this.data),
+        data: this.data,
         oraInizio: this.oraInizio,
         oraFine: this.oraFine,
         descrizione: this.descrizione,
