@@ -70,6 +70,7 @@ export class AdminEventiComponent implements OnInit, AfterViewInit {
   }
 
   eliminaEvento (evento: Eventi): void {
+		console.log(evento);
     this.eventiService.rimuoviEvento(evento._id)
       .then((deletedEvent: Eventi) => {
 				let index: number = this.events.indexOf(deletedEvent);
