@@ -163,7 +163,7 @@ app.post("/api/eventi", function(req, res){
 	} else {
 		var evento = {
 			nome: req.body.nome,
-			data: req.body.data,
+			data: new Date(req.body.data),
 			oraInizio: req.body.oraInizio,
 			oraFine: req.body.oraFine,
 			luogo: req.body.luogo,
