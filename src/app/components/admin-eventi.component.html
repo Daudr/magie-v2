@@ -122,7 +122,7 @@
   <div *ngFor="let event of events" class="row valign-wrapper">
     <div class="col l8 m8 s7 valign">{{event.nome}} - {{traduciData(event.data)}}</div>
     <div class="col l4 m4 s5">
-    	<button (click)="eliminaEvento(event._id)" class="btn-flat white-text light-blue text-darken-4">Elimina</button>
+    	<button (click)="eliminaEvento(event)" class="btn-flat white-text light-blue text-darken-4">Elimina</button>
     </div>
   </div>
 </div>
