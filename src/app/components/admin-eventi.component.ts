@@ -66,14 +66,16 @@ export class AdminEventiComponent implements OnInit, AfterViewInit {
     this.eventiService.creaEvento(evento)
       .then((nuovoEvento: Eventi) => {
         this.events.push(nuovoEvento);
-        console.log('Evento aggiunto');
       });
   }
 
-  eliminaEvento (eventoID: String): void {
-    this.eventiService.rimuoviEvento(eventoID)
-      .then((deletedEventID: String) => {
-        this.deleteHandler(deletedEventID);
+  eliminaEvento (evento: Eventi): void {
+    this.eventiService.rimuoviEvento(evento._id)
+      .then((deletedEvent: Eventi) => {
+				let index: number = this.events.indexOf(deletedEvent);
+		    if (index !== -1) {
+		        this.events.splice(index, 1);
+		    }
       });
   }
 

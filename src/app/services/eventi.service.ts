@@ -47,10 +47,10 @@ export class EventiService {
 			.catch(this.handleError);
 	}
 
-	rimuoviEvento (delEventoID: String): Promise<String> {
+	rimuoviEvento (delEventoID: String): Promise<Eventi> {
 		return this.http.delete(this.eventiUrl + '/' + delEventoID)
 			.toPromise()
-			.then(response => response.json() as String)
+			.then(response => response.json() as Eventi)
 			.catch(this.handleError);
 	}
 
