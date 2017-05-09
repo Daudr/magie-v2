@@ -1,6 +1,7 @@
 import { Component, OnInit, AfterViewInit } from '@angular/core';
 import { MdDialog, MdDialogRef } from '@angular/material';
 import { Title } from '@angular/platform-browser';
+import { DatePipe } from '@angular/common';
 
 import { CookieService } from 'angular2-cookie/services/cookies.service';
 
@@ -105,7 +106,8 @@ export class IndexComponent implements OnInit, AfterViewInit {
 	}
 
 	traduciData(): String {				// METODO PER TRADURRE LA DATA
-		switch (this.data.getDay()) {
+		return new DatePipe('it-IT').transform(this.data.getDay(), 'longDate');
+		/*switch (this.data.getDay()) {
 			default:
 				console.log("errore nel reperire giorno.");
 			case 0:
@@ -197,7 +199,7 @@ export class IndexComponent implements OnInit, AfterViewInit {
 				break;
 		}
 
-		return this.giorno + " " + this.data.getDate() + " " + this.mese;
+		return this.giorno + " " + this.data.getDate() + " " + this.mese;*/
 	}
 
 	fade_img (): void {
