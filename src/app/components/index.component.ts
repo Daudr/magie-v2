@@ -168,6 +168,27 @@ export class IndexComponent implements OnInit, AfterViewInit {
 			case 2:
 				this.mese = "Marzo";
 				break;
+			case 3:
+				this.mese = "Aprile";
+				break;
+			case 4:
+				this.mese = "Maggio";
+				break;
+			case 5:
+				this.mese = "Giugno";
+				break;
+			case 6:
+				this.mese = "Luglio";
+				break;
+			case 7:
+				this.mese = "Agosto";
+				break;
+			case 8:
+				this.mese = "Settembre";
+				break;
+			case 9:
+				this.mese = "Ottobre";
+				break;
 			case 10:
 				this.mese = "Novembre";
 				break;
