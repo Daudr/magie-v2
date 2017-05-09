@@ -1,4 +1,5 @@
 import { BrowserModule, Title } from '@angular/platform-browser';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
@@ -35,7 +36,8 @@ import { AuthGuard } from './guards/auth.guard';
       AppRoutingModule,
       HttpModule,
       FormsModule,
-      MaterialModule.forRoot()
+      MaterialModule.forRoot(),
+      BrowserAnimationsModule
     ],
   declarations: [
     AppComponent,
