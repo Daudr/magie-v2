@@ -106,7 +106,7 @@ export class IndexComponent implements OnInit, AfterViewInit {
 	}
 
 	traduciData(): String {				// METODO PER TRADURRE LA DATA
-		return new DatePipe('it-IT').transform(new Date(), 'MMMMEEEEd');
+		return new DatePipe('it-IT').transform(new Date(), 'fullDate');
 	}
 
 	fade_img (): void {
