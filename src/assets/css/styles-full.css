@@ -1357,5 +1357,5 @@ md-sidenav {
 }
 
 .mat-tab-body.mat-tab-body-active[_ngcontent-c4] {
-  overflow-y: hidden;
+  overflow-y: hidden !important;
 }
