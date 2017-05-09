@@ -290,6 +290,8 @@ app.get("/api/email", function(res, res){
   var mail = new helper.Mail(fromEmail, subject, toEmail, content);
 
   var sg = require('sendgrid')(process.env.SENDGRID_API_KEY);
+  console.log(process.env.SENDGRID_API_KEY);
+  console.log(process.env.SENDGRID_API_KEY.toString());
   var request = sg.emptyRequest({
     method: 'POST',
     path: '/v3/mail/send',
