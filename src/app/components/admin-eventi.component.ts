@@ -52,8 +52,8 @@ export class AdminEventiComponent implements OnInit, AfterViewInit {
         oraInizio: this.oraInizio,
         oraFine: this.oraFine,
         descrizione: this.descrizione,
-        fotoMin: '',
-        foto: ''
+        fotoMin: '../assets/icons/other/magie200.png',
+        foto: '../assets/icons/other/magie200.png'
       }
 
       this.inserisciEvento(event);
