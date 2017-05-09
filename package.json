@@ -47,6 +47,7 @@
     "rxjs": "^5.3.1",
     "sendgrid": "^5.1.0",
     "ts-helpers": "^1.1.2",
+    "typescript": "~2.3.2",
     "zone.js": "0.8.10"
   },
   "devDependencies": {
@@ -63,7 +64,6 @@
     "karma-remap-istanbul": "^0.6.0",
     "protractor": "~5.1.1",
     "ts-node": "3.0.4",
-    "tslint": "^5.2.0",
-    "typescript": "~2.3.2"
+    "tslint": "^5.2.0"
   }
 }
