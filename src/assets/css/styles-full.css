@@ -1355,3 +1355,7 @@ md-sidenav {
   width: 100%;
   min-height: 100vh;
 }
+
+.mat-tab-body.mat-tab-body-active[_ngcontent-c4] {
+  overflow-y: hidden;
+}

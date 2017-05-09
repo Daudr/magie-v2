@@ -75,7 +75,7 @@ export class AppComponent implements OnInit, AfterViewInit {
 	selector: 'news-dialog',
 	template: `
 		<div class="dialog">
-			<p>Funzionalità non ancotra implementata</p>
+			<p>Funzionalità non ancora implementata</p>
 			<!--
 			<div class="container">
 				<div class="dialog-title">
@@ -94,7 +94,7 @@ export class AppComponent implements OnInit, AfterViewInit {
 		</div>
 	`
 })
-export class NewsDialog implements AfterViewInit { 
+export class NewsDialog implements AfterViewInit {
 	constructor(public dialogRef: MdDialogRef<NewsDialog>) { }
 
 	ngAfterViewInit() {
@@ -110,7 +110,7 @@ export class NewsDialog implements AfterViewInit {
 		<div class="dialog">
 			<div class="center-align">
 				<p>
-					Funzionalità non ancotra implementata del tutto<br>
+					Funzionalità non ancora implementata del tutto<br>
 					Per il momento si prega di inviare un'email a michidarin@gmail.com
 				</p>
 				<a class="white-text btn center-align light-blue text-darken-4" href="mailto:michidarin@gmail.com">Invia email</a>
