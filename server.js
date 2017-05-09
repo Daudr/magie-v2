@@ -281,16 +281,6 @@ app.get("/api/news", function(req, res){
 
 app.use('/admin', admins);
 
-app.get('*', function(req, res, next){
-	res.sendFile(distDir + '/index.html');
-});
-
-/*  "/api/news/:id"
- *    GET: find contact by id
- *    PUT: update contact by id
- *    DELETE: deletes contact by id
- */
-
 app.get("/api/email", function(res, res){
   var helper = require('sendgrid').mail;
   var fromEmail = new helper.Email('test@example.com');
@@ -316,6 +306,15 @@ app.get("/api/email", function(res, res){
   });
 });
 
+app.get('*', function(req, res, next){
+	res.sendFile(distDir + '/index.html');
+});
+
+/*  "/api/news/:id"
+ *    GET: find contact by id
+ *    PUT: update contact by id
+ *    DELETE: deletes contact by id
+ */
 
 var server = app.listen(process.env.PORT || 8080, function () {
     var port = server.address().port;
