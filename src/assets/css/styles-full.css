@@ -1359,3 +1359,7 @@ md-sidenav {
 .mat-tab-body {
   overflow-y: hidden !important;
 }
+
+md-dialog-container {
+  overflow-x: hidden;
+}
