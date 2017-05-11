@@ -283,8 +283,8 @@ app.use('/admin', admins);
 
 app.get("/api/email", function(res, res){
   var helper = require('sendgrid').mail;
-  var fromEmail = new helper.Email('test@example.com');
-  var toEmail = new helper.Email('test@example.com');
+  var fromEmail = new helper.Email('michele@daudr.me');
+  var toEmail = new helper.Email('michidarin@gmail.com');
   var subject = 'Sending with SendGrid is Fun';
   var content = new helper.Content('text/plain', 'and easy to do anywhere, even with Node.js');
   var mail = new helper.Mail(fromEmail, subject, toEmail, content);
