@@ -282,7 +282,7 @@ app.get("/api/news", function(req, res){
 app.post("/api/news", (req, res) => {
   if(!req.body.receiver) {
     handleError(res, "Invalid user input", "Must provide a name.", 400);
-  } else {}
+  } else {
     nw.news.insert(receiver, function(err, receiver) {
       if(err) {
         handleError(res, err.message, "Failed to insert event");
