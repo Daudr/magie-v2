@@ -15,7 +15,8 @@ declare var $: any;
 	templateUrl: `./app.component.html`,
 	providers: [
 		StaffService,
-		EventiService
+		EventiService,
+		NewsletterService
 	]
 })
 export class AppComponent implements OnInit, AfterViewInit {
