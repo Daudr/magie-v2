@@ -10,10 +10,10 @@ export class NewsletterService {
 
   constructor(private http: Http) { }
 
-  addReceiver(receiver: Receiver) {
+  addReceiver(receiver: Receiver): Promise<Receiver> {
     return this.http.post("/api/news", receiver)
       .toPromise()
-      .then(res => res.json())
+      .then(res => res.json() as Receiver)
       .catch(this.handleError);
   }
 
