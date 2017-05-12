@@ -30,6 +30,8 @@ import { AdminLoginComponent } from './components/admin-login.component';
 import { AuthService } from './services/auth.service';
 import { AuthGuard } from './guards/auth.guard';
 
+import 'hammerjs';
+
 @NgModule({
   imports: [
       BrowserModule,
