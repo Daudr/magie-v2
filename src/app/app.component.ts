@@ -15,8 +15,7 @@ declare var $: any;
 	templateUrl: `./app.component.html`,
 	providers: [
 		StaffService,
-		EventiService,
-		NewsletterService
+		EventiService
 	]
 })
 export class AppComponent implements OnInit, AfterViewInit {
@@ -97,7 +96,8 @@ export class AppComponent implements OnInit, AfterViewInit {
 				</form>
 			</div>
 		</div>
-	`
+	`,
+	providers: [NewsletterService]
 })
 export class NewsDialog implements AfterViewInit {
 	nome: string;
