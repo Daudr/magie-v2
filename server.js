@@ -178,9 +178,9 @@ app.post("/api/eventi", function(req, res){
 			} else {
 				res.status(201).json(evento);
 			}
-		})
+		});
 	}
-})
+});
 
 
 /*  "/api/eventi/:id"
@@ -272,11 +272,25 @@ var nw = mongojs(process.env.MONGODB_URI, [NEWS_COLLECTION]);
 app.get("/api/news", function(req, res){
 	nw.news.find().toArray(function(err, contatti){
 		if(err){
-			handleError(res, err.message, "Failed to load near contacts.");
+			handleError(res, err.message, "Failed to load contacts.");
 		} else {
 			res.status(200).json(contatti);
 		}
 	});
+});
+
+app.post("/api/news", (req, res) => {
+  if(!req.body.receiver) ){
+    handleError(res, "Invalid user input", "Must provide a name.", 400);
+  } else {}
+    nw.news.insert(receiver, function(err, receiver) {
+      if(err) {
+        handleError(res, err.message, "Failed to insert event");
+      } else {
+        res.status(201).json(receiver);
+      }
+    });
+  }
 });
 
 app.use('/admin', admins);

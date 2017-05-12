@@ -6,6 +6,7 @@ import { CookieService } from 'angular2-cookie/services/cookies.service';
 
 import { StaffService } from './services/staff.service';
 import { EventiService } from './services/eventi.service';
+import { NewsletterService } from './services/newsletter.service';
 
 declare var $: any;
 
@@ -86,10 +87,11 @@ export class AppComponent implements OnInit, AfterViewInit {
 							<input type="tel" mdInput name="tel" [(ngModel)]="tel" placeholder="Cellulare" required>
 						</md-input-container>
 						<br>
-						<md-checkbox name="checkEULA" [(ngModel)]="checkEULA" class="center-align">Acconsento ai termini.</md-checkbox>
+						<md-checkbox name="checkEULA" [(ngModel)]="checkEULA" class="center-align" required>Acconsento ai termini.</md-checkbox>
 					</div>
+					<br>
 					<div class="center-align dialog-actions">
-						<input type="submit" class="btn btn-flat">
+						<input type="submit" class="btn btn-flat light-blue">
 					</div>
 				</form>
 			</div>
@@ -103,7 +105,10 @@ export class NewsDialog implements AfterViewInit {
 	tel: string;
 	checkEULA: boolean = false;
 
-	constructor(public dialogRef: MdDialogRef<NewsDialog>) { }
+	constructor(
+		public dialogRef: MdDialogRef<NewsDialog>,
+		public newsService: NewsletterService
+	) { }
 
 	ngAfterViewInit() {
 		if(!($('.md-dialog-container').hasClass('dialog-responsive'))) {
@@ -120,7 +125,7 @@ export class NewsDialog implements AfterViewInit {
 				tel: this.tel
 			}
 
-			console.log(receiver);
+			this.newsService.addReceiver(receiver);
 
 			this.dialogRef.close();
 		}
