@@ -37,8 +37,8 @@ export class NewsletterService {
           let email = {
             fromEmail: "michele@daudr.me",
             toEmail: this.receivers[i].email,
-            subject: "Questa è una prova",
-            content: "Provare è bello."
+            subject: subject,
+            content: content
           };
           this.sendMail(email);
         }

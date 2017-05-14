@@ -1,7 +1,7 @@
 import  { Component, OnInit, AfterViewInit } from '@angular/core';
 import { Title } from '@angular/platform-browser';
 
-import { CookieService } from 'angular2-cookie/services/cookies.service';
+import { NewsletterService } from '../services/newsletter.service';
 
 @Component({
 	selector: 'admin',
@@ -11,7 +11,10 @@ export class AdminComponent implements OnInit, AfterViewInit {
 	admin: boolean = true;
 	trueAdmin: boolean = false;
 
-	constructor (private cookieService: CookieService, private title: Title) { }
+	constructor (
+		private title: Title,
+		private news: NewsletterService
+	) { }
 
 	ngOnInit(){
 		this.title.setTitle('Admin');
@@ -21,20 +24,9 @@ export class AdminComponent implements OnInit, AfterViewInit {
 		if(!($('.mat-tab-list').hasClass('light-blue lighten-2 tab'))) {
 			$('.mat-tab-list').addClass('light-blue lighten-2 tab');
 		}
-		if(!this.cookieService.get('allowAdmin')) {
-			this.cookieService.put('allowAdmin', 'true');
-		}
 	}
 
-	showContent () {
-		if(this.cookieService.get('allowAdmin')) {
-			if(!($('.hide-admin').hasClass('hide'))) {
-				$('.hide-admin').addClass('hide');
-			}
-
-			if(!($('.login-admin').hasClass('hide'))) {
-				$('.login-admin').addClass('hide');
-			}
-		} else { this.admin = false; }
+	sendMail () {
+		this.news.sendMails("Questa è una prova", "Provare è bello");
 	}
 }
