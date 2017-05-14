@@ -275,7 +275,6 @@ app.get("/api/news", function(req, res){
 });
 
 app.post("/api/news", (req, res) => {
-  console.log(req.body);
   receiver = req.body;
   nw.news.insert(receiver, function(err, receiver) {
     if(err) {
@@ -288,13 +287,15 @@ app.post("/api/news", (req, res) => {
 
 app.use('/admin', admins);
 
-app.get("/api/email", function(res, res){
+app.post("/api/email", function(res, res){
   var helper = require('sendgrid').mail;
-  var fromEmail = new helper.Email('michele@daudr.me');
-  var toEmail = new helper.Email('michidarin@gmail.com');
-  var subject = 'Sending with SendGrid is Fun';
-  var content = new helper.Content('text/plain', 'and easy to do anywhere, even with Node.js');
+  var fromEmail = new helper.Email(req.body.fromEmail);
+  var toEmail = new helper.Email(req.body.fromEmail);
+  var subject = req.body.subject;
+  var content = new helper.Content('text/plain', req.body.content);
   var mail = new helper.Mail(fromEmail, subject, toEmail, content);
+
+  console.log(mail);
 
   var sg = require('sendgrid')(process.env.SENDGRID_API_KEY);
   var request = sg.emptyRequest({

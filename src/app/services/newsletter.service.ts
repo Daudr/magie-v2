@@ -7,6 +7,7 @@ import 'rxjs/add/operator/toPromise';
 
 @Injectable()
 export class NewsletterService {
+  public receivers: Receiver[];
 
   constructor(private http: Http) { }
 
@@ -15,6 +16,41 @@ export class NewsletterService {
       .toPromise()
       .then(res => res.json() as Receiver)
       .catch(this.handleError);
+  }
+
+  getReceivers (): Promise<Receiver[]> {
+    return this.http.get("/api/news")
+      .toPromise()
+      .then(res => res.json() as Receiver[])
+      .catch(this.handleError);
+  }
+
+  sendMails (subject: string, content: string) {
+    this.getReceivers()
+      .then((receivers: Receiver[]) => {
+        this.receivers = receivers.map((receivers) => {
+          return receivers;
+      });
+
+      for (let i = 0; i < this.receivers.length; i++) {
+        if(this.receivers[i].email) {
+          let email = {
+            fromEmail: "michele@daudr.me",
+            toEmail: this.receivers[i].email,
+            subject: "Questa è una prova",
+            content: "Provare è bello."
+          };
+          this.sendMail(email);
+        }
+      }
+    });
+  }
+
+  sendMail (email) {
+    return this.http.post("/api/email", email)
+    .toPromise()
+    .then(res => res.json())
+    .catch(this.handleError);
   }
 
   private handleError(error: any) {

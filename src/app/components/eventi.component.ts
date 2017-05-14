@@ -30,7 +30,6 @@ export class EventiComponent implements OnInit {
 			.getFutureEvents()
 			.then((futureEvents: Eventi[]) => {
 				this.futureEvents = futureEvents.map((futureEvents) => {
-					console.log("eventi: " + futureEvents);
 					return futureEvents;
 				});
 			});
@@ -82,7 +81,7 @@ export class EventiComponent implements OnInit {
 					<iframe
 						frameborder="0"
 						class="map-frame-event"
-						src="https://www.google.com/maps/embed/v1/place?q=place_id:ChIJLSt0CtQUeUcRvAz1SS5vNfk&key=AIzaSyBZbraKHNSZ6hXdK3ZPXCe3WHPcP4tdEM8" 
+						src="https://www.google.com/maps/embed/v1/place?q=place_id:ChIJLSt0CtQUeUcRvAz1SS5vNfk&key=AIzaSyBZbraKHNSZ6hXdK3ZPXCe3WHPcP4tdEM8"
 						allowfullscreen>
 					</iframe>
 				</div>
@@ -108,7 +107,7 @@ export class EventDialog implements OnInit, AfterViewInit {
     $(document).ready(function(){
 			$('.materialboxed').materialbox();
 		});
-    
+
 		if(window.screen.height < 700) {
 			if(!($('.mat-dialog-container').hasClass('dialog-cel'))) {
 				$('.mat-dialog-container').addClass('dialog-cel');
