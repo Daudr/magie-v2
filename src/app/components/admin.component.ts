@@ -5,7 +5,8 @@ import { NewsletterService } from '../services/newsletter.service';
 
 @Component({
 	selector: 'admin',
-	templateUrl: './admin.component.html'
+	templateUrl: './admin.component.html',
+	providers: [NewsletterService]
 })
 export class AdminComponent implements OnInit, AfterViewInit {
 	admin: boolean = true;
