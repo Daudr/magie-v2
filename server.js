@@ -280,7 +280,6 @@ app.get("/api/news", function(req, res){
 });
 
 app.post("/api/news", (req, res) => {
-  console.log(req.body.receiver);
   nw.news.insert(req.body.receiver, function(err, receiver) {
     if(err) {
       handleError(res, err.message, "Failed to insert event");
