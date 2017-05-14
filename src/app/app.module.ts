@@ -38,7 +38,7 @@ import 'hammerjs';
       AppRoutingModule,
       HttpModule,
       FormsModule,
-      MaterialModule.forRoot(),
+      MaterialModule,
       BrowserAnimationsModule
     ],
   declarations: [
