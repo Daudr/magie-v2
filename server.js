@@ -288,12 +288,13 @@ app.post("/api/news", (req, res) => {
 app.use('/admin', admins);
 
 app.post("/api/email", function(req, res){
-  console.log(req.body);
+  email = req.body;
+  console.log(email);
   var helper = require('sendgrid').mail;
-  var fromEmail = new helper.Email(req.body.fromEmail);
-  var toEmail = new helper.Email(req.body.fromEmail);
-  var subject = req.body.subject;
-  var content = new helper.Content('text/plain', req.body.content);
+  var fromEmail = new helper.Email(email.fromEmail);
+  var toEmail = new helper.Email(email.fromEmail);
+  var subject = email.subject;
+  var content = new helper.Content('text/plain', email.content);
   var mail = new helper.Mail(fromEmail, subject, toEmail, content);
 
   console.log(mail);
