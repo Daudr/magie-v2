@@ -46,12 +46,7 @@ function handleError(res, reason, message, code) {
     res.status(code || 500).json({ "error": message });
 }
 
-var st = mongojs(process.env.MONGODB_URI, [STAFF_COLLECTION], function(err){
-	if(err){
-		console.log(err);
-		process.exit(1);
-	}
-});
+var st = mongojs(process.env.MONGODB_URI, [STAFF_COLLECTION]);
 
 /*  "/api/staff"
  *    GET: finds all staff
@@ -280,8 +275,9 @@ app.get("/api/news", function(req, res){
 });
 
 app.post("/api/news", (req, res) => {
-  console.log(req.body.receiver);
-  nw.news.insertOne(req.body.receiver, function(err, receiver) {
+  console.log(req.body);
+  receiver = req.body;
+  nw.news.insert(receiver, function(err, receiver) {
     if(err) {
       handleError(res, err.message, "Failed to insert event");
     } else {
