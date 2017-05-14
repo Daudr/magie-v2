@@ -288,6 +288,7 @@ app.post("/api/news", (req, res) => {
 app.use('/admin', admins);
 
 app.post("/api/email", function(req, res){
+  console.log(req.body);
   var helper = require('sendgrid').mail;
   var fromEmail = new helper.Email(req.body.fromEmail);
   var toEmail = new helper.Email(req.body.fromEmail);
