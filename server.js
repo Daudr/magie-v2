@@ -36,7 +36,7 @@ app.use(express.static(distDir));
 
 // HTTP Caching
 app.use(function(req, res, next) {
-    res.setHeader("Cache-Control", "must-revalidate");
+    res.setHeader("Cache-Control", "max-age=604800");
     return next();
 });
 
