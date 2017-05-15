@@ -36,7 +36,7 @@ app.use(express.static(distDir));
 
 // HTTP Caching
 app.use(function(req, res, next) {
-    res.setHeader("Cache-Control", "max-age=no-store");
+    res.setHeader("Cache-Control", "must-revalidate");
     return next();
 });
 
@@ -289,7 +289,6 @@ app.use('/admin', admins);
 
 app.post("/api/email", function(req, res){
   email = req.body;
-  console.log(email);
   var helper = require('sendgrid').mail;
   var fromEmail = new helper.Email(email.fromEmail);
   var toEmail = new helper.Email(email.fromEmail);
@@ -297,7 +296,6 @@ app.post("/api/email", function(req, res){
   var content = new helper.Content('text/plain', email.content);
   var mail = new helper.Mail(fromEmail, subject, toEmail, content);
 
-  console.log(mail);
 
   var sg = require('sendgrid')(process.env.SENDGRID_API_KEY);
   var request = sg.emptyRequest({
@@ -310,9 +308,6 @@ app.post("/api/email", function(req, res){
     if (error) {
       console.log('Error response received');
     }
-    console.log(response.statusCode);
-    console.log(response.body);
-    console.log(response.headers);
   });
 });
 

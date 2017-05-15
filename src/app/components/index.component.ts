@@ -82,10 +82,7 @@ export class IndexComponent implements OnInit, AfterViewInit {
     	if(!this.cookieService.get('viewed')) {
     		this.dialogRef = this.dialog.open(DialogAlert);
     		this.cookieService.put('viewed', 'true', {expires: new Date(2020, 12, 31)});
-    		// this.cookieService.put('allowAdmin', 'true', {expires: '2020-01-01'});
     	}
-
-    	// localStorage.setItem('prova', Date());
     }
 
 	openEventDialog(event: Eventi) {
