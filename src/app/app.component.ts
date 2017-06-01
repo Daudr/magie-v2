@@ -4,7 +4,6 @@ import { MdDialog, MdDialogRef, MdDialogConfig } from '@angular/material';
 
 import { CookieService } from 'angular2-cookie/services/cookies.service';
 
-import { StaffService } from './services/staff.service';
 import { EventiService } from './services/eventi.service';
 import { NewsletterService } from './services/newsletter.service';
 
@@ -14,7 +13,6 @@ declare var $: any;
 	selector: 'magie-dinverno',
 	templateUrl: `./app.component.html`,
 	providers: [
-		StaffService,
 		EventiService
 	]
 })

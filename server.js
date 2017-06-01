@@ -291,7 +291,7 @@ app.post("/api/email", function(req, res){
   email = req.body;
   var helper = require('sendgrid').mail;
   var fromEmail = new helper.Email(email.fromEmail);
-  var toEmail = new helper.Email(email.fromEmail);
+  var toEmail = new helper.Email(email.toEmail);
   var subject = email.subject;
   var content = new helper.Content('text/plain', email.content);
   var mail = new helper.Mail(fromEmail, subject, toEmail, content);

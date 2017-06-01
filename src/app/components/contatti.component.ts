@@ -1,11 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Title } from '@angular/platform-browser';
 
-import { StaffService } from '../services/staff.service';
-
 import { Staff } from '../staff';
-
-declare var $: any;
 
 @Component({
 	selector: 'my-contatti',
@@ -13,58 +9,60 @@ declare var $: any;
 })
 export class ContattiComponent implements OnInit {
 
-	staff: Staff[];
+	staff: Staff[] = [
+		{
+			icon: "assets/icons/staff/mirco.jpg",
+	    nome: "Mirco Zago",
+	    compiti: "Informazioni generali",
+	    disponibilita: "Lun-Ven: 15:00 - 19:00",
+	    telefono: "3314504424",
+	    email: "mircozago@magiedinverno.it"
+		},
+		{
+			icon: "assets/icons/staff/michele.jpg",
+	    nome: "Michele Da Rin",
+	    compiti: "Sito web",
+	    disponibilita: "Lun-Ven: 18:00 - 19:00",
+	    telefono: "3938405607",
+	    email: "micheledarin@magiedinverno.it"
+		},
+		{
+			icon: '',
+			nome: "Renato Da Rin",
+	    compiti: "Preonotazione turni serali",
+	    disponibilita: "Lun-Ven: 15:00 - 19:00",
+	    telefono: "0123456789",
+	    email: "renatodarin@magiedinverno.it"
+		},
+		{
+			icon: "assets/icons/staff/cristina.jpg",
+	    nome: "Cristina Papa",
+	    compiti: "Corsi - A.S.D. Ice Team Sanve",
+	    disponibilita: "Lun-Ven: 15:30 - 17:30",
+	    telefono: "3271652583",
+	    email: "cristinapapa@magiedinverno.it"
+		},
+		{
+			icon: '',
+			nome: "Lara Marcon",
+	    compiti: "Corsi - A.S.D. Ice Team Sanve",
+	    disponibilita: "Lun-Ven: 15:30 - 17:30",
+	    telefono: "3471520763",
+	    email: "laramarcon@magiedinverno.it"
+		},
+		{
+			icon: "assets/icons/staff/caio.jpg",
+			nome: "Caio Zanette",
+			compiti: "Compleanni e gonfiabili/area bimbi",
+			disponibilita: "Lun-Ven: 15:00 - 19:00",
+			telefono: "0123456789",
+			email: "claudiozanette@magiedinverno.it"
+		}
+	];
 
-	constructor(private staffService: StaffService, private title: Title) { }
+	constructor(private title: Title) { }
 
 	ngOnInit() {
-		this.staffService
-			.getStaff()
-			.then((staff: Staff[]) => {
-				this.staff = staff.map((staff => {
-					return staff;
-				}));
-			});
-
 		this.title.setTitle('Magie D\'Inverno - Contatti');
 	}
 }
-
-
-/*
-	    {
-	    	icon: '../icons/staff/icon_michele.png',
-	    	nome: 'Mirco Zago',
-	    	compiti: 'Informazioni generali',
-	    	disponibilita: '15:00 -17:00',
-	    	cols: 2,
-	    	rows: 1,
-	    },
-	    {
-	    	icon: '../icons/staff/icon_michele.png',
-	    	nome: 'Claudio Caio Zanette',
-	    	compiti: 'Compleanni e area bimbi',
-	    	cols: 2,
-	    	rows: 1,
-	    },
-	    {
-	    	icon: '../icons/staff/icon_michele.png',
-	    	nome: 'Michele Da Rin',
-	    	compiti: 'Informazioni generali, sito web',
-	    	cols: 2, 
-	    	rows: 1,
-	    },
-	    {
-	    	icon: '../icons/staff/icon_michele.png',
-	    	nome: 'Renato Da Rin',
-	    	compiti: 'Informazioni generali',
-	    	cols: 2,
-	    	rows: 1,
-	    },
-	    {
-	    	nome: 'Mappa',
-	    	cols: 3,
-	    	rows: 3,
-	    }
-*/
-
