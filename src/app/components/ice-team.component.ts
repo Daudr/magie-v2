@@ -1,8 +1,6 @@
 import {Component, OnInit, AfterViewInit } from '@angular/core';
 import { Title } from '@angular/platform-browser';
 
-import { StaffService } from '../services/staff.service';
-
 import { Foto } from '../foto';
 import { Staff } from '../staff';
 
@@ -13,7 +11,25 @@ declare var $: any;
   templateUrl: './ice-team.component.html'
 })
 export class IceTeamComponent implements OnInit, AfterViewInit {
-	staff: Staff[];
+	staff: Staff[] = [
+    {
+			icon: "assets/icons/staff/cristina.jpg",
+	    nome: "Cristina Papa",
+	    compiti: "Corsi - A.S.D. Ice Team Sanve",
+	    disponibilita: "Lun-Ven: 15:30 - 17:30",
+	    telefono: "3271652583",
+	    email: "cristinapapa@magiedinverno.it"
+		},
+		{
+			icon: '',
+			nome: "Lara Marcon",
+	    compiti: "Corsi - A.S.D. Ice Team Sanve",
+	    disponibilita: "Lun-Ven: 15:30 - 17:30",
+	    telefono: "3471520763",
+	    email: "laramarcon@magiedinverno.it"
+		}
+  ];
+
 	foto: Foto[] = [
 		{
 			path: '../assets/icons/iceteam/hockey/foto1.jpg'
@@ -29,23 +45,15 @@ export class IceTeamComponent implements OnInit, AfterViewInit {
 		}
 	];
 
-	constructor(private staffService: StaffService, private title: Title) { }
+	constructor(private title: Title) { }
 
 	ngOnInit () {
-		this.staffService
-			.getCorsiStaff()
-			.then((staff: Staff[]) => {
-				this.staff = staff.map(( staff => {
-					return staff;
-				}));
-			});
-
 		this.title.setTitle('Ice Team Sanve');
 	}
-  
+
   ngAfterViewInit () {
     $(document).ready(function(){
       $('.materialboxed').materialbox();
-    }); 
+    });
   }
 }

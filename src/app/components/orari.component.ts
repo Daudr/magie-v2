@@ -5,7 +5,6 @@ import { DatePipe } from '@angular/common';
 
 import { Staff } from '../staff';
 import { Orario } from '../orario';
-import { StaffService } from '../services/staff.service';
 
 @Component({
 	selector: 'orari',
@@ -59,7 +58,6 @@ export class OrariComponent  implements OnInit {
 }
 
 @Component({
-	providers: [ StaffService ],
 	selector: 'dialog-pomeriggio',
 	template: `
 		<img src="./assets/icons//banner/banner_about.jpg" class="banner-corsi center-align" />
@@ -115,24 +113,30 @@ export class OrariComponent  implements OnInit {
 		</div>
 	`
 })
-export class DialogPomeriggio implements OnInit {
-	staff: Staff[];
+export class DialogPomeriggio {
+	staff: Staff[] = [
+		{
+			icon: "assets/icons/staff/cristina.jpg",
+	    nome: "Cristina Papa",
+	    compiti: "Corsi - A.S.D. Ice Team Sanve",
+	    disponibilita: "Lun-Ven: 15:30 - 17:30",
+	    telefono: "3271652583",
+	    email: "cristinapapa@magiedinverno.it"
+		},
+		{
+			icon: '',
+			nome: "Lara Marcon",
+	    compiti: "Corsi - A.S.D. Ice Team Sanve",
+	    disponibilita: "Lun-Ven: 15:30 - 17:30",
+	    telefono: "3471520763",
+	    email: "laramarcon@magiedinverno.it"
+		}
+	];
 
-	constructor(private staffService: StaffService) { }
-
-	ngOnInit() {
-		this.staffService
-			.getCorsiStaff()
-			.then((staff: Staff[]) => {
-				this.staff = staff.map((staff) => {
-					return staff;
-				});
-			});
-	}
+	constructor() { }
 }
 
 @Component({
-	providers: [ StaffService ],
 	selector: 'dialog-mattina',
 	template: `
 		<img src="./assets/icons//banner/banner_about.jpg" class="banner-corsi center-align" />
@@ -181,25 +185,29 @@ export class DialogPomeriggio implements OnInit {
 			        </div>
 				</div>
 			</div>
-			<div class="card-panel center-align db-error" *ngIf="!staff">
-				<h3 class="hide-on-small-only">Caricamento dei contatti</h3>
-				<h4 class="hide-on-med-and-up">Caricamento dei contatti</h4>
-			</div>
 		</div>
 	`
 })
-export class DialogMattina implements OnInit {
-	staff: Staff[];
+export class DialogMattina {
+	staff: Staff[] = [
+		{
+			icon: "assets/icons/staff/cristina.jpg",
+	    nome: "Cristina Papa",
+	    compiti: "Corsi - A.S.D. Ice Team Sanve",
+	    disponibilita: "Lun-Ven: 15:30 - 17:30",
+	    telefono: "3271652583",
+	    email: "cristinapapa@magiedinverno.it"
+		},
+		{
+			icon: '',
+			nome: "Lara Marcon",
+	    compiti: "Corsi - A.S.D. Ice Team Sanve",
+	    disponibilita: "Lun-Ven: 15:30 - 17:30",
+	    telefono: "3471520763",
+	    email: "laramarcon@magiedinverno.it"
+		}
+	];
 
-	constructor(private staffService: StaffService) { }
+	constructor() { }
 
-	ngOnInit() {
-		this.staffService
-			.getCorsiStaff()
-			.then((staff: Staff[]) => {
-				this.staff = staff.map((staff) => {
-					return staff;
-				});
-			});
-	}
 }
