@@ -13,7 +13,7 @@
 			<patt-inline></patt-inline>
 		</md-tab>
 	</md-tab-group>
-  
+
   <div class="card-panel light-blue lighten-4 left-align">
     <h4>Per informazioni contattare</h4>
     <div class="row">
@@ -25,9 +25,7 @@
                       <img src={{person.icon}} class="circle responsive-img">
                     </div>
                     <span class="card-title">{{person.nome}}</span>
-                    <p class="left-align">
-                      <br>
-                      <br>
+                    <p class="right-align">
                       Contattare per: {{person.compiti}}<br>
                       Contattare: {{person.disponibilita}}<br>
                       Cel: {{person.telefono}}<br>
@@ -65,7 +63,7 @@
                     <a href="mailto:{{person.email}}" class="btn btn-flat white-text light-blue darken-4 waves-effect" disabled>Invia email</a>
                   </div>
               </div>
-        </div>		
+        </div>
       </div>
       <div class="card-panel light-blue lighten-4 center-align db-error" *ngIf="!staff">
         <h4>Caricamento contatti</h4>
@@ -75,7 +73,7 @@
   <div class="card-panel light-blue lighten-4 right-align" *ngIf="foto">
     <h4>Alcune foto dell'Ice Team Sanve</h4>
     <div class="row">
-      <img src={{pic.path}} class="col l4 m6 s12 materialboxed iceteam" *ngFor="let pic of foto">	
+      <img src={{pic.path}} class="col l4 m6 s12 materialboxed iceteam" *ngFor="let pic of foto">
     </div>
   </div>
 </div>

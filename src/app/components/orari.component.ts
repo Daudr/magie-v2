@@ -78,10 +78,7 @@ export class OrariComponent  implements OnInit {
 				              <img src={{person.icon}} class="circle responsive-img">
 				          	</div>
 				          	<span class="card-title">{{person.nome}}</span>
-				          	<p class="left-align hide-on-small-only">
-				          		<br>
-				          		<br>
-				          		<br>
+				          	<p class="right-align hide-on-small-only">
 				          		Contattare per: {{person.compiti}}<br>
 				          		Contattare: {{person.disponibilita}}<br>
 				          		Cel: {{person.telefono}}<br>
@@ -157,10 +154,7 @@ export class DialogPomeriggio {
 				              <img src={{person.icon}} class="circle responsive-img">
 				          	</div>
 				          	<span class="card-title">{{person.nome}}</span>
-				          	<p class="left-align hide-on-small-only">
-				          		<br>
-				          		<br>
-				          		<br>
+				          	<p class="right-align hide-on-small-only">
 				          		Contattare per: {{person.compiti}}<br>
 				          		Contattare: {{person.disponibilita}}<br>
 				          		Cel: {{person.telefono}}<br>
