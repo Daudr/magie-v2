@@ -13,7 +13,7 @@ var ObjectID = mongojs.ObjectID;
 var STAFF_COLLECTION = "staff";
 var EVENTS_COLLECTION = "eventi";
 var FILES_COLLECTION = "fs.files";
-var NEWS_COLLECTION = "newsletter";
+var NEWS_COLLECTION = "news";
 
 // Connessione mongoose
 mongoose.connect(config.database);
@@ -45,95 +45,6 @@ function handleError(res, reason, message, code) {
     console.log("ERROR: " + reason);
     res.status(code || 500).json({ "error": message });
 }
-
-var st = mongojs(process.env.MONGODB_URI, [STAFF_COLLECTION]);
-
-/*  "/api/staff"
- *    GET: finds all staff
- *    POST: creates a new person in staff
- */
-
-app.get("/api/staff", function(req, res){
-	st.staff.find().toArray(function(err, staff){
-		if(err){
-			handleError(res, err.message, "Failed to get staff.");
-		} else {
-			res.status(200).json(staff);
-		}
-	});
-});
-
-app.post("/api/staff", function(req, res){
-	var person = req.body;
-
-	if(!req.body.name){
-		handleError(res, "Invalid user input", "Must provide a name.", 400);
-	}
-
-	st.staff.insertOne(person, function(err, person){
-		if(err){
-			handleError(res, err.message, "Failed to create new person.");
-		} else {
-			res.status(201).json(person);
-		}
-	});
-});
-
-/*  "/api/staff/:id"
- *    GET: find person by id
- *    PUT: update person by id
- *    DELETE: deletes person by id
- */
-
-app.get("/api/staff/:id", function(req, res){
-	st.staff.findOne({_id: new ObjectID(req.params.id)}, function(err, person){
-		if(err){
-			handleError(res, err.message, "Failed to get contact");
-		} else {
-			res.status(200).json(person);
-		}
-	});
-});
-
-app.put("/api/staff/:id", function (req, res) {
-    var person = req.body;
-    delete person._id;
-
-    st.staff.updateOne({ _id: new ObjectID(req.params.id) }, person, function (err, doc) {
-        if (err) {
-            handleError(res, err.message, "Failed to update person");
-        } else {
-            person._id = req.params.id;
-            res.status(200).json(person);
-        }
-    });
-});
-
-app.delete("/api/staff/:id", function(req, res){
-	st.staff.deleteOne({_id: new ObjectID(req.params.id)}, function(err, result){
-		if(err){
-			handleError(res, err.message, "Failed to delete person");
-		} else {
-			res.status(200).json(req.params.id);
-		}
-	});
-});
-
-
-/*  "/api/staff/corsi"
- *    GET: finds all staff of corsi
- */
-
-app.get("/api/staffcorsi", function(req, res) {
-	st.staff.find({compiti: "Corsi - A.S.D. Ice Team Sanve"}).toArray(function(err, staff){
-		if(err){
-			handleError(res, err.message, "Failed to get staff.");
-		} else {
-			res.status(200).json(staff);
-		}
-	});
-});
-
 
 var evt = mongojs(process.env.MONGODB_URI, [EVENTS_COLLECTION]);
 

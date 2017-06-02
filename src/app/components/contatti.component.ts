@@ -29,7 +29,7 @@ export class ContattiComponent implements OnInit {
 		{
 			icon: '',
 			nome: "Renato Da Rin",
-	    compiti: "Preonotazione turni serali",
+	    compiti: "Prenotazione turni serali",
 	    disponibilita: "Lun-Ven: 15:00 - 19:00",
 	    telefono: "0123456789",
 	    email: "renatodarin@magiedinverno.it"
