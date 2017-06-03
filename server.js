@@ -36,7 +36,7 @@ app.use(express.static(distDir));
 
 // HTTP Caching
 app.use(function(req, res, next) {
-    res.setHeader("Cache-Control", "max-age=614800");
+    res.setHeader("Cache-Control", "max-age=no-store");
     return next();
 });
 
