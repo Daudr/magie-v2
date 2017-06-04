@@ -127,7 +127,6 @@ export class AdminEventiComponent implements OnInit, AfterViewInit {
 		console.log(evento);
     this.eventiService.aggiornaEvento(evento)
       .then((updateEvent: Eventi) => {
-        this.updateHandler(updateEvent);
 				this.snackBar.open("Evento aggiornato", "Chiudi", {
 		      duration: 6000,
 		    });
