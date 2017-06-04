@@ -13,21 +13,17 @@
 		</md-input-container>
 		<br>
 		<md-input-container class="admin-input">
-	    	<input mdInput type="date" placeholder="Data" name="data" [(ngModel)]="data" required>
-	    </md-input-container>
-	    <br><br>
-	    <md-input-container>
-	    	<input mdInput type="time" placeholder="Ora Inizio" name="oraInizio" [(ngModel)]="oraInizio" required>
-	    </md-input-container>
-	    <md-input-container>
-	    	<input mdInput type="time" placeholder="Ora Fine" name="oraFine" [(ngModel)]="oraFine">
-	    </md-input-container>
-	    <br>
-	    <div class="input-field">
-			<textarea id="textarea1" class="textarea materialize-textarea" name="descrizione" [(ngModel)]="descrizione"></textarea>
-			<label for="textarea1">Descrizione evento</label>
-			<br>
-		</div>
+	  	<input mdInput type="date" placeholder="Data" name="data" [(ngModel)]="data" required>
+	  </md-input-container>
+	  <br><br>
+	  <md-input-container>
+  		<input mdInput type="time" placeholder="Ora Inizio" name="oraInizio" [(ngModel)]="oraInizio" required>
+    </md-input-container>
+    <md-input-container>
+  		<input mdInput type="time" placeholder="Ora Fine" name="oraFine" [(ngModel)]="oraFine">
+    </md-input-container>
+    <br>
+    <div id="editor-eventi" [(ngModel)]="descrizione"></div>
 
 		<div class="file-field input-field">
 			<div class="btn btn-flat light-blue">

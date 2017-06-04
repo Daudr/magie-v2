@@ -5,6 +5,7 @@ import { Eventi } from '../eventi';
 import { EventiService } from '../services/eventi.service';
 
 declare var $: any;
+declare var Quill: any;
 
 @Component({
 	selector: 'admin-eventi',
@@ -42,6 +43,8 @@ export class AdminEventiComponent implements OnInit, AfterViewInit {
         return events;
       });
     });
+
+		var editor = new Quill ('#editor-eventi');
   }
 
   creaEvento () {
