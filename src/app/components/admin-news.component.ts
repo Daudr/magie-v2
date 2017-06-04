@@ -7,17 +7,19 @@ declare var Quill: any;
   templateUrl: './admin-news.component.html'
 })
 export class AdminNewsComponent implements AfterViewInit {
+  editorOpen: boolean = false;
 
-  ngAfterViewInit () {
-    $(document).ready(() => {
-      var options = {
-        modules: {
-          toolbar: ['bold', 'italic', 'underline', 'strike']
-        },
-        placeholder: 'Compose an epic...',
-        theme: 'snow'
-      };
-      var editor = new Quill('#editor-quill', options);
-    });
+  ngAfterViewInit () { }
+
+  openEditor () {
+    var options = {
+      modules: {
+        toolbar: ['bold', 'italic', 'underline', 'strike']
+      },
+      placeholder: 'Compose an epic...',
+      theme: 'snow'
+    };
+    var editor = new Quill('#editor-quill', options);
+    this.editorOpen = true;
   }
 }
