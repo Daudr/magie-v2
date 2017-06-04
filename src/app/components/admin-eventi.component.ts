@@ -53,6 +53,17 @@ export class AdminEventiComponent implements OnInit, AfterViewInit {
     });
   }
 
+	refresh () {
+		this.events = null;
+		this.eventiService
+    .getEventi()
+    .then((events: Eventi[]) => {
+      this.events = events.map((events) => {
+        return events;
+      });
+    });
+	}
+
   creaEvento () {
     if (this.nome || this.data || this.oraInizio ) {
       let event = {
@@ -77,6 +88,7 @@ export class AdminEventiComponent implements OnInit, AfterViewInit {
 				this.snackBar.open("Evento aggiunto", "Chiudi", {
 		      duration: 6000,
 		    });
+				this.refresh();
       });
   }
 
@@ -91,6 +103,7 @@ export class AdminEventiComponent implements OnInit, AfterViewInit {
 				this.snackBar.open("Evento eliminato", "Chiudi", {
 		      duration: 6000,
 		    });
+				this.refresh();
       });
   }
 
@@ -101,6 +114,7 @@ export class AdminEventiComponent implements OnInit, AfterViewInit {
 				this.snackBar.open("Evento aggiornato", "Chiudi", {
 		      duration: 6000,
 		    });
+				this.refresh();
       })
   }
 
