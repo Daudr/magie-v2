@@ -11,6 +11,7 @@ declare var Quill: any;
 })
 export class AdminNewsComponent implements AfterViewInit {
   editorOpen: boolean = false;
+  editor: any;
 
   constructor (private news: NewsletterService) { }
 
@@ -39,11 +40,12 @@ export class AdminNewsComponent implements AfterViewInit {
       placeholder: 'Inserisci il contenuto dell\'email',
       theme: 'snow'
     };
-    var editor = new Quill('#editor-quill', options);
+    this.editor = new Quill('#editor-quill', options);
     this.editorOpen = true;
   }
 
   sendMail () {
+    console.log(this.editor.getText());
 		this.news.sendMails("Questa è una prova", "Provare è bello");
 	}
 }
