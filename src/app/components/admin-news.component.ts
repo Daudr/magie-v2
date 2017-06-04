@@ -9,6 +9,14 @@ declare var Quill: any;
 export class AdminNewsComponent implements AfterViewInit {
 
   ngAfterViewInit () {
-    var editor = new Quill('#editor-quill');
+    var editor = new Quill('#editor-quill', {
+      debug: 'info',
+      modules: {
+        toolbar: ['bold', 'italic', 'underline', 'strike']
+      },
+      placeholder: 'Compose an epic...',
+      readOnly: true,
+      theme: 'snow'
+    });
   }
 }

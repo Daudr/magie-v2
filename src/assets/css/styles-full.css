@@ -1371,3 +1371,7 @@ md-dialog-container {
 #editor-eventi {
   min-height: 200px;
 }
+
+#editor-quill p {
+  text-align: left;
+}
