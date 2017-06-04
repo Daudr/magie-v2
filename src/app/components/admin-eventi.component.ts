@@ -45,6 +45,16 @@ export class AdminEventiComponent implements OnInit, AfterViewInit {
     });
   }
 
+	ngAfterViewInit () {
+    $(document).ready(function(){
+      $('.collapsible').collapsible();
+    });
+
+    this.title.setTitle('Admin eventi');
+
+		var editor = new Quill ('#editor-eventi');
+  }
+
   creaEvento () {
     if (this.nome || this.data || this.oraInizio ) {
       let event = {
@@ -59,7 +69,7 @@ export class AdminEventiComponent implements OnInit, AfterViewInit {
 
       this.inserisciEvento(event);
     } else {
-      console.log('Informazioni mancanti sul form');
+      console.log('Informazioni mancanti nel form');
     }
   }
 
@@ -86,16 +96,6 @@ export class AdminEventiComponent implements OnInit, AfterViewInit {
       .then((updateEvent: Eventi) => {
         this.updateHandler(updateEvent);
       })
-  }
-
-  ngAfterViewInit () {
-    $(document).ready(function(){
-      $('.collapsible').collapsible();
-    });
-
-    this.title.setTitle('Admin eventi');
-
-		var editor = new Quill ('#editor-eventi');
   }
 
   goTo(location: string): void {
