@@ -119,7 +119,7 @@ app.put("/api/eventi/:id", function(req, res){
 })
 
 app.delete("/api/eventi/:id", function(req, res){
-	evt.eventi.findOne({_id: new ObjectID(req.params.id)}, function(err, result){
+	evt.eventi.remove({_id: new ObjectID(req.params.id)}, function(err, result){
 		if(err) {
 			console.log(err);
 			handleError(res, err.message, "Failed to delete event");
