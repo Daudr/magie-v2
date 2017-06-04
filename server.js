@@ -196,7 +196,9 @@ app.post("/api/news", (req, res) => {
   });
 });
 
-app.use('/admin', admins);
+/* "api/email"
+ *    POST: send emails
+ */
 
 app.post("/api/email", function(req, res){
   email = req.body;
@@ -222,15 +224,12 @@ app.post("/api/email", function(req, res){
   });
 });
 
+// Admin routes
+app.use('/admin', admins);
+
 app.get('*', function(req, res, next){
 	res.sendFile(distDir + '/index.html');
 });
-
-/*  "/api/news/:id"
- *    GET: find contact by id
- *    PUT: update contact by id
- *    DELETE: deletes contact by id
- */
 
 var server = app.listen(process.env.PORT || 8080, function () {
     var port = server.address().port;

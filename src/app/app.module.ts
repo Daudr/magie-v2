@@ -18,7 +18,7 @@ import { ContattiComponent } from './components/contatti.component';
 import { AdminComponent} from './components/admin.component';
 import { CreditsComponent } from './components/credits.component';
 import { AdminEventiComponent } from './components/admin-eventi.component';
-import { AdminStaffComponent } from './components/admin-staff.component';
+import { AdminNewsComponent } from './components/admin-news.component';
 import { IceTeamComponent } from './components/ice-team.component';
 import { HockeyComponent } from './components/hockey.component';
 import { PattArtComponent } from './components/patt-art.component';
@@ -57,7 +57,7 @@ import 'hammerjs';
     DialogAlert,
     CreditsComponent,
     AdminEventiComponent,
-    AdminStaffComponent,
+    AdminNewsComponent,
     IceTeamComponent,
     HockeyComponent,
     HockeyPistaComponent,

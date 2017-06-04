@@ -3,8 +3,8 @@
 	<md-tab-group>
 		<md-tab label="EVENTI">
 			<admin-eventi [createHandler]="addContact"
-                          [updateHandler]="updateContact"
-                          [deleteHandler]="deleteContact"></admin-eventi>
+                    [updateHandler]="updateContact"
+                    [deleteHandler]="deleteContact"></admin-eventi>
 		</md-tab>
 
 		<!-- <md-tab label="Calendario">
@@ -40,12 +40,9 @@
 				proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
 			</div>
 		</md-tab> -->
-
-		<md-tab label="STAFF">
-			<admin-staff></admin-staff>
-		</md-tab>
 		<md-tab label="NEWSLETTER">
 			<div class="card-panel">
+				<admin-news></admin-news>
 				<button md-button (click)="sendMail()">click</button>
 			</div>
 		</md-tab>
