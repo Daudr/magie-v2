@@ -27,7 +27,7 @@ export class ContattiComponent implements OnInit {
 	    email: "micheledarin@magiedinverno.it"
 		},
 		{
-			icon: '',
+			icon: 'assets/icons/staff/renato.jpg',
 			nome: "Renato Da Rin",
 	    compiti: "Prenotazione turni serali",
 	    disponibilita: "Lun-Ven: 15:00 - 19:00",
@@ -43,7 +43,7 @@ export class ContattiComponent implements OnInit {
 	    email: "cristinapapa@magiedinverno.it"
 		},
 		{
-			icon: '',
+			icon: 'assets/icons/staff/lara.jpg',
 			nome: "Lara Marcon",
 	    compiti: "Corsi - A.S.D. Ice Team Sanve",
 	    disponibilita: "Lun-Ven: 15:30 - 17:30",
