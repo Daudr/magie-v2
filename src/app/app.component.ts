@@ -139,9 +139,9 @@ export class NewsDialog implements AfterViewInit {
 			<div class="center-align">
 				<p>
 					Funzionalità non ancora implementata del tutto<br>
-					Per il momento si prega di inviare un'email a michidarin@gmail.com
+					Per il momento si prega di inviare un'email a michele@daudr.me
 				</p>
-				<a class="white-text btn center-align light-blue text-darken-4" href="mailto:michidarin@gmail.com">Invia email</a>
+				<a class="white-text btn center-align light-blue text-darken-4" href="mailto:michele@daudr.me">Invia email</a>
 			</div>
 			<!--
 			<div class="dialog-title">
