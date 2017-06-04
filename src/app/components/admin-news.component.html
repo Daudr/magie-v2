@@ -1,3 +1,10 @@
 <!-- Create the editor container -->
+<div class="center-align">
+  <button md-button (click)="openEditor()" *ngIf="!editorOpen">Apri editor</button>
+</div>
+
 <div id="editor-quill"></div>
-<button md-button (click)="openEditor()" *ngIf="!editorOpen">Apri editor</button>
+
+<div class="center-align">
+  <button md-button (click)="sendMail()">click</button>
+</div>

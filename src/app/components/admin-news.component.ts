@@ -1,13 +1,18 @@
 import { Component, AfterViewInit } from '@angular/core';
 
+import { NewsletterService } from '../services/newsletter.service';
+
 declare var Quill: any;
 
 @Component({
   selector: 'admin-news',
-  templateUrl: './admin-news.component.html'
+  templateUrl: './admin-news.component.html',
+	providers: [NewsletterService]
 })
 export class AdminNewsComponent implements AfterViewInit {
   editorOpen: boolean = false;
+
+  constructor (private news: NewsletterService) { }
 
   ngAfterViewInit () { }
 
@@ -37,4 +42,8 @@ export class AdminNewsComponent implements AfterViewInit {
     var editor = new Quill('#editor-quill', options);
     this.editorOpen = true;
   }
+
+  sendMail () {
+		this.news.sendMails("Questa è una prova", "Provare è bello");
+	}
 }

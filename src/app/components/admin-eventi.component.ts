@@ -51,8 +51,6 @@ export class AdminEventiComponent implements OnInit, AfterViewInit {
     $(document).ready(function(){
       $('.collapsible').collapsible();
     });
-
-    this.title.setTitle('Admin eventi');
   }
 
   creaEvento () {
