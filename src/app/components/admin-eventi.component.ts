@@ -20,6 +20,12 @@ export class AdminEventiComponent implements OnInit, AfterViewInit {
   oraFine: any;
   descrizione: any;
 
+	m_nome: any;
+	m_data: any;
+	m_oraInizio: any;
+	m_oraFine: any;
+	m_descrizione: any;
+
   events: Eventi[];
 
   giorno: string;
@@ -107,7 +113,17 @@ export class AdminEventiComponent implements OnInit, AfterViewInit {
       });
   }
 
-  aggiornaEvento (evento: Eventi): void {
+  aggiornaEvento (id: any): void {
+		var evento = {
+			_id: id,
+			nome: this.m_nome,
+			data: this.m_data,
+			oraInizio: this.m_oraInizio,
+			oraFine: this.m_oraFine,
+			descrizione: this.m_descrizione,
+			fotoMin: '',
+			foto: ''
+		}
     this.eventiService.aggiornaEvento(evento)
       .then((updateEvent: Eventi) => {
         this.updateHandler(updateEvent);

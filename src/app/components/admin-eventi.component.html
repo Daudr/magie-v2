@@ -84,7 +84,7 @@
 			    </md-input-container>
 			    <br>
 			    <div class="input-field">
-						<textarea id={{event._id}} class="textarea materialize-textarea" [value]="event.descrizione" name="descrizione"></textarea>
+						<textarea id={{event._id}} class="textarea materialize-textarea" [value]="event.descrizione" name="descrizione" [(ngModel)]="descrizione"></textarea>
 						<label for={{event._id}}>Descrizione evento</label>
 						<br>
 					</div>
@@ -110,7 +110,7 @@
 					</div>
 
 					<div class="center-align btn-group">
-						<a (click)="aggiornaEvento()" class="btn-flat white-text light-blue text-darken-4 margin-btn">Inserisci</a>
+						<a (click)="aggiornaEvento(event._id)" class="btn-flat white-text light-blue text-darken-4 margin-btn">Inserisci</a>
 						<input type="reset" class="btn-flat white-text light-blue text-darken-4 margin-btn">
 					</div>
 				</form>
