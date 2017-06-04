@@ -71,13 +71,13 @@ export class OrariComponent  implements OnInit {
 		<div class="contatti row">
 			<h4 class="center-align">Per informazioni:</h4>
 			<div *ngFor="let person of staff">
-				<div class="col m12">
+				<div class="col m5 offset-m1">
 					<div class="card light-blue lighten-1">
 			            <div class="card-content white-text">
 			              	<div class="col l2 s3">
 				              <img src={{person.icon}} class="circle responsive-img">
 				          	</div>
-				          	<span class="card-title">{{person.nome}}</span>
+				          	<span class="card-title center-align">{{person.nome}}</span>
 				          	<p class="right-align hide-on-small-only">
 				          		Contattare per: {{person.compiti}}<br>
 				          		Contattare: {{person.disponibilita}}<br>
@@ -147,13 +147,13 @@ export class DialogPomeriggio {
 		<div class="contatti row">
 			<h4 class="center-align">Per informazioni:</h4>
 			<div *ngFor="let person of staff">
-				<div class="col m12">
+				<div class="col m5 offset-m1">
 					<div class="card light-blue lighten-1">
 			            <div class="card-content white-text">
 			              	<div class="col l2 s3">
 				              <img src={{person.icon}} class="circle responsive-img">
 				          	</div>
-				          	<span class="card-title">{{person.nome}}</span>
+				          	<span class="card-title center-align">{{person.nome}}</span>
 				          	<p class="right-align hide-on-small-only">
 				          		Contattare per: {{person.compiti}}<br>
 				          		Contattare: {{person.disponibilita}}<br>
