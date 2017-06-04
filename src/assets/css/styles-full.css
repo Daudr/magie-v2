@@ -618,7 +618,7 @@ main {
 .container_logo {
   display: block;
   margin-top: 10px;
-  margin-bottom: 300px;
+  margin-bottom: 150px;
   max-height: 500px;
   max-width: 500px;
 }
@@ -1263,7 +1263,7 @@ mat-tab-header {
   }
 
   .container_logo {
-    margin-bottom: 100px;
+    margin-bottom: 20px;
   }
 
   .map-row, .map-frame {
