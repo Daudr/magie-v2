@@ -66,14 +66,16 @@
 	</div>
 
 	<div class="card-panel center-align body_container"> <!-- SERVIZI -->
-		
+
 		<h2 class="hide-on-small-only">Magie D'Inverno offre i seguenti servizi</h2>
 		<h4 class="hide-on-med-and-up">Magie D'Inverno offre i seguenti servizi</h4>
 
 		<div class="row row-service-index">
 			<div class="col m6 s12 col-service-index parallax-container" *ngFor="let servizio of servizi">
 				<div>
-					<img src={{servizio.foto}} class="img-service-index">
+					<a routerLink="/servizi">
+						<img src={{servizio.foto}} class="img-service-index">
+					</a>
 				</div>
 				<div class="card-panel service-name">
 					<p>{{servizio.nome}}</p>
@@ -90,7 +92,7 @@
 			<iframe
 				frameborder="0"
 				class="map-frame col s12"
-				src="https://www.google.com/maps/embed/v1/place?q=place_id:ChIJLSt0CtQUeUcRvAz1SS5vNfk&key=AIzaSyBZbraKHNSZ6hXdK3ZPXCe3WHPcP4tdEM8" 
+				src="https://www.google.com/maps/embed/v1/place?q=place_id:ChIJLSt0CtQUeUcRvAz1SS5vNfk&key=AIzaSyBZbraKHNSZ6hXdK3ZPXCe3WHPcP4tdEM8"
 				allowfullscreen>
 			</iframe>
 		</div>
