@@ -120,8 +120,8 @@
 </div>
 <div id="del-ev" class="card-panel">
   <div *ngFor="let event of events" class="row valign-wrapper">
-    <div class="col l8 m8 s7 valign">{{event.nome}} - {{traduciData(event.data)}}</div>
-    <div class="col l4 m4 s5">
+    <div class="col l10 m10 s8 valign">{{event.nome}} - {{traduciData(event.data)}}</div>
+    <div class="col l2 m2 s4">
     	<button (click)="eliminaEvento(event)" class="btn-flat white-text light-blue text-darken-4">Elimina</button>
     </div>
   </div>
