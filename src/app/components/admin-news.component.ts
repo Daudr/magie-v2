@@ -12,6 +12,7 @@ declare var Quill: any;
 export class AdminNewsComponent implements AfterViewInit {
   editorOpen: boolean = false;
   editor: any;
+  subject: any;
 
   constructor (private news: NewsletterService) { }
 
@@ -45,8 +46,7 @@ export class AdminNewsComponent implements AfterViewInit {
   }
 
   sendMail () {
-    console.log(this.editor.getText());
-    console.log(this.editor.getContents());
-		// this.news.sendMails("Questa è una prova", "Provare è bello");
+    console.log(this.subject);
+		//this.news.sendMails(this.subject, this.editor.getText());
 	}
 }
