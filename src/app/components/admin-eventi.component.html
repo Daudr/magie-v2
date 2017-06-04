@@ -23,7 +23,11 @@
   		<input mdInput type="time" placeholder="Ora Fine" name="oraFine" [(ngModel)]="oraFine">
     </md-input-container>
     <br>
-    <div id="editor-eventi" name="descrizione" [(ngModel)]="descrizione"></div>
+		<div class="input-field">
+			<textarea id="descrizione" class="textarea materialize-textarea" name="descrizione"></textarea>
+			<label for="descrizione">Descrizione evento</label>
+			<br>
+		</div>
 
 		<div class="file-field input-field">
 			<div class="btn btn-flat light-blue">
@@ -69,17 +73,17 @@
 					</md-input-container>
 					<br>
 					<md-input-container class="admin-input">
-				    	<input mdInput type="date" placeholder="Data" [value]="event.data" name="dataEvento">
-				    </md-input-container>
-				    <br><br>
-				    <md-input-container>
-				    	<input mdInput type="time" placeholder="Ora Inizio" [value]="event.oraFine" name="oraInizio">
-				    </md-input-container>
-				    <md-input-container>
-				    	<input mdInput type="time" placeholder="Ora Fine" [value]="event.oraFine" name="oraFine">
-				    </md-input-container>
-				    <br>
-				    <div class="input-field">
+			    	<input mdInput type="date" placeholder="Data" [value]="event.data" name="dataEvento">
+			    </md-input-container>
+			    <br><br>
+			    <md-input-container>
+			    	<input mdInput type="time" placeholder="Ora Inizio" [value]="event.oraFine" name="oraInizio">
+			    </md-input-container>
+			    <md-input-container>
+			    	<input mdInput type="time" placeholder="Ora Fine" [value]="event.oraFine" name="oraFine">
+			    </md-input-container>
+			    <br>
+			    <div class="input-field">
 						<textarea id={{event._id}} class="textarea materialize-textarea" [value]="event.descrizione" name="descrizione"></textarea>
 						<label for={{event._id}}>Descrizione evento</label>
 						<br>
