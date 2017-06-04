@@ -53,7 +53,7 @@ export class OrariComponent  implements OnInit {
   	}
 
   	traduciData(grn: Date): String {				// METODO PER TRADURRE LA DATA
-			return new DatePipe('it-IT').transform(grn, 'fullDate');;
+			return new DatePipe('it-IT').transform(grn, 'fullDate');
 	}
 }
 
