@@ -1374,4 +1374,5 @@ md-dialog-container {
 
 #editor-quill p {
   text-align: left;
+  color: inherit;
 }
