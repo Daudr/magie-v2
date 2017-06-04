@@ -1,6 +1,7 @@
 import { Component, OnInit, AfterViewInit, Input } from '@angular/core';
 import { Title } from '@angular/platform-browser';
 import { DatePipe } from '@angular/common';
+import { MdSnackBar } from '@angular/material';
 
 
 import { Eventi } from '../eventi';
@@ -34,7 +35,7 @@ export class AdminEventiComponent implements OnInit, AfterViewInit {
   @Input()
   deleteHandler: Function;
 
-  constructor (private eventiService: EventiService, private title: Title) { }
+  constructor (private eventiService: EventiService, private title: Title, private snackBar: MdSnackBar) { }
 
   ngOnInit () {
     this.eventiService
@@ -74,8 +75,10 @@ export class AdminEventiComponent implements OnInit, AfterViewInit {
 
   inserisciEvento (evento: Eventi) {
     this.eventiService.creaEvento(evento)
-      .then((nuovoEvento: Eventi) => {
-        this.events.push(nuovoEvento);
+      .then(() => {
+				this.snackBar.open("Evento aggiunto", "Chiudi", {
+		      duration: 6000,
+		    });
       });
   }
 
@@ -87,6 +90,9 @@ export class AdminEventiComponent implements OnInit, AfterViewInit {
 		    if (index !== -1) {
 		        this.events.splice(index, 1);
 		    }
+				this.snackBar.open("Evento eliminato", "Chiudi", {
+		      duration: 6000,
+		    });
       });
   }
 
@@ -94,6 +100,9 @@ export class AdminEventiComponent implements OnInit, AfterViewInit {
     this.eventiService.aggiornaEvento(evento)
       .then((updateEvent: Eventi) => {
         this.updateHandler(updateEvent);
+				this.snackBar.open("Evento aggiornato", "Chiudi", {
+		      duration: 6000,
+		    });
       })
   }
 
