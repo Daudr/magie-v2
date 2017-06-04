@@ -43,8 +43,6 @@ export class AdminEventiComponent implements OnInit, AfterViewInit {
         return events;
       });
     });
-
-		var editor = new Quill ('#editor-eventi');
   }
 
   creaEvento () {
@@ -96,6 +94,8 @@ export class AdminEventiComponent implements OnInit, AfterViewInit {
     });
 
     this.title.setTitle('Admin eventi');
+
+		var editor = new Quill ('#editor-eventi');
   }
 
   goTo(location: string): void {
