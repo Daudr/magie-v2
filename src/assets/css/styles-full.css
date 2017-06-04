@@ -1363,3 +1363,7 @@ md-sidenav {
 md-dialog-container {
   overflow-x: hidden;
 }
+
+#ditor-quill {
+  height: 400px;
+}
