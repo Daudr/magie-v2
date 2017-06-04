@@ -1,4 +1,4 @@
-import { Component, AfterViewChecked } from '@angular/core';
+import { Component, AfterViewInit } from '@angular/core';
 
 declare var Quill: any;
 
@@ -6,9 +6,9 @@ declare var Quill: any;
   selector: 'admin-news',
   templateUrl: './admin-news.component.html'
 })
-export class AdminNewsComponent implements AfterViewChecked {
+export class AdminNewsComponent implements AfterViewInit {
 
-  ngAfterViewChecked () {
+  ngAfterViewInit () {
     $(document).ready(() => {
       var options = {
         modules: {
