@@ -71,7 +71,7 @@ export class OrariComponent  implements OnInit {
 		<div class="contatti row">
 			<h4 class="center-align">Per informazioni:</h4>
 			<div *ngFor="let person of staff">
-				<div class="col m5 offset-m1">
+				<div class="col m6">
 					<div class="card light-blue lighten-1">
 			            <div class="card-content white-text">
 			              	<div class="col l2 s3">
@@ -147,7 +147,7 @@ export class DialogPomeriggio {
 		<div class="contatti row">
 			<h4 class="center-align">Per informazioni:</h4>
 			<div *ngFor="let person of staff">
-				<div class="col m5 offset-m1">
+				<div class="col m6">
 					<div class="card light-blue lighten-1">
 			            <div class="card-content white-text">
 			              	<div class="col l2 s3">
