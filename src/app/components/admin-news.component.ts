@@ -47,6 +47,6 @@ export class AdminNewsComponent implements AfterViewInit {
   sendMail () {
     console.log(this.editor.getText());
     console.log(this.editor.getContents());
-		this.news.sendMails("Questa è una prova", "Provare è bello");
+		// this.news.sendMails("Questa è una prova", "Provare è bello");
 	}
 }
