@@ -1,4 +1,4 @@
-import { Component, AfterViewInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 
 declare var Quill: any;
 
@@ -6,9 +6,9 @@ declare var Quill: any;
   selector: 'admin-news',
   templateUrl: './admin-news.component.html'
 })
-export class AdminNewsComponent implements AfterViewInit {
+export class AdminNewsComponent implements OnInit {
 
-  ngAfterViewInit () {
+  ngOnInit () {
     var container = $('#editor-quill').get(0);
     var editor = new Quill(container, {
     modules: {
