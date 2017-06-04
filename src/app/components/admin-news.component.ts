@@ -11,7 +11,7 @@ export class AdminNewsComponent implements AfterViewInit {
   ngAfterViewInit () {
     var editor = new Quill('#editor', {
     modules: { toolbar: '#toolbar' },
-    theme: 'bubble'
+    theme: 'snow'
   });
   }
 }
