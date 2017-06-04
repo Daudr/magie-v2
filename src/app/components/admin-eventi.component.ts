@@ -124,6 +124,7 @@ export class AdminEventiComponent implements OnInit, AfterViewInit {
 			fotoMin: '',
 			foto: ''
 		}
+		console.log(evento);
     this.eventiService.aggiornaEvento(evento)
       .then((updateEvent: Eventi) => {
         this.updateHandler(updateEvent);
