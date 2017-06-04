@@ -46,7 +46,6 @@ export class AdminNewsComponent implements AfterViewInit {
   }
 
   sendMail () {
-    console.log(this.subject);
-		//this.news.sendMails(this.subject, this.editor.getText());
+		this.news.sendMails(this.subject, this.editor.getText());
 	}
 }
