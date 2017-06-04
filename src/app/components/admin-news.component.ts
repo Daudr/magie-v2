@@ -9,17 +9,6 @@ declare var Quill: any;
 export class AdminNewsComponent implements OnInit {
 
   ngOnInit () {
-    var container = $('#editor-quill').get(0);
-    var editor = new Quill(container, {
-    modules: {
-      toolbar: [
-        [{ header: [1, 2, false] }],
-        ['bold', 'italic', 'underline'],
-        ['image', 'code-block']
-      ]
-    },
-    placeholder: 'Scrivi qualcosa di bello...',
-    theme: 'snow'
-  });
+    var editor = new Quill('#editor-quill');
   }
 }
