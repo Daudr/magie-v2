@@ -580,16 +580,11 @@ input.mat-input-element:-webkit-autofill + .mat-input-placeholder .mat-placehold
 .mat-tooltip {
   background: rgba(97, 97, 97, 0.9); }
 
-/*# sourceMappingURL=material-theme.css.map */
-
-* {
-  font-family: 'Merienda', cursive;
-}
-
 body {
-    display: flex;
-    flex-direction: column;
-    background-color: #e0f7fa;
+  font-family: 'Merienda', cursive;
+  display: flex;
+  flex-direction: column;
+  background-color: #e0f7fa;
 }
 
 main {
