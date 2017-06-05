@@ -1373,10 +1373,18 @@ md-dialog-container {
 .i-sponsor {
   max-width: 150px;
   vertical-align: middle;
+  display: inline-block;
 }
 
 .d-sponsor {
   align-items: center;
   text-align: center;
   vertical-align: middle;
+}
+
+.d-sponsor:before {
+  content: ' ';
+  display: inline-block;
+  vertical-align: middle;
+  height: 100%;
 }
