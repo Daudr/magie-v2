@@ -1363,5 +1363,5 @@ md-dialog-container {
 }
 
 .in-text {
-  font-family: 'Roboto', sans-serif;
+  font-family: 'Roboto', sans-serif !important;
 }
