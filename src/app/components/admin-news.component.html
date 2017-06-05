@@ -5,6 +5,6 @@
 Oggetto dell'e-mail: <input type="text" name="subject" [(ngModel)]="subject">
 <div id="editor-quill"></div>
 
-<div class="center-align" *nfIf="editorOpen">
+<div class="center-align" *ngIf="editorOpen">
   <button md-button (click)="sendMail()" class="light-blue lighten-2 b-invia">Invia E-Mail</button>
 </div>
