@@ -1380,6 +1380,7 @@ md-dialog-container {
   align-items: center;
   text-align: center;
   vertical-align: middle;
+  margin-bottom: 15px;
 }
 
 .d-sponsor:before {
