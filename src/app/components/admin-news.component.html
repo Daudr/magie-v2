@@ -2,9 +2,11 @@
   <button md-button (click)="openEditor()" *ngIf="!editorOpen">Apri editor</button>
 </div>
 
-Oggetto dell'e-mail: <input type="text" name="subject" [(ngModel)]="subject">
-<div id="editor-quill"></div>
+<div *ngIf="editorOpen">
+  Oggetto dell'e-mail: <input type="text" name="subject" [(ngModel)]="subject">
+  <div id="editor-quill"></div>
 
-<div class="center-align">
-  <button md-button (click)="sendMail()" class="light-blue lighten-2">Invia E-Mail</button>
+  <div class="center-align">
+    <button md-button (click)="sendMail()" class="light-blue lighten-2">Invia E-Mail</button>
+  </div>
 </div>
