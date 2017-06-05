@@ -82,7 +82,9 @@ export class AdminEventiComponent implements OnInit, AfterViewInit {
         foto: '../assets/icons/other/magie200.png'
       }
 
-      this.inserisciEvento(event);
+			if (confirm('Vuoi inserire l\'evento' + event.nome)) {
+      	this.inserisciEvento(event);
+			}
     } else {
       console.log('Informazioni mancanti nel form');
     }
@@ -99,17 +101,19 @@ export class AdminEventiComponent implements OnInit, AfterViewInit {
   }
 
   eliminaEvento (evento: Eventi): void {
-    this.eventiService.rimuoviEvento(evento._id)
-      .then((deletedEvent: Eventi) => {
-				let index: number = this.events.indexOf(deletedEvent);
-		    if (index !== -1) {
-		        this.events.splice(index, 1);
-		    }
-				this.snackBar.open("Evento eliminato", "Chiudi", {
-		      duration: 6000,
-		    });
-				this.refresh();
-      });
+		if (confirm('Vuoi rimuovere l\'evento' + evento.nome)) {
+	    this.eventiService.rimuoviEvento(evento._id)
+	      .then((deletedEvent: Eventi) => {
+					let index: number = this.events.indexOf(deletedEvent);
+			    if (index !== -1) {
+			        this.events.splice(index, 1);
+			    }
+					this.snackBar.open("Evento eliminato", "Chiudi", {
+			      duration: 6000,
+			    });
+					this.refresh();
+	      });
+		}
   }
 
   aggiornaEvento (id: any): void {
@@ -123,14 +127,16 @@ export class AdminEventiComponent implements OnInit, AfterViewInit {
 			fotoMin: '',
 			foto: ''
 		}
-    this.eventiService.aggiornaEvento(evento)
-      .then((updateEvent: Eventi) => {
-				this.snackBar.open("Evento aggiornato", "Chiudi", {
-		      duration: 6000,
-		    });
-				this.refresh();
-      })
-  }
+		if (confirm('Vuoi aggiornare l\'evento' + evento.nome)) {
+	    this.eventiService.aggiornaEvento(evento)
+	      .then((updateEvent: Eventi) => {
+					this.snackBar.open("Evento aggiornato", "Chiudi", {
+			      duration: 6000,
+			    });
+					this.refresh();
+	      })
+	  }
+	}
 
   goTo(location: string): void {
     window.location.hash = location;
