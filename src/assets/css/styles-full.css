@@ -1254,7 +1254,7 @@ mat-tab-header {
   }
 
   .b-logout {
-    top: 80px;
+    top: 80px !important;
   }
 }
 
