@@ -1360,3 +1360,7 @@ md-dialog-container {
 .in-text {
   font-family: 'Roboto', sans-serif !important;
 }
+
+[_nghost-c1] {
+  font-family: 'Merienda', cursive !important;
+}
