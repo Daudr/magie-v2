@@ -1361,3 +1361,7 @@ md-dialog-container {
 .b-invia {
   margin: 10px;
 }
+
+.in-text {
+  font-family: inherit;
+}
