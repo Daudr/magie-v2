@@ -1372,8 +1372,11 @@ md-dialog-container {
 
 .i-sponsor {
   max-width: 150px;
+  vertical-align: middle;
 }
 
 .d-sponsor {
-  margin: 10px;
+  align-items: center;
+  text-align: center;
+  vertical-align: middle;
 }
