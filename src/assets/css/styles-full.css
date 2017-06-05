@@ -1369,3 +1369,7 @@ md-dialog-container {
   right: 20px;
   top: 100px;
 }
+
+.i-sponsor {
+  max-width: 100px;
+}
