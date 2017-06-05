@@ -580,8 +580,11 @@ input.mat-input-element:-webkit-autofill + .mat-input-placeholder .mat-placehold
 .mat-tooltip {
   background: rgba(97, 97, 97, 0.9); }
 
-body {
+* {
   font-family: 'Merienda', cursive;
+}
+
+body {
   display: flex;
   flex-direction: column;
   background-color: #e0f7fa;
@@ -1249,6 +1252,10 @@ mat-tab-header {
   .parallax-service {
     min-height: 300px;
   }
+
+  .b-logout {
+    top: 80px;
+  }
 }
 
 @media only screen and (max-width: 360px) {
@@ -1357,6 +1364,8 @@ md-dialog-container {
   margin: 10px;
 }
 
-[_nghost-c1] {
-  font-family: 'Merienda', cursive;
+.b-logout {
+  position: absolute;
+  right: 20px;
+  top: 100px;
 }
