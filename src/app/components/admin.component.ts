@@ -1,5 +1,6 @@
 import  { Component, OnInit, AfterViewInit } from '@angular/core';
 import { Title } from '@angular/platform-browser';
+import { Router } from '@angular/router';
 
 import { AuthService } from '../services/auth.service';
 
@@ -13,7 +14,8 @@ export class AdminComponent implements OnInit, AfterViewInit {
 
 	constructor (
 		private title: Title,
-		private auth: AuthService
+		private auth: AuthService,
+		private router: Router
 	) { }
 
 	ngOnInit(){
@@ -28,5 +30,6 @@ export class AdminComponent implements OnInit, AfterViewInit {
 
 	logout () {
 		this.auth.logout();
+		this.router.navigate(['/admin']);
 	}
 }
