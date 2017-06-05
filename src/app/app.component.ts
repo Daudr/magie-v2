@@ -7,6 +7,8 @@ import { CookieService } from 'angular2-cookie/services/cookies.service';
 import { EventiService } from './services/eventi.service';
 import { NewsletterService } from './services/newsletter.service';
 
+import { Sponsor } from './sponsor';
+
 declare var $: any;
 
 @Component({
@@ -20,6 +22,33 @@ export class AppComponent implements OnInit, AfterViewInit {
 	dialogRef: MdDialogRef<any>;
 
 	cookieAccepted: any;
+
+	sponsors: Sponsor[] = [
+		{
+			icon: '../assets/icons/sponsor/ascopiave.jpg'
+		},
+		{
+			icon: '../assets/icons/sponsor/banca.jpg'
+		},
+		{
+			icon: '../assets/icons/sponsor/bibione.jpg'
+		},
+		{
+			icon: '../assets/icons/sponsor/chocomax.jpg'
+		},
+		{
+			icon: '../assets/icons/sponsor/csn.jpg'
+		},
+		{
+			icon: '../assets/icons/sponsor/daros.jpg'
+		},
+		{
+			icon: '../assets/icons/sponsor/epa.jpg'
+		},
+		{
+			icon: '../assets/icons/sponsor/gibus.jpg'
+		}
+	];
 
 	public constructor(private titleService: Title, public dialog: MdDialog, private cookieService: CookieService) { }
 

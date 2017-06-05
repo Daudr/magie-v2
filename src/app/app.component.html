@@ -71,32 +71,8 @@
 			<div class="col l6 s12">
 				<h5 class="white-text">Magie D'Inverno ringrazia: </h5>
 				<div class="row">
-					<div class="col m3 offset-s3">
-						<img src="assets/icons/sponsor/sponsor_logo.jpg" alt="logo sponsor">
-					</div>
-					<div class="col m3 offset-s3">
-						<img src="assets/icons/sponsor/sponsor_logo.jpg" alt="logo sponsor">
-					</div>
-					<div class="col m3 offset-s3">
-						<img src="assets/icons/sponsor/sponsor_logo.jpg" alt="logo sponsor">
-					</div>
-					<div class="col m3 offset-s3">
-						<img src="assets/icons/sponsor/sponsor_logo.jpg" alt="logo sponsor">
-					</div>
-					<div class="col m3 offset-s3">
-						<img src="assets/icons/sponsor/sponsor_logo.jpg" alt="logo sponsor">
-					</div>
-					<div class="col m3 offset-s3">
-						<img src="assets/icons/sponsor/sponsor_logo.jpg" alt="logo sponsor">
-					</div>
-					<div class="col m3 offset-s3">
-						<img src="assets/icons/sponsor/sponsor_logo.jpg" alt="logo sponsor">
-					</div>
-					<div class="col m3 offset-s3">
-						<img src="assets/icons/sponsor/sponsor_logo.jpg" alt="logo sponsor">
-					</div>
-					<div class="col m3 offset-s3">
-						<img src="assets/icons/sponsor/sponsor_logo.jpg" alt="logo sponsor">
+					<div class="col m3 offset-s3" *ngFor="let sponsor of sponsors">
+						<img src={{sponsor.icon}} alt="logo sponsor">
 					</div>
 				</div>
 				<h5 class="white-text left-align hide-on-small-only"> Ci puoi trovare anche su: </h5>
