@@ -1357,3 +1357,7 @@ md-dialog-container {
   text-align: left;
   color: inherit;
 }
+
+.b-invia {
+  margin: 10px;
+}
