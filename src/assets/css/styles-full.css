@@ -1371,5 +1371,9 @@ md-dialog-container {
 }
 
 .i-sponsor {
-  max-width: 100px;
+  max-width: 150px;
+}
+
+.d-sponsor {
+  margin: 10px;
 }
