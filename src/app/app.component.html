@@ -62,16 +62,14 @@
 		</nav>
 	</div>
 
-	<a name="t"></a>
-
 	<router-outlet></router-outlet>
 
 	<footer class="page-footer light-blue lighten-1">
 		<div class="row">
-			<div class="col l6 s12">
+			<div class="col l8 s12">
 				<h5 class="white-text">Magie D'Inverno ringrazia: </h5>
 				<div class="row">
-					<div class="col m3 s6 d-sponsor" *ngFor="let sponsor of sponsors">
+					<div class="col l3 m4 s6 d-sponsor" *ngFor="let sponsor of sponsors">
 						<img src={{sponsor.icon}} alt="logo sponsor" class="i-sponsor">
 					</div>
 				</div>
@@ -89,7 +87,7 @@
 					</div>
 				</div>
 			</div>
-			<div class="col l4 offset-l2 s12 center-align">
+			<div class="col l4 s12 center-align">
 				<h5 class="white-text left-align hide-on-small-only">Per rimanere sempre aggiornato, iscriviti alla nostra newsletter:<br></h5>
 				<h5 class="white-text center-align hide-on-med-and-up">Per rimanere sempre aggiornato, iscriviti alla nostra newsletter:<br></h5>
 				<a title="iscrizioneNewsletter" class="btn btn-flat white-text light-blue" (click)="openNews()" >Iscriviti</a>
