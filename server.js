@@ -224,7 +224,10 @@ app.post("/api/email", function(req, res){
   sg.API(request, function (error, response) {
     if (error) {
       console.log('Error response received');
-    }
+    } else {
+      console.log(response.statusCode);
+      console.log(response.body);
+      console.log(response.headers);
   });
 });
 
