@@ -652,14 +652,6 @@ p, h1, h2, h3, h4, a.valign, strong.valign {
   text-align: center;
 }
 
-img.working {
-  display: block;
-  width: 10%;
-  height: 10%;
-  margin: auto;
-  margin-top: 10px;
-}
-
 .center {
   text-align: center;
 }
@@ -667,7 +659,7 @@ img.working {
 .body_container {
   background-color: #f5f5f5; /* grey lighten-4 */
   padding: 10px;
-  opacity: 0.85;
+  opacity: 0.75;
 }
 
 video#bgvid {
@@ -677,15 +669,13 @@ video#bgvid {
   min-width: 100%; min-height: 1080px;
 
   width: auto; height: 100%; z-index: -100;
-
-  z-index: -100;
 }
 
 div.parallax {
   background-attachment: fixed;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 .ad_left {
