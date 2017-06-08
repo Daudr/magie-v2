@@ -209,7 +209,11 @@ app.post("/api/email", function(req, res){
   var content = new helper.Content('text/plain', email.content);
   var mail = new helper.Mail(fromEmail, subject, toEmail, content);
 
-
+  // mail.addSubstitution('%name%', email.nome);
+  
+  mail.addFilter('templates', 'enable', 1);
+  mail.addFilter('templates', 'templates_id', process.env.SENDGRID_TEMPLATE_ID);
+  
   var sg = require('sendgrid')(process.env.SENDGRID_API_KEY);
   var request = sg.emptyRequest({
     method: 'POST',
