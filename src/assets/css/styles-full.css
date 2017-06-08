@@ -1370,3 +1370,7 @@ md-dialog-container {
   vertical-align: middle;
   height: 100%;
 }
+
+.p-size-large {
+  font-size: 1.2em;
+}

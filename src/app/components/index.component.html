@@ -9,16 +9,16 @@
 
 <div class="container main">
 	<div class="card-panel body_container center-align"> <!-- ORARI -->
-		<p>
+		<p class="p-size-large">
 			Oggi è {{ traduciData() }} e noi siamo <strong>{{ isOpen() }}</strong>
 		</p>
-		<p *ngIf="apertura">
+		<p *ngIf="apertura" class="p-size-large">
 			Siamo aperti dalle <strong><time>{{ apertura }}</time></strong> alle <strong><time>{{ chiusura }}</time></strong> al pubblico
 		</p>
-		<p *ngIf="aperturaCorsi">
+		<p *ngIf="aperturaCorsi" class="p-size-large">
 			I corsi si svolgono dalle <strong><time>{{ aperturaCorsi }}</time></strong> alle <strong><time>{{ chiusuraCorsi }}</time></strong>
 		</p>
-		<p *ngIf="isOpen()==='CHIUSI'">
+		<p *ngIf="isOpen()==='CHIUSI'" class="p-size-large">
 			Torna a trovarci spesso per sapere quando riapriremo.
 		</p>
     	<!-- <p class="red-text">Si avvisa che:</p>
