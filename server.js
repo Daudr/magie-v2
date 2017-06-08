@@ -202,28 +202,26 @@ app.post("/api/news", (req, res) => {
 
 app.post("/api/email", function(req, res){
   email = req.body;
-  var helper = require('sendgrid').mail;
-  var fromEmail = new helper.Email(email.fromEmail);
-  var toEmail = new helper.Email(email.toEmail);
-  var subject = email.subject;
-  var content = new helper.Content('text/plain', email.content);
-  var mail = new helper.Mail(fromEmail, subject, toEmail, content);
-
+  
+  var sendgrid = require('sendgrid')(process.env.SENDGRID_API_KEY);
+  
+  var mail = new sendgrid.Email({
+    from: email.fromEmail,
+    to: email.toEmail,
+    html: email.content,
+    subject: email.subject
+  });
+  
   // mail.addSubstitution('%name%', email.nome);
   
   mail.addFilter('templates', 'enable', 1);
   mail.addFilter('templates', 'templates_id', process.env.SENDGRID_TEMPLATE_ID);
   
-  var sg = require('sendgrid')(process.env.SENDGRID_API_KEY);
-  var request = sg.emptyRequest({
-    method: 'POST',
-    path: '/v3/mail/send',
-    body: mail.toJSON()
-  });
-
-  sg.API(request, function (error, response) {
-    if (error) {
-      console.log('Error response received');
+  sendgrid.send(mail, (res, err) => {
+    if (err) {
+      console.log(err);
+    } else {
+      console.log('Email inviata');
     }
   });
 });
