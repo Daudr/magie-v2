@@ -581,7 +581,7 @@ input.mat-input-element:-webkit-autofill + .mat-input-placeholder .mat-placehold
   background: rgba(97, 97, 97, 0.9); }
 
 * {
-  font-family: 'Merienda', cursive;
+  font-family: 'Slabo 27px';
 }
 
 body {

@@ -202,16 +202,16 @@ app.post("/api/news", (req, res) => {
 
 app.post("/api/email", function(req, res){
   email = req.body;
-  
+
   var helper = require('sendgrid').mail;
   var fromEmail = new helper.Email(email.fromEmail);
   var toEmail = new helper.Email(email.toEmail);
   var subject = email.subject;
   var content = new helper.Content('text/plain', email.content);
   var mail = new helper.Mail(fromEmail, subject, toEmail, content);
-  
+
   // mail.personalizations[0].addSubstitution(new helper.Substitution('%name%', email.nome));
-  
+
   mail.setTemplateId(process.env.SENDGRID_TEMPLATE_ID);
 
   var sg = require('sendgrid')(process.env.SENDGRID_API_KEY);
@@ -225,9 +225,7 @@ app.post("/api/email", function(req, res){
     if (error) {
       console.log('Error response received');
     } else {
-      console.log(response.statusCode);
-      console.log(response.body);
-      console.log(response.headers);
+      response.send({success: true});
     }
   });
 });
