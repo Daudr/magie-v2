@@ -4,6 +4,7 @@ export class Eventi {
 	data: Date;
 	oraInizio: string;
 	oraFine: string;
+	luogo?: string;
 	descrizione: string;
 	fotoMin: string;
 	foto: string;

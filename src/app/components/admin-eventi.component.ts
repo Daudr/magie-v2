@@ -77,8 +77,9 @@ export class AdminEventiComponent implements OnInit, AfterViewInit {
         data: new Date(this.data),
         oraInizio: this.oraInizio,
         oraFine: this.oraFine,
+				luogo: 'Pista di pattinaggio - Magie D\'Inverno',
         descrizione: this.descrizione,
-        fotoMin: '../assets/icons/other/magie200.png',
+        fotoMin: '../assets/icons/other/magie100.png',
         foto: '../assets/icons/other/magie200.png'
       }
 
