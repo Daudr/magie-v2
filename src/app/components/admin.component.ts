@@ -30,6 +30,6 @@ export class AdminComponent implements OnInit, AfterViewInit {
 
 	logout () {
 		this.auth.logout();
-		this.router.navigate(['/admin']);
+		location.href = location.href;
 	}
 }
