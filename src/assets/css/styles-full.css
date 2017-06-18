@@ -1036,6 +1036,8 @@ caption {
 
 .footer-list {
   float: left;
+  margin-right: 10px;
+  margin-left: 10px;
 }
 
 .full-width {
