@@ -41,13 +41,13 @@ export class AppComponent implements OnInit, AfterViewInit {
 		},
 		{
 			icon: '../assets/icons/sponsor/daros.jpg'
-		},
+		}/*,
 		{
 			icon: '../assets/icons/sponsor/epa.jpg'
 		},
 		{
 			icon: '../assets/icons/sponsor/gibus.jpg'
-		}
+		}*/
 	];
 
 	public constructor(private titleService: Title, public dialog: MdDialog, private cookieService: CookieService) { }
