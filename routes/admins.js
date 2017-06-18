@@ -8,14 +8,12 @@ const config = require('../config/database');
 
 // Register
 router.post('/register', (req, res, next) => {
-  let newAdmin= new Admin({
+  let newAdmin = new Admin({
     name: req.body.name,
     email: req.body.email,
     username: req.body.username,
     password: req.body.password
   });
-
-  console.log(newAdmin);
 
   Admin.addAdmin(newAdmin, (err, admin) => {
     if(err) {
