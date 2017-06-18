@@ -22,7 +22,7 @@
 			<h3 class="hide-on-small-only">Con l'aiuto di:</h3>
 			<h4 class="hide-on-med-and-up">Con l'aiuto di:</h4>
 			<div class="row"> <!-- Sponsors -->
-				<a href="#" ngFor="let sponsor of sponsors">
+				<a href="#" *ngFor="let sponsor of sponsors">
 					<div class="col s3">
 						<img src={{sponsor.icon}} alt="logo sponsor" class="i-sponsor">
 					</div>
