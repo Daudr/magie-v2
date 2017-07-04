@@ -973,6 +973,10 @@ ul.sidenav {
   margin: 5% 10% 0 10%;
 }
 
+.mat-tab-labels {
+  justify-content: center;
+}
+
 .parallax-container {
   height: auto;
   max-height: 300px;
