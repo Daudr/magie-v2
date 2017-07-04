@@ -969,10 +969,8 @@ ul.sidenav {
   list-style: none;
 }
 
-.tab {
-  margin-top: 5%;
-  margin-left: 40%;
-  margin-right: 40%;
+.mat-tab-label-container {
+  margin: 5% 10% 0 10%;
 }
 
 .parallax-container {
