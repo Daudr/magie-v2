@@ -1071,8 +1071,16 @@ caption {
   justify-content: center;
 }
 
+.mat-card {
+  text-align: center;
+}
+
+.mat-card-content {
+  text-align: left;
+}
+
 img.dialog-evento, img.iceteam {
-  width: 450px;
+  width: 300px;
   height: auto;
 }
 
