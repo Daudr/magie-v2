@@ -1085,7 +1085,7 @@ img.dialog-evento, img.iceteam {
 }
 
 .mat-dialog-container {
-  max-height: 500px;
+  max-height: 80vh;
 }
 
 .floatr {
