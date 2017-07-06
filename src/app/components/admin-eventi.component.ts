@@ -83,7 +83,7 @@ export class AdminEventiComponent implements OnInit, AfterViewInit {
         foto: '../assets/icons/logo/magie_dinverno_logo.png'
       }
 
-			if (confirm('Vuoi inserire l\'evento ' + event.nome)) {
+			if (confirm('Vuoi inserire l\'evento ' + event.nome + '?')) {
       	this.inserisciEvento(event);
 			}
     } else {
@@ -102,7 +102,7 @@ export class AdminEventiComponent implements OnInit, AfterViewInit {
   }
 
   eliminaEvento (evento: Eventi): void {
-		if (confirm('Vuoi rimuovere l\'evento ' + evento.nome)) {
+		if (confirm('Vuoi rimuovere l\'evento ' + evento.nome + '?')) {
 	    this.eventiService.rimuoviEvento(evento._id)
 	      .then((deletedEvent: Eventi) => {
 					let index: number = this.events.indexOf(deletedEvent);
@@ -128,7 +128,7 @@ export class AdminEventiComponent implements OnInit, AfterViewInit {
 			fotoMin: '',
 			foto: ''
 		}
-		if (confirm('Vuoi aggiornare l\'evento ' + evento.nome)) {
+		if (confirm('Vuoi aggiornare l\'evento ' + evento.nome + '?')) {
 	    this.eventiService.aggiornaEvento(evento)
 	      .then((updateEvent: Eventi) => {
 					this.snackBar.open("Evento aggiornato", "Chiudi", {
