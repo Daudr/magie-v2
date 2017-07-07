@@ -69,6 +69,8 @@ app.post("/api/eventi", function(req, res){
 	} else {
 		var evento = req.body;
 
+    evento.data = new Date(req.body.data);
+
 		evt.eventi.insert(evento, function(err, evento) {
 			if(err) {
 				handleError(res, err.message, "Failed to insert event");
