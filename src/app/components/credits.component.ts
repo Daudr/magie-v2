@@ -12,6 +12,7 @@ export class CreditsComponent implements OnInit {
 
 	ngOnInit () {
 		this.title.setTitle('Magie D\'Inverno - Crediti');
+		document.body.scrollTop = document.documentElement.scrollTop = 0;
 	}
 
 	sponsors: Sponsor[] = [
