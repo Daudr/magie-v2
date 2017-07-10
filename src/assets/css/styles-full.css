@@ -1142,6 +1142,7 @@ img.dialog-evento, img.iceteam {
 .db-error {
   margin-right: 10%;
   margin-left: 10%;
+  background-color: rgba(0, 0, 0, 0.1);
 }
 
 .service-info {
