@@ -659,7 +659,7 @@ h1.raleway, h2.raleway, h3.raleway, h4.raleway, h5.raleway, h6.raleway {
   font-family: 'Raleway';
 }
 
-nav ul a {
+nav ul a, .button-collapse {
   color: #000;
 }
 
@@ -671,7 +671,7 @@ nav ul a {
   background-color: #F5F5F5 !important; /* grey lighten-4 */
 }
 
-.button-col {
+a[class~="btn"] {
   background-color: #62D0DF !important;
 }
 
