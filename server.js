@@ -5,15 +5,18 @@ var mongojs = require("mongojs");
 const passport = require('passport');
 const jwt = require('jsonwebtoken');
 const mongoose = require('mongoose');
+const aws = require('aws-sdk');
+const s3 = new aws.S3();
 
 const config = require('./config/database');
 
 var ObjectID = mongojs.ObjectID;
 
-var STAFF_COLLECTION = "staff";
-var EVENTS_COLLECTION = "eventi";
-var FILES_COLLECTION = "fs.files";
-var NEWS_COLLECTION = "news";
+const STAFF_COLLECTION = "staff";
+const EVENTS_COLLECTION = "eventi";
+const NEWS_COLLECTION = "news";
+
+const BUCKET_NAME = process.env.S3_BUCKET_NAME;
 
 // Connessione mongoose
 mongoose.connect(config.database);
@@ -67,6 +70,36 @@ app.post("/api/eventi", function(req, res){
 	if(!req.body.nome || !req.body.data || !req.body.oraInizio ){
 		handleError(res, "Invalid user input", "Must provide a name.", 400);
 	} else {
+    var fotoMin = '';
+    var fotoFull = '';
+
+    var params-min = {
+      Bucket: BUCKET_NAME,
+      Key: ????,
+      body: req.body.fotoMin
+    };
+    var params-full = {
+
+    };
+
+    s3.upload(params-min, (err, data) => {
+      if (err) {
+        console.log(err);
+      } else {
+        console.log('Successfully uploaded: ' + data);
+        fotoMin = data;
+      }
+    });
+
+    s3.upload(params-full, (err, data) => {
+      if (err) {
+        console.log(err);
+      } else {
+        console.log('Successfully uploaded: ' + data);
+        fotoFull = data;
+      }
+    });
+
 		var evento = {
 			nome: req.body.nome,
 			data: new Date(req.body.data),
@@ -74,8 +107,8 @@ app.post("/api/eventi", function(req, res){
 			oraFine: req.body.oraFine,
 			luogo: req.body.luogo,
 			descrizione: req.body.descrizione,
-			fotoMin: req.body.fotoMin,
-			foto: req.body.foto
+			fotoMin: this.fotoMin,
+			foto: this.fotoFull
 		};
 
 		evt.eventi.insert(evento, function(err, evento) {
