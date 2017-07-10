@@ -679,6 +679,14 @@ a[class~="btn"] {
   padding: 10px;
 }
 
+table {
+  background-color: rgba(0, 0, 0, 0.1);
+}
+
+table caption {
+  background-color: rgba(0, 0, 0, 0.2);
+}
+
 video#bgvid {
 
   position: fixed; right: 0; top: 0;
