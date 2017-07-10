@@ -75,12 +75,12 @@ app.post("/api/eventi", function(req, res){
 
     var params_min = {
       Bucket: BUCKET_NAME,
-      Key: ????,
+      Key: '',
       body: req.body.fotoMin
     };
     var params_full = {
       Bucket: BUCKET_NAME,
-      Key: ????,
+      Key: '',
       body: req.body.foto
     };
 
