@@ -659,6 +659,10 @@ h1.raleway, h2.raleway, h3.raleway, h4.raleway, h5.raleway, h6.raleway {
   font-family: 'Raleway';
 }
 
+nav ul a {
+  color: #000;
+}
+
 .center {
   text-align: center;
 }
