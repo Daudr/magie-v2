@@ -14,26 +14,26 @@
 </div>
 
 <md-sidenav-container>
-	<md-sidenav #sidenav class="side-nav light-blue lighten-1">
-		<ul class="sidenav light-blue lighten-1">
-	    	<li routerLinkActive="active"><a routerLink="/index" (click)="this.sidenav.toggle()" class="white-text mobile-li">Home</a></li>
-			<li routerLinkActive="active"><a routerLink="/orari" (click)="this.sidenav.toggle()" class="white-text mobile-li">Prezzi/Orari</a></li>
-			<li routerLinkActive="active"><a routerLink="/servizi" (click)="this.sidenav.toggle()" class="white-text mobile-li">Servizi</a></li>
-			<li routerLinkActive="active"><a routerLink="/eventi" (click)="this.sidenav.toggle()" class="white-text mobile-li">Eventi</a></li>
-			<li routerLinkActive="active"><a routerLink="/contatti" (click)="this.sidenav.toggle()" class="white-text mobile-li">Contatti</a></li>
+	<md-sidenav #sidenav class="side-nav back-col">
+		<ul class="sidenav back-col">
+	    <li routerLinkActive="active"><a routerLink="/index" (click)="this.sidenav.toggle()" class="mobile-li">Home</a></li>
+			<li routerLinkActive="active"><a routerLink="/orari" (click)="this.sidenav.toggle()" class="mobile-li">Prezzi/Orari</a></li>
+			<li routerLinkActive="active"><a routerLink="/servizi" (click)="this.sidenav.toggle()" class="mobile-li">Servizi</a></li>
+			<li routerLinkActive="active"><a routerLink="/eventi" (click)="this.sidenav.toggle()" class="mobile-li">Eventi</a></li>
+			<li routerLinkActive="active"><a routerLink="/contatti" (click)="this.sidenav.toggle()" class="mobile-li">Contatti</a></li>
 			<li routerLinkActive="active">
 				<a routerLink="/iceteam" (click)="this.sidenav.toggle()">
 					<img class="asd-logo" src="assets/icons/logo/logo-asd-trasp.png" alt="A.S.D. Ice Team Sanve">
 				</a>
 			</li>
 			<br>
-			<li><a href="https://www.facebook.com/magiedinverno" target="_blank" class="white-text btn-flat"><img src="assets/icons/social/facebook.png" alt="Facebook" class="side">Facebook</a></li>
+			<li><a href="https://www.facebook.com/magiedinverno" target="_blank" class="btn-flat"><img src="assets/icons/social/facebook.png" alt="Facebook" class="side">Facebook</a></li>
 			<li>
-				<a href="https://www.instagram.com/magie_inverno_official/" target="_blank" class="white-text btn-flat">
+				<a href="https://www.instagram.com/magie_inverno_official/" target="_blank" class="btn-flat">
 					<img src="assets/icons/social/instagram.png" alt="Instagram" class="side">Instagram
 				</a>
 			</li>
-	      	<li><a href="https://www.youtube.com/watch?v=L8kx_VK4OMc" target="_blank" class="white-text btn-flat"><img src="assets/icons/social/youtube.png" alt="YouTube" class="side">YouTube</a></li>
+	      	<li><a href="https://www.youtube.com/watch?v=L8kx_VK4OMc" target="_blank" class="btn-flat"><img src="assets/icons/social/youtube.png" alt="YouTube" class="side">YouTube</a></li>
 	    </ul>
 	</md-sidenav>
 
@@ -41,15 +41,15 @@
 
 	<div class="navbar-fixed">
 		<nav>
-		    <div class="nav-wrapper light-blue lighten-1">
+		    <div class="nav-wrapper back-col">
 		    	<a routerLink="/index" class="brand-logo center hide-on-large-only"><img src="assets/icons/logo/magie_dinverno_logo.png" alt="Magie D'Inverno" class="logo center"></a>
 				<a (click)="sidenav.open()" class="button-collapse"><i class="material-icons">menu</i></a>
 				<ul id="nav-mobile" class="left hide-on-med-and-down">
-					<li routerLinkActive="active"><a routerLink="/index" class="white-text ul-link">Home</a></li>
-					<li routerLinkActive="active"><a routerLink="/orari" class="white-text ul-link">Prezzi/Orari</a></li>
-					<li routerLinkActive="active"><a routerLink="/servizi" class="white-text ul-link">Servizi</a></li>
-					<li routerLinkActive="active"><a routerLink="/eventi" class="white-text ul-link">Eventi</a></li>
-					<li routerLinkActive="active"><a routerLink="/contatti" class="white-text ul-link">Contatti</a></li>
+					<li routerLinkActive="active"><a routerLink="/index" class="ul-link">Home</a></li>
+					<li routerLinkActive="active"><a routerLink="/orari" class="ul-link">Prezzi/Orari</a></li>
+					<li routerLinkActive="active"><a routerLink="/servizi" class="ul-link">Servizi</a></li>
+					<li routerLinkActive="active"><a routerLink="/eventi" class="ul-link">Eventi</a></li>
+					<li routerLinkActive="active"><a routerLink="/contatti" class="ul-link">Contatti</a></li>
 				</ul>
 				<ul class="right hide-on-med-and-down">
 					<li routerLinkActive="active">
@@ -64,17 +64,17 @@
 
 	<router-outlet></router-outlet>
 
-	<footer class="page-footer light-blue lighten-1">
+	<footer class="page-footer back-col">
 		<div class="row">
 			<div class="col l8 s12">
-				<h5 class="white-text">Magie D'Inverno ringrazia: </h5>
+				<h5 class="white-text raleway">Magie D'Inverno ringrazia: </h5>
 				<div class="row">
 					<div class="col l4 m4 s6 d-sponsor" *ngFor="let sponsor of sponsors">
 						<img src={{sponsor.icon}} alt="logo sponsor" class="i-sponsor">
 					</div>
 				</div>
-				<h5 class="white-text left-align hide-on-small-only"> Ci puoi trovare anche su: </h5>
-				<h5 class="white-text center-align hide-on-med-and-up"> Ci puoi trovare anche su: </h5>
+				<h5 class="left-align hide-on-small-only raleway"> Ci puoi trovare anche su: </h5>
+				<h5 class="center-align hide-on-med-and-up raleway"> Ci puoi trovare anche su: </h5>
 				<div class="row">
 					<div class="footer-icon col">
 						<a href="https://www.facebook.com" target="_blank"><img src="assets/icons/social/facebook.png" alt="Facebook" class="icon" mdTooltip="Facebook"></a>
@@ -88,15 +88,15 @@
 				</div>
 			</div>
 			<div class="col l4 s12 center-align">
-				<h5 class="white-text left-align hide-on-small-only">Per rimanere sempre aggiornato, iscriviti alla nostra newsletter:<br></h5>
-				<h5 class="white-text center-align hide-on-med-and-up">Per rimanere sempre aggiornato, iscriviti alla nostra newsletter:<br></h5>
+				<h5 class="left-align hide-on-small-only raleway">Per rimanere sempre aggiornato, iscriviti alla nostra newsletter:<br></h5>
+				<h5 class="center-align hide-on-med-and-up raleway">Per rimanere sempre aggiornato, iscriviti alla nostra newsletter:<br></h5>
 				<a title="iscrizioneNewsletter" class="btn btn-flat white-text light-blue" (click)="openNews()" >Iscriviti</a>
 				<br><br>
-				<h5 class="white-text left-align hide-on-small-only">
+				<h5 class="left-align hide-on-small-only raleway">
 					Hai notato degli errori in questa pagina?<br>
 					Aiutami a risolverli:
 				</h5>
-				<h5 class="white-text center-align hide-on-med-and-up">
+				<h5 class="center-align hide-on-med-and-up raleway">
 					Hai notato degli errori in questa pagina?<br>
 					Aiutami a risolverli:
 				</h5>
@@ -106,12 +106,12 @@
 	  <div class="footer-copyright justify">
 	    <div>
 	    	<ul class="footer-list hide-on-small-only">
-	    		<li class="footer-list"><a class="white-text btn-flat" routerLink="/credits">Credits</a></li>
-	    		<li class="footer-list"><a class="white-text btn-flat" routerLink="/privacy">Privacy Policy</a></li>
+	    		<li class="footer-list"><a class="btn-flat" routerLink="/credits">Credits</a></li>
+	    		<li class="footer-list"><a class="btn-flat" routerLink="/privacy">Privacy Policy</a></li>
 	    	</ul>
 	    	<ul class="footer-list hide-on-med-and-up center-align">
-	    		<li><a class="white-text btn-flat" routerLink="/credits">Credits</a></li>
-	    		<li><a class="white-text btn-flat" routerLink="/privacy">Privacy Policy</a></li>
+	    		<li><a class="btn-flat" routerLink="/credits">Credits</a></li>
+	    		<li><a class="btn-flat" routerLink="/privacy">Privacy Policy</a></li>
 	    	</ul>
 	    </div>
 	  </div>
