@@ -54,8 +54,8 @@ export class EventiComponent implements OnInit {
 	}
 
 	ngAfterViewInit() {
-		if(!($('.mat-tab-list').hasClass('light-blue lighten-2 tab'))) {
-			$('.mat-tab-list').addClass('light-blue lighten-2 tab');
+		if(!($('.mat-tab-list').hasClass('back-col tab'))) {
+			$('.mat-tab-list').addClass('back-col tab');
 		}
 	}
 
