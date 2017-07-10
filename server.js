@@ -76,12 +76,12 @@ app.post("/api/eventi", function(req, res){
     var params_min = {
       Bucket: BUCKET_NAME,
       Key: '',
-      body: req.body.fotoMin
+      Body: req.body.fotoMin
     };
     var params_full = {
       Bucket: BUCKET_NAME,
       Key: '',
-      body: req.body.foto
+      Body: req.body.foto
     };
 
     s3.upload(params_min, (err, data) => {
