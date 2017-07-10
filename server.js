@@ -73,16 +73,18 @@ app.post("/api/eventi", function(req, res){
     var fotoMin = '';
     var fotoFull = '';
 
-    var params-min = {
+    var params_min = {
       Bucket: BUCKET_NAME,
       Key: ????,
       body: req.body.fotoMin
     };
-    var params-full = {
-
+    var params_full = {
+      Bucket: BUCKET_NAME,
+      Key: ????,
+      body: req.body.foto
     };
 
-    s3.upload(params-min, (err, data) => {
+    s3.upload(params_min, (err, data) => {
       if (err) {
         console.log(err);
       } else {
@@ -91,7 +93,7 @@ app.post("/api/eventi", function(req, res){
       }
     });
 
-    s3.upload(params-full, (err, data) => {
+    s3.upload(params_full, (err, data) => {
       if (err) {
         console.log(err);
       } else {
