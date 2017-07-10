@@ -687,6 +687,14 @@ table caption {
   background-color: rgba(0, 0, 0, 0.2);
 }
 
+.staff-card {
+  background-color: rgba(0, 0, 0, 0.1);
+}
+
+.staff-btn {
+  background-color: rgba(0, 0, 0, 0.6) !important;
+}
+
 video#bgvid {
 
   position: fixed; right: 0; top: 0;
