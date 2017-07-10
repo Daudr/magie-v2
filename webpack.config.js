@@ -1,3 +1,5 @@
+const webpack = require('webpack');
+const htmlMinifier = require('html-minifier').minify;
 const path = require('path');
 const ProgressPlugin = require('webpack/lib/ProgressPlugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
@@ -362,7 +364,7 @@ module.exports = {
       "inject": true,
       "compile": true,
       "favicon": false,
-      "minify": true,
+      "minify": htmlMinifier,
       "cache": true,
       "showErrors": true,
       "chunks": "all",
@@ -404,10 +406,6 @@ module.exports = {
       "tsConfigPath": "src\\tsconfig.json",
       "skipCodeGeneration": true
     }),
-    new webpack.DefinePlugin({
-      'process.env.NODE_ENV': '"production"'
-    }),
-    new webpack.optimize.DedupePlugin(),
     new webpack.optimize.UglifyJsPlugin({
       mangle: true,
       compress: {
