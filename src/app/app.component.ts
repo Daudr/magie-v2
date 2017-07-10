@@ -143,6 +143,8 @@ export class NewsDialog implements AfterViewInit {
 		if(!($('.md-dialog-container').hasClass('dialog-responsive'))) {
 			$('.md-dialog-container').addClass('dialog-responsive');
 		}
+
+		this.recaptcha();
 	}
 
 	addReceiver () {
@@ -158,6 +160,30 @@ export class NewsDialog implements AfterViewInit {
 
 			this.dialogRef.close();
 		}
+	}
+
+	recaptcha () {
+		(function() {
+			    if (!window['___grecaptcha_cfg']) {
+			        window['___grecaptcha_cfg'] = {};
+			    }
+			    ;if (!window['___grecaptcha_cfg']['render']) {
+			        window['___grecaptcha_cfg']['render'] = 'onload';
+			    }
+			    ;window['__google_recaptcha_client'] = true;
+			    var po = document.createElement('script');
+			    po.type = 'text/javascript';
+			    po.async = true;
+			    po.src = 'https://www.gstatic.com/recaptcha/api2/r20170629165701/recaptcha__it.js';
+			    var elem = document.querySelector('script[nonce]');
+			    var nonce = elem && (elem['nonce'] || elem.getAttribute('nonce'));
+			    if (nonce) {
+			        po.setAttribute('nonce', nonce);
+			    }
+			    var s = document.getElementsByTagName('script')[0];
+			    s.parentNode.insertBefore(po, s);
+			}
+		)();
 	}
 }
 
