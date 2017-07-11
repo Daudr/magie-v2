@@ -3,8 +3,6 @@ import { MdDialog, MdDialogRef } from '@angular/material';
 import { Title } from '@angular/platform-browser';
 import { DatePipe } from '@angular/common';
 
-import { CookieService } from 'angular2-cookie/services/cookies.service';
-
 import { Eventi } from '../eventi';
 import { EventiService } from '../services/eventi.service';
 
@@ -62,7 +60,6 @@ export class IndexComponent implements OnInit, AfterViewInit {
 
 	constructor(
 		private eventiService: EventiService,
-		private cookieService: CookieService,
 		public dialog: MdDialog,
 		private title: Title) { }
 
@@ -79,9 +76,9 @@ export class IndexComponent implements OnInit, AfterViewInit {
     }
 
     ngAfterViewInit () {
-    	if(!this.cookieService.get('viewed')) {
+    	if(!localStorage.getItem('viewed')) {
     		this.dialogRef = this.dialog.open(DialogAlert);
-    		this.cookieService.put('viewed', 'true', {expires: new Date(2020, 12, 31)});
+    		localStorage.setItem('viewed', 'true');
     	}
     }
 
