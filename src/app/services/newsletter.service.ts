@@ -11,14 +11,14 @@ export class NewsletterService {
 
   constructor(private http: Http) { }
 
-  addReceiver(receiver: Receiver): Promise<Receiver> {
+  addReceiver(receiver: Receiver): Promise<void | Receiver> {
     return this.http.post("/api/news", receiver)
       .toPromise()
       .then(res => res.json() as Receiver)
       .catch(this.handleError);
   }
 
-  getReceivers (): Promise<Receiver[]> {
+  getReceivers (): Promise<void | Receiver[]> {
     return this.http.get("/api/news")
       .toPromise()
       .then(res => res.json() as Receiver[])

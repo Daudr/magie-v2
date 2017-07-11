@@ -12,49 +12,49 @@ export class EventiService {
 
 	constructor(private http: Http) { }
 
-	getEventi(): Promise<Eventi[]>{
+	getEventi(): Promise<void | Eventi[]>{
 		return this.http.get(this.eventiUrl)
 			.toPromise()
 			.then(response => response.json() as Eventi[])
 			.catch(this.handleError);
 	}
 
-	getEventiProssimi(): Promise<Eventi[]>{
+	getEventiProssimi(): Promise<void | Eventi[]>{
 		return this.http.get(this.soonUrl)
 			.toPromise()
 			.then(response => response.json() as Eventi[])
 			.catch(this.handleError);
 	}
 
-	getFutureEvents(): Promise<Eventi[]> {
+	getFutureEvents(): Promise<void | Eventi[]> {
 		return this.http.get(this.futureUrl)
 			.toPromise()
 			.then(response => response.json() as Eventi[])
 			.catch(this.handleError);
 	}
 
-	getPastEvents(): Promise<Eventi[]> {
+	getPastEvents(): Promise<void | Eventi[]> {
 		return this.http.get(this.pastUrl)
 			.toPromise()
 			.then(response => response.json() as Eventi[])
 			.catch(this.handleError);
 	}
 
-	creaEvento (nuovoEvento: Eventi): Promise<Eventi> {
+	creaEvento (nuovoEvento: Eventi): Promise<void | Eventi> {
 		return this.http.post(this.eventiUrl, nuovoEvento)
 			.toPromise()
 			.then(response => response.json() as Eventi)
 			.catch(this.handleError);
 	}
 
-	rimuoviEvento (delEventoID: String): Promise<Eventi> {
+	rimuoviEvento (delEventoID: String): Promise<void | Eventi> {
 		return this.http.delete(this.eventiUrl + '/' + delEventoID)
 			.toPromise()
 			.then(response => response.json() as Eventi)
 			.catch(this.handleError);
 	}
 
-	aggiornaEvento (putEvento: Eventi): Promise<Eventi> {
+	aggiornaEvento (putEvento: Eventi): Promise<void | Eventi> {
 		var putUrl = this.eventiUrl + '/' + putEvento._id;
 
 		return this.http.put(putUrl, putEvento)

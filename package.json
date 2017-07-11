@@ -19,6 +19,7 @@
   "private": true,
   "dependencies": {
     "@angular/animations": "^4.1.1",
+    "@angular/cdk": "^2.0.0-beta.8",
     "@angular/cli": "^1.2.0",
     "@angular/common": "^4.1.1",
     "@angular/compiler": "^4.1.1",
@@ -50,9 +51,9 @@
     "rxjs": "^5.3.1",
     "sendgrid": "^5.1.0",
     "ts-helpers": "^1.1.2",
-    "typescript": "^2.3.2",
-    "zone.js": "0.8.10",
-    "webpack": "^3.1.0"
+    "typescript": "^2.4.1",
+    "webpack": "^3.1.0",
+    "zone.js": "0.8.10"
   },
   "devDependencies": {
     "@types/jasmine": "2.5.47",
