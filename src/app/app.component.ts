@@ -2,8 +2,6 @@ import { Component, OnInit, AfterViewInit } from '@angular/core';
 import { Title } from '@angular/platform-browser';
 import { MdDialog, MdDialogRef, MdDialogConfig } from '@angular/material';
 
-import { CookieService } from 'angular2-cookie/services/cookies.service';
-
 import { EventiService } from './services/eventi.service';
 import { NewsletterService } from './services/newsletter.service';
 
@@ -50,14 +48,14 @@ export class AppComponent implements OnInit, AfterViewInit {
 		}*/
 	];
 
-	public constructor(private titleService: Title, public dialog: MdDialog, private cookieService: CookieService) { }
+	public constructor(private titleService: Title, public dialog: MdDialog) { }
 
 	ngOnInit(){
 		$(document).ready(function(){
 			$('.materialboxed').materialbox();
 		});
 
-		this.cookieAccepted = this.cookieService.get('cookieAccepted');
+		this.cookieAccepted = localStorage.getItem('cookieAccepted');
 	}
 
 	ngAfterViewInit () { }
@@ -83,8 +81,8 @@ export class AppComponent implements OnInit, AfterViewInit {
   	}
 
   	hideCookieBanner () {
-  		this.cookieService.put('cookieAccepted', 'true', {expires: new Date(2020, 12, 31)});
-  		this.cookieAccepted = this.cookieService.get('cookieAccepted');
+  		localStorage.setItem('cookieAccepted', 'true');
+  		this.cookieAccepted = localStorage.getItem('cookieAccepted');
   	}
 }
 
