@@ -10,8 +10,8 @@ import { Foto } from '../foto';
 export class HockeyComponent implements AfterViewInit {
 
 	ngAfterViewInit() {
-		if(!($('.mat-tab-list').hasClass('light-blue lighten-2 tab'))) {
-			$('.mat-tab-list').addClass('light-blue lighten-2 tab');
+		if(!($('.mat-tab-list').hasClass('back-coltab'))) {
+			$('.mat-tab-list').addClass('back-coltab');
 		}
 	}
 }

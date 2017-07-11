@@ -45,9 +45,9 @@
       "spec": false
     },
     "component": {
-      "spec": true,
-      "inlineStyle": false,
-      "inlineTemplate": false
+      "spec": false,
+      "inlineStyle": true,
+      "inlineTemplate": true
     }
   }
 }

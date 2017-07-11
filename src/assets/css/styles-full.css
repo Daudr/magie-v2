@@ -696,7 +696,7 @@ table caption {
 }
 
 button.mat-mini-fab {
-  background-color: rgba(0, 0, 0, 0.65);
+  background-color: rgba(0, 0, 0, 0.65) !important;
 }
 
 video#bgvid {
