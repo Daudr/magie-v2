@@ -19,8 +19,8 @@
     <div class="row">
       <div *ngFor="let person of staff" class="hide-on-small-only">
         <div class="col m6">
-          <div class="card light-blue lighten-1">
-                  <div class="card-content white-text">
+          <div class="card staff-card">
+                  <div class="card-content">
                       <div class="col l3" *ngIf="person.icon">
                       <img src={{person.icon}} class="circle responsive-img">
                     </div>
@@ -33,8 +33,8 @@
                     </p>
                   </div>
                   <div class="card-action center-align">
-                    <a href="tel:{{person.telefono}}" class="btn btn-flat light-blue darken-4 white-text waves-effect">Chiama</a>
-                    <a href="mailto:{{person.email}}" class="btn btn-flat white-text light-blue darken-4 waves-effect" disabled>Invia email</a>
+                    <a href="tel:{{person.telefono}}" class="btn btn-flat btn-staff white-text waves-effect">Chiama</a>
+                    <a href="mailto:{{person.email}}" class="btn btn-flat white-text btn-staff waves-effect" disabled>Invia email</a>
                   </div>
               </div>
         </div>
@@ -42,8 +42,8 @@
 
       <div *ngFor="let person of staff" class="hide-on-med-and-up">
         <div class="col m8">
-          <div class="card light-blue lighten-1">
-                  <div class="card-content white-text">
+          <div class="card staff-card">
+                  <div class="card-content">
                       <div class="col s4" *ngIf="person.icon">
                       <img src={{person.icon}} class="circle responsive-img">
                     </div>
@@ -57,16 +57,13 @@
                     </p>
                   </div>
                   <div class="card-action center-align">
-                    <a href="tel:{{person.telefono}}" class="btn btn-flat light-blue darken-4 white-text waves-effect">Chiama</a>
+                    <a href="tel:{{person.telefono}}" class="btn btn-flat btn-staff white-text waves-effect">Chiama</a>
                     <br>
                     <br>
-                    <a href="mailto:{{person.email}}" class="btn btn-flat white-text light-blue darken-4 waves-effect" disabled>Invia email</a>
+                    <a href="mailto:{{person.email}}" class="btn btn-flat white-text btn-staff waves-effect" disabled>Invia email</a>
                   </div>
               </div>
         </div>
-      </div>
-      <div class="card-panel back-col center-align db-error" *ngIf="!staff">
-        <h4>Caricamento contatti</h4>
       </div>
     </div>
   </div>
