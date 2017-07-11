@@ -7,8 +7,6 @@ import { MaterialModule } from '@angular/material';
 
 import { AppRoutingModule } from './modules/app-routing.module';
 
-import { CookieService } from 'angular2-cookie/services/cookies.service';
-
 import { AppComponent, NewsDialog, BugDialog } from './app.component';
 import { OrariComponent, DialogPomeriggio, DialogMattina } from './components/orari.component';
 import { IndexComponent, DialogAlert } from './components/index.component';
@@ -76,7 +74,6 @@ import 'hammerjs';
   ],
   providers: [
     Title,
-    CookieService,
     AuthService,
     AuthGuard
   ],
