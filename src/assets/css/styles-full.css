@@ -1115,26 +1115,13 @@ caption {
   text-align: left;
 }
 
-img.dialog-evento, img.iceteam {
+img.iceteam {
   width: 300px;
   height: auto;
 }
 
 .mat-dialog-container {
   max-height: 80vh;
-}
-
-.floatr {
-  float: right;
-  margin-left: 10px;
-}
-
-.floatl {
-  float: left;
-}
-
-.des-evento {
-  text-align: left;
 }
 
 .descrizione {
@@ -1267,10 +1254,6 @@ mat-tab-header {
 }
 
 @media only screen and (max-width: 768px) {
-  img.dialog-evento {
-    width: 250px;
-  }
-
   .container_logo {
     margin-bottom: 20px;
   }
@@ -1422,4 +1405,18 @@ md-dialog-container {
 
 .p-size-large {
   font-size: 1.2em;
+}
+
+div.g-recaptcha {
+  margin-top: 20px;
+}
+
+.map-event {
+  width: 70%;
+  height: 350px;
+  margin: auto;
+}
+
+div.info p, div.descrizione p {
+  font-size: 1.25em;
 }

@@ -70,13 +70,13 @@ export class EventiComponent implements OnInit {
 	providers: [Eventi],
 	selector: 'event-dialog',
 	template:`
-		<div class="info">
-			<img class="dialog-evento materialboxed floatl" src={{event.foto}}>
-			<div class="floatr">
+		<div class="info dialog-event">
+			<img class="dialog-evento materialboxed floatl responsive-img" src={{event.foto}}>
+			<div>
 				<h3>{{event.nome}}</h3>
-				<p class="des-evento">{{event.data | date:'dd/MM/yyyy'}}</p>
-				<p class="des-evento">Dalle {{event.oraInizio}}<p>
-				<p class="des-evento">Presso {{event.luogo}}</p>
+				<p><strong>Quando: </strong>{{event.data | date:'dd/MM/yyyy'}}</p>
+				<p><strong>A che ora: </strong>Dalle {{event.oraInizio}}<p>
+				<p><strong>Dove: </strong>Presso {{event.luogo}}</p>
 				<div class="map-event">
 					<iframe
 						frameborder="0"
@@ -87,13 +87,12 @@ export class EventiComponent implements OnInit {
 				</div>
 			</div>
 		</div>
-		<div class="descrizione floatl">
-			<span>
-				{{event.descrizione}}
-			</span>
+		<div class="descrizione">
+			<h3>Descrizione evento</h3>
+			<p>{{event.descrizione}}</p>
 		</div>
-		<br>
-		<div class="floatl row" *ngIf="event.galleria">
+		<h3>Galleria evento</h3>
+		<div class="row" *ngIf="event.galleria">
 			<img src={{foto}} class="col l4 m6 s12 materialboxed iceteam" *ngFor="let foto of event.galleria">
 		</div>
 	`
