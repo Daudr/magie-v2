@@ -91,8 +91,8 @@ export class EventiComponent implements OnInit {
 			<h3>Descrizione evento</h3>
 			<p>{{event.descrizione}}</p>
 		</div>
-		<h3>Galleria evento</h3>
 		<div class="row" *ngIf="event.galleria">
+			<h3>Galleria evento</h3>
 			<img src={{foto}} class="col l4 m6 s12 materialboxed iceteam" *ngFor="let foto of event.galleria">
 		</div>
 	`
