@@ -1254,6 +1254,11 @@ mat-tab-header {
 }
 
 @media only screen and (max-width: 768px) {
+  .map-event {
+    width: 100%;
+    height: 250px;
+  }
+
   .container_logo {
     margin-bottom: 20px;
   }
@@ -1419,4 +1424,8 @@ div.g-recaptcha {
 
 div.info p, div.descrizione p {
   font-size: 1.25em;
+}
+
+img.dialog-evento {
+  margin: auto;
 }
