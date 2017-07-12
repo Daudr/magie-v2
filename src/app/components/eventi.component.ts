@@ -106,11 +106,5 @@ export class EventDialog implements OnInit, AfterViewInit {
     $(document).ready(function(){
 			$('.materialboxed').materialbox();
 		});
-
-		if(window.screen.height < 700) {
-			if(!($('.mat-dialog-container').hasClass('dialog-cel'))) {
-				$('.mat-dialog-container').addClass('dialog-cel');
-			}
-		}
 	}
 }
