@@ -31,6 +31,9 @@ export class AdminEventiComponent implements OnInit, AfterViewInit {
   giorno: string;
   mese: string;
 
+	fotoMin: File;
+	fotoFull: File;
+
   @Input()
   event: Eventi;
 
@@ -70,11 +73,15 @@ export class AdminEventiComponent implements OnInit, AfterViewInit {
     });
 	}
 
-	fileChange(event) {
+	fileChange(event, type) {
 		console.log(event.target.files);
     let fileList: FileList = event.target.files;
     if(fileList.length > 0) {
-        let file: File = fileList[0];
+			if (type === "fotoMin") {
+				this.fotoMin = fileList[0];
+			} else {
+				this.fotoFull = fileList[0];
+			}
     }
 }
 
@@ -87,8 +94,8 @@ export class AdminEventiComponent implements OnInit, AfterViewInit {
         oraFine: this.oraFine,
 				luogo: 'Pista di pattinaggio - Magie D\'Inverno',
         descrizione: this.descrizione,
-        fotoMin: '../assets/icons/logo/logo_magie.webp',
-        foto: '../assets/icons/logo/logo_magie.webp'
+        fotoMin: this.fotoMin,
+        foto: this.fotoFull
       }
 
 			if (confirm('Vuoi inserire l\'evento ' + event.nome + '?')) {
