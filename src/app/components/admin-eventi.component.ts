@@ -73,6 +73,7 @@ export class AdminEventiComponent implements OnInit, AfterViewInit {
 	}
 
 	fileChange(event, type) {
+		debugger;
     let fileList: FileList = event.target.files;
 		var myReader: FileReader = new FileReader();
 		console.log(type);
