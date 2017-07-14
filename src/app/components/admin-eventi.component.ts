@@ -140,8 +140,8 @@ export class AdminEventiComponent implements OnInit, AfterViewInit {
 			oraInizio: this.m_oraInizio,
 			oraFine: this.m_oraFine,
 			descrizione: this.m_descrizione,
-			fotoMin: '',
-			foto: ''
+			fotoMin: this.fotoMin,
+			foto: this.fotoFull
 		}
 		if (confirm('Vuoi aggiornare l\'evento ' + evento.nome + '?')) {
 	    this.eventiService.aggiornaEvento(evento)
