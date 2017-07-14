@@ -50,7 +50,7 @@ var s3Options = {
 };
 var s3 = new AWS.S3(s3Options);
 
-function uploadFoto(foto {
+function uploadFoto(foto) {
   var params = {
     ACL: "public-read",
     Body: foto,
