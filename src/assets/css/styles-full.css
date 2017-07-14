@@ -1250,7 +1250,7 @@ mat-tab-header {
 
 @media only screen and (max-width: 768px) {
   .mat-tab-labels {
-    display: block;
+    display: block !important;
   }
   .map-event {
     width: 100%;
