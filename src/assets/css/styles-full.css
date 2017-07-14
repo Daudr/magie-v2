@@ -1248,6 +1248,12 @@ mat-tab-header {
   margin: 10px;
 }
 
+@media only screen and (min-width: 768px) {
+  .floatl {
+    float: left;
+  }
+}
+
 @media only screen and (max-width: 768px) {
   .mat-tab-labels {
     display: block !important;
@@ -1426,8 +1432,4 @@ div.info p, div.descrizione p {
 
 img.dialog-evento {
   margin: auto;
-}
-
-.floatl {
-  float: left;
 }
