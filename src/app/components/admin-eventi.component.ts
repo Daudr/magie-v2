@@ -73,7 +73,6 @@ export class AdminEventiComponent implements OnInit, AfterViewInit {
 	}
 
 	fileChange(event, type) {
-		debugger;
     let fileList: FileList = event.target.files;
 		var myReader: FileReader = new FileReader();
 		console.log(type);
@@ -84,10 +83,9 @@ export class AdminEventiComponent implements OnInit, AfterViewInit {
 
     if(fileList.length > 0) {
 			if (type === 'fotoMin') {
-				console.log('ciao');
-				this.fotoMin = myReader.readAsBinaryString(fileList[0]);
+				this.fotoMin = myReader.readAsDataURL(fileList[0]);
 			} else if(type === 'fotoFull') {
-				this.fotoFull = myReader.readAsBinaryString(fileList[0]);
+				this.fotoFull = myReader.readAsDataURL(fileList[0]);
 			}
     }
 
