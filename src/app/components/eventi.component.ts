@@ -18,9 +18,8 @@ export class EventiComponent implements OnInit {
 	pastEvents: Eventi[];
 	data: Date;
 	i: number;
-
+	tab: any;
 	evtdlg: EventDialog;
-
 	dialogRef: MdDialogRef<EventDialog>;
 
 	constructor(private eventiService: EventiService, public dialog: MdDialog, private title: Title) { }
@@ -50,6 +49,10 @@ export class EventiComponent implements OnInit {
 				});
 			});
 
+		if (this.soonEvents.length == 0) {
+			this.tab.selectedIndex = 1;
+		}
+
 		this.title.setTitle('Magie D\'Inverno - Eventi');
 		document.body.scrollTop = document.documentElement.scrollTop = 0;
 	}
@@ -58,6 +61,10 @@ export class EventiComponent implements OnInit {
 		if(!($('.mat-tab-list').hasClass('back-col tab'))) {
 			$('.mat-tab-list').addClass('back-col tab');
 		}
+	}
+
+	bindTab (tab) {
+		this.tab = tab;
 	}
 
 	openEventDialog(event: Eventi) {

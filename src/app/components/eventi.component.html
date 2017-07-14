@@ -3,7 +3,8 @@
 <!-- <div class="ad_right hide-on-med-and-down"><img src="assets/icons/ads/ads.png" alt="Annuncio"></div> -->
 
 <div class="container main">
-	<md-tab-group>
+	<md-tab-group #tab>
+		{{ bindTab(this.tab) }}
 		<md-tab label="FUTURI">
 			<!-- FUTURI -->
 			<div class="container">
