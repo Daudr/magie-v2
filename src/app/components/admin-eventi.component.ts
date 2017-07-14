@@ -75,7 +75,7 @@ export class AdminEventiComponent implements OnInit, AfterViewInit {
 	fileChange(event, type) {
     let fileList: FileList = event.target.files;
 		var myReader: FileReader = new FileReader();
-
+		console.log(type);
 
     if(fileList.length > 0) {
 			if (type === 'fotoMin') {
