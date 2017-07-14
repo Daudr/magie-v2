@@ -32,20 +32,20 @@
 		<div class="file-field input-field">
 			<div class="btn btn-flat light-blue">
 				<span>Foto min</span>
-				<input type="file" accept="image/jpg">
+				<input (change)="fileChange($event, 'fotoFull')" type="file" accept="image/jpg, image/png. image/webp">
 			</div>
 			<div class="file-path-wrapper">
-				<input (change)="fileChange($event, 'fotoMin')" class="file-path validate" type="file">
+				<input class="file-path validate" type="text">
 			</div>
 		</div>
 
 		<div class="file-field input-field">
 			<div class="btn btn-flat light-blue">
 				<span>Foto</span>
-				<input type="file" accept="image/jpg">
+				<input (change)="fileChange($event, 'fotoFull')" type="file" accept="image/jpg, image/png. image/webp">
 			</div>
 			<div class="file-path-wrapper">
-				<input (change)="fileChange($event, 'fotoFull')" class="file-path validate" type="file">
+				<input class="file-path validate" type="text">
 			</div>
 		</div>
 
