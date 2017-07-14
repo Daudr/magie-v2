@@ -94,6 +94,7 @@ app.get("/api/eventi", function(req, res){
 });
 
 app.post("/api/eventi", function(req, res){
+  console.log(req.body);
 	if(!req.body.nome || !req.body.data || !req.body.oraInizio ){
 		handleError(res, "Invalid user input", "Must provide a name.", 400);
 	} else {
