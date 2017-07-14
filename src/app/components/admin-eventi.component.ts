@@ -70,6 +70,13 @@ export class AdminEventiComponent implements OnInit, AfterViewInit {
     });
 	}
 
+	fileChange(event) {
+    let fileList: FileList = event.target.files;
+    if(fileList.length > 0) {
+        let file: File = fileList[0];
+    }
+}
+
   creaEvento () {
     if (this.nome || this.data || this.oraInizio ) {
       let event = {
