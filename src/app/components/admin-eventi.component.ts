@@ -79,6 +79,7 @@ export class AdminEventiComponent implements OnInit, AfterViewInit {
 
     if(fileList.length > 0) {
 			if (type === 'fotoMin') {
+				console.log('ciao');
 				this.fotoMin = myReader.readAsBinaryString(fileList[0]);
 			} else if(type === 'fotoFull') {
 				this.fotoFull = myReader.readAsBinaryString(fileList[0]);
