@@ -15,7 +15,7 @@ var client = s3.createClient({
   },
 });
 
-uploadFoto (foto) {
+uploadFoto = function(foto) {
   var params = {
     localFile: foto,
 
