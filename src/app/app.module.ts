@@ -3,7 +3,25 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
-import { MaterialModule } from '@angular/material';
+// import { MaterialModule } from '@angular/material';
+import {
+  MdButtonModule,
+  MdCardModule,
+  MdCheckboxModule,
+  MdCoreModule,
+  MdDatepickerModule,
+  MdDialogModule,
+  MdIconModule,
+  MdInputModule,
+  MdMenuModule,
+  MdNativeDateModule,
+  MdSelectModule,
+  MdSidenavModule,
+  MdSnackBarModule,
+  MdSortModule,
+  MdTabsModule,
+  MdTooltipModule,
+} from '@angular/material';
 
 import { AppRoutingModule } from './modules/app-routing.module';
 
@@ -36,7 +54,22 @@ import 'hammerjs';
       AppRoutingModule,
       HttpModule,
       FormsModule,
-      MaterialModule,
+      MdButtonModule,
+      MdCardModule,
+      MdCheckboxModule,
+      MdCoreModule,
+      MdDatepickerModule,
+      MdDialogModule,
+      MdIconModule,
+      MdInputModule,
+      MdMenuModule,
+      MdNativeDateModule,
+      MdSelectModule,
+      MdSidenavModule,
+      MdSnackBarModule,
+      MdSortModule,
+      MdTabsModule,
+      MdTooltipModule,
       BrowserAnimationsModule
     ],
   declarations: [
