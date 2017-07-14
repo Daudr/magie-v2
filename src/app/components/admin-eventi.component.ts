@@ -30,8 +30,8 @@ export class AdminEventiComponent implements OnInit, AfterViewInit {
   giorno: string;
   mese: string;
 
-	fotoMin: File;
-	fotoFull: File;
+	fotoMin: any;
+	fotoFull: any;
 
   @Input()
   event: Eventi;
@@ -74,19 +74,20 @@ export class AdminEventiComponent implements OnInit, AfterViewInit {
 
 	fileChange(event, type) {
     let fileList: FileList = event.target.files;
+		var myReader: FileReader = new FileReader();
+
+
     if(fileList.length > 0) {
 			if (type === 'fotoMin') {
-				this.fotoMin = fileList[0];
+				this.fotoMin = myReader.readAsBinaryString(fileList[0]);
 			} else if(type === 'fotoFull') {
-				this.fotoFull = fileList[0];
+				this.fotoFull = myReader.readAsBinaryString(fileList[0]);
 			}
     }
 }
 
   creaEvento () {
     if (this.nome || this.data || this.oraInizio ) {
-			var fotoMin64 = new Buffer(JSON.stringify(this.fotoMin)).toString("base64");
-			var fotoFull64 = new Buffer(JSON.stringify(this.fotoFull)).toString("base64");
       let event = {
         nome: this.nome,
         data: new Date(this.data),
@@ -94,8 +95,8 @@ export class AdminEventiComponent implements OnInit, AfterViewInit {
         oraFine: this.oraFine,
 				luogo: 'Pista di pattinaggio - Magie D\'Inverno',
         descrizione: this.descrizione,
-        fotoMin: fotoMin64,
-        foto: fotoFull64
+        fotoMin: this.fotoMin,
+        foto: this.fotoFull
       }
 
 			console.log(event);
