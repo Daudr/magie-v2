@@ -79,8 +79,8 @@ export class AdminEventiComponent implements OnInit, AfterViewInit {
         oraFine: this.oraFine,
 				luogo: 'Pista di pattinaggio - Magie D\'Inverno',
         descrizione: this.descrizione,
-        fotoMin: '../assets/icons/logo/magie_dinverno_logo.png',
-        foto: '../assets/icons/logo/magie_dinverno_logo.png'
+        fotoMin: '../assets/icons/logo/logo_magie.webp',
+        foto: '../assets/icons/logo/logo_magie.webp'
       }
 
 			if (confirm('Vuoi inserire l\'evento ' + event.nome + '?')) {
