@@ -5,8 +5,35 @@ var mongojs = require("mongojs");
 const passport = require('passport');
 const jwt = require('jsonwebtoken');
 const mongoose = require('mongoose');
-const aws = require('aws-sdk');
-const s3 = new aws.S3();
+const s3 = require('s3');
+
+var client = s3.createClient({
+  s3Options: {
+    accessKeyId: process.env.AWS_ACCESS_KEY,
+    secretAccessKey: process.env.AWS_SECRET_ACCESS_KEY,
+    region: "eu-wset-1",
+  },
+});
+
+uploadFoto (foto) {
+  var params = {
+    localFile: foto,
+
+    s3Params: {
+      Bucket: BUCKET_NAME,
+      Key: foto
+    },
+  };
+  var uploader = client.uploadFile(params);
+  uploader.on('error', function(err) {
+    console.error("unable to upload:", err.stack);
+  });
+  uploader.on('end', function() {
+    console.log("done uploading");
+  });
+
+  return client.getPublicUrl(BUCKET_NAME, params.Key, "eu-west-1");
+}
 
 const config = require('./config/database');
 
@@ -70,37 +97,8 @@ app.post("/api/eventi", function(req, res){
 	if(!req.body.nome || !req.body.data || !req.body.oraInizio ){
 		handleError(res, "Invalid user input", "Must provide a name.", 400);
 	} else {
-    var fotoMin = '';
-    var fotoFull = '';
-
-    var params_min = {
-      Bucket: BUCKET_NAME,
-      Key: req.body.fotoMin,
-      Body: req.body.fotoMin
-    };
-    var params_full = {
-      Bucket: BUCKET_NAME,
-      Key: req.body.foto,
-      Body: req.body.foto
-    };
-
-    s3.upload(params_min, (err, data) => {
-      if (err) {
-        console.log(err);
-      } else {
-        console.log('Successfully uploaded: ' + data);
-        fotoMin = data;
-      }
-    });
-
-    s3.upload(params_full, (err, data) => {
-      if (err) {
-        console.log(err);
-      } else {
-        console.log('Successfully uploaded: ' + data);
-        fotoFull = data;
-      }
-    });
+    var fotoMin = uploadFoto(req.body.fotoMin);
+    var fotoFull = uploadFoto(req.body.fotoFull);
 
 		var evento = {
 			nome: req.body.nome,
