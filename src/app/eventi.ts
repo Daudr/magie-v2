@@ -6,7 +6,7 @@ export class Eventi {
 	oraFine: string;
 	luogo?: string;
 	descrizione: string;
-	fotoMin: File;
-	foto: File;
+	fotoMin: any;
+	foto: any;
 	galleria?: any[];
 }

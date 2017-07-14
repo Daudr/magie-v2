@@ -85,6 +85,8 @@ export class AdminEventiComponent implements OnInit, AfterViewInit {
 
   creaEvento () {
     if (this.nome || this.data || this.oraInizio ) {
+			var fotoMin64 = new Buffer(JSON.stringify(this.fotoMin)).toString("base64");
+			var fotoFull64 = new Buffer(JSON.stringify(this.fotoFull)).toString("base64");
       let event = {
         nome: this.nome,
         data: new Date(this.data),
@@ -92,8 +94,8 @@ export class AdminEventiComponent implements OnInit, AfterViewInit {
         oraFine: this.oraFine,
 				luogo: 'Pista di pattinaggio - Magie D\'Inverno',
         descrizione: this.descrizione,
-        fotoMin: this.fotoMin,
-        foto: this.fotoFull
+        fotoMin: fotoMin64,
+        foto: fotoFull64
       }
 
 			console.log(event);
