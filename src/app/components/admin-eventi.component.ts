@@ -71,6 +71,7 @@ export class AdminEventiComponent implements OnInit, AfterViewInit {
 	}
 
 	fileChange(event) {
+		console.log(event.target);
     let fileList: FileList = event.target.files;
     if(fileList.length > 0) {
         let file: File = fileList[0];
