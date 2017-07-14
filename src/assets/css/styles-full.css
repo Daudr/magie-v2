@@ -1433,3 +1433,8 @@ div.info p, div.descrizione p {
 img.dialog-evento {
   margin: auto;
 }
+
+.frame-video {
+  width: 100%;
+  min-height: 350px;
+}
