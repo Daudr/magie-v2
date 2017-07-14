@@ -5,35 +5,7 @@ var mongojs = require("mongojs");
 const passport = require('passport');
 const jwt = require('jsonwebtoken');
 const mongoose = require('mongoose');
-const s3 = require('s3');
-
-var client = s3.createClient({
-  s3Options: {
-    accessKeyId: process.env.AWS_ACCESS_KEY,
-    secretAccessKey: process.env.AWS_SECRET_ACCESS_KEY,
-    region: "eu-wset-1",
-  },
-});
-
-uploadFoto = function(foto) {
-  var params = {
-    localFile: foto,
-
-    s3Params: {
-      Bucket: BUCKET_NAME,
-      Key: foto
-    },
-  };
-  var uploader = client.uploadFile(params);
-  uploader.on('error', function(err) {
-    console.error("unable to upload:", err.stack);
-  });
-  uploader.on('end', function() {
-    console.log("done uploading");
-  });
-
-  return s3.getPublicUrl(BUCKET_NAME, params.Key, "eu-west-1");
-}
+const AWS = require('aws-sdk');
 
 const config = require('./config/database');
 
@@ -69,6 +41,26 @@ app.use(function(req, res, next) {
     res.setHeader("Cache-Control", "max-age=no-store");
     return next();
 });
+
+
+var s3Options = {
+  accessKeyId: process.env.AWS_ACCESS_KEY,
+  secretAccessKey: process.env.AWS_SECRET_ACCESS_KEY,
+  region: "eu-wset-1",
+};
+var s3 = new AWS.S3(s3Options);
+
+function uploadFoto(foto {
+  var params = {
+    ACL: "public-read",
+    Body: foto,
+    Bucket: BUCKET_NAME,
+    Key: foto.name
+  };
+  s3.upload(params, (err, data) => {
+    return data.Location;
+  });
+}
 
 // Generic error handler used by all endpoints.
 function handleError(res, reason, message, code) {
