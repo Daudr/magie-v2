@@ -3,7 +3,6 @@ import { Title } from '@angular/platform-browser';
 import { DatePipe } from '@angular/common';
 import { MdSnackBar } from '@angular/material';
 
-
 import { Eventi } from '../eventi';
 import { EventiService } from '../services/eventi.service';
 
@@ -74,12 +73,11 @@ export class AdminEventiComponent implements OnInit, AfterViewInit {
 	}
 
 	fileChange(event, type) {
-		console.log(event.target.files);
     let fileList: FileList = event.target.files;
     if(fileList.length > 0) {
-			if (type === "fotoMin") {
+			if (type === 'fotoMin') {
 				this.fotoMin = fileList[0];
-			} else {
+			} else if(type === 'fotoFull') {
 				this.fotoFull = fileList[0];
 			}
     }
@@ -97,6 +95,8 @@ export class AdminEventiComponent implements OnInit, AfterViewInit {
         fotoMin: this.fotoMin,
         foto: this.fotoFull
       }
+
+			console.log(event);
 
 			if (confirm('Vuoi inserire l\'evento ' + event.nome + '?')) {
       	this.inserisciEvento(event);
