@@ -35,7 +35,7 @@
 				<input type="file" accept="image/jpg">
 			</div>
 			<div class="file-path-wrapper">
-				<input (change)="fileChange($event)" class="file-path validate" type="file">
+				<input (change)="fileChange($event, 'fotoMin')" class="file-path validate" type="file">
 			</div>
 		</div>
 
@@ -45,7 +45,7 @@
 				<input type="file" accept="image/jpg">
 			</div>
 			<div class="file-path-wrapper">
-				<input (change)="fileChange($event)" class="file-path validate" type="file">
+				<input (change)="fileChange($event, 'fotoFull')" class="file-path validate" type="file">
 			</div>
 		</div>
 
