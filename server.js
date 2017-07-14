@@ -32,7 +32,7 @@ uploadFoto = function(foto) {
     console.log("done uploading");
   });
 
-  return client.getPublicUrl(BUCKET_NAME, params.Key, "eu-west-1");
+  return s3.getPublicUrl(BUCKET_NAME, params.Key, "eu-west-1");
 }
 
 const config = require('./config/database');
