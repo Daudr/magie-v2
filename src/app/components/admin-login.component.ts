@@ -16,7 +16,9 @@ export class AdminLoginComponent implements OnInit {
     private router: Router
   ) { }
 
-  ngOnInit () { }
+  ngOnInit () {
+    document.body.scrollTop = document.documentElement.scrollTop = 0;
+  }
 
   onLoginSubmit () {
     const user = {

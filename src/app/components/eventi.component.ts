@@ -51,6 +51,7 @@ export class EventiComponent implements OnInit {
 			});
 
 		this.title.setTitle('Magie D\'Inverno - Eventi');
+		document.body.scrollTop = document.documentElement.scrollTop = 0;
 	}
 
 	ngAfterViewInit() {

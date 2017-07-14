@@ -58,6 +58,7 @@ export class ServiziComponent implements OnInit, AfterViewInit {
 
 	ngOnInit() {
 		this.title.setTitle('Magie D\'Inverno - Servizi');
+		document.body.scrollTop = document.documentElement.scrollTop = 0;
 	}
 
 	ngAfterViewInit () {

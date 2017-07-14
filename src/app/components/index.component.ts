@@ -64,23 +64,24 @@ export class IndexComponent implements OnInit, AfterViewInit {
 		private title: Title) { }
 
 	ngOnInit() {
-        this.eventiService
-            .getEventiProssimi()
-            .then((soonEvents: Eventi[]) => {
-                this.soonEvents = soonEvents.map((soonEvents) => {
-                    return soonEvents;
-                });
-            });
+	  this.eventiService
+	      .getEventiProssimi()
+	      .then((soonEvents: Eventi[]) => {
+	          this.soonEvents = soonEvents.map((soonEvents) => {
+	              return soonEvents;
+	          });
+	      });
 
-        this.title.setTitle('Magie D\'Inverno - Home');
-    }
+	  this.title.setTitle('Magie D\'Inverno - Home');
+		document.body.scrollTop = document.documentElement.scrollTop = 0;
+  }
 
-    ngAfterViewInit () {
-    	if(!localStorage.getItem('viewed')) {
-    		this.dialogRef = this.dialog.open(DialogAlert);
-    		localStorage.setItem('viewed', 'true');
-    	}
-    }
+  ngAfterViewInit () {
+  	if(!localStorage.getItem('viewed')) {
+  		this.dialogRef = this.dialog.open(DialogAlert);
+  		localStorage.setItem('viewed', 'true');
+  	}
+  }
 
 	openEventDialog(event: Eventi) {
 		this.dialog.closeAll();

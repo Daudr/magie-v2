@@ -49,6 +49,7 @@ export class IceTeamComponent implements OnInit, AfterViewInit {
 
 	ngOnInit () {
 		this.title.setTitle('Ice Team Sanve');
+    document.body.scrollTop = document.documentElement.scrollTop = 0;
 	}
 
   ngAfterViewInit () {

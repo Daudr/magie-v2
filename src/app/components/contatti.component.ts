@@ -64,5 +64,6 @@ export class ContattiComponent implements OnInit {
 
 	ngOnInit() {
 		this.title.setTitle('Magie D\'Inverno - Contatti');
+		document.body.scrollTop = document.documentElement.scrollTop = 0;
 	}
 }

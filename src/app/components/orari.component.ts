@@ -32,6 +32,7 @@ export class OrariComponent  implements OnInit {
 		}
 
 		this.title.setTitle('Magie D\'Inverno - Orari e Prezzi');
+		document.body.scrollTop = document.documentElement.scrollTop = 0;
 	}
 
 	openDialogPomeriggio() {
