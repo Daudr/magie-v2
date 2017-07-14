@@ -643,7 +643,7 @@ img.icon-service {
   margin: auto;
 }
 
-div.top {
+div.top, .mat-tab-label-container {
   margin-top: 50px;
 }
 
@@ -1003,10 +1003,6 @@ p.left-align {
 
 ul.sidenav {
   list-style: none;
-}
-
-.mat-tab-label-container {
-  margin: 5% 10% 0 10%;
 }
 
 .mat-tab-labels {
