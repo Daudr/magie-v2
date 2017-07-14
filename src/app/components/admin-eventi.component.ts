@@ -84,6 +84,9 @@ export class AdminEventiComponent implements OnInit, AfterViewInit {
 				this.fotoFull = myReader.readAsBinaryString(fileList[0]);
 			}
     }
+
+		console.log(this.fotoMin);
+		console.log(this.fotoFull);
 }
 
   creaEvento () {
