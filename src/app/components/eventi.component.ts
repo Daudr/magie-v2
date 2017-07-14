@@ -78,7 +78,7 @@ export class EventiComponent implements OnInit {
 	selector: 'event-dialog',
 	template:`
 		<div class="info dialog-event">
-			<img class="dialog-evento materialboxed floatl responsive-img" src={{event.foto}}>
+			<img class="dialog-evento materialboxed responsive-img" src={{event.foto}}>
 			<div>
 				<h3>{{event.nome}}</h3>
 				<p><strong>Quando: </strong>{{event.data | date:'dd/MM/yyyy'}}</p>
