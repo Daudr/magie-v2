@@ -77,6 +77,10 @@ export class AdminEventiComponent implements OnInit, AfterViewInit {
 		var myReader: FileReader = new FileReader();
 		console.log(type);
 
+		myReader.onloadend = (e) => {
+			console.log(myReader.result);
+		}
+
     if(fileList.length > 0) {
 			if (type === 'fotoMin') {
 				console.log('ciao');
