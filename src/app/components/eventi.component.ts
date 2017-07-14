@@ -47,11 +47,10 @@ export class EventiComponent implements OnInit {
 				this.soonEvents = soonEvents.map((soonEvents) => {
 					return soonEvents;
 				});
+				if (this.soonEvents.length == 0) {
+					this.tab.selectedIndex = 1;
+				}
 			});
-
-		if (this.soonEvents.length == 0) {
-			this.tab.selectedIndex = 1;
-		}
 
 		this.title.setTitle('Magie D\'Inverno - Eventi');
 		document.body.scrollTop = document.documentElement.scrollTop = 0;
