@@ -46,7 +46,7 @@ app.use(function(req, res, next) {
 var s3Options = {
   accessKeyId: process.env.AWS_ACCESS_KEY,
   secretAccessKey: process.env.AWS_SECRET_ACCESS_KEY,
-  region: "eu-wset-1",
+  region: "eu-west-1",
 };
 var s3 = new AWS.S3(s3Options);
 
@@ -57,7 +57,7 @@ function uploadFoto(foto) {
     Bucket: BUCKET_NAME,
     Key: foto.name
   };
-  s3.upload(params, (err, data) => {
+  return s3.upload(params, (err, data) => {
     return data.Location;
   });
 }
@@ -86,7 +86,7 @@ app.get("/api/eventi", function(req, res){
 });
 
 app.post("/api/eventi", function(req, res){
-  console.log('body: ' + req.body);
+  console.log(req.body);
 	if(!req.body.nome || !req.body.data || !req.body.oraInizio ){
 		handleError(res, "Invalid user input", "Must provide a name.", 400);
 	} else {
