@@ -1438,3 +1438,7 @@ img.dialog-evento {
   width: 100%;
   min-height: 350px;
 }
+
+.tech-div {
+  margin: auto;
+}
