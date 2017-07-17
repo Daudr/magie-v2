@@ -496,7 +496,7 @@ caption {
 }
 
 .mat-sidenav-container {
-  background-color: inherit;
+  background-color: inherit !important;
 }
 
 .banner-corsi {
