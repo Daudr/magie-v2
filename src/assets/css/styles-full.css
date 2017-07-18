@@ -872,3 +872,9 @@ img.dialog-evento {
 p {
   font-size: 1.1em;
 }
+
+
+.mean-img {
+  max-width: 350px;
+  margin: auto;
+}
