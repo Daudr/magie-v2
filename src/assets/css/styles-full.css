@@ -868,3 +868,7 @@ img.dialog-evento {
 .container-servizi {
   width: 95%;
 }
+
+p {
+  font-size: 1.1em;
+}
