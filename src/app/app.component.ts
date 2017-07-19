@@ -194,6 +194,55 @@ export class NewsDialog implements AfterViewInit {
 			</div>
 			<div class="dialog-content">
 				<p>Ecco come installare la nostra app: </p>
+				<md-tab-group>
+					<md-tab>
+						<ng-template md-tab-label>
+							1
+						</ng-template>
+						<h5>Assicurati di usare <a href="http://chrome.google.com" target="_blank" rel="noopener">Google Chrome</a></h5>
+						<img src="" alt=""/> <!-- Screen Cellulare -->
+						<img src="" alt=""/> <!-- Screen Tablet -->
+						<img src="" alt=""/> <!-- Screen Desktop -->
+					</md-tab>
+					<md-tab>
+						<ng-template md-tab-label>
+							2
+						</ng-template>
+						<h5>Apri le impostazioni</h5>
+						<img src="" alt=""/> <!-- Screen Cellulare -->
+						<img src="" alt=""/> <!-- Screen Tablet -->
+						<img src="" alt=""/> <!-- Screen Desktop -->
+					</md-tab>
+					<md-tab>
+						<ng-template md-tab-label>
+							3
+						</ng-template>
+						<h5>Seleziona l'opzione "Aggiungi a schermata Home"</h5>
+						<img src="" alt=""/> <!-- Screen Cellulare -->
+						<img src="" alt=""/> <!-- Screen Tablet -->
+						<img src="" alt=""/> <!-- Screen Desktop -->
+					</md-tab>
+					<md-tab>
+						<ng-template md-tab-label>
+							4
+						</ng-template>
+						<h5>Aspetta che si carichino il nome e l'icona del sito e clicca su "Aggiungi"</h5>
+						<img src="" alt=""/> <!-- Screen Cellulare -->
+						<img src="" alt=""/> <!-- Screen Tablet -->
+						<img src="" alt=""/> <!-- Screen Desktop -->
+					</md-tab>
+					<md-tab>
+						<ng-template md-tab-label>
+							5
+						</ng-template>
+						<h5>Puoi subito iniziare a godere dei vantaggi del sito anche senza una connessione ad internet, buon divertimento!</h5>
+						<img src="" alt=""/> <!-- Screen Cellulare -->
+						<img src="" alt=""/> <!-- Screen Tablet -->
+						<img src="" alt=""/> <!-- Screen Desktop -->
+					</md-tab>
+				</md-tab-group>
+
+				<!--
 				<ol>
 					<li>
 						Assicurati di usare <a href="https://www.google.it/chrome/browser/desktop/index.html">Google Chrome</a>
@@ -211,6 +260,7 @@ export class NewsDialog implements AfterViewInit {
 						Puoi subito iniziare a godere dei vantaggi del sito anche senza una connessione ad internet, buon divertimento!
 					</li>
 				</ol>
+				-->
 			</div>
 		</div>
 	`
