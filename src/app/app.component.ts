@@ -189,73 +189,35 @@ export class NewsDialog implements AfterViewInit {
 	selector: 'bug-dialog',
 	template: `
 		<div class="dialog">
-			<div class="center-align">
-				<p>
-					Funzionalità non ancora implementata del tutto<br>
-					Per il momento si prega di inviare un'email a michele@daudr.me
-				</p>
-				<a class="white-text btn center-align light-blue text-darken-4" href="mailto:michele@daudr.me">Invia email</a>
-			</div>
-			<!--
 			<div class="dialog-title">
-				<h4>Segnala un errore del sito</h4>
+				<h4>Installa la nostra web app</h4>
 			</div>
 			<div class="dialog-content">
-				<md-input-container class="full-width"><input mdInput #name placeholder="Nome:"></md-input-container>
-				<md-input-container class="full-width"><input mdInput #email placeholder="Email:"></md-input-container>
-				<br>
-				<br>
-				Tipo di errore riscontrato:
-					<md-select placeholder="Errore">
-						<md-option *ngFor="let error of errors" [value]="error.value">
-							{{ error.viewValue }}
-						</md-option>
-					</md-select>
-					<br>
-					<br>
-					<br>
-				Dispositivo utilizzato:
-					<md-select placeholder="Dispositivo">
-						<md-option *ngFor="let device of devices" [value]="device.value">
-							{{ device.viewValue }}
-						</md-option>
-					</md-select>
-					<br>
-					<br>
-					<br>
-					<br>
-				<div class="input-field">
-					<textarea id="textarea1" class="textarea materialize-textarea"></textarea>
-					<label for="textarea1">Descrivi l'errore: cosa stavi facendo quando l'hai riscontrato, come ti si è presentato, ecc.</label>
-					<br>
-				</div>
+				<p>Ecco come installare la nostra app: </p>
+				<ol>
+					<li>
+						Assicurati di usare <a href="https://www.google.it/chrome/browser/desktop/index.html">Google Chrome</a>
+					</li>
+					<li>
+						Apri le impostazioni
+					</li>
+					<li>
+						Seleziona l'opzione "Aggiungi a schermata Home"
+					</li>
+					<li>
+						Aspetta che si carichi il nome e l'icona del sito e clicca su "Aggiungi"
+					</li>
+					<li>
+						Puoi subito iniziare a godere dei vantaggi del sito anche senza una connessione ad internet, buon divertimento!
+					</li>
+				</ol>
 			</div>
-			<div class="g-recaptcha" data-sitekey="6LcOBSQUAAAAAJbEL7-esngydOF6taoeYO2pNpY2"></div>
-			<div class="center-align dialog-actions">
-				<button md-button (click)="dialogRef.close()">Invia</button>
-			</div>
-			-->
 		</div>
 	`
 })
 export class BugDialog implements AfterViewInit {
-	errors = [
-		{ value: 'graf-err', viewValue: 'Errore Grafico' },
-		{ value: 'err-1', viewValue: 'Errore 1' },
-		{ value: 'err-2', viewValue: 'Errore 2' }
-	];
-
-	devices = [
-		{ value: 'pc', viewValue: 'Computer' },
-		{ value: 'tablet', viewValue: 'Tablet' },
-		{ value: 'phone', viewValue: 'Cellulare' }
-	];
 
 	constructor(public dialogRef: MdDialogRef<BugDialog>) { }
 
-	ngAfterViewInit() {
-		if(!($('.md-dialog-container').hasClass('dialog-responsive'))) {
-			$('.md-dialog-container').addClass('dialog-responsive');
-		}
-	}
+	ngAfterViewInit() { }
 }
