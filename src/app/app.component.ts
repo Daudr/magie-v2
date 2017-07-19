@@ -200,9 +200,9 @@ export class NewsDialog implements AfterViewInit {
 							1
 						</ng-template>
 						<h5>Assicurati di usare <a href="http://chrome.google.com" target="_blank" rel="noopener">Google Chrome</a></h5>
-						<img src="" alt=""/> <!-- Screen Cellulare -->
-						<img src="" alt=""/> <!-- Screen Tablet -->
-						<img src="" alt=""/> <!-- Screen Desktop -->
+						<img src="assets/icons/staff/michele.jpg" alt="App Google Chrome" class="hide-on-med-and-up"/> <!-- Screen Cellulare -->
+						<img src="assets/icons/staff/michele.jpg" alt="App Google Chrome" class="hide-on-small-only hide-on-large-only"/> <!-- Screen Tablet -->
+						<img src="assets/icons/staff/michele.jpg" alt="App Google Chrome" class="hide-on-med-and-down"/> <!-- Screen Desktop -->
 					</md-tab>
 					<md-tab>
 						<ng-template md-tab-label>
@@ -241,26 +241,6 @@ export class NewsDialog implements AfterViewInit {
 						<img src="" alt=""/> <!-- Screen Desktop -->
 					</md-tab>
 				</md-tab-group>
-
-				<!--
-				<ol>
-					<li>
-						Assicurati di usare <a href="https://www.google.it/chrome/browser/desktop/index.html">Google Chrome</a>
-					</li>
-					<li>
-						Apri le impostazioni
-					</li>
-					<li>
-						Seleziona l'opzione "Aggiungi a schermata Home"
-					</li>
-					<li>
-						Aspetta che si carichi il nome e l'icona del sito e clicca su "Aggiungi"
-					</li>
-					<li>
-						Puoi subito iniziare a godere dei vantaggi del sito anche senza una connessione ad internet, buon divertimento!
-					</li>
-				</ol>
-				-->
 			</div>
 		</div>
 	`
