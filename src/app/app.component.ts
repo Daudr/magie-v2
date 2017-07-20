@@ -200,9 +200,9 @@ export class NewsDialog implements AfterViewInit {
 							1
 						</ng-template>
 						<h5>Assicurati di usare <a href="http://chrome.google.com" target="_blank" rel="noopener">Google Chrome</a></h5>
-						<img src="assets/icons/altro/cellulare.png" alt="App Google Chrome" class="hide-on-med-and-up"/> <!-- Screen Cellulare -->
-						<img src="assets/icons/altro/tablet.png" alt="App Google Chrome" class="hide-on-small-only hide-on-large-only"/> <!-- Screen Tablet -->
-						<img src="assets/icons/altro/desktop.png" alt="App Google Chrome" class="hide-on-med-and-down"/> <!-- Screen Desktop -->
+						<img src="assets/icons/istruzioni-app/chrome-cellulare.jpg" alt="App Google Chrome" class="hide-on-med-and-up"/> <!-- Screen Cellulare -->
+						<img src="assets/icons/istruzioni-app/chrome-tablet.jpg" alt="App Google Chrome" class="hide-on-small-only hide-on-large-only"/> <!-- Screen Tablet -->
+						<img src="assets/icons/istruzioni-app/chrome-desktop.jpg" alt="App Google Chrome" class="hide-on-med-and-down"/> <!-- Screen Desktop -->
 					</md-tab>
 					<md-tab>
 						<ng-template md-tab-label>
