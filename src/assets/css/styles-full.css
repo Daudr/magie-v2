@@ -877,6 +877,10 @@ p {
   margin: auto;
 }
 
+.dialog-img img {
+  width: 100%;
+}
+
 .mean-img {
   max-width: 350px;
   margin: auto;
