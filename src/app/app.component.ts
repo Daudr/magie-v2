@@ -199,41 +199,49 @@ export class NewsDialog implements AfterViewInit {
 						<ng-template md-tab-label>
 							1
 						</ng-template>
-						<h5>Assicurati di usare <a href="http://chrome.google.com" target="_blank" rel="noopener">Google Chrome</a></h5>
-						<img src="assets/icons/istruzioni-app/chrome-cellulare.jpg" alt="App Google Chrome" class="hide-on-med-and-up"/> <!-- Screen Cellulare -->
-						<img src="assets/icons/istruzioni-app/chrome-tablet.jpg" alt="App Google Chrome" class="hide-on-small-only hide-on-large-only"/> <!-- Screen Tablet -->
-						<img src="assets/icons/istruzioni-app/chrome-desktop.jpg" alt="App Google Chrome" class="hide-on-med-and-down"/> <!-- Screen Desktop -->
+						<h3 class="center">Assicurati di usare <a href="http://chrome.google.com" target="_blank" rel="noopener">Google Chrome</a></h3>
+						<div class="dialog-img">
+							<img src="assets/icons/istruzioni-app/chrome-cellulare.jpg" alt="App Google Chrome" class="hide-on-med-and-up"/> <!-- Screen Cellulare -->
+							<img src="assets/icons/istruzioni-app/chrome-tablet.jpg" alt="App Google Chrome" class="hide-on-small-only hide-on-large-only"/> <!-- Screen Tablet -->
+							<img src="assets/icons/istruzioni-app/chrome-desktop.jpg" alt="App Google Chrome" class="hide-on-med-and-down"/> <!-- Screen Desktop -->
+						</div>
 					</md-tab>
 					<md-tab>
 						<ng-template md-tab-label>
 							2
 						</ng-template>
-						<h5 class="hide-on-large-only">Apri le impostazioni e seleziona l'opzione "Aggiungi a schermata Home"</h5>
-						<h5 class="hide-on-med-and-up">Apri le impostazioni e seleziona l'opzione "Aggiungi al desktop..."</h5>
-						<img src="assets/icons/istruzioni-app/opzioni-cellulare.jpg" alt="Opzioni Google Chrome" class="hide-on-med-and-up"/> <!-- Screen Cellulare -->
-						<!-- TODO: fare screen per tablet -->
-						<img src="assets/icons/istruzioni-app/chrome-tablet.jpg" alt="Opzioni Google Chrome" class="hide-on-small-only hide-on-large-only"/> <!-- Screen Tablet -->
-						<img src="assets/icons/istruzioni-app/opzioni-desktop.jpg" alt="Opzioni Google Chrome" class="hide-on-med-and-down"/> <!-- Screen Desktop -->
+						<h3 class="hide-on-large-only center">Apri le impostazioni e seleziona l'opzione "Aggiungi a schermata Home"</h3>
+						<h3 class="hide-on-med-and-down center">Apri le impostazioni e seleziona l'opzione "Aggiungi al desktop..."</h3>
+						<div class="dialog-img">
+							<img src="assets/icons/istruzioni-app/opzioni-cellulare.jpg" alt="Opzioni Google Chrome" class="hide-on-med-and-up"/> <!-- Screen Cellulare -->
+							<!-- TODO: fare screen per tablet -->
+							<img src="assets/icons/istruzioni-app/chrome-tablet.jpg" alt="Opzioni Google Chrome" class="hide-on-small-only hide-on-large-only"/> <!-- Screen Tablet -->
+							<img src="assets/icons/istruzioni-app/opzioni-desktop.jpg" alt="Opzioni Google Chrome" class="hide-on-med-and-down"/> <!-- Screen Desktop -->
+						</div>
 					</md-tab>
 					<md-tab>
 						<ng-template md-tab-label>
 							3
 						</ng-template>
-						<h5>Aspetta che si carichino il nome e l'icona del sito e clicca su "Aggiungi"</h5>
-						<img src="assets/icons/istruzioni-app/chrome-cellulare.jpg" alt="App Google Chrome" class="hide-on-med-and-up"/> <!-- Screen Cellulare -->
-						<!-- TODO: fare screen per tablet -->
-						<img src="assets/icons/istruzioni-app/chrome-tablet.jpg" alt="App Google Chrome" class="hide-on-small-only hide-on-large-only"/> <!-- Screen Tablet -->
-						<img src="assets/icons/istruzioni-app/chrome-desktop.jpg" alt="App Google Chrome" class="hide-on-med-and-down"/> <!-- Screen Desktop -->
+						<h3 class="center">Aspetta che si carichino il nome e l'icona del sito e clicca su "Aggiungi"</h3>
+						<div class="dialog-img">
+							<img src="assets/icons/istruzioni-app/aggiungiapp-cellulare.jpg" alt="App Google Chrome" class="hide-on-med-and-up"/> <!-- Screen Cellulare -->
+							<!-- TODO: fare screen per tablet -->
+							<img src="assets/icons/istruzioni-app/chrome-tablet.jpg" alt="App Google Chrome" class="hide-on-small-only hide-on-large-only"/> <!-- Screen Tablet -->
+							<img src="assets/icons/istruzioni-app/aggiungi-desktop.jpg" alt="App Google Chrome" class="hide-on-med-and-down"/> <!-- Screen Desktop -->
+						</div>
 					</md-tab>
 					<md-tab>
 						<ng-template md-tab-label>
 							4
 						</ng-template>
-						<h5>Puoi subito iniziare a godere dei vantaggi del sito anche senza una connessione ad internet, buon divertimento!</h5>
-						<img src="assets/icons/istruzioni-app/chrome-cellulare.jpg" alt="App Google Chrome" class="hide-on-med-and-up"/> <!-- Screen Cellulare -->
-						<!-- TODO: fare screen per tablet -->
-						<img src="assets/icons/istruzioni-app/chrome-tablet.jpg" alt="App Google Chrome" class="hide-on-small-only hide-on-large-only"/> <!-- Screen Tablet -->
-						<img src="assets/icons/istruzioni-app/chrome-desktop.jpg" alt="App Google Chrome" class="hide-on-med-and-down"/> <!-- Screen Desktop -->
+						<h3 class="center">Puoi subito iniziare a godere dei vantaggi del sito anche senza una connessione ad internet, buon divertimento!</h3>
+						<div className="dialog-img">
+							<img src="assets/icons/istruzioni-app/app-cellulare.jpg" alt="App Google Chrome" class="hide-on-med-and-up"/> <!-- Screen Cellulare -->
+							<!-- TODO: fare screen per tablet -->
+							<img src="assets/icons/istruzioni-app/chrome-tablet.jpg" alt="App Google Chrome" class="hide-on-small-only hide-on-large-only"/> <!-- Screen Tablet -->
+							<img src="assets/icons/istruzioni-app/app-desktop.jpg" alt="App Google Chrome" class="hide-on-med-and-down"/> <!-- Screen Desktop -->
+						</div>
 					</md-tab>
 				</md-tab-group>
 			</div>

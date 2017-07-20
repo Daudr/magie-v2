@@ -873,6 +873,9 @@ p {
   font-size: 1.1em;
 }
 
+.dialog-img {
+  margin: auto;
+}
 
 .mean-img {
   max-width: 350px;
