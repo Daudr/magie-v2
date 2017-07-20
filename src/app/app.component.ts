@@ -225,7 +225,7 @@ export class NewsDialog implements AfterViewInit {
 						</ng-template>
 						<h3 class="center">Aspetta che si carichino il nome e l'icona del sito e clicca su "Aggiungi"</h3>
 						<div class="dialog-img">
-							<img src="assets/icons/istruzioni-app/aggiungiapp-cellulare.jpg" alt="App Google Chrome" class="hide-on-med-and-up"/> <!-- Screen Cellulare -->
+							<img src="assets/icons/istruzioni-app/aggiungi-cellulare.jpg" alt="App Google Chrome" class="hide-on-med-and-up"/> <!-- Screen Cellulare -->
 							<!-- TODO: fare screen per tablet -->
 							<img src="assets/icons/istruzioni-app/chrome-tablet.jpg" alt="App Google Chrome" class="hide-on-small-only hide-on-large-only"/> <!-- Screen Tablet -->
 							<img src="assets/icons/istruzioni-app/aggiungi-desktop.jpg" alt="App Google Chrome" class="hide-on-med-and-down"/> <!-- Screen Desktop -->
@@ -236,7 +236,7 @@ export class NewsDialog implements AfterViewInit {
 							4
 						</ng-template>
 						<h3 class="center">Puoi subito iniziare a godere dei vantaggi del sito anche senza una connessione ad internet, buon divertimento!</h3>
-						<div className="dialog-img">
+						<div class="dialog-img">
 							<img src="assets/icons/istruzioni-app/app-cellulare.jpg" alt="App Google Chrome" class="hide-on-med-and-up"/> <!-- Screen Cellulare -->
 							<!-- TODO: fare screen per tablet -->
 							<img src="assets/icons/istruzioni-app/chrome-tablet.jpg" alt="App Google Chrome" class="hide-on-small-only hide-on-large-only"/> <!-- Screen Tablet -->
