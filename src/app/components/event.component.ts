@@ -23,7 +23,7 @@ export class EventComponent implements OnInit, OnDestroy {
     });
 
     this.eventiService
-     .getFutureEvents()
+     .getEvent(this._id)
      .then((event: Eventi[]) => {
        this.event = event.map((event) => {
          return event;
