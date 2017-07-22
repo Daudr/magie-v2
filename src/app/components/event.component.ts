@@ -1,4 +1,4 @@
-import { Component, OnInit, OnDestroy } from '@angular/core';
+import { Component, OnInit, OnDestroy, AfterViewInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 
 import { Eventi } from '../eventi';
@@ -8,7 +8,7 @@ import { EventiService } from '../services/eventi.service';
   selector: 'my-event',
   templateUrl: './event.component.html'
 })
-export class EventComponent implements OnInit, OnDestroy {
+export class EventComponent implements OnInit, AfterViewInit, OnDestroy {
   _id: string;
   private sub: any;
   event: Eventi;
@@ -17,9 +17,7 @@ export class EventComponent implements OnInit, OnDestroy {
 
   ngOnInit() {
     this.sub = this.route.params.subscribe(params => {
-       this._id = params['id']; // (+) converts string '_id' to a number
-       console.log(this._id);
-       // In a real app: dispatch action to load the details here.
+       this._id = params['id'];
     });
 
     this.eventiService
@@ -28,6 +26,12 @@ export class EventComponent implements OnInit, OnDestroy {
        this.event = event
      });
   }
+
+  ngAfterViewInit() {
+    $(document).ready(function(){
+			$('.materialboxed').materialbox();
+		});
+	}
 
   ngOnDestroy() {
     this.sub.unsubscribe();
