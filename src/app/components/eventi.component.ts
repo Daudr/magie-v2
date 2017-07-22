@@ -98,11 +98,13 @@ export class EventiComponent implements OnInit {
 		<div class="descrizione">
 			<h3>Descrizione evento</h3>
 			<p class="truncate">{{event.descrizione}}</p>
-			<a (click)="eventNavigate(event._id)" class="btn">Maggiori informazioni</a>
 		</div>
 		<div class="row" *ngIf="event.galleria">
 			<h3>Galleria evento</h3>
 			<img src={{foto}} class="col l4 m6 s12 materialboxed iceteam" *ngFor="let foto of event.galleria">
+		</div>
+		<div className="center-align">
+			<a (click)="eventNavigate(event._id)" class="btn">Maggiori informazioni</a>
 		</div>
 	`
 })
