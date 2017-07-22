@@ -1,0 +1,36 @@
+<div class="container main">
+  <div class="card-panel top" *ngIf="event; else eventError">
+    <div class="info dialog-event">
+      <img class="dialog-evento materialboxed responsive-img" src={{event.foto}}>
+      <div>
+        <h3>{{event.nome}}</h3>
+        <p><strong>Quando: </strong>{{event.data | date:'dd/MM/yyyy'}}</p>
+        <p><strong>A che ora: </strong>Dalle {{event.oraInizio}}<p>
+        <p><strong>Dove: </strong>Presso {{event.luogo}}</p>
+        <div class="map-event">
+          <iframe
+            frameborder="0"
+            class="map-frame-event"
+            src="https://www.google.com/maps/embed/v1/place?q=place_id:ChIJLSt0CtQUeUcRvAz1SS5vNfk&key=AIzaSyBZbraKHNSZ6hXdK3ZPXCe3WHPcP4tdEM8"
+            allowfullscreen>
+          </iframe>
+        </div>
+      </div>
+    </div>
+    <div class="descrizione">
+      <h3>Descrizione evento</h3>
+      <p>{{event.descrizione}}</p>
+    </div>
+    <div class="row" *ngIf="event.galleria">
+      <h3>Galleria evento</h3>
+      <img src={{foto}} class="col l4 m6 s12 materialboxed iceteam" *ngFor="let foto of event.galleria">
+    </div>
+  </div>
+  <ng-template #eventError>
+    <div class="card-panel top">
+      <h3>Non &egrave; stato trovato nessun evento con l'id cercato.</h3>
+      <p class="p-size-large">Non &egrave; stato trovato nessun evento.</p>
+      <a routerLink="/eventi" class="btn">Torna indietro</a>
+    </div>
+  </ng-template>
+</div>

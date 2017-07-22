@@ -42,6 +42,7 @@ import { HockeyPistaComponent } from './components/hockey-pista.component';
 import { PattInlineComponent } from './components/patt-inline.component';
 import { PrivacyComponent } from './components/privacy.component';
 import { AdminLoginComponent } from './components/admin-login.component';
+import { EventComponent } from './components/event.component';
 
 import { AuthService } from './services/auth.service';
 import { AuthGuard } from './guards/auth.guard';
@@ -95,7 +96,8 @@ import 'hammerjs';
     PattArtComponent,
     PattInlineComponent,
     PrivacyComponent,
-    AdminLoginComponent
+    AdminLoginComponent,
+    EventComponent
   ],
   entryComponents: [
     NewsDialog,

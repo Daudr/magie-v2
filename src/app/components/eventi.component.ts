@@ -96,7 +96,8 @@ export class EventiComponent implements OnInit {
 		</div>
 		<div class="descrizione">
 			<h3>Descrizione evento</h3>
-			<p>{{event.descrizione}}</p>
+			<p class="truncate">{{event.descrizione}}</p>
+			<a routerLink="['/eventi', event.id]" class="btn">Maggiori informazioni</a>
 		</div>
 		<div class="row" *ngIf="event.galleria">
 			<h3>Galleria evento</h3>

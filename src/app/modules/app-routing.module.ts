@@ -12,6 +12,7 @@ import { CreditsComponent } from '../components/credits.component';
 import { IceTeamComponent } from '../components/ice-team.component';
 import { PrivacyComponent } from '../components/privacy.component';
 import { AdminLoginComponent } from '../components/admin-login.component';
+import { EventComponent } from '../components/event.component';
 
 import { AuthGuard } from '../guards/auth.guard';
 
@@ -28,6 +29,10 @@ const routes: Routes = [
 	{
 		path: 'eventi',
 		component: EventiComponent
+	},
+	{
+		path: 'eventi/:id',
+		component: EventComponent
 	},
 	{
 		path: 'servizi',
@@ -59,7 +64,7 @@ const routes: Routes = [
 		path: 'iceteam',
 		component: IceTeamComponent
 	}
-]
+];
 
 @NgModule({
 	imports: [ RouterModule.forRoot(routes) ],
