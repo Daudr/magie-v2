@@ -1,6 +1,7 @@
 import { Component, OnInit, AfterViewInit } from '@angular/core';
 import { MdDialog, MdDialogRef } from '@angular/material';
 import { Title } from '@angular/platform-browser';
+import { Router } from '@angular/router';
 
 import { EventiService } from '../services/eventi.service';
 
@@ -97,7 +98,7 @@ export class EventiComponent implements OnInit {
 		<div class="descrizione">
 			<h3>Descrizione evento</h3>
 			<p class="truncate">{{event.descrizione}}</p>
-			<a [routerLink]="['/eventi', event._id]" class="btn">Maggiori informazioni</a>
+			<a (click)="eventNavigate(event._id)" class="btn">Maggiori informazioni</a>
 		</div>
 		<div class="row" *ngIf="event.galleria">
 			<h3>Galleria evento</h3>
@@ -108,11 +109,18 @@ export class EventiComponent implements OnInit {
 export class EventDialog implements OnInit, AfterViewInit {
 	event: Eventi;
 
+	constructor (public dialog: MdDialog, public router: Router) { }
+
 	ngOnInit () { }
 
 	ngAfterViewInit() {
     $(document).ready(function(){
 			$('.materialboxed').materialbox();
 		});
+	}
+
+	eventNavigate (id: string) {
+		this.dialog.closeAll();
+		this.router.navigate(['/eventi', id]);
 	}
 }
