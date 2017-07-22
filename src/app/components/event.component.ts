@@ -1,5 +1,6 @@
 import { Component, OnInit, OnDestroy, AfterViewInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import { Title } from '@angular/platform-browser';
 
 import { Eventi } from '../eventi';
 import { EventiService } from '../services/eventi.service';
@@ -13,7 +14,7 @@ export class EventComponent implements OnInit, AfterViewInit, OnDestroy {
   private sub: any;
   event: Eventi;
 
-  constructor(private route: ActivatedRoute, private eventiService: EventiService) {}
+  constructor(private route: ActivatedRoute, private eventiService: EventiService, private title: Title) {}
 
   ngOnInit() {
     this.sub = this.route.params.subscribe(params => {
@@ -23,7 +24,9 @@ export class EventComponent implements OnInit, AfterViewInit, OnDestroy {
     this.eventiService
      .getEvent(this._id)
      .then((event: Eventi) => {
-       this.event = event
+       this.event = event;
+
+       this.title.setTitle(event.nome);
      });
   }
 
