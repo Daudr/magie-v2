@@ -17,7 +17,7 @@ export class EventComponent implements OnInit, OnDestroy {
 
   ngOnInit() {
     this.sub = this.route.params.subscribe(params => {
-       this._id = params['_id']; // (+) converts string '_id' to a number
+       this._id = params['id']; // (+) converts string '_id' to a number
        console.log(this._id);
        // In a real app: dispatch action to load the details here.
     });
