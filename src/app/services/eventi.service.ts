@@ -19,10 +19,10 @@ export class EventiService {
 			.catch(this.handleError);
 	}
 
-	getEvent (id: string): Promise<void | Eventi[]> {
+	getEvent (id: string): Promise<void | Eventi> {
 		return this.http.get(this.eventiUrl + '/' + id)
 			.toPromise()
-			.then(response => response.json() as Eventi[])
+			.then(response => response.json() as Eventi)
 			.catch(this.handleError);
 	}
 

@@ -11,7 +11,7 @@ import { EventiService } from '../services/eventi.service';
 export class EventComponent implements OnInit, OnDestroy {
   _id: string;
   private sub: any;
-  event: Eventi[];
+  event: Eventi;
 
   constructor(private route: ActivatedRoute, private eventiService: EventiService) {}
 
@@ -24,10 +24,8 @@ export class EventComponent implements OnInit, OnDestroy {
 
     this.eventiService
      .getEvent(this._id)
-     .then((event: Eventi[]) => {
-       this.event = event.map((event) => {
-         return event;
-       });
+     .then((event: Eventi) => {
+       this.event = event
      });
   }
 
