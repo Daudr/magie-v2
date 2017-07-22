@@ -1,13 +1,16 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+
+import { Eventi } from '../eventi';
 
 @Component({
   selector: 'my-event',
   templateUrl: './event.component.html'
 })
-export class EventComponent implements OnInit {
+export class EventComponent implements OnInit, OnDestroy {
   id: number;
   private sub: any;
+  event: Eventi = null;
 
   constructor(private route: ActivatedRoute) {}
 
