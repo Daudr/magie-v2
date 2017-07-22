@@ -9,7 +9,7 @@ import { EventiService } from '../services/eventi.service';
   templateUrl: './event.component.html'
 })
 export class EventComponent implements OnInit, OnDestroy {
-  id: string;
+  _id: string;
   private sub: any;
   event: Eventi[];
 
@@ -17,8 +17,8 @@ export class EventComponent implements OnInit, OnDestroy {
 
   ngOnInit() {
     this.sub = this.route.params.subscribe(params => {
-       this.id = params['id']; // (+) converts string 'id' to a number
-       console.log(this.id);
+       this._id = params['_id']; // (+) converts string '_id' to a number
+       console.log(this._id);
        // In a real app: dispatch action to load the details here.
     });
 
