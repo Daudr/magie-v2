@@ -19,6 +19,13 @@ export class EventiService {
 			.catch(this.handleError);
 	}
 
+	getEvent (id: string): Promise<void | Eventi[]> {
+		return this.http.get(this.eventiUrl + '/' + id)
+			.toPromise()
+			.then(response => response.json() as Eventi[])
+			.catch(this.handleError);
+	}
+
 	getEventiProssimi(): Promise<void | Eventi[]>{
 		return this.http.get(this.soonUrl)
 			.toPromise()
