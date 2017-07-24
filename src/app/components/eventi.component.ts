@@ -101,7 +101,9 @@ export class EventiComponent implements OnInit {
 		</div>
 		<div class="row" *ngIf="event.galleria">
 			<h3>Galleria evento</h3>
-			<img src={{foto}} class="col l4 m6 s12 materialboxed iceteam" *ngFor="let foto of event.galleria">
+			<div *ngFor="let foto of event.galleria; let i=index">
+				<img src={{foto}} class="col l4 m6 s12 materialboxed iceteam" *ngIf="i<2">
+			</div>
 		</div>
 		<div class="center-align">
 			<a (click)="eventNavigate(event._id)" class="btn">Maggiori informazioni</a>
