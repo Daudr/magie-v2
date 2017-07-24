@@ -88,7 +88,7 @@ nav ul a, .button-collapse {
   background-color: #F5F5F5 !important; /* grey lighten-4 */
 }
 
-a[class~="btn"] {
+a[class~="btn"], input.btn {
   background-color: rgba(0, 0, 0, 0.6);
 }
 

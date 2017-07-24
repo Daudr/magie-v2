@@ -117,7 +117,7 @@ export class AppComponent implements OnInit, AfterViewInit {
 					<div class="g-recaptcha" data-sitekey="6LcOBSQUAAAAAJbEL7-esngydOF6taoeYO2pNpY2"></div>
 					<br>
 					<div class="center-align dialog-actions">
-						<input type="submit" class="btn btn-flat light-blue" [disabled]="!this.checkEULA">
+						<input type="submit" class="btn btn-flat white-text" [disabled]="!this.checkEULA">
 					</div>
 				</form>
 			</div>
