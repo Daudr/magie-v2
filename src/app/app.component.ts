@@ -146,7 +146,7 @@ export class NewsDialog implements AfterViewInit {
 	}
 
 	addReceiver () {
-		if (this.checkEULA) {
+		if ((this.nome && this.cognome && this.email && this.checkEULA) || (this.nome && this.cognome && this.tel && this.checkEULA) || (this.nome && this.cognome && this.email && this.tel && this.checkEULA)) {
 			let receiver = {
 				nome: this.nome,
 				cognome: this.cognome,
