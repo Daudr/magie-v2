@@ -74,6 +74,8 @@ export class IndexComponent implements OnInit, AfterViewInit {
 	      });
 
 	  this.title.setTitle('Magie D\'Inverno - Home');
+		this.meta.removeTag("description");
+		this.meta.removeTag("keywords");
 		this.meta.addTags([
 			{
 				name: 'description', content: 'Sito ufficiale di Magie D\'Inverno - San Vendemiano'

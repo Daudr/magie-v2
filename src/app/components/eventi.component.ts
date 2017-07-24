@@ -54,10 +54,16 @@ export class EventiComponent implements OnInit {
 			});
 
 		this.title.setTitle('Magie D\'Inverno - Eventi');
-		this.meta.removeTag('description');
-		this.meta.removeTag('keywords');
-		this.meta.updateTag({description: 'Scopri gli eventi della manifestazione Magie D\'Inverno di San Vendemiano'});
-		this.meta.updateTag({keywords: 'eventi, san vendemiano, treviso, veneto, manifestazione, magie d\'inverno'});
+		this.meta.removeTag("description");
+		this.meta.removeTag("keywords");
+		this.meta.addTags([
+			{
+				name: 'description', content: 'Contatta l\'amministrazione di Magie D\'Inverno - San Vendemiano per avere tutte le informazioni necessarie'
+			},
+			{
+				name: 'keywords', content: 'magie d\'inverno, san vendemiano, pattinaggio, pista, ghiaccio, hockey, artistico, corsi, bambini, festa, compleanno, concerti, eventi, treviso, veneto, contatti, mappa'
+			}
+		]);
 		document.body.scrollTop = document.documentElement.scrollTop = 0;
 	}
 

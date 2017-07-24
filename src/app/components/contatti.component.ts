@@ -64,6 +64,8 @@ export class ContattiComponent implements OnInit {
 
 	ngOnInit() {
 		this.title.setTitle('Magie D\'Inverno - Contatti');
+		this.meta.removeTag("description");
+		this.meta.removeTag("keywords");
 		this.meta.addTags([
 			{
 				name: 'description', content: 'Contatta l\'amministrazione di Magie D\'Inverno - San Vendemiano per avere tutte le informazioni necessarie'
