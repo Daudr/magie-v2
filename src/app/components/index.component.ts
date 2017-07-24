@@ -76,10 +76,10 @@ export class IndexComponent implements OnInit, AfterViewInit {
 	  this.title.setTitle('Magie D\'Inverno - Home');
 		this.meta.addTags([
 			{
-				description: 'Sito ufficiale di Magie D\'Inverno - San Vendemiano'
+				name: 'description', content: 'Sito ufficiale di Magie D\'Inverno - San Vendemiano'
 			},
 			{
-				keywords: 'magie, inverno, san, vendemiano, pattinaggio, pista, ghiaccio, hockey, artistico, corsi, bambini, festa, concerti, eventi, treviso, veneto'
+				name: 'keywords', content: 'magie, inverno, san, vendemiano, pattinaggio, pista, ghiaccio, hockey, artistico, corsi, bambini, festa, concerti, eventi, treviso, veneto'
 			}
 		]);
 		document.body.scrollTop = document.documentElement.scrollTop = 0;

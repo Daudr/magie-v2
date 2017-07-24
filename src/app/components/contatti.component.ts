@@ -66,10 +66,10 @@ export class ContattiComponent implements OnInit {
 		this.title.setTitle('Magie D\'Inverno - Contatti');
 		this.meta.addTags([
 			{
-				description: 'Contatta l\'amministrazione di Magie D\'Inverno - San Vendemiano per avere tutte le informazioni necessarie'
+				name: 'description', content: 'Contatta l\'amministrazione di Magie D\'Inverno - San Vendemiano per avere tutte le informazioni necessarie'
 			},
 			{
-				keywords: 'magie d\'inverno, san vendemiano, pattinaggio, pista, ghiaccio, hockey, artistico, corsi, bambini, festa, compleanno, concerti, eventi, treviso, veneto, contatti, mappa'
+				name: 'keywords', content: 'magie d\'inverno, san vendemiano, pattinaggio, pista, ghiaccio, hockey, artistico, corsi, bambini, festa, compleanno, concerti, eventi, treviso, veneto, contatti, mappa'
 			}
 		]);
 		document.body.scrollTop = document.documentElement.scrollTop = 0;
