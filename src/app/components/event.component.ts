@@ -27,12 +27,14 @@ export class EventComponent implements OnInit, AfterViewInit, OnDestroy {
      .getEvent(this._id)
      .then((event: Eventi) => {
        this.event = event;
-       $('.materialboxed').materialbox();
+
        this.title.setTitle(event.nome);
      });
   }
 
-  ngAfterViewInit() {	}
+  ngAfterViewInit() {
+    $('.materialboxed').materialbox();
+  }
 
   ngOnDestroy() {
     this.sub.unsubscribe();
