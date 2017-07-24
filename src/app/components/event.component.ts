@@ -5,6 +5,8 @@ import { Title } from '@angular/platform-browser';
 import { Eventi } from '../eventi';
 import { EventiService } from '../services/eventi.service';
 
+declare var $: any;
+
 @Component({
   selector: 'my-event',
   templateUrl: './event.component.html'
