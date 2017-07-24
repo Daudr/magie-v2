@@ -99,7 +99,7 @@ app.post("/api/eventi", function(req, res){
 			oraInizio: req.body.oraInizio,
 			oraFine: req.body.oraFine,
 			luogo: req.body.luogo,
-			descrizione: req.body.descrizione,
+			descrizione: req.body.descrizione.replace("/n", "<br>"),
 			fotoMin: this.fotoMin,
 			foto: this.fotoFull
 		};
