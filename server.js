@@ -90,8 +90,8 @@ app.post("/api/eventi", function(req, res){
 	if(!req.body.nome || !req.body.data || !req.body.oraInizio ){
 		handleError(res, "Invalid user input", "Must provide a name.", 400);
 	} else {
-    var fotoMin = uploadFoto(req.body.fotoMin);
-    var fotoFull = uploadFoto(req.body.fotoFull);
+    var fotoMin = uploadFoto(req.body.fotoMin) | '/assets/icons/logo/logo_magie.png';
+    var fotoFull = uploadFoto(req.body.fotoFull) | '/assets/icons/logo/logo_magie.png';
 
 		var evento = {
 			nome: req.body.nome,
