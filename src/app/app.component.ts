@@ -1,6 +1,6 @@
 import { Component, OnInit, AfterViewInit } from '@angular/core';
 import { Meta, Title } from '@angular/platform-browser';
-import { MdDialog, MdDialogRef, MdDialogConfig } from '@angular/material';
+import { MdDialog, MdDialogRef, MdDialogConfig, MdSnackBar } from '@angular/material';
 
 import { EventiService } from './services/eventi.service';
 import { NewsletterService } from './services/newsletter.service';
@@ -123,7 +123,7 @@ export class AppComponent implements OnInit, AfterViewInit {
 			</div>
 		</div>
 	`,
-	providers: [NewsletterService]
+	providers: [NewsletterService, MdSnackBar]
 })
 export class NewsDialog implements AfterViewInit {
 	nome: string;
@@ -134,7 +134,8 @@ export class NewsDialog implements AfterViewInit {
 
 	constructor(
 		public dialogRef: MdDialogRef<NewsDialog>,
-		public newsService: NewsletterService
+		public newsService: NewsletterService,
+		public snackBar: MdSnackBar
 	) { }
 
 	ngAfterViewInit() {
@@ -156,7 +157,14 @@ export class NewsDialog implements AfterViewInit {
 
 			this.newsService.addReceiver(receiver);
 
+			this.snackBar.open("Aggiunto alla newsletter", "Chiudi", {
+	      duration: 3000,
+	    });
 			this.dialogRef.close();
+		} else {
+			this.snackBar.open("Compilare tutti i campi richiesti", "Chiudi", {
+	      duration: 3000,
+	    });
 		}
 	}
 
