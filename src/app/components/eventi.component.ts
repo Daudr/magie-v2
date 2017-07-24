@@ -54,6 +54,8 @@ export class EventiComponent implements OnInit {
 			});
 
 		this.title.setTitle('Magie D\'Inverno - Eventi');
+		this.meta.removeTag('description');
+		this.meta.removeTag('keywords');
 		this.meta.updateTag({description: 'Scopri gli eventi della manifestazione Magie D\'Inverno di San Vendemiano'});
 		this.meta.updateTag({keywords: 'eventi, san vendemiano, treviso, veneto, manifestazione, magie d\'inverno'});
 		document.body.scrollTop = document.documentElement.scrollTop = 0;
