@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Title } from '@angular/platform-browser';
+import { Meta, Title } from '@angular/platform-browser';
 
 import { Staff } from '../staff';
 
@@ -60,10 +60,18 @@ export class ContattiComponent implements OnInit {
 		}
 	];
 
-	constructor(private title: Title) { }
+	constructor(private title: Title, private meta: Meta) { }
 
 	ngOnInit() {
 		this.title.setTitle('Magie D\'Inverno - Contatti');
+		this.meta.addTags([
+			{
+				description: 'Contatta l\'amministrazione di Magie D\'Inverno - San Vendemiano per avere tutte le informazioni necessarie'
+			},
+			{
+				keywords: 'magie d\'inverno, san vendemiano, pattinaggio, pista, ghiaccio, hockey, artistico, corsi, bambini, festa, compleanno, concerti, eventi, treviso, veneto, contatti, mappa'
+			}
+		]);
 		document.body.scrollTop = document.documentElement.scrollTop = 0;
 	}
 }

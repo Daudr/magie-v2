@@ -1,5 +1,5 @@
 import { Component, OnInit, AfterViewInit } from '@angular/core';
-import { Title } from '@angular/platform-browser';
+import { Meta, Title } from '@angular/platform-browser';
 import { MdDialog, MdDialogRef, MdDialogConfig } from '@angular/material';
 
 import { EventiService } from './services/eventi.service';
@@ -48,7 +48,7 @@ export class AppComponent implements OnInit, AfterViewInit {
 		}*/
 	];
 
-	public constructor(private titleService: Title, public dialog: MdDialog) { }
+	public constructor(private titleService: Title, public dialog: MdDialog, private meta: Meta) { }
 
 	ngOnInit(){
 		$(document).ready(function(){
