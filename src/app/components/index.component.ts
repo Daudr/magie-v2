@@ -1,6 +1,6 @@
 import { Component, OnInit, AfterViewInit } from '@angular/core';
 import { MdDialog, MdDialogRef } from '@angular/material';
-import { Meta, Title } from '@angular/platform-browser';
+import { Title } from '@angular/platform-browser';
 import { DatePipe } from '@angular/common';
 
 import { Eventi } from '../eventi';
@@ -61,8 +61,7 @@ export class IndexComponent implements OnInit, AfterViewInit {
 	constructor(
 		private eventiService: EventiService,
 		public dialog: MdDialog,
-		private title: Title,
-		private meta: Meta) { }
+		private title: Title) { }
 
 	ngOnInit() {
 	  this.eventiService
@@ -74,16 +73,6 @@ export class IndexComponent implements OnInit, AfterViewInit {
 	      });
 
 	  this.title.setTitle('Magie D\'Inverno - Home');
-		this.meta.removeTag("description");
-		this.meta.removeTag("keywords");
-		this.meta.addTags([
-			{
-				name: 'description', content: 'Sito ufficiale di Magie D\'Inverno - San Vendemiano'
-			},
-			{
-				name: 'keywords', content: 'magie, inverno, san, vendemiano, pattinaggio, pista, ghiaccio, hockey, artistico, corsi, bambini, festa, concerti, eventi, treviso, veneto'
-			}
-		]);
 		document.body.scrollTop = document.documentElement.scrollTop = 0;
   }
 
