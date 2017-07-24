@@ -1,6 +1,6 @@
 import { Component, OnInit, AfterViewInit } from '@angular/core';
 import { MdDialog, MdDialogRef } from '@angular/material';
-import { Title } from '@angular/platform-browser';
+import { Meta, Title } from '@angular/platform-browser';
 import { Router } from '@angular/router';
 
 import { EventiService } from '../services/eventi.service';
@@ -23,7 +23,7 @@ export class EventiComponent implements OnInit {
 	evtdlg: EventDialog;
 	dialogRef: MdDialogRef<EventDialog>;
 
-	constructor(private eventiService: EventiService, public dialog: MdDialog, private title: Title) { }
+	constructor(private eventiService: EventiService, public dialog: MdDialog, private title: Title, private meta: Meta) { }
 
 	ngOnInit() {
 		this.eventiService
@@ -54,6 +54,8 @@ export class EventiComponent implements OnInit {
 			});
 
 		this.title.setTitle('Magie D\'Inverno - Eventi');
+		this.meta.updateTag({description: 'Scopri gli eventi della manifestazione Magie D\'Inverno di San Vendemiano'});
+		this.meta.updateTag({keywords: 'eventi, san vendemiano, treviso, veneto, manifestazione, magie d\'inverno'});
 		document.body.scrollTop = document.documentElement.scrollTop = 0;
 	}
 
