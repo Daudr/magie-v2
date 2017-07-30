@@ -54,6 +54,7 @@ import 'hammerjs';
       AppRoutingModule,
       HttpModule,
       FormsModule,
+      ReactiveFormsModule,
       MdButtonModule,
       MdCardModule,
       MdCheckboxModule,
