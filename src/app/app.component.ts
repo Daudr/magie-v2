@@ -1,6 +1,7 @@
 import { Component, OnInit, AfterViewInit } from '@angular/core';
 import { Meta, Title } from '@angular/platform-browser';
 import { MdDialog, MdDialogRef, MdDialogConfig, MdSnackBar } from '@angular/material';
+import {FormControl, Validators} from '@angular/forms';
 
 import { EventiService } from './services/eventi.service';
 import { NewsletterService } from './services/newsletter.service';
@@ -8,6 +9,7 @@ import { NewsletterService } from './services/newsletter.service';
 import { Sponsor } from './sponsor';
 
 declare var $: any;
+const EMAIL_REGEX = /^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
 
 @Component({
   selector: 'magie-dinverno',
@@ -105,12 +107,18 @@ export class AppComponent implements OnInit, AfterViewInit {
 							<input mdInput name="cognome" [(ngModel)]="cognome" placeholder="Cognome" required>
 						</md-input-container>
 						<md-input-container class="full-width">
-							<input type="email" mdInput name="email" [(ngModel)]="email" placeholder="Email" required>
-						</md-input-container>
-						<p class="center-align">O se preferisci essere contattato per cellulare tramite WhatsApp: </p>
+              <input mdInput placeholder="Email" [formControl]="emailFormControl" [(ngModel)]="email">
+              <md-error *ngIf="emailFormControl.hasError('pattern')">
+                Inserisci un indirizzo email valido
+              </md-error>
+              <md-error *ngIf="emailFormControl.hasError('required')">
+                L'email &egrave; <strong>obbligatoria</strong>
+              </md-error>
+            </md-input-container>
+						<!--<p class="center-align">O se preferisci essere contattato per cellulare tramite WhatsApp: </p>
 						<md-input-container class="full-width">
 							<input type="tel" mdInput name="tel" [(ngModel)]="tel" placeholder="Cellulare" required>
-						</md-input-container>
+						</md-input-container>-->
 						<br>
 						<md-checkbox name="checkEULA" [(ngModel)]="checkEULA" class="center-align" required>Acconsento ai termini.</md-checkbox>
 					</div>
@@ -131,6 +139,10 @@ export class NewsDialog implements AfterViewInit {
 	email: string;
 	tel: string;
 	checkEULA: boolean = false;
+
+  emailFormControl = new FormControl('', [
+    Validators.required,
+    Validators.pattern(EMAIL_REGEX)]);
 
 	constructor(
 		public dialogRef: MdDialogRef<NewsDialog>,
