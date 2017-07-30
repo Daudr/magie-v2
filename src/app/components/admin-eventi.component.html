@@ -13,8 +13,10 @@
 		</md-input-container>
 		<br>
 		<md-input-container class="admin-input">
-	  	<input mdInput type="date" placeholder="Data" name="data" [(ngModel)]="data" required>
-	  </md-input-container>
+	  	<input mdInput [mdDatePicker]="picker" placeholder="Data evento" name="data" [(ngModel)]="data" required>
+			<button mdSuffix [mdDatePickerToggle]="picker"></button>
+		</md-input-container>
+		<md-datepicker #picker></md-datepicker>
 	  <br><br>
 	  <md-input-container>
   		<input mdInput type="time" placeholder="Ora Inizio" name="oraInizio" [(ngModel)]="oraInizio" required>
@@ -29,10 +31,19 @@
 			<br>
 		</div>
 
+		<md-input-container class="admin-input">
+		    <input mdInput placeholder="Foto min" name="fotoMin" [(ngModel)]="fotoMin">
+		</md-input-container>
+
+		<md-input-container class="admin-input">
+		    <input mdInput placeholder="Foto full" name="fotoFull" [(ngModel)]="fotoFull">
+		</md-input-container>
+
+		<!--
 		<div class="file-field input-field">
 			<div class="btn btn-flat light-blue">
 				<span>Foto min</span>
-				<input (change)="fileChange($event, 'fotoMin')" type="file" accept="image/jpg, image/png. image/webp">
+				<input type="file" >
 			</div>
 			<div class="file-path-wrapper">
 				<input class="file-path validate" type="text">
@@ -47,7 +58,7 @@
 			<div class="file-path-wrapper">
 				<input class="file-path validate" type="text">
 			</div>
-		</div>
+		</div> -->
 
 		<div>
 			<p class="center-align">* Campo obbligatorio</p>

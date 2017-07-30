@@ -72,27 +72,6 @@ export class AdminEventiComponent implements OnInit, AfterViewInit {
     });
 	}
 
-	fileChange(event, type) {
-    let fileList: FileList = event.target.files;
-		var myReader: FileReader = new FileReader();
-		console.log(type);
-
-		myReader.onloadend = (e) => {
-			console.log(myReader.result);
-		}
-
-    if(fileList.length > 0) {
-			if (type === 'fotoMin') {
-				this.fotoMin = myReader.readAsDataURL(fileList[0]);
-			} else if(type === 'fotoFull') {
-				this.fotoFull = myReader.readAsDataURL(fileList[0]);
-			}
-    }
-
-		console.log(this.fotoMin);
-		console.log(this.fotoFull);
-}
-
   creaEvento () {
     if (this.nome || this.data || this.oraInizio ) {
       let event = {

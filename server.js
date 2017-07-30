@@ -5,8 +5,7 @@ var mongojs = require("mongojs");
 const passport = require('passport');
 const jwt = require('jsonwebtoken');
 const mongoose = require('mongoose');
-const AWS = require('aws-sdk');
-
+const admins = require('./routes/admins');
 const config = require('./config/database');
 
 var ObjectID = mongojs.ObjectID;
@@ -15,12 +14,11 @@ const STAFF_COLLECTION = "staff";
 const EVENTS_COLLECTION = "eventi";
 const NEWS_COLLECTION = "news";
 
-const BUCKET_NAME = process.env.S3_BUCKET_NAME;
-
 // Connessione mongoose
 mongoose.connect(config.database);
 
 var app = express();
+app.use(bodyParser.urlencoded());
 app.use(bodyParser.json());
 app.use(compression());
 
@@ -29,8 +27,6 @@ app.use(passport.initialize());
 app.use(passport.session());
 
 require('./config/passport')(passport);
-
-const admins = require('./routes/admins');
 
 // Create link to Angular build directory
 var distDir = __dirname + "/dist/";
@@ -41,26 +37,6 @@ app.use(function(req, res, next) {
     res.setHeader("Cache-Control", "max-age=no-store");
     return next();
 });
-
-
-var s3Options = {
-  accessKeyId: process.env.AWS_ACCESS_KEY,
-  secretAccessKey: process.env.AWS_SECRET_ACCESS_KEY,
-  region: "eu-west-1",
-};
-var s3 = new AWS.S3(s3Options);
-
-function uploadFoto(foto) {
-  var params = {
-    ACL: "public-read",
-    Body: foto,
-    Bucket: BUCKET_NAME,
-    Key: foto.name
-  };
-  return s3.upload(params, (err, data) => {
-    return data.Location;
-  });
-}
 
 // Generic error handler used by all endpoints.
 function handleError(res, reason, message, code) {
@@ -90,8 +66,6 @@ app.post("/api/eventi", function(req, res){
 	if(!req.body.nome || !req.body.data || !req.body.oraInizio ){
 		handleError(res, "Invalid user input", "Must provide a name.", 400);
 	} else {
-    var fotoMin =/* uploadFoto(req.body.fotoMin) |*/ '/assets/icons/logo/logo_magie.png';
-    var fotoFull =/* uploadFoto(req.body.fotoFull) |*/ '/assets/icons/logo/logo_magie.png';
 
 		var evento = {
 			nome: req.body.nome,
@@ -100,8 +74,8 @@ app.post("/api/eventi", function(req, res){
 			oraFine: req.body.oraFine,
 			luogo: req.body.luogo,
 			descrizione: req.body.descrizione.replace("/n", "<br>"),
-			fotoMin: this.fotoMin,
-			foto: this.fotoFull
+			fotoMin: req.body.fotoMin || 'assets/icons/logo/logo_magie.png',
+			foto: req.body.fotoFull || 'assets/icons/logo/logo_magie.png'
 		};
 
 		evt.eventi.insert(evento, function(err, evento) {
