@@ -1,6 +1,6 @@
 export class Servizio {
-	nome: string;
-	foto: string;
-	descrizione: string;
-	id: string;
+  nome: string;
+  foto: string;
+  descrizione: string;
+  id: string;
 }

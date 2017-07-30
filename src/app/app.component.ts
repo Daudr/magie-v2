@@ -10,45 +10,45 @@ import { Sponsor } from './sponsor';
 declare var $: any;
 
 @Component({
-	selector: 'magie-dinverno',
-	templateUrl: `./app.component.html`,
-	providers: [
-		EventiService
-	]
+  selector: 'magie-dinverno',
+  templateUrl: `./app.component.html`,
+  providers: [
+      EventiService
+  ]
 })
 export class AppComponent implements OnInit, AfterViewInit {
-	dialogRef: MdDialogRef<any>;
+  dialogRef: MdDialogRef<any>;
 
-	cookieAccepted: any;
+  cookieAccepted: any;
 
-	sponsors: Sponsor[] = [
-		{
-			icon: '../assets/icons/sponsor/ascopiave.jpg'
-		},
-		{
-			icon: '../assets/icons/sponsor/banca.jpg'
-		},
-		{
-			icon: '../assets/icons/sponsor/bibione.jpg'
-		},
-		{
-			icon: '../assets/icons/sponsor/chocomax.jpg'
-		},
-		{
-			icon: '../assets/icons/sponsor/csn.jpg'
-		},
-		{
-			icon: '../assets/icons/sponsor/daros.jpg'
-		}/*,
+  sponsors: Sponsor[] = [
+    {
+      icon: '../assets/icons/sponsor/ascopiave.jpg'
+    },
+    {
+      icon: '../assets/icons/sponsor/banca.jpg'
+    },
+    {
+      icon: '../assets/icons/sponsor/bibione.jpg'
+    },
+    {
+      icon: '../assets/icons/sponsor/chocomax.jpg'
+    },
+    {
+      icon: '../assets/icons/sponsor/csn.jpg'
+    },
+    {
+      icon: '../assets/icons/sponsor/daros.jpg'
+    }/*,
 		{
 			icon: '../assets/icons/sponsor/epa.jpg'
 		},
 		{
 			icon: '../assets/icons/sponsor/gibus.jpg'
 		}*/
-	];
+  ];
 
-	public constructor(private titleService: Title, public dialog: MdDialog, private meta: Meta) { }
+  public constructor(private titleService: Title, public dialog: MdDialog, private meta: Meta) { }
 
 	ngOnInit(){
 		$(document).ready(function(){
