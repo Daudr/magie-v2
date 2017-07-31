@@ -200,6 +200,10 @@ p.left-align {
   font-size: 1.5em;
 }
 
+.p-istruttore {
+  padding: 15px;
+}
+
 /* ANIMAZIONE */
 
 #loader-wrapper {
