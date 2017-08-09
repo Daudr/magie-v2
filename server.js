@@ -211,7 +211,7 @@ app.post("/api/mailchimp", (req, res) => {
     }
   });
 
-  mailchimp.post('list/3b67de1fae/members', {
+  mailchimp.post({path: 'list/3b67de1fae/members'}, {
     first_name: member.nome,
     last_name: member.cognome,
     email: member.email,
