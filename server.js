@@ -211,6 +211,17 @@ app.post("/api/mailchimp", (req, res) => {
     }
   });
 
+  mailchimp.post('list/3b67de1fae/members', {
+    first_name: member.nome,
+    last_name: member.cognome,
+    email: member.email,
+    status: 'subscribed'
+  }, (err, result) => {
+    if (err) throw err;
+    else {
+      console.log(result);
+    }
+  });
 });
 
 /* "api/email"
