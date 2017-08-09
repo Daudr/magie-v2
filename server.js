@@ -7,6 +7,7 @@ const jwt = require('jsonwebtoken');
 const mongoose = require('mongoose');
 const admins = require('./routes/admins');
 const config = require('./config/database');
+const MailChimp = require('mailchimp-api-v3');
 
 var ObjectID = mongojs.ObjectID;
 
@@ -194,6 +195,22 @@ app.post("/api/news", (req, res) => {
       res.status(201).json(receiver);
     }
   });
+});
+
+app.post("/api/mailchimp", (req, res) => {
+  member = req.body;
+
+  var mailchimp = new MailChimp(process.env.MailChimpKey);
+
+  mailchimp.get({
+    path: 'list/3b67de1fae/members'
+  }, (err, result) => {
+    if (err) throw err;
+    else {
+      console.log(result);
+    }
+  });
+
 });
 
 /* "api/email"
