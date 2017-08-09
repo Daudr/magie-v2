@@ -200,7 +200,7 @@ app.post("/api/news", (req, res) => {
 app.post("/api/mailchimp", (req, res) => {
   member = req.body;
 
-  var mailchimp = new MailChimp(process.env.MailChimpKey);
+  var mailchimp = new MailChimp(process.env.MAILCHIMP_KEY);
 
   mailchimp.get({
     path: 'list/3b67de1fae/members'
