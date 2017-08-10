@@ -196,13 +196,11 @@ app.post("/api/news", (req, res) => {
       var options = { method: 'POST',
         url: 'https://magie.herokuapp.com/api/mailchimp',
         headers: { 'content-type': 'application/json' },
-        body: { email_address: receiver.email, status: 'subscribed' },
+        body: { email: receiver.email },
         json: true };
 
       request(options, function (error, response, body) {
         if (error) throw new Error(error);
-
-        console.log(body);
       });
       res.status(201).json(receiver);
     }
@@ -215,10 +213,10 @@ app.post("/api/mailchimp", (req, res) => {
   var mailchimp = new MailChimp(process.env.MAILCHIMP_KEY);
 
   mailchimp.post({path: 'lists/3b67de1fae/members'}, {
-    email: member.email,
+    email_address: member.email,
     status: 'subscribed'
   }, (err, result) => {
-    if (err) throw err;
+    if (err) throw new Error(err);
     else {
       res.status(200).json({success: true});
     }
