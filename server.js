@@ -199,12 +199,11 @@ app.post("/api/news", (req, res) => {
 
 app.post("/api/mailchimp", (req, res) => {
   member = req.body;
-  console.log(member);
-  console.log(req.body);
+
   var mailchimp = new MailChimp(process.env.MAILCHIMP_KEY);
 
   mailchimp.get({
-    path: 'list/3b67de1fae/members'
+    path: 'lists/3b67de1fae/members'
   }, (err, result) => {
     if (err) throw err;
     else {
@@ -212,7 +211,7 @@ app.post("/api/mailchimp", (req, res) => {
     }
   });
 
-  mailchimp.post({path: 'list/3b67de1fae/members'}, {
+  mailchimp.post({path: 'lists/3b67de1fae/members'}, {
     first_name: member.nome,
     last_name: member.cognome,
     email: member.email,
