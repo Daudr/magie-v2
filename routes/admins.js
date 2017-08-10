@@ -20,7 +20,7 @@ router.post('/register', (req, res, next) => {
       res.json({success: false, msg: 'Failed to register Admin.'});
       console.log(err);
     } else {
-      res.json({success: true, msg: 'Admin registered.'});
+      res.status(200).json({success: true, msg: 'Admin registered.'});
     }
   })
 });
@@ -33,7 +33,7 @@ router.post('/authenticate', (req, res, next) => {
     if (err) throw err;
 
     if (!admin) {
-      return res.json({success: false, msg: 'Admin not found'});
+      return res.status(404).json({success: false, msg: 'Admin not found'});
     }
 
     Admin.comparePassword(password, admin.password, (err, isMatch) => {
@@ -44,7 +44,7 @@ router.post('/authenticate', (req, res, next) => {
           expiresIn: 604800 // Una settimana
         });
 
-        res.json({
+        res.status(200).json({
           success: true,
           token: 'JWT ' + token,
           Admin: {   // Per non inviare la password creiamo un nuovo oggetto
