@@ -42,6 +42,7 @@ import { PattInlineComponent } from './components/patt-inline.component';
 import { PrivacyComponent } from './components/privacy.component';
 import { AdminLoginComponent } from './components/admin-login.component';
 import { EventComponent } from './components/event.component';
+import { SitemapComponent } from './components/sitemap.component';
 
 import { AuthService } from './services/auth.service';
 import { AuthGuard } from './guards/auth.guard';
@@ -97,7 +98,8 @@ import 'hammerjs';
     PattInlineComponent,
     PrivacyComponent,
     AdminLoginComponent,
-    EventComponent
+    EventComponent,
+    SitemapComponent
   ],
   entryComponents: [
     NewsDialog,

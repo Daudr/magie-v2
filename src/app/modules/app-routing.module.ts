@@ -13,6 +13,7 @@ import { IceTeamComponent } from '../components/ice-team.component';
 import { PrivacyComponent } from '../components/privacy.component';
 import { AdminLoginComponent } from '../components/admin-login.component';
 import { EventComponent } from '../components/event.component';
+import { SitemapComponent } from '../components/sitemap.component';
 
 import { AuthGuard } from '../guards/auth.guard';
 
@@ -63,6 +64,10 @@ const routes: Routes = [
 	{
 		path: 'iceteam',
 		component: IceTeamComponent
+	},
+	{
+		path: 'sitemap',
+		component: SitemapComponent
 	}
 ];
 
