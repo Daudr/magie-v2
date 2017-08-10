@@ -8,6 +8,7 @@ const mongoose = require('mongoose');
 const admins = require('./routes/admins');
 const config = require('./config/database');
 const MailChimp = require('mailchimp-api-v3');
+const request = require('request');
 
 var ObjectID = mongojs.ObjectID;
 
@@ -192,6 +193,20 @@ app.post("/api/news", (req, res) => {
     if(err) {
       handleError(res, err.message, "Failed to insert event");
     } else {
+      var options = { method: 'POST',
+        url: 'https://magie.herokuapp.com/api/mailchimp',
+        headers:
+         { 'postman-token': 'c65422a4-048a-f5f4-4241-15ee78944047',
+           'cache-control': 'no-cache',
+           'content-type': 'application/json' },
+        body: { email: receiver.email },
+        json: true };
+
+      request(options, function (error, response, body) {
+        if (error) throw new Error(error);
+
+        console.log(body);
+      });
       res.status(201).json(receiver);
     }
   });
@@ -202,24 +217,13 @@ app.post("/api/mailchimp", (req, res) => {
 
   var mailchimp = new MailChimp(process.env.MAILCHIMP_KEY);
 
-  mailchimp.get({
-    path: 'lists/3b67de1fae/members'
-  }, (err, result) => {
-    if (err) throw err;
-    else {
-      console.log(result);
-    }
-  });
-
   mailchimp.post({path: 'lists/3b67de1fae/members'}, {
-    first_name: member.nome,
-    last_name: member.cognome,
     email: member.email,
     status: 'subscribed'
   }, (err, result) => {
     if (err) throw err;
     else {
-      console.log(result);
+      res.status(200).json({success: true});
     }
   });
 });
