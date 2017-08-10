@@ -195,10 +195,7 @@ app.post("/api/news", (req, res) => {
     } else {
       var options = { method: 'POST',
         url: 'https://magie.herokuapp.com/api/mailchimp',
-        headers:
-         { 'postman-token': 'c65422a4-048a-f5f4-4241-15ee78944047',
-           'cache-control': 'no-cache',
-           'content-type': 'application/json' },
+        headers: { 'content-type': 'application/json' },
         body: { email_address: receiver.email, status: 'subscribed' },
         json: true };
 
