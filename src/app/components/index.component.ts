@@ -77,10 +77,10 @@ export class IndexComponent implements OnInit, AfterViewInit {
   }
 
   ngAfterViewInit () {
-  	if(!localStorage.getItem('viewed')) {
+  	/*if(!localStorage.getItem('viewed')) {
   		this.dialogRef = this.dialog.open(DialogAlert);
   		localStorage.setItem('viewed', 'true');
-  	}
+  	}*/
   }
 
 	openEventDialog(event: Eventi) {
