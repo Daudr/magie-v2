@@ -18,7 +18,6 @@ import { SitemapComponent } from '../components/sitemap.component';
 import { AuthGuard } from '../guards/auth.guard';
 
 const routes: Routes = [
-	{ path: '', redirectTo: '/index', pathMatch: 'full' },
 	{
 		path: 'index',
 		component: IndexComponent
@@ -68,7 +67,9 @@ const routes: Routes = [
 	{
 		path: 'sitemap',
 		component: SitemapComponent
-	}
+	},
+	{ path: '', redirectTo: '/index', pathMatch: 'full' },
+	{ path: '*', redirectTo: '/index' }
 ];
 
 @NgModule({
