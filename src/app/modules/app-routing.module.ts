@@ -69,7 +69,7 @@ const routes: Routes = [
 		component: SitemapComponent
 	},
 	{ path: '', redirectTo: '/index', pathMatch: 'full' },
-	{ path: '*', redirectTo: '/index' }
+	{ path: '**', redirectTo: '/index', pathMatch: 'full' }
 ];
 
 @NgModule({
