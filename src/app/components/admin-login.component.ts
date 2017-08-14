@@ -28,8 +28,7 @@ export class AdminLoginComponent implements OnInit {
 
     this.authService.authenticateUser(user).subscribe(data => {
       if(data.success) {
-      console.log(data);
-        this.authService.storeUserData(data.token, data.user);
+        this.authService.storeUserData(data.token, data.Admin);
         this.router.navigate(['/admin']);
       } else {
         this.router.navigate(['admin/login']);
