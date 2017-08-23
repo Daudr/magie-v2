@@ -8,13 +8,13 @@
     "npm": "4.2.0"
   },
   "scripts": {
+    "prestart": "ng build --prod && ngc && npm run generate:sw",
     "ng": "ng",
-    "start": "node server.js",
+    "start": "ts-node src/server.ts",
     "lint": "tslint \"src/**/*.ts\"",
     "test": "ng test",
     "pree2e": "webdriver-manager update --standalone false --gecko false",
     "e2e": "protractor",
-    "postinstall": "ng build --prod && npm run generate:sw",
     "generate:sw": "sw-precache --root=dist --handler=offlineFirst"
   },
   "private": true,
@@ -41,6 +41,7 @@
     "core-js": "^2.5.0",
     "cors": "^2.8.4",
     "express": "^4.15.4",
+    "file-system": "^2.2.2",
     "hammerjs": "^2.0.8",
     "jsonwebtoken": "^7.4.2",
     "mailchimp-api-v3": "^1.7.0",
@@ -49,6 +50,7 @@
     "mongoose": "^4.11.6",
     "passport": "^0.3.2",
     "passport-jwt": "^2.2.1",
+    "path": "^0.12.7",
     "rxjs": "^5.4.2",
     "s3": "^4.4.0",
     "sendgrid": "^5.2.0",

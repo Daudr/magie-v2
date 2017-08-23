@@ -51,7 +51,7 @@ import 'hammerjs';
 
 @NgModule({
   imports: [
-      BrowserModule,
+      BrowserModule.withServerTransition({appId: 'magie-v2'}),
       AppRoutingModule,
       HttpModule,
       FormsModule,
