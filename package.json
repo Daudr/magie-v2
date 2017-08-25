@@ -10,7 +10,7 @@
   "scripts": {
     "prestart": "ng build --prod && ngc && npm run generate:sw",
     "ng": "ng",
-    "start": "ts-node src/server.ts",
+    "start": "ts-node server.ts",
     "lint": "tslint \"src/**/*.ts\"",
     "test": "ng test",
     "pree2e": "webdriver-manager update --standalone false --gecko false",
