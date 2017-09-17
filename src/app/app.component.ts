@@ -62,7 +62,7 @@ export class AppComponent implements OnInit, AfterViewInit {
 
 	ngAfterViewInit () { }
 
-	addNoScroll (sidenav) {
+	addNoScroll (sidenav: any) {
 		if(sidenav._isOpened) {
 			if(!$('body').hasClass('noscroll')) {
 				$('body').addClass('noscroll');

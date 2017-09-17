@@ -47,7 +47,7 @@ import { SitemapComponent } from './components/sitemap.component';
 import { AuthService } from './services/auth.service';
 import { AuthGuard } from './guards/auth.guard';
 
-import 'hammerjs';
+// import 'hammerjs';
 
 @NgModule({
   imports: [

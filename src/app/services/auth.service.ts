@@ -11,14 +11,14 @@ export class AuthService {
 
   constructor(private http: Http) { }
 
-  authenticateUser (user) {
+  authenticateUser (user: any) {
     let headers = new Headers();
     headers.append('Content-Type', 'application/json');
     return this.http.post('/admin/authenticate', user, {headers: headers})
       .map(res => res.json());
   }
 
-  storeUserData (token, user) {
+  storeUserData (token: any, user: any) {
     localStorage.setItem('id_admin_magie', token);
     localStorage.setItem('user', JSON.stringify(user));
     this.authToken = token;

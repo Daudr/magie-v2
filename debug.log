@@ -13,3 +13,6 @@
 [0722/190202.226:ERROR:file_io_win.cc(182)] CreateFile C:\Program Files (x86)\temp\settings.dat: Accesso negato. (0x5)
 [0722/190202.228:ERROR:registration_protocol_win.cc(84)] TransactNamedPipe: Pipe terminata. (0x6D)
 [0722/190202.229:ERROR:file_io_win.cc(182)] CreateFile C:\Program Files (x86)\temp\settings.dat: Accesso negato. (0x5)
+[0830/131657.763:ERROR:file_io_win.cc(182)] CreateFile C:\Program Files (x86)\temp\settings.dat: Accesso negato. (0x5)
+[0830/131657.765:ERROR:registration_protocol_win.cc(84)] TransactNamedPipe: Pipe terminata. (0x6D)
+[0830/131657.766:ERROR:file_io_win.cc(182)] CreateFile C:\Program Files (x86)\temp\settings.dat: Accesso negato. (0x5)

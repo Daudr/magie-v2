@@ -4,6 +4,8 @@ import { Router } from '@angular/router';
 
 import { AuthService } from '../services/auth.service';
 
+declare var $: any;
+
 @Component({
 	selector: 'admin',
 	templateUrl: './admin.component.html',

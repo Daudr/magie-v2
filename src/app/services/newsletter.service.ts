@@ -46,7 +46,7 @@ export class NewsletterService {
     });
   }
 
-  sendMail (email) {
+  sendMail (email: any) {
     return this.http.post("/api/email", email)
     .toPromise()
     .then(res => res.json())

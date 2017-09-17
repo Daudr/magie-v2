@@ -63,7 +63,7 @@ export class EventiComponent implements OnInit {
 		}
 	}
 
-	bindTab (tab) {
+	bindTab (tab: any) {
 		this.tab = tab;
 	}
 

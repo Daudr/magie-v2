@@ -3,6 +3,7 @@
 # compiled output
 /dist
 /tmp
+/aot
 
 # dependencies
 /node_modules
@@ -38,4 +39,6 @@ testem.log
 #System Files
 .DS_Store
 Thumbs.db
-"sendgrid.env" 
+"sendgrid.env"
+
+*.js.map
