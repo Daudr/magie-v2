@@ -150,8 +150,8 @@ export class IndexComponent implements OnInit, AfterViewInit {
     <div class="center-align dialog-actions">
       <button md-button (click)="dialogRef.close()">Capito</button>
     </div> -->
-		<h3>Stiamo tornando!</h3>
-		<h4>Mancano<br>{{message}}<br>alla nuova apertura!</h4>
+		<h3 class="red-text">Stiamo tornando!</h3>
+		<h4 class="blue-text">Mancano<br>{{message}}<br>alla nuova apertura!</h4>
 	`
 })
 export class DialogAlert implements OnInit, OnDestroy {
