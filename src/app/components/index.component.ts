@@ -1,7 +1,10 @@
-import { Component, OnInit, AfterViewInit } from '@angular/core';
+import { Component, OnInit, AfterViewInit, OnDestroy, ElementRef } from '@angular/core';
 import { MdDialog, MdDialogRef } from '@angular/material';
 import { Title } from '@angular/platform-browser';
 import { DatePipe } from '@angular/common';
+import { Observable } from 'rxjs/Observable';
+import { IntervalObservable } from 'rxjs/observable/IntervalObservable';
+import { Subscription } from 'rxjs/Subscription';
 
 import { Eventi } from '../eventi';
 import { EventiService } from '../services/eventi.service';
@@ -77,10 +80,10 @@ export class IndexComponent implements OnInit, AfterViewInit {
   }
 
   ngAfterViewInit () {
-  	/*if(!localStorage.getItem('viewed')) {
+  	if(!localStorage.getItem('viewed')) {
   		this.dialogRef = this.dialog.open(DialogAlert);
   		localStorage.setItem('viewed', 'true');
-  	}*/
+  	}
   }
 
 	openEventDialog(event: Eventi) {
@@ -135,7 +138,7 @@ export class IndexComponent implements OnInit, AfterViewInit {
 	selector: 'dialog-alert',
 	template: `
 		<div class="center-align">
-			<h4>Benvenuti al sito ufficiale di Magie d'Inverno</h4>
+			<!--<h4>Benvenuti al sito ufficiale di Magie d'Inverno</h4>
 			<div>
 				Si avvisano i gentili visitatori che questo sito è attualmente in fase di sviluppo, quindi alcune opzioni sono ancora da implementare, ma sono presenti le cose più essenziali
 				come orari e mappa per raggiungerci.<br><br>
@@ -146,9 +149,53 @@ export class IndexComponent implements OnInit, AfterViewInit {
 		</div>
     <div class="center-align dialog-actions">
       <button md-button (click)="dialogRef.close()">Capito</button>
-    </div>
+    </div> -->
+		<h3>Stiamo tornando!</h3>
+		<h4>Mancano<br>{{message}}<br>alla nuova apertura!</h4>
 	`
 })
-export class DialogAlert {
-  constructor(public dialogRef: MdDialogRef<DialogAlert>) {}
+export class DialogAlert implements OnInit, OnDestroy {
+	private future: Date;
+  private futureString: string;
+  private diff: number;
+  private $counter: any;
+  private subscription: Subscription;
+  private message: string;
+
+  constructor(elm: ElementRef, public dialogRef: MdDialogRef<DialogAlert>) {
+      this.futureString = elm.nativeElement.getAttribute('inputDate');
+  }
+
+  dhms(t) {
+      var days, hours, minutes, seconds;
+      days = Math.floor(t / 86400);
+      t -= days * 86400;
+      hours = Math.floor(t / 3600) % 24;
+      t -= hours * 3600;
+      minutes = Math.floor(t / 60) % 60;
+      t -= minutes * 60;
+      seconds = t % 60;
+
+      return [
+          days + 'G',
+          hours + 'H',
+          minutes + 'M',
+          seconds + 'S'
+      ].join(' ');
+  }
+
+
+  ngOnInit() {
+      this.future = new Date('11/18/2017'); // Data da raggiungere [18/11/2017]
+      this.$counter = IntervalObservable.create(1000).map((x) => {
+          this.diff = Math.floor((this.future.getTime() - new Date().getTime()) / 1000);
+          return x;
+      });
+
+      this.subscription = this.$counter.subscribe((x) => this.message = this.dhms(this.diff));
+  }
+
+  ngOnDestroy(): void {
+      this.subscription.unsubscribe();
+  }
 }

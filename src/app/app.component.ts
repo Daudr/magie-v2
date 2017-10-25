@@ -53,9 +53,7 @@ export class AppComponent implements OnInit, AfterViewInit {
   public constructor(private titleService: Title, public dialog: MdDialog, private meta: Meta) { }
 
 	ngOnInit(){
-		$(document).ready(function(){
-			$('.materialboxed').materialbox();
-		});
+		$('.materialboxed').materialbox();
 
 		this.cookieAccepted = localStorage.getItem('cookieAccepted');
 	}
