@@ -160,7 +160,7 @@ export class DialogAlert implements OnInit, OnDestroy {
   private diff: number;
   private $counter: any;
   private subscription: Subscription;
-  private message: string;
+  public message: string;
 
   constructor(elm: ElementRef, public dialogRef: MdDialogRef<DialogAlert>) {
       this.futureString = elm.nativeElement.getAttribute('inputDate');
