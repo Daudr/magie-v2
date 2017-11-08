@@ -21,14 +21,14 @@
 				          		Contattare per: {{person.compiti}}<br>
 				          		Contattare: {{person.disponibilita}}<br>
 				          		Cellulare: {{person.telefono}}<br>
-				          		Email: {{person.email}}<br>
+				          		<span *ngIf="person.email">Email: {{person.email}}</span><br>
 				          	</p>
 			            </div>
 			            <div class="card-action center-align">
 			              <a href="tel:{{person.telefono}}" class="btn btn-flat white-text waves-effect">Chiama</a>
 			              <br class="hide-on-med-and-up">
 			              <br class="hide-on-med-and-up">
-			              <a href="mailto:{{person.email}}" class="btn btn-flat white-text waves-effect" disabled>Invia email</a>
+			              <a *ngIf="person.email" href="mailto:{{person.email}}" class="btn btn-flat white-text waves-effect">Invia email</a>
 			            </div>
 			        </div>
 				</div>

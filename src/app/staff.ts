@@ -4,5 +4,5 @@ export class Staff {
   compiti: string;
   disponibilita: string;
   telefono: string;
-  email: string;
+  email?: string;
 }
