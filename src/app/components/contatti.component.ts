@@ -19,21 +19,6 @@ export class ContattiComponent implements OnInit {
 	    email: "info@magiedinverno.it"
 		},
 		{
-			icon: "assets/icons/staff/michele.jpg",
-	    nome: "Michele Da Rin",
-	    compiti: "Sito web",
-	    disponibilita: "Lun-Ven: 18:00 - 19:00",
-	    telefono: "3938405607",
-	    email: "michele@daudr.me"
-		},
-		{
-			icon: 'assets/icons/staff/renato.jpg',
-			nome: "Renato Da Rin",
-	    compiti: "Prenotazione turni serali",
-	    disponibilita: "Lun-Ven: 15:00 - 19:00",
-	    telefono: "0123456789"
-		},
-		{
 			icon: "assets/icons/staff/cristina.jpg",
 	    nome: "Cristina Papa",
 	    compiti: "Corsi - Allenamenti Ice Team Sanve - Laboratori didattici",
@@ -54,7 +39,7 @@ export class ContattiComponent implements OnInit {
 			nome: "Claudio Zanette",
 			compiti: "Compleanni e gonfiabili/area bimbi",
 			disponibilita: "Lun-Ven: 15:00 - 19:00",
-			telefono: "0123456789"
+			telefono: "3477197575"
 		}
 	];
 
