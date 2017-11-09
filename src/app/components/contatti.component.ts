@@ -13,8 +13,8 @@ export class ContattiComponent implements OnInit {
 		{
 			icon: "assets/icons/staff/mirco.jpg",
 	    nome: "Mirco Zago",
-	    compiti: "Informazioni generali",
-	    disponibilita: "Lun-Ven: 15:00 - 19:00",
+	    compiti: "Informazioni generali - Corsi - Allenamenti Ice Team Sanve",
+	    disponibilita: "Lun-Ven: 15:00 - 17:00",
 	    telefono: "3314504424",
 	    email: "info@magiedinverno.it"
 		},
@@ -36,20 +36,22 @@ export class ContattiComponent implements OnInit {
 		{
 			icon: "assets/icons/staff/cristina.jpg",
 	    nome: "Cristina Papa",
-	    compiti: "Corsi - A.S.D. Ice Team Sanve",
-	    disponibilita: "Lun-Ven: 15:30 - 17:30",
-	    telefono: "3271652583"
+	    compiti: "Corsi - Allenamenti Ice Team Sanve - Laboratori didattici",
+	    disponibilita: "Lun-Ven: 16:00 - 18:00",
+	    telefono: "3271652583",
+			email: "iceteamsanve@gmail.com"
 		},
 		{
 			icon: 'assets/icons/staff/lara.jpg',
 			nome: "Lara Marcon",
-	    compiti: "Corsi - A.S.D. Ice Team Sanve",
-	    disponibilita: "Lun-Ven: 15:30 - 17:30",
-	    telefono: "3471520763"
+	    compiti: "Corsi - Allenamenti Ice Team Sanve",
+	    disponibilita: "Lun-Ven: 17:30 - 19:30",
+	    telefono: "3471520763",
+			email: "iceteamsanve@gmail.com"
 		},
 		{
 			icon: "assets/icons/staff/caio.jpg",
-			nome: "Caio Zanette",
+			nome: "Claudio Zanette",
 			compiti: "Compleanni e gonfiabili/area bimbi",
 			disponibilita: "Lun-Ven: 15:00 - 19:00",
 			telefono: "0123456789"
