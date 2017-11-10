@@ -13,19 +13,19 @@ export class ServiziComponent implements OnInit, AfterViewInit {
 		{
 			nome: 'Pista di Pattinaggio',
 			foto: '../../assets/icons/services/pista1.jpg',
-			descrizione: 'A Magie D\'Inverno è presente la più grande pista di pattinaggio del trevigiano: 800mq di ghiaccio vero.' ,
+			descrizione: 'A Magie D\'Inverno è presente la più grande pista di pattinaggio della Provincia di Treviso: 800mq di ghiaccio vero.' ,
 			id: 'pista'
 		},
 		{
 			nome: 'Casette enogastronomiche',
 			foto: '../../assets/icons/services/casette.jpg',
-			descrizione: 'A Magie D\'Inverno sono presenti numerose casette ceh sapranno accontentarvi in tutto.' ,
+			descrizione: 'A Magie D\'Inverno sono presenti numerose casette che sapranno deliziare il vostro palato con ottimi piatti, panini e bevande tipiche' ,
 			id: 'casette'
 		},
 		{
-			nome: 'Noleggio Pattini',
+			nome: 'Noleggio pattini',
 			foto: '../../assets/icons/services/pattini.jpg',
-			descrizione: 'A Magie D\'Inverno sono presenti pattini che vanno dal 23 al 49, per tutti.' ,
+			descrizione: 'A Magie D\'Inverno sono presenti pattini che vanno dal 23 al 49, ovvero per tutti.' ,
 			id: 'pattini'
 		},
 		{
@@ -37,7 +37,7 @@ export class ServiziComponent implements OnInit, AfterViewInit {
 		{
 			nome: 'Gonfiabili e area bimbi',
 			foto: '../../assets/icons/services/gonfiabili.jpg',
-			descrizione: 'A Magie D\'Inverno è presente un capannone riscaldato con al suo interno dei gonfiabili, un area bimbi e un bar, dove grandi e piccini potranno stare insieme e giocare.' ,
+			descrizione: 'A Magie D\'Inverno è presente un\'area con al suo interno giochi gonfiabili per i più piccoli ed un bar, area nella quale grandi e piccini potranno stare insieme e divertirsi' ,
 			id: 'gonfiabili'
 		},
 		{
@@ -49,7 +49,7 @@ export class ServiziComponent implements OnInit, AfterViewInit {
 		{
 			nome: 'Ice Team Sanve',
 			foto: '../../assets/icons/background/back-img.jpg',
-			descrizione: 'Magie d\'Inverno offre ai ragazzi la possibilità di imparare uno sport, poco conosciuto ma non per questo bello, a prezzi completamente convenienti.',
+			descrizione: 'L\'A.S.D. Ice Team Sanve offre ai ragazzi la possibilità di imparare a pattinare e giocare ad hockey con corsi di avviamento ed allenamenti seguiti da istruttori qualificati e dall\'esperienza internazionale, a prezzi convenienti',
 			id: 'iceteam'
 		},
 	];
