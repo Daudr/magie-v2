@@ -48,13 +48,25 @@ export class IndexComponent implements OnInit, AfterViewInit {
 			id: 'taverna'
 		},
 		{
+			nome: 'Taverna 2',
+			descrizione: '',
+			foto: '../assets/icons/services/taverna.jpg',
+			id: 'taverna'
+		},
+		{
+			nome: 'Taverna 3',
+			descrizione: '',
+			foto: '../assets/icons/services/taverna.jpg',
+			id: 'taverna'
+		},
+		{
 			nome: 'Noleggio Pattini',
 			descrizione: '',
 			foto: '../assets/icons/services/pattini.jpg',
 			id: 'pattini'
 		},
 		{
-			nome: 'Corsi di pattinaggio',
+			nome: 'Corsi Ice Team Sanve',
 			descrizione: '',
 			foto: '../assets/icons/services/corsimattina.jpg',
 			id: 'corsi'
@@ -93,8 +105,9 @@ export class IndexComponent implements OnInit, AfterViewInit {
 	}
 
 	isOpen(): String {
-		if((this.data >= new Date(2016, 11, 23)) && (this.data <= new Date(2017, 3, 5))){
-			return 'APERTI';
+		if(((this.data >= new Date(2017, 11, 18)) && (this.data <= new Date(2018, 12, 23))) || ((this.data >= new Date(2018, 1, 9)) && (this.data <= new Date(2018, 3, 11)))) {
+			// if(this.data.getDay() == 4 && this.data.getDay() == 5 && this.data.getDay() == 6 )
+				return 'APERTI';
 		}
 		else {
 			this.apertura = null;		// Se siamo chiusi non apriamo
