@@ -28,8 +28,9 @@ export class EventComponent implements OnInit, AfterViewInit, OnDestroy {
      .then((event: Eventi) => {
        this.event = event;
 
-       this.title.setTitle(event.nome);
+       this.title.setTitle(event.nome + ' | Magie D\'Inverno');
      });
+   document.body.scrollTop = document.documentElement.scrollTop = 0;
   }
 
   ngAfterViewInit() {
