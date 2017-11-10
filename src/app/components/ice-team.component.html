@@ -27,13 +27,13 @@
                     <span class="card-title">{{person.nome}}</span>
                     <p class="right-align">
                       Contattare per: {{person.compiti}}<br>
-                      Contattare: {{person.disponibilita}}<br>
-                      Cel: {{person.telefono}}<br>
+                      <span *ngIf="person.disponibilita">Contattare: {{person.disponibilita}}</span><br>
+                      <span *ngIf="person.telefono">Cel: {{person.telefono}}</span><br>
                       Email: {{person.email}}<br>
                     </p>
                   </div>
                   <div class="card-action center-align">
-                    <a href="tel:{{person.telefono}}" class="btn btn-flat btn-staff white-text waves-effect">Chiama</a>
+                    <a *ngIf="person.telefono" href="tel:{{person.telefono}}" class="btn btn-flat btn-staff white-text waves-effect">Chiama</a>
                     <a href="mailto:{{person.email}}" class="btn btn-flat white-text btn-staff waves-effect" disabled>Invia email</a>
                   </div>
               </div>

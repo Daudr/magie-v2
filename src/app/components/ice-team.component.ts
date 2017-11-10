@@ -13,21 +13,27 @@ declare var $: any;
 export class IceTeamComponent implements OnInit, AfterViewInit {
 	staff: Staff[] = [
     {
+			icon: "assets/icons/staff/mirco.jpg",
+	    nome: "Mirco Zago",
+	    compiti: "Corsi / Allenamenti Ice Team Sanve",
+	    email: "iceteamsanve@gmail.com"
+		},
+		{
 			icon: "assets/icons/staff/cristina.jpg",
 	    nome: "Cristina Papa",
-	    compiti: "Corsi - A.S.D. Ice Team Sanve",
-	    disponibilita: "Lun-Ven: 15:30 - 17:30",
+	    compiti: "Corsi / Allenamenti Ice Team Sanve / Laboratori didattici",
+	    disponibilita: "Lun-Ven: 16:00 - 18:00",
 	    telefono: "3271652583",
-	    email: "cristinapapa@magiedinverno.it"
+			email: "iceteamsanve@gmail.com"
 		},
 		{
 			icon: 'assets/icons/staff/lara.jpg',
 			nome: "Lara Marcon",
-	    compiti: "Corsi - A.S.D. Ice Team Sanve",
-	    disponibilita: "Lun-Ven: 15:30 - 17:30",
+	    compiti: "Corsi / Allenamenti Ice Team Sanve",
+	    disponibilita: "Lun-Ven: 17:30 - 19:30",
 	    telefono: "3471520763",
-	    email: "laramarcon@magiedinverno.it"
-		}
+			email: "iceteamsanve@gmail.com"
+		},
   ];
 
 	foto: Foto[] = [
