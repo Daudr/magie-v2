@@ -14,14 +14,27 @@
 		</md-tab>
 	</md-tab-group>
 
+	<div class="card-panel back-col">
+		<h4>L'hockey nell'Ice Team Sanve</h4>
+			<p>L’Associazione Sportiva Dilettantistica “ICE TEAM SANVE” è nata nel novembre 2016. Affiliata sin da subito all’Associazione Italiana Cultura e Sport (A.I.C.S.) ed al C.O.N.I., ad oggi lo è anche alla Federazione Italiana Sport del Ghiaccio (F.I.S.G.) ed ha ottenuto un forte riscontro sin dagli inizi, basti pensare che alla fine della prima stagione invernale si sono contati ben 136 iscritti in tutto il periodo!</p>
+			<p>Svolge attività di avviamento con corsi base e di perfezionamento, pattinaggio artistico ed hockey su ghiaccio nel periodo invernale sulla pista di pattinaggio di 800 mq di ghiaccio vero durante la manifestazione “Magie d’inverno” ed in-line con pattini Off-Ice, nel periodo estivo nella piastra polifunzionale. Il tutto presso il Piazzale Manifestazioni fronte Municipio (via A. De Gasperi - San Vendemiano - TV)</p>
+			<p>Con l’affiliazione alla F.I.S.G. l’Associazione Sportiva Dilettantistica “ICE TEAM SANVE” ha la possibilità di partecipare con i propri atleti a gare di pattinaggio artistico su ghiaccio ed al campionato a maglie miste di hockey.</p>
+			<p>Con tale iscrizione è stato introdotto anche il corso agonistico di pattinaggio artistico che porta gli allenamenti a quattro giorni a settimana e sono suddivisi tra ginnastica, per riscaldamento/potenziamento, ed attività su pattini.</p>
+			<p>Gli allenatori hanno esperienza internazionale. Milos Kupec, allenatore di hockey, ha giocato in Serie A ed ha militato nelle Nazionali U15 e U18 dove ha giocato anche i Mondiali in Svizzera. Successivamente ha allenato in diverse squadre contando nel proprio Palmares anche vittorie di Campionati.</p>
+			<p>Anna Solodilova, allenatrice di pattinaggio artistico, è stata cinque volte campionessa di Mosca, due della Federazione Russa e due consecutive vice Campionessa del Campionato della C.S.I. Ha conseguito la laurea presso l’ “Accademia Statale dell’Educazione Fisica e Sport della Federazione Russa” e attualmente è coreografa e partecipe ad uno spettacolo sul ghiaccio quale “Intimissimi On Ice”.</p>
+			<div class="img-organigrammi">
+				<img src="assets/icons/iceteam/organigrammi.png" alt="Organigrammi Ice Team Sanve" class="responsive-img">
+			</div>
+	</div>
+
   <div class="card-panel back-col left-align">
     <h4>Per informazioni contattare</h4>
     <div class="row">
-      <div *ngFor="let person of staff" class="hide-on-small-only">
-        <div class="col m6">
+      <div *ngFor="let person of staff">
+        <div class="col s12">
           <div class="card staff-card">
                   <div class="card-content">
-                      <div class="col l3" *ngIf="person.icon">
+                      <div class="col l3 m4 s4" *ngIf="person.icon">
                       <img src={{person.icon}} class="circle responsive-img">
                     </div>
                     <span class="card-title">{{person.nome}}</span>
@@ -31,35 +44,10 @@
                       <span *ngIf="person.telefono">Cel: {{person.telefono}}<br></span>
                       Email: {{person.email}}<br>
                     </p>
+										<div *ngIf="!person.disponibilita" class="margin-blank-card"></div>
                   </div>
                   <div class="card-action center-align">
                     <a *ngIf="person.telefono" href="tel:{{person.telefono}}" class="btn btn-flat btn-staff white-text waves-effect">Chiama</a>
-                    <a href="mailto:{{person.email}}" class="btn btn-flat white-text btn-staff waves-effect">Invia email</a>
-                  </div>
-              </div>
-        </div>
-      </div>
-
-      <div *ngFor="let person of staff" class="hide-on-med-and-up">
-        <div class="col m8">
-          <div class="card staff-card">
-                  <div class="card-content">
-                      <div class="col s4" *ngIf="person.icon">
-                      <img src={{person.icon}} class="circle responsive-img">
-                    </div>
-                    <span class="card-title">{{person.nome}}</span>
-                    <p class="left-align">
-                      <br>
-											Contattare per: {{person.compiti}}<br>
-                      <span *ngIf="person.disponibilita">Giorno: {{person.disponibilita}}<br></span>
-                      <span *ngIf="person.telefono">Cel: {{person.telefono}}<br></span>
-                      Email: {{person.email}}<br>
-                    </p>
-                  </div>
-                  <div class="card-action center-align">
-                    <a *ngIf="person.telefono" href="tel:{{person.telefono}}" class="btn btn-flat btn-staff white-text waves-effect">Chiama</a>
-                    <br>
-                    <br>
                     <a href="mailto:{{person.email}}" class="btn btn-flat white-text btn-staff waves-effect">Invia email</a>
                   </div>
               </div>

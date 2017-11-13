@@ -91,6 +91,7 @@ nav ul a, .button-collapse {
 
 a[class~="btn"], input.btn {
   background-color: rgba(0, 0, 0, 0.6);
+  margin: 5px;
 }
 
 .body_container {
@@ -889,4 +890,13 @@ p {
 .mean-img {
   max-width: 350px;
   margin: auto;
+}
+
+.margin-blank-card {
+  margin-bottom: 50px;
+}
+
+.img-organigrammi {
+  text-align: center;
+  
 }

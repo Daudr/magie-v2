@@ -14,13 +14,13 @@ export class IceTeamComponent implements OnInit, AfterViewInit {
 	staff: Staff[] = [
     {
 			icon: "assets/icons/staff/mirco.jpg",
-	    nome: "Mirco Zago",
+	    nome: "Presidente Mirco Zago",
 	    compiti: "Corsi / Allenamenti Ice Team Sanve",
 	    email: "iceteamsanve@gmail.com"
 		},
 		{
 			icon: "assets/icons/staff/cristina.jpg",
-	    nome: "Cristina Papa",
+	    nome: "Vicepresidente Cristina Papa",
 	    compiti: "Corsi / Allenamenti Ice Team Sanve / Laboratori didattici",
 	    disponibilita: "Lun-Ven: 16:00 - 18:00",
 	    telefono: "3271652583",
@@ -28,7 +28,7 @@ export class IceTeamComponent implements OnInit, AfterViewInit {
 		},
 		{
 			icon: 'assets/icons/staff/lara.jpg',
-			nome: "Lara Marcon",
+			nome: "Segretaria Lara Marcon",
 	    compiti: "Corsi / Allenamenti Ice Team Sanve",
 	    disponibilita: "Lun-Ven: 17:30 - 19:30",
 	    telefono: "3471520763",
