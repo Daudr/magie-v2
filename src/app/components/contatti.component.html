@@ -10,26 +10,31 @@
 
 		<div class="row">
 			<div *ngFor="let person of staff">
-				<div class="col m6 s12">
+				<div class="col s12">
 					<div class="card staff-card">
 			            <div class="card-content">
 		              	<div class="col l3 m4 s4" *ngIf="person.icon">
 				              <img src={{person.icon}} class="circle responsive-img">
 				          	</div>
 				          	<span class="card-title center-align">{{person.nome}}</span>
-				          	<p class="right-align">
+				          	<p class="left-align">
 				          		Contattare per: {{person.compiti}}<br>
 				          		Giorni: {{person.disponibilita}}<br>
-				          		Cellulare: {{person.telefono}}<br>
+				          		<span *ngIf="person.telefono">Cellulare: {{person.telefono}}<br></span>
 				          		<span *ngIf="person.email">Email: {{person.email}}</span><br>
+											<span *ngIf="person.compiti2"><br><br>Contattare per: {{person.compiti2}}<br></span>
+											<span *ngIf="person.email2">Email: {{person.email2}}</span>
 				          	</p>
 			            </div>
 			            <div class="card-action center-align">
-			              <a href="tel:{{person.telefono}}" class="btn btn-flat white-text waves-effect">Chiama</a>
+			              <a *ngIf="person.telefono" href="tel:{{person.telefono}}" class="btn btn-flat white-text waves-effect">Chiama</a>
 			              <br class="hide-on-med-and-up">
 			              <br class="hide-on-med-and-up">
 			              <a *ngIf="person.email" href="mailto:{{person.email}}" class="btn btn-flat white-text waves-effect">Invia email</a>
-			            </div>
+										<br *ngIf="person.email2" class="hide-on-med-and-up">
+			              <br *ngIf="person.email2" class="hide-on-med-and-up">
+			              <a *ngIf="person.email2" href="mailto:{{person.email2}}" class="btn btn-flat white-text waves-effect">Invia email Ice Team</a>
+									</div>
 			        </div>
 				</div>
 			</div>

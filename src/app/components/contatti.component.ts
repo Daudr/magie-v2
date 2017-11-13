@@ -14,17 +14,11 @@ export class ContattiComponent implements OnInit {
 			icon: "assets/icons/staff/mirco.jpg",
 	    nome: "Mirco Zago",
 	    compiti: "Informazioni generali intera manifestazione",
+			compiti2: "Corsi / Allenamenti Ice Team Sanve",
 	    disponibilita: "Lun-Ven: 15:00 - 17:00",
 	    telefono: "3314504424",
-	    email: "info@magiedinverno.it"
-		},
-		{
-			icon: "assets/icons/staff/mirco.jpg",
-	    nome: "Mirco Zago",
-	    compiti: "Corsi / Allenamenti Ice Team Sanve",
-	    disponibilita: "Lun-Ven: 15:00 - 17:00",
-	    telefono: "3314504424",
-	    email: "iceteamsanve@gmail.com"
+	    email: "info@magiedinverno.it",
+			email2: "iceteamsanve@gmail.com"
 		},
 		{
 			icon: "assets/icons/staff/cristina.jpg",
