@@ -13,14 +13,15 @@
 			Oggi è {{ traduciData() }} e noi siamo <strong>{{ isOpen() }}</strong>
 		</p>
 		<p *ngIf="apertura" class="p-size-large">
-			Siamo aperti dalle <strong><time>{{ apertura }}</time></strong> alle <strong><time>{{ chiusura }}</time></strong> al pubblico
+			Siamo aperti al pubblico <span *ngIf="aperturaCorsi">e si svolgono i corsi</span>.
 		</p>
 		<p *ngIf="aperturaCorsi" class="p-size-large">
-			I corsi si svolgono dalle <strong><time>{{ aperturaCorsi }}</time></strong> alle <strong><time>{{ chiusuraCorsi }}</time></strong>
+			Siamo spiacenti, oggi si svolgono solo i corsi di hockey/pattinaggio artistico.
+			<a routerLink="/iceteam" routerLinkActive="active" class="white-text btn center-align">Informazioni sui corsi</a>
 		</p>
-		<p *ngIf="isOpen()==='CHIUSI'" class="p-size-large">
+		<!-- <p *ngIf="isOpen()==='CHIUSI'" class="p-size-large">
 			Torna a trovarci spesso per sapere quando riapriremo.
-		</p>
+		</p> -->
     	<!-- <p class="red-text">Si avvisa che:</p>
 		<p class="red-text">Sabato 18 febbraio la pista chiude alle 19.</p>
 		<p class="red-text">Domenica 19 febbraio gli orari cambiano, cliccare sotto per avere più informazioni.</p> -->

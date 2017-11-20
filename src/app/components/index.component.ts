@@ -24,9 +24,9 @@ export class IndexComponent implements OnInit, AfterViewInit {
 	giorno: String;
 	mese: String;
 	numero: number;
-	apertura: string;
+	apertura: boolean;
 	chiusura: string;
-	aperturaCorsi: string;
+	aperturaCorsi: boolean;
 	chiusuraCorsi: string;
 	viewed: boolean;
 
@@ -92,10 +92,10 @@ export class IndexComponent implements OnInit, AfterViewInit {
   }
 
   ngAfterViewInit () {
-  	if(!localStorage.getItem('viewed')) {
+  	/*if(!localStorage.getItem('viewed')) {
   		this.dialogRef = this.dialog.open(DialogAlert);
   		localStorage.setItem('viewed', 'true');
-  	}
+  	}*/
   }
 
 	openEventDialog(event: Eventi) {
@@ -105,9 +105,17 @@ export class IndexComponent implements OnInit, AfterViewInit {
 	}
 
 	isOpen(): String {
-		if(((this.data >= new Date(2017, 11, 18)) && (this.data <= new Date(2018, 12, 23))) || ((this.data >= new Date(2018, 1, 9)) && (this.data <= new Date(2018, 3, 11)))) {
-			// if(this.data.getDay() == 4 && this.data.getDay() == 5 && this.data.getDay() == 6 )
-				return 'APERTI';
+		if(((this.data >= new Date(2017, 10, 18)) && (this.data <= new Date(2018, 11, 23))) || ((this.data >= new Date(2018, 0, 9)) && (this.data <= new Date(2018, 2, 11)))) {
+			if (this.data.getDay() == 6 && this.data.getDay() == 7 ) {
+					this.apertura = true;
+					this.aperturaCorsi = false;
+			} else if (this.data.getDay() == 5) {
+				this.apertura = true;
+				this.aperturaCorsi = true;
+			} else {
+				this.aperturaCorsi = true;
+			}
+			return 'APERTI';
 		}
 		else {
 			this.apertura = null;		// Se siamo chiusi non apriamo
