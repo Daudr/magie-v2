@@ -36,17 +36,24 @@ require('./config/passport')(passport);
 var distDir = __dirname + "/dist/";
 app.use(express.static(distDir));
 
-// HTTP Caching
-app.use(function(req, res, next) {
-    res.setHeader("Cache-Control", "max-age=no-store");
-    return next();
-});
 
 // Generic error handler used by all endpoints.
 function handleError(res, reason, message, code) {
     console.log("ERROR: " + reason);
     res.status(code || 500).json({ "error": message });
 }
+
+app.get('*/**.jpg', (req, res) => {
+  res.setHeader("Cache-Control", "max-age=1296000, s-maxage=2592000");
+});
+
+app.get('*/**.png', (req, res) => {
+  res.setHeader("Cache-Control", "max-age=1296000, s-maxage=2592000");
+});
+
+app.get('*/**.gif', (req, res) => {
+  res.setHeader("Cache-Control", "max-age=1296000, s-maxage=2592000");
+});
 
 var evt = mongojs(process.env.MONGODB_URI, [EVENTS_COLLECTION]);
 
