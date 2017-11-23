@@ -9,7 +9,7 @@ const admins = require('./routes/admins');
 const config = require('./config/database');
 const MailChimp = require('mailchimp-api-v3');
 const request = require('request');
-const rendertron = require('rendetron-middleware');
+const rendertron = require('rendertron-middleware');
 
 var ObjectID = mongojs.ObjectID;
 
