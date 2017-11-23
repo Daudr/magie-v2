@@ -49,6 +49,7 @@
     "mongoose": "^4.11.6",
     "passport": "^0.3.2",
     "passport-jwt": "^2.2.1",
+    "rendertron-middleware": "^0.1.2",
     "rxjs": "^5.4.2",
     "s3": "^4.4.0",
     "sendgrid": "^5.2.0",

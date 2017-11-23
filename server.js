@@ -9,6 +9,7 @@ const admins = require('./routes/admins');
 const config = require('./config/database');
 const MailChimp = require('mailchimp-api-v3');
 const request = require('request');
+const rendertron = require('rendetron-middleware');
 
 var ObjectID = mongojs.ObjectID;
 
@@ -23,6 +24,7 @@ var app = express();
 app.use(bodyParser.urlencoded());
 app.use(bodyParser.json());
 app.use(compression());
+app.use(rendertron.makeMiddleware({proxyUrl:'https://render-tron.appspot.com/render'}));
 
 // Passport
 app.use(passport.initialize());
