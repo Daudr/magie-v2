@@ -40,7 +40,7 @@
 					</div>
 				</div>
 
-				<div *ngIf="futureEvents">
+				<div class="row" *ngIf="futureEvents">
 					<div class="col s12 m8 l6 offset-m2" *ngFor="let event of futureEvents">
 						<a (click)="openEventDialog(event)">
 							<md-card class="card">
