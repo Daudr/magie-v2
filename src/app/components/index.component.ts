@@ -24,10 +24,8 @@ export class IndexComponent implements OnInit, AfterViewInit {
 	giorno: String;
 	mese: String;
 	numero: number;
-	apertura: boolean;
-	chiusura: string;
-	aperturaCorsi: boolean;
-	chiusuraCorsi: string;
+	apertura: boolean = false;
+	aperturaCorsi: boolean = false;
 	viewed: boolean;
 
 	dialogRef: MdDialogRef<any>;
@@ -106,7 +104,7 @@ export class IndexComponent implements OnInit, AfterViewInit {
 
 	isOpen(): String {
 		if(((this.data >= new Date(2017, 10, 18)) && (this.data <= new Date(2018, 11, 23))) || ((this.data >= new Date(2018, 0, 9)) && (this.data <= new Date(2018, 2, 11)))) {
-			if (this.data.getDay() == 6 && this.data.getDay() == 7 ) {
+			if (this.data.getDay() == 6 || this.data.getDay() == 7 ) {
 					this.apertura = true;
 					this.aperturaCorsi = false;
 			} else if (this.data.getDay() == 5) {
