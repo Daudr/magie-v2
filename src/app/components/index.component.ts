@@ -85,7 +85,7 @@ export class IndexComponent implements OnInit, AfterViewInit {
 	          });
 	      });
 
-	  this.title.setTitle('Magie D\'Inverno - Home');
+	  this.title.setTitle('Magie D\'Inverno - San Vendemiano');
 		document.body.scrollTop = document.documentElement.scrollTop = 0;
   }
 
