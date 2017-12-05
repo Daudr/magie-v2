@@ -46,13 +46,13 @@ export class IndexComponent implements OnInit, AfterViewInit {
 			id: 'taverna'
 		},
 		{
-			nome: 'Taverna 2',
+			nome: 'Taverna Winter',
 			descrizione: '',
 			foto: '../assets/icons/services/taverna.jpg',
 			id: 'taverna'
 		},
 		{
-			nome: 'Taverna 3',
+			nome: 'Taverna Christmas',
 			descrizione: '',
 			foto: '../assets/icons/services/taverna.jpg',
 			id: 'taverna'
