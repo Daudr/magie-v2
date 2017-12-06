@@ -83,7 +83,7 @@ export class EventiComponent implements OnInit {
 			<div>
 				<h3>{{event.nome}}</h3>
 				<p><strong>Quando: </strong>{{event.data | date:'dd/MM/yyyy'}}</p>
-				<p><strong>A che ora: </strong>Dalle {{event.oraInizio}}<p>
+				<p *ngIf="event.oraInizio"><strong>Dalle: </strong>{{event.oraInizio}}<p>
 				<p><strong>Dove: </strong>Presso {{event.luogo}}</p>
 				<div class="map-event">
 					<iframe
@@ -95,7 +95,7 @@ export class EventiComponent implements OnInit {
 				</div>
 			</div>
 		</div>
-		<div class="descrizione">
+		<div *ngIf="event.descrizione" class="descrizione">
 			<h3>Descrizione evento</h3>
 			<p class="truncate">{{event.descrizione}}</p>
 		</div>
