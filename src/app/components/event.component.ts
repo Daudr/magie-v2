@@ -4,6 +4,7 @@ import { Title } from '@angular/platform-browser';
 
 import { Eventi } from '../eventi';
 import { EventiService } from '../services/eventi.service';
+import { SeoService } from '../services/seo.service';
 
 declare var $: any;
 
@@ -16,7 +17,7 @@ export class EventComponent implements OnInit, AfterViewInit, OnDestroy {
   private sub: any;
   event: Eventi;
 
-  constructor(private route: ActivatedRoute, private eventiService: EventiService, private title: Title) {}
+  constructor(private route: ActivatedRoute, private eventiService: EventiService, private title: Title, private seo: SeoService) {}
 
   ngOnInit() {
     this.sub = this.route.params.subscribe(params => {
@@ -29,6 +30,13 @@ export class EventComponent implements OnInit, AfterViewInit, OnDestroy {
        this.event = event;
 
        this.title.setTitle(event.nome + ' | Magie D\'Inverno');
+
+       this.seo.generateTags({
+         title: event.nome + ' | Magie D\'Inverno',
+         description: event.descrizione,
+         image: 'https://www.magiedinverno.it/' + event.foto,
+         slug: 'eventi' + event._id
+       });
      });
    document.body.scrollTop = document.documentElement.scrollTop = 0;
   }

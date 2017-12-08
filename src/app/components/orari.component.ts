@@ -6,6 +6,8 @@ import { DatePipe } from '@angular/common';
 import { Staff } from '../staff';
 import { Orario } from '../orario';
 
+import { SeoService } from '../services/seo.service';
+
 @Component({
 	selector: 'orari',
 	providers: [ MdSnackBar ],
@@ -24,7 +26,7 @@ export class OrariComponent  implements OnInit {
 	giorno: string;
 	mese: string;
 
-	constructor(public snackBar: MdSnackBar, public dialog: MdDialog, private title: Title) { }
+	constructor(public snackBar: MdSnackBar, public dialog: MdDialog, private title: Title, private seo: SeoService) { }
 
 	ngOnInit() {
 		if(window.screen.width < 992) {		// Apre il snackbar se la larghezza del dispositivo e` inferiore a 992px
@@ -33,6 +35,13 @@ export class OrariComponent  implements OnInit {
 
 		this.title.setTitle('Magie D\'Inverno - Orari e Prezzi');
 		document.body.scrollTop = document.documentElement.scrollTop = 0;
+
+		this.seo.generateTags({
+      title: 'Magie D\'Inverno - Orari e Prezzi',
+      description: `Conosci gli orari e i prezzi della pista di pattinaggio in ghiaccio vero più grande della provincia di Treviso`,
+      image: 'https://www.magiedinverno.it/assets/icons/logo/logo_magie.png',
+      slug: 'orari'
+    });
 	}
 
 	openDialogPomeriggio() {

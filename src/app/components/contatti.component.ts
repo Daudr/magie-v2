@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Title } from '@angular/platform-browser';
 
+import { SeoService } from '../services/seo.service';
 import { Staff } from '../staff';
 
 @Component({
@@ -45,10 +46,18 @@ export class ContattiComponent implements OnInit {
 		}
 	];
 
-	constructor(private title: Title) { }
+	constructor(private title: Title, private seo: SeoService) { }
 
 	ngOnInit() {
 		this.title.setTitle('Magie D\'Inverno - Contatti');
 		document.body.scrollTop = document.documentElement.scrollTop = 0;
+
+		this.seo.generateTags({
+      title: 'Magie D\'Inverno - Contatti',
+      description: 'Contatta il team di Magie d\'Inverno per avere tutte le informazioni sulla manifestazione, sugli eventi, sui corsi e sulle feste di compleanno',
+      image: 'https://www.magiedinverno.it/assets/icons/logo/logo_magie.png',
+      slug: 'contatti'
+    });
 	}
+
 }

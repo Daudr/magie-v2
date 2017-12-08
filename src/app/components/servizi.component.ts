@@ -4,6 +4,8 @@ import { Servizio } from '../servizio';
 
 declare var $: any;
 
+import { SeoService } from '../services/seo.service';
+
 @Component({
 	selector: 'my-servizi',
 	templateUrl: `./servizi.component.html`,
@@ -54,11 +56,18 @@ export class ServiziComponent implements OnInit, AfterViewInit {
 		},
 	];
 
-	constructor (private title: Title) {}
+	constructor (private title: Title, private seo: SeoService) {}
 
 	ngOnInit() {
 		this.title.setTitle('Magie D\'Inverno - Servizi');
 		document.body.scrollTop = document.documentElement.scrollTop = 0;
+
+		this.seo.generateTags({
+      title: 'Magie D\'Inverno - Servizi',
+      description: `Vieni a scoprire cosa ti offre la più grande pista di pattinaggio della provincia di Treviso. Dalle casette enogastronomiche al mercatino natalizio`,
+      image: 'https://www.magiedinverno.it/assets/icons/logo/logo_magie.png',
+      slug: 'servizi'
+    });
 	}
 
 	ngAfterViewInit () {

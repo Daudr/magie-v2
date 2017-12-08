@@ -4,6 +4,8 @@ import { Title } from '@angular/platform-browser';
 import { Foto } from '../foto';
 import { Staff } from '../staff';
 
+import { SeoService } from '../services/seo.service';
+
 declare var $: any;
 
 @Component({
@@ -51,11 +53,18 @@ export class IceTeamComponent implements OnInit, AfterViewInit {
 		}
 	];
 
-	constructor(private title: Title) { }
+	constructor(private title: Title, private seo: SeoService) { }
 
 	ngOnInit () {
 		this.title.setTitle('Ice Team Sanve');
     document.body.scrollTop = document.documentElement.scrollTop = 0;
+
+    this.seo.generateTags({
+      title: 'Ice Team Sanve',
+      description: `L'Ice Team Sanve è l'unica realtà sportiva nella Provincia di Treviso che dà la possibilità di dare continuità, in modi diversi, a pattinare durante l'intero anno.`,
+      image: 'https://www.magiedinverno.it/assets/icons/logo/logo_iceteam_n.png',
+      slug: 'iceteam'
+    });
 	}
 
   ngAfterViewInit () {
