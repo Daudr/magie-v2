@@ -44,6 +44,7 @@ import { AdminLoginComponent } from './components/admin-login.component';
 import { EventComponent } from './components/event.component';
 import { SitemapComponent } from './components/sitemap.component';
 
+import { SeoService } from './services/seo.service';
 import { AuthService } from './services/auth.service';
 import { AuthGuard } from './guards/auth.guard';
 
@@ -112,7 +113,8 @@ import 'hammerjs';
   providers: [
     Title,
     AuthService,
-    AuthGuard
+    AuthGuard,
+    SeoService
   ],
   bootstrap:    [ AppComponent ]
 })
