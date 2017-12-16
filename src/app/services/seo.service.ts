@@ -11,15 +11,15 @@ export class SeoService {
       image: 'https://www.magiedinverno.it/assets/icons/logo/logo_magie.png',
       slug: '',
       ...config
-    }
+    };
+    
     this.meta.updateTag({ name: 'description', content: config.description });
     this.meta.updateTag({ name: 'twitter:card', content: 'summary' });
-    this.meta.updateTag({ name: 'twitter:site', content: '@angularfirebase' });
     this.meta.updateTag({ name: 'twitter:title', content: config.title });
     this.meta.updateTag({ name: 'twitter:description', content: config.description });
     this.meta.updateTag({ name: 'twitter:image', content: config.image });
     this.meta.updateTag({ property: 'og:type', content: 'article' });
-    this.meta.updateTag({ property: 'og:site_name', content: 'Magie D\'Inverno' });
+    this.meta.updateTag({ property: 'og:site_name', content: config.title });
     this.meta.updateTag({ property: 'og:title', content: config.title });
     this.meta.updateTag({ property: 'og:description', content: config.description });
     this.meta.updateTag({ property: 'og:image', content: config.image });
