@@ -103,7 +103,7 @@ export class IndexComponent implements OnInit, AfterViewInit {
 	}
 
 	isOpen(): String {
-		if(((this.data >= new Date(2017, 10, 18)) && (this.data <= new Date(2018, 11, 23))) || ((this.data >= new Date(2018, 0, 9)) && (this.data <= new Date(2018, 2, 11)))) {
+		/* if(((this.data >= new Date(2017, 10, 18)) && (this.data <= new Date(2018, 11, 23))) || ((this.data >= new Date(2018, 0, 9)) && (this.data <= new Date(2018, 2, 11)))) {
 			if (this.data.getDay() == 6 || this.data.getDay() == 7 ) {
 					this.apertura = true;
 					this.aperturaCorsi = false;
@@ -119,7 +119,8 @@ export class IndexComponent implements OnInit, AfterViewInit {
 			this.apertura = null;		// Se siamo chiusi non apriamo
 			this.aperturaCorsi = null;	// Se siamo chiusi i corsi non si fanno
 			return 'CHIUSI';
-		}
+		} */
+    return 'CHIUSI';
 	}
 
 	traduciData(): String {				// METODO PER TRADURRE LA DATA
