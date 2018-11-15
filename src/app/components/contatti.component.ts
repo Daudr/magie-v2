@@ -34,7 +34,7 @@ export class ContattiComponent implements OnInit {
 			nome: "Lara Marcon",
 	    compiti: "Corsi / Allenamenti Ice Team Sanve",
 	    disponibilita: "Lun-Ven: 17:30 - 19:30",
-	    telefono: "3471520763",
+	    telefono: "3271652583",
 			email: "iceteamsanve@gmail.com"
 		},
 		{
