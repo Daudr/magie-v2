@@ -102,24 +102,18 @@ export class IndexComponent implements OnInit, AfterViewInit {
 		this.dialogRef.componentInstance.event = event;
 	}
 
-	isOpen(): String {
-		/* if(((this.data >= new Date(2017, 10, 18)) && (this.data <= new Date(2018, 11, 23))) || ((this.data >= new Date(2018, 0, 9)) && (this.data <= new Date(2018, 2, 11)))) {
-			if (this.data.getDay() == 6 || this.data.getDay() == 7 ) {
-					this.apertura = true;
-					this.aperturaCorsi = false;
-			} else if (this.data.getDay() == 5) {
-				this.apertura = true;
-				this.aperturaCorsi = true;
-			} else {
-				this.aperturaCorsi = true;
-			}
-			return 'APERTI';
-		}
-		else {
-			this.apertura = null;		// Se siamo chiusi non apriamo
-			this.aperturaCorsi = null;	// Se siamo chiusi i corsi non si fanno
-			return 'CHIUSI';
-		} */
+	isOpen(): string {
+    const today = new Date();
+    if (today >= new Date(2018, 10, 17) && today <= new Date(2018, 2, 17)) {
+     if (today >= new Date(2018, 11, 22) && today <= new Date(2019, 0, 6)) {
+       return 'APERTI';
+     } else {
+       const day = today.getDay();
+       if (day === 6 || day === 0) {
+        return 'APERTI';
+       }
+      }
+    }
     return 'CHIUSI';
 	}
 
