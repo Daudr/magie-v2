@@ -899,3 +899,7 @@ p {
   text-align: center;
 
 }
+
+div.descrizione > p {
+  white-space: pre-line;
+}
