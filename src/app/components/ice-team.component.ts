@@ -18,9 +18,11 @@ export class IceTeamComponent implements OnInit, AfterViewInit {
 			icon: "assets/icons/staff/mirco.jpg",
 	    nome: "Presidente Mirco Zago",
 	    compiti: "Corsi / Allenamenti Ice Team Sanve",
+      disponibilita: "Lun-Ven: 16:00 - 18:00",
+      telefono: "3314504424",
 	    email: "iceteamsanve@gmail.com"
 		},
-		{
+		/* {
 			icon: "assets/icons/staff/cristina.jpg",
 	    nome: "Vicepresidente Cristina Papa",
 	    compiti: "Corsi / Allenamenti Ice Team Sanve / Laboratori didattici",
@@ -35,7 +37,7 @@ export class IceTeamComponent implements OnInit, AfterViewInit {
 	    disponibilita: "Lun-Ven: 17:30 - 19:30",
 	    telefono: "3471520763",
 			email: "iceteamsanve@gmail.com"
-		},
+		}, */
   ];
 
 	foto: Foto[] = [
