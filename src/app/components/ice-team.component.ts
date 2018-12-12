@@ -18,7 +18,7 @@ export class IceTeamComponent implements OnInit, AfterViewInit {
 			icon: "assets/icons/staff/mirco.jpg",
 	    nome: "Presidente Mirco Zago",
 	    compiti: "Corsi / Allenamenti Ice Team Sanve",
-      disponibilita: "Lun-Ven: 16:00 - 18:00",
+      disponibilita: "Lun-Ven: 15:00 - 18:00",
       telefono: "3314504424",
 	    email: "iceteamsanve@gmail.com"
 		},
