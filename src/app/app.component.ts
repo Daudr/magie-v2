@@ -2,6 +2,9 @@ import { Component, OnInit, AfterViewInit } from '@angular/core';
 import { Meta, Title } from '@angular/platform-browser';
 import { MdDialog, MdDialogRef, MdDialogConfig, MdSnackBar } from '@angular/material';
 import {FormControl, Validators} from '@angular/forms';
+import { Router } from '@angular/router';
+
+import { Subscription } from 'rxjs/Subscription';
 
 import { EventiService } from './services/eventi.service';
 import { NewsletterService } from './services/newsletter.service';
@@ -22,6 +25,8 @@ export class AppComponent implements OnInit, AfterViewInit {
   dialogRef: MdDialogRef<any>;
 
   cookieAccepted: any;
+  
+  routerSub: Subscription;
 
   sponsors: Sponsor[] = [
     {
@@ -50,15 +55,26 @@ export class AppComponent implements OnInit, AfterViewInit {
 		}*/
   ];
 
-  public constructor(private titleService: Title, public dialog: MdDialog, private meta: Meta) { }
+  public constructor(private titleService: Title, public dialog: MdDialog, private meta: Meta, private router: Router) { }
 
 	ngOnInit(){
 		$('.materialboxed').materialbox();
 
 		this.cookieAccepted = localStorage.getItem('cookieAccepted');
+    
+    this.routerSub = this.router.events.subscribe(event => {
+      if (event instanceof NavigationEnd) {
+        (<any>window).ga('set', 'page', event.urlAfterRedirects);
+        (<any>window).ga('send', 'pageview');
+      }
+    });
 	}
 
 	ngAfterViewInit () { }
+  
+  ngOnDestroy () {
+    this.routerSub.unsubscribe();
+  }
 
 	addNoScroll (sidenav) {
 		if(sidenav._isOpened) {
