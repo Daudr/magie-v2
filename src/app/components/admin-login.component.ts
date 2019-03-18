@@ -8,8 +8,8 @@ import { AuthService } from '../services/auth.service';
   templateUrl: './admin-login.component.html'
 })
 export class AdminLoginComponent implements OnInit {
-  username: String;
-  password: String;
+  username: string;
+  password: string;
 
   constructor (
     private authService: AuthService,
@@ -23,7 +23,7 @@ export class AdminLoginComponent implements OnInit {
   onLoginSubmit () {
     const user = {
       username: this.username,
-      password: this.password
+      password: btoa(this.password)
     }
 
     this.authService.authenticateUser(user).subscribe(data => {
