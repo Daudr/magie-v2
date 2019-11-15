@@ -31,6 +31,7 @@
 			<br>
 		</div>
 
+    <!--
 		<md-input-container class="admin-input">
 		    <input mdInput placeholder="Foto min" name="fotoMin" [(ngModel)]="fotoMin">
 		</md-input-container>
@@ -39,7 +40,6 @@
 		    <input mdInput placeholder="Foto full" name="fotoFull" [(ngModel)]="fotoFull">
 		</md-input-container>
 
-		<!--
 		<div class="file-field input-field">
 			<div class="btn btn-flat light-blue">
 				<span>Foto min</span>
@@ -80,26 +80,27 @@
 			<div class="collapsible-body">
 				<form class="center-align">
 					<md-input-container class="admin-input">
-					    <input mdInput placeholder="Nome" [value]="event.nome" name="m_nome" [(ngModel)]="m_nome">
+					    <input mdInput placeholder="Nome" name="m_nome" [(ngModel)]="event.nome">
 					</md-input-container>
 					<br>
 					<md-input-container class="admin-input">
-			    	<input mdInput type="date" placeholder="Data" [value]="event.data" name="m_data" [(ngModel)]="m_data">
+			    	<input mdInput type="date" placeholder="Data" name="m_data" [(ngModel)]="event.data">
 			    </md-input-container>
 			    <br><br>
 			    <md-input-container>
-			    	<input mdInput type="time" placeholder="Ora Inizio" [value]="event.oraFine" name="m_oraInizio" [(ngModel)]="m_oraInizio">
+			    	<input mdInput type="time" placeholder="Ora Inizio"  name="m_oraInizio" [(ngModel)]="event.oraInizio">
 			    </md-input-container>
 			    <md-input-container>
-			    	<input mdInput type="time" placeholder="Ora Fine" [value]="event.oraFine" name="m_oraFine" [(ngModel)]="m_oraFine">
+			    	<input mdInput type="time" placeholder="Ora Fine" name="m_oraFine" [(ngModel)]="event.oraFine">
 			    </md-input-container>
 			    <br>
 			    <div class="input-field">
-						<textarea id={{event._id}} class="textarea materialize-textarea" [value]="event.descrizione" name="m_descrizione" [(ngModel)]="m_descrizione"></textarea>
+						<textarea id={{event._id}} class="textarea materialize-textarea" name="m_descrizione" [(ngModel)]="event.descrizione"></textarea>
 						<label for={{event._id}}>Descrizione evento</label>
 						<br>
 					</div>
 
+          <!--
 					<div class="file-field input-field">
 						<div class="btn btn-flat light-blue">
 							<span>Foto min</span>
@@ -119,6 +120,7 @@
 							<input class="file-path validate" type="text">
 						</div>
 					</div>
+          !-->
 
 					<div class="center-align btn-group">
 						<a (click)="aggiornaEvento(event._id)" class="btn-flat white-text light-blue text-darken-4 margin-btn">Inserisci</a>
