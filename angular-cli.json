@@ -11,7 +11,8 @@
         "favicon.ico",
         "manifest.webapp",
         "sw.js",
-        "sitemap.xml"
+        "sitemap.xml",
+        "ads.txt"
       ],
       "index": "index.html",
       "main": "main.ts",
