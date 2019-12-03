@@ -1,26 +1,26 @@
-import { Component, OnInit, AfterViewInit, OnDestroy } from '@angular/core';
-import { Meta, Title } from '@angular/platform-browser';
+import { Component, OnInit, AfterViewInit, OnDestroy } from "@angular/core";
+import { Meta, Title } from "@angular/platform-browser";
 import {
   MdDialog,
   MdDialogRef,
   MdDialogConfig,
   MdSnackBar
-} from '@angular/material';
-import { FormControl, Validators } from '@angular/forms';
-import { Router, NavigationEnd } from '@angular/router';
+} from "@angular/material";
+import { FormControl, Validators } from "@angular/forms";
+import { Router, NavigationEnd } from "@angular/router";
 
-import { Subscription } from 'rxjs/Subscription';
+import { Subscription } from "rxjs/Subscription";
 
-import { EventiService } from './services/eventi.service';
-import { NewsletterService } from './services/newsletter.service';
+import { EventiService } from "./services/eventi.service";
+import { NewsletterService } from "./services/newsletter.service";
 
-import { Sponsor } from './sponsor';
+import { Sponsor } from "./sponsor";
 
 declare var $: any;
 const EMAIL_REGEX = /^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
 
 @Component({
-  selector: 'magie-dinverno',
+  selector: "magie-dinverno",
   templateUrl: `./app.component.html`,
   providers: [EventiService]
 })
@@ -33,22 +33,22 @@ export class AppComponent implements OnInit, OnDestroy {
 
   sponsors: Sponsor[] = [
     {
-      icon: '../assets/icons/sponsor/ascopiave.jpg'
+      icon: "../assets/icons/sponsor/ascopiave.jpg"
     },
     {
-      icon: '../assets/icons/sponsor/banca.jpg'
+      icon: "../assets/icons/sponsor/banca.jpg"
     },
     {
-      icon: '../assets/icons/sponsor/bibione.jpg'
+      icon: "../assets/icons/sponsor/bibione.jpg"
     },
     {
-      icon: '../assets/icons/sponsor/chocomax.jpg'
+      icon: "../assets/icons/sponsor/chocomax.jpg"
     },
     {
-      icon: '../assets/icons/sponsor/csn.jpg'
+      icon: "../assets/icons/sponsor/csn.jpg"
     },
     {
-      icon: '../assets/icons/sponsor/daros.jpg'
+      icon: "../assets/icons/sponsor/daros.jpg"
     } /*,
 		{
 			icon: '../assets/icons/sponsor/epa.jpg'
@@ -66,14 +66,16 @@ export class AppComponent implements OnInit, OnDestroy {
   ) {}
 
   ngOnInit() {
-    $('.materialboxed').materialbox();
+    if ($(".materialboxed")) {
+      $(".materialboxed").materialbox();
+    }
 
-    this.cookieAccepted = localStorage.getItem('cookieAccepted');
+    this.cookieAccepted = localStorage.getItem("cookieAccepted");
 
     this.routerSub = this.router.events.subscribe(event => {
       if (event instanceof NavigationEnd) {
-        (<any>window).ga('set', 'page', event.urlAfterRedirects);
-        (<any>window).ga('send', 'pageview');
+        (<any>window).ga("set", "page", event.urlAfterRedirects);
+        (<any>window).ga("send", "pageview");
       }
     });
   }
@@ -84,12 +86,12 @@ export class AppComponent implements OnInit, OnDestroy {
 
   addNoScroll(sidenav) {
     if (sidenav._isOpened) {
-      if (!$('body').hasClass('noscroll')) {
-        $('body').addClass('noscroll');
+      if (!$("body").hasClass("noscroll")) {
+        $("body").addClass("noscroll");
       }
     } else {
-      if ($('body').hasClass('noscroll')) {
-        $('body').removeClass('noscroll');
+      if ($("body").hasClass("noscroll")) {
+        $("body").removeClass("noscroll");
       }
     }
   }
@@ -103,13 +105,13 @@ export class AppComponent implements OnInit, OnDestroy {
   }
 
   hideCookieBanner() {
-    localStorage.setItem('cookieAccepted', 'true');
-    this.cookieAccepted = localStorage.getItem('cookieAccepted');
+    localStorage.setItem("cookieAccepted", "true");
+    this.cookieAccepted = localStorage.getItem("cookieAccepted");
   }
 }
 
 @Component({
-  selector: 'news-dialog',
+  selector: "news-dialog",
   template: `
     <div class="dialog">
       <div class="container">
@@ -192,7 +194,7 @@ export class NewsDialog implements AfterViewInit {
   tel: string;
   checkEULA = false;
 
-  emailFormControl = new FormControl('', [
+  emailFormControl = new FormControl("", [
     Validators.required,
     Validators.pattern(EMAIL_REGEX)
   ]);
@@ -204,8 +206,8 @@ export class NewsDialog implements AfterViewInit {
   ) {}
 
   ngAfterViewInit() {
-    if (!$('.md-dialog-container').hasClass('dialog-responsive')) {
-      $('.md-dialog-container').addClass('dialog-responsive');
+    if (!$(".md-dialog-container").hasClass("dialog-responsive")) {
+      $(".md-dialog-container").addClass("dialog-responsive");
     }
 
     this.recaptcha();
@@ -226,12 +228,12 @@ export class NewsDialog implements AfterViewInit {
 
       this.newsService.addReceiver(receiver);
 
-      this.snackBar.open('Aggiunto alla newsletter', 'Chiudi', {
+      this.snackBar.open("Aggiunto alla newsletter", "Chiudi", {
         duration: 3000
       });
       this.dialogRef.close();
     } else {
-      this.snackBar.open('Compilare tutti i campi richiesti', 'Chiudi', {
+      this.snackBar.open("Compilare tutti i campi richiesti", "Chiudi", {
         duration: 3000
       });
     }
@@ -239,31 +241,31 @@ export class NewsDialog implements AfterViewInit {
 
   recaptcha() {
     (function() {
-      if (!window['___grecaptcha_cfg']) {
-        window['___grecaptcha_cfg'] = {};
+      if (!window["___grecaptcha_cfg"]) {
+        window["___grecaptcha_cfg"] = {};
       }
-      if (!window['___grecaptcha_cfg']['render']) {
-        window['___grecaptcha_cfg']['render'] = 'onload';
+      if (!window["___grecaptcha_cfg"]["render"]) {
+        window["___grecaptcha_cfg"]["render"] = "onload";
       }
-      window['__google_recaptcha_client'] = true;
-      let po = document.createElement('script');
-      po.type = 'text/javascript';
+      window["__google_recaptcha_client"] = true;
+      let po = document.createElement("script");
+      po.type = "text/javascript";
       po.async = true;
       po.src =
-        'https://www.gstatic.com/recaptcha/api2/r20170629165701/recaptcha__it.js';
-      let elem = document.querySelector('script[nonce]');
-      let nonce = elem && (elem['nonce'] || elem.getAttribute('nonce'));
+        "https://www.gstatic.com/recaptcha/api2/r20170629165701/recaptcha__it.js";
+      let elem = document.querySelector("script[nonce]");
+      let nonce = elem && (elem["nonce"] || elem.getAttribute("nonce"));
       if (nonce) {
-        po.setAttribute('nonce', nonce);
+        po.setAttribute("nonce", nonce);
       }
-      let s = document.getElementsByTagName('script')[0];
+      let s = document.getElementsByTagName("script")[0];
       s.parentNode.insertBefore(po, s);
     })();
   }
 }
 
 @Component({
-  selector: 'bug-dialog',
+  selector: "bug-dialog",
   template: `
     <div class="dialog">
       <div class="dialog-title">
