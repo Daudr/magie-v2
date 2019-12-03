@@ -7,7 +7,7 @@ export class SeoService {
     // default values
     config = {
       title: 'Magie D\'Inverno - Pista di pattinaggio a San Vendemiano',
-      description: 'Magie D\'Inverno: la pista di pattinaggio in ghiaccio vero più grande nella provincia di Treviso. Dal 18 novembre 2017 all\'11 marzo 2018',
+      description: 'Magie D\'Inverno: la pista di pattinaggio in ghiaccio vero più grande nella provincia di Treviso. Dal 16 novembre 2019 al 29 marzo 2020. Vieni a scoprire la Magia 🎅',
       image: 'https://www.magiedinverno.it/assets/icons/logo/logo_magie.png',
       slug: '',
       ...config
