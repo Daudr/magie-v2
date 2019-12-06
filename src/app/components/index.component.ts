@@ -108,7 +108,7 @@ export class IndexComponent implements OnInit, AfterViewInit {
     if (today >= new Date(2018, 10, 17) && today <= new Date(2099, 2, 17)) {
      if (today >= new Date(2019, 11, 23) && today <= new Date(2020, 0, 6)) {
        return 'APERTI';
-     } else if (todayTime === new Date(2019, 11, 6).getTime() || todayTime === new Date(2019, 11, 13).getTime() || todayTime === new Date(2019, 11, 20).getTime()) {
+     } else if (todayTime === new Date(2019, 11, 6).getTime() || todayTime === new Date(2019, 11, 13).getTime() || todayTime === new Date(2019, 11, 20).getTime() || (today >= new Date(2020, 1, 24) && today <= new Date(2020, 1, 26))) {
        return 'APERTI';
      } else {
        const day = today.getDay();
