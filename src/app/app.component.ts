@@ -66,9 +66,9 @@ export class AppComponent implements OnInit, OnDestroy {
   ) {}
 
   ngOnInit() {
-    if ($(".materialboxed")) {
-      $(".materialboxed").materialbox();
-    }
+    // if ($(".materialboxed")) {
+    //   $(".materialboxed").materialbox();
+    // }
 
     this.cookieAccepted = localStorage.getItem("cookieAccepted");
 
