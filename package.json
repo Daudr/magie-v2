@@ -46,7 +46,7 @@
     "mailchimp-api-v3": "^1.13.1",
     "mongodb": "2.2.31",
     "mongojs": "2.4.1",
-    "mongoose": "4.11.6",
+    "mongoose": "5.7.5",
     "passport": "0.3.2",
     "passport-jwt": "2.2.1",
     "rendertron-middleware": "0.1.2",
