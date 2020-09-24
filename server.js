@@ -58,7 +58,8 @@ app.get('*/**.gif', (req, res) => {
   res.setHeader('Cache-Control', 'max-age=1296000, s-maxage=2592000');
 });
 
-var evt = mongojs(process.env.DB_URI, [EVENTS_COLLECTION]);
+const MongoClient = require('mongodb').MongoClient;
+const evt = new MongoClient(process.env.DB_URI, { useNewUrlParser: true });
 
 /*  "/api/eventi"
  *    GET: finds all events
