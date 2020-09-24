@@ -59,7 +59,10 @@ app.get('*/**.gif', (req, res) => {
 });
 
 const MongoClient = require('mongodb').MongoClient;
-const evt = new MongoClient(process.env.DB_URI, { useNewUrlParser: true });
+const client = new MongoClient(process.env.DB_URI, { useNewUrlParser: true });
+
+client.connect(err => {
+  const evt = client.collection('eventi');
 
 /*  "/api/eventi"
  *    GET: finds all events
@@ -67,7 +70,7 @@ const evt = new MongoClient(process.env.DB_URI, { useNewUrlParser: true });
  */
 
 app.get('/api/eventi', function(req, res) {
-  evt.eventi
+  evt
     .find()
     .sort({ data: 1 })
     .toArray(function(err, eventi) {
@@ -95,7 +98,7 @@ app.post('/api/eventi', function(req, res) {
       foto: req.body.fotoFull || 'assets/icons/logo/logo_magie.png'
     };
 
-    evt.eventi.insert(evento, function(err, evento) {
+    evt.insert(evento, function(err, evento) {
       if (err) {
         handleError(res, err.message, 'Failed to insert event');
       } else {
@@ -112,7 +115,7 @@ app.post('/api/eventi', function(req, res) {
  */
 
 app.get('/api/eventi/:id', function(req, res) {
-  evt.eventi.findOne({ _id: new ObjectID(req.params.id) }, function(err, doc) {
+  evt.findOne({ _id: new ObjectID(req.params.id) }, function(err, doc) {
     if (err) {
       handleError(res, err.message, 'Failed to load event.');
     }
@@ -124,7 +127,7 @@ app.put('/api/eventi/:id', function(req, res) {
   var evento = req.body;
   delete evento._id;
 
-  evt.eventi.update({ _id: ObjectID(req.params.id) }, evento, function(
+  evt.update({ _id: ObjectID(req.params.id) }, evento, function(
     err,
     evento
   ) {
@@ -138,7 +141,7 @@ app.put('/api/eventi/:id', function(req, res) {
 });
 
 app.delete('/api/eventi/:id', function(req, res) {
-  evt.eventi.remove({ _id: new ObjectID(req.params.id) }, function(
+  evt.remove({ _id: new ObjectID(req.params.id) }, function(
     err,
     result
   ) {
@@ -156,7 +159,7 @@ app.delete('/api/eventi/:id', function(req, res) {
  */
 
 app.get('/api/eventisoon', function(req, res) {
-  evt.eventi
+  evt
     .find({ data: { $gte: new Date() } })
     .sort({ data: 1 })
     .limit(3)
@@ -173,7 +176,7 @@ app.get('/api/eventisoon', function(req, res) {
  */
 
 app.get('/api/eventifuture', function(req, res) {
-  evt.eventi
+  evt
     .find({
       data: { $gte: new Date(new Date().setDate(new Date().getDate() - 1)) }
     })
@@ -192,7 +195,7 @@ app.get('/api/eventifuture', function(req, res) {
  */
 
 app.get('/api/eventipast', function(req, res) {
-  evt.eventi
+  evt
     .find({
       data: { $lt: new Date(new Date().setDate(new Date().getDate() - 1)) }
     })
@@ -308,4 +311,5 @@ app.get('*', (req, res, next) => {
 var server = app.listen(process.env.PORT || 8080, function() {
   var port = server.address().port;
   console.log('App now running on port', port);
+});
 });
