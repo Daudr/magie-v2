@@ -62,7 +62,7 @@ const MongoClient = require('mongodb').MongoClient;
 const client = new MongoClient(process.env.DB_URI, { useNewUrlParser: true });
 
 client.connect(err => {
-  const evt = client.collection('eventi');
+  const evt = client.db('heroku_slmcz4nh').collection('eventi');
 
 /*  "/api/eventi"
  *    GET: finds all events
